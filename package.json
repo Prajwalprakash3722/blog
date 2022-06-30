@@ -1,15 +1,21 @@
 {
-  "author": {
-    "name": "Prajwal P",
-    "email": "prajwalprakash3722@gmail.com",
-    "url": "http://www.devcoffee.me"
-  },
+  "name": "blog",
+  "version": "0.0.1",
   "private": true,
+  "author": {
+    "email": "prajwalprakash3722@gmail.com",
+    "name": "Prajwal Prakash",
+    "url": "https://www.devcoffee.me"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -17,14 +23,28 @@
     "date-fns": "2.21.3",
     "feed": "^4.2.2",
     "gray-matter": "4.0.3",
-    "next": "latest",
+    "next": "^12.1.0",
+    "preact": "^10.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "remark": "14.0.2",
     "remark-html": "15.0.1",
     "typescript": "^4.2.4"
   },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
+    "@next/bundle-analyzer": "^12.1.6",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.0",
     "@types/react": "^17.0.6",
