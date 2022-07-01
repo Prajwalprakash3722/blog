@@ -5,9 +5,10 @@ type Props = {
   date: string;
   slug: string;
   content: string;
+  category: string;
 };
 
-const PostPreview = ({ title, date, slug ,content}: Props) => {
+const PostPreview = ({ title, date, slug, content, category }: Props) => {
   const colorGradients = [
     "bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400",
     "bg-gradient-to-r from-green-300 via-blue-500 to-purple-600",
@@ -46,12 +47,18 @@ const PostPreview = ({ title, date, slug ,content}: Props) => {
             <dt className="text-sm font-medium text-gray-600">Published</dt>
             <dd className="text-xs text-gray-500">
               {" "}
-                <DateFormatter dateString={date} />
+              <DateFormatter dateString={date} />
             </dd>
           </div>
-          <div className="flex flex-col-reverse ml-3 sm:ml-6">
+          <div className="hidden md:flex flex-col-reverse ml-3 sm:ml-6">
             <dt className="text-sm font-medium text-gray-600">Reading time</dt>
-            <dd className="text-xs text-slate-100">{Math.floor((content.split(' ').length)/200)} mins</dd>
+            <dd className="text-xs text-slate-100">{Math.floor((content.split(' ').length) / 200)} mins</dd>
+          </div>
+          <div className="hidden lg:flex flex-col-reverse ml-3 sm:ml-6">
+            <dt className="text-sm font-medium text-gray-600">Category</dt>
+            <dd className="text-xs text-slate-100">
+              {category}
+            </dd>
           </div>
         </dl>
       </div>

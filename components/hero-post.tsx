@@ -1,15 +1,12 @@
-import Avatar from './avatar'
-import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
+import DateFormatter from './date-formatter'
 import Link from 'next/link'
-import Author from '../types/author'
 
 type Props = {
   title: string
   coverImage: string
   date: string
   excerpt: string
-  author: Author
   slug: string
 }
 
@@ -18,7 +15,6 @@ const HeroPost = ({
   coverImage,
   date,
   excerpt,
-  author,
   slug,
 }: Props) => {
   return (
@@ -36,10 +32,6 @@ const HeroPost = ({
           <div className="mb-4 md:mb-0 text-lg">
             <DateFormatter dateString={date} />
           </div>
-        </div>
-        <div>
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          <Avatar name={author.name} picture={author.picture} />
         </div>
       </div>
     </section>

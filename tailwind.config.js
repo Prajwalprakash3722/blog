@@ -1,7 +1,25 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./components/**/*.tsx", "./pages/**/*.tsx"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          "Inter",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Oxygen",
+          "Ubuntu",
+          "Cantarell",
+          "Fira Sans",
+          "Droid Sans",
+          "Helvetica Neue",
+          "sans-serif",
+        ],
+      },
       animation: {
         tilt: "tilt 10s infinite linear",
       },
@@ -20,5 +38,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    {
+      ...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {}),
+    },
+  ],
 };

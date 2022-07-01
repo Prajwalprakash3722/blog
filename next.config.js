@@ -1,4 +1,11 @@
 /**@type{import('next).NextConfig} */
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+});
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
@@ -22,3 +29,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 module.exports = nextConfig;
 module.exports = withBundleAnalyzer({});
+module.exports = withMDX({
+  pageExtensions: ["ts", "tsx", "mdx"],
+});

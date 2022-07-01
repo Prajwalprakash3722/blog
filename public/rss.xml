@@ -2,42 +2,60 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Prajwals Blog</title>
-        <link>https://www.blog.devcoffee.me</link>
+        <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Thu, 30 Jun 2022 21:00:31 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 Jul 2022 09:37:30 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
             <title>Prajwals Blog</title>
-            <url>https://www.blog.devcoffee.me/favicon.ico</url>
-            <link>https://www.blog.devcoffee.me</link>
+            <url>http://localhost:3000/favicon.ico</url>
+            <link>http://localhost:3000</link>
         </image>
         <copyright>All rights reserved 2022, Prajwal P</copyright>
         <item>
             <title><![CDATA[Dynamic Routing and Static Generation]]></title>
-            <link>https://www.blog.devcoffee.me/posts/dynamic-routing</link>
-            <guid>https://www.blog.devcoffee.me/posts/dynamic-routing</guid>
+            <link>http://localhost:3000/posts/dynamic-routing</link>
+            <guid>http://localhost:3000/posts/dynamic-routing</guid>
             <pubDate>Wed, 16 Mar 2022 05:35:07 GMT</pubDate>
             <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.]]></description>
             <content:encoded><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
-            <title><![CDATA[Learn How to Pre-render Pages Using Static Generation with Next.js]]></title>
-            <link>https://www.blog.devcoffee.me/posts/hello-world</link>
-            <guid>https://www.blog.devcoffee.me/posts/hello-world</guid>
-            <pubDate>Mon, 16 Mar 2020 05:35:07 GMT</pubDate>
+            <title><![CDATA[The Respect !!!]]></title>
+            <link>http://localhost:3000/posts/the-respect</link>
+            <guid>http://localhost:3000/posts/the-respect</guid>
+            <pubDate>Sun, 21 Nov 2021 06:01:03 GMT</pubDate>
+            <description><![CDATA[Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying]]></description>
+            <content:encoded><![CDATA[Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[From MDX]]></title>
+            <link>http://localhost:3000/posts/hello-world-mdx</link>
+            <guid>http://localhost:3000/posts/hello-world-mdx</guid>
+            <pubDate>Thu, 16 Apr 2020 05:35:07 GMT</pubDate>
             <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.]]></description>
             <content:encoded><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Preview Mode for Static Generation]]></title>
-            <link>https://www.blog.devcoffee.me/posts/preview</link>
-            <guid>https://www.blog.devcoffee.me/posts/preview</guid>
+            <link>http://localhost:3000/posts/preview</link>
+            <guid>http://localhost:3000/posts/preview</guid>
             <pubDate>Sat, 16 Mar 2019 05:35:07 GMT</pubDate>
             <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.]]></description>
             <content:encoded><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[The Next.js MDX Blog Starter]]></title>
+            <link>http://localhost:3000/posts/hello-world</link>
+            <guid>http://localhost:3000/posts/hello-world</guid>
+            <pubDate>Mon, 16 Mar 2009 05:35:07 GMT</pubDate>
+            <description><![CDATA[Run your blog on [Next.js](https://nextjs.org/) with content authoring in [MDX](https://mdxjs.com/), design theme and styling with [Theme UI](https://theme-ui.com/components), and deploy with [Vercel](https://vercel.com/).]]></description>
+            <content:encoded><![CDATA[Run your blog on [Next.js](https://nextjs.org/) with content authoring in [MDX](https://mdxjs.com/), design theme and styling with [Theme UI](https://theme-ui.com/components), and deploy with [Vercel](https://vercel.com/).]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
     </channel>

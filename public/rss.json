@@ -1,19 +1,19 @@
 {
     "version": "https://jsonfeed.org/version/1",
     "title": "Prajwals Blog",
-    "home_page_url": "https://www.blog.devcoffee.me",
-    "feed_url": "https://www.blog.devcoffee.me/rss/feed.json",
+    "home_page_url": "http://localhost:3000",
+    "feed_url": "http://localhost:3000/rss/feed.json",
     "description": "Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.",
-    "icon": "https://www.blog.devcoffee.me/favicon.ico",
+    "icon": "http://localhost:3000/favicon.ico",
     "author": {
         "name": "Prajwal P",
         "url": "https://twitter.com/prajwal_3722"
     },
     "items": [
         {
-            "id": "https://www.blog.devcoffee.me/posts/dynamic-routing",
+            "id": "http://localhost:3000/posts/dynamic-routing",
             "content_html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
-            "url": "https://www.blog.devcoffee.me/posts/dynamic-routing",
+            "url": "http://localhost:3000/posts/dynamic-routing",
             "title": "Dynamic Routing and Static Generation",
             "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
             "date_modified": "2022-03-16T05:35:07.322Z",
@@ -23,24 +23,48 @@
             }
         },
         {
-            "id": "https://www.blog.devcoffee.me/posts/hello-world",
-            "content_html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
-            "url": "https://www.blog.devcoffee.me/posts/hello-world",
-            "title": "Learn How to Pre-render Pages Using Static Generation with Next.js",
-            "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
-            "date_modified": "2020-03-16T05:35:07.322Z",
+            "id": "http://localhost:3000/posts/the-respect",
+            "content_html": "Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying",
+            "url": "http://localhost:3000/posts/the-respect",
+            "title": "The Respect !!!",
+            "summary": "Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying",
+            "date_modified": "2021-11-21T06:01:03.657Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
             }
         },
         {
-            "id": "https://www.blog.devcoffee.me/posts/preview",
+            "id": "http://localhost:3000/posts/hello-world-mdx",
             "content_html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
-            "url": "https://www.blog.devcoffee.me/posts/preview",
+            "url": "http://localhost:3000/posts/hello-world-mdx",
+            "title": "From MDX",
+            "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
+            "date_modified": "2020-04-16T05:35:07.322Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
+            "id": "http://localhost:3000/posts/preview",
+            "content_html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
+            "url": "http://localhost:3000/posts/preview",
             "title": "Preview Mode for Static Generation",
             "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
             "date_modified": "2019-03-16T05:35:07.322Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
+            "id": "http://localhost:3000/posts/hello-world",
+            "content_html": "Run your blog on [Next.js](https://nextjs.org/) with content authoring in [MDX](https://mdxjs.com/), design theme and styling with [Theme UI](https://theme-ui.com/components), and deploy with [Vercel](https://vercel.com/).",
+            "url": "http://localhost:3000/posts/hello-world",
+            "title": "The Next.js MDX Blog Starter",
+            "summary": "Run your blog on [Next.js](https://nextjs.org/) with content authoring in [MDX](https://mdxjs.com/), design theme and styling with [Theme UI](https://theme-ui.com/components), and deploy with [Vercel](https://vercel.com/).",
+            "date_modified": "2009-03-16T05:35:07.322Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"

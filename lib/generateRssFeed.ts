@@ -9,6 +9,7 @@ export default async function generateRssFeed() {
     'content',
     'coverImage',
     'excerpt',
+    'preview'
   ])
   const siteURL = process.env.NODE_ENV === 'production' ? 'https://www.blog.devcoffee.me' : 'http://localhost:3000'
   const date = new Date();

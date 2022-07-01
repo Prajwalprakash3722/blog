@@ -45,7 +45,7 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   }
   return (
     <>
-      <Layout newArticle={newArticle}>
+      <Layout>
         <Container>
           <Header />
           {router.isFallback ? (

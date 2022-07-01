@@ -1,9 +1,10 @@
+import Catagories from '../components/categories'
 import Container from '../components/container'
 import Head from 'next/head'
-import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'
 import LatestPosts from '../components/latest-posts'
 import Layout from '../components/layout'
+import MorePosts from '../components/more-posts'
 import Post from '../types/post'
 import generateRssFeed from '../lib/generateRssFeed'
 import { getAllPosts } from '../lib/api'
@@ -15,7 +16,9 @@ type Props = {
 const Index = ({ allPosts }: Props) => {
   const heroPost = allPosts[0]
   //first 10 posts 
+  allPosts = allPosts.filter(post => post.preview !== true)
   const morePosts = allPosts.slice(0, 10)
+  const latestPosts = allPosts.slice(0, 10)
   return (
     <>
       <Layout newArticle={heroPost}>
@@ -24,7 +27,9 @@ const Index = ({ allPosts }: Props) => {
         </Head>
         <Container>
           <Intro />
-          {morePosts.length > 0 && <LatestPosts posts={morePosts} />}
+          {latestPosts.length > 0 && <LatestPosts posts={latestPosts} />}
+          {morePosts.length > 0 && <MorePosts posts={morePosts} />}
+          <Catagories posts={allPosts} />
         </Container>
       </Layout>
     </>
@@ -39,8 +44,8 @@ export const getStaticProps = async () => {
     'date',
     'slug',
     'content',
-    'coverImage',
-    'excerpt',
+    'preview',
+    'category'
   ])
   await generateRssFeed(); // calling to generate the feed
 

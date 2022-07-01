@@ -4,9 +4,11 @@
 
 .markdown p,
 .markdown ul,
+.markdown code
 .markdown ol,
 .markdown blockquote {
   @apply my-6;
+  overflow-wrap: break-word;
 }
 
 .markdown h2 {

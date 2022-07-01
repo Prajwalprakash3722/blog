@@ -25,11 +25,21 @@ const Footer = () => {
     },
     {
       name: 'RSS',
-      path:'rss.xml'
+      path: 'rss.xml'
     }
   ]
 
-
+  const madeUsingLinks = [{
+    name: 'Next.JS',
+    path: 'https://nextjs.org/'
+  }, {
+    name: 'Tailwind',
+    path: 'https://tailwindcss.com/'
+  }, {
+    name: 'Typescript',
+    path: 'https://www.typescriptlang.org/'
+  }
+  ]
 
   return (
     <footer className="border-t-2 border-gray-400">
@@ -54,8 +64,8 @@ const Footer = () => {
               >
                 {navLinks.map(link => {
                   return (
-                    <li>
-                      <a className="text-white transition hover:text-white/75" href={link.path} target="_blank">
+                    <li key={link.name}>
+                      <a className="text-white transition hover:text-white/75" href={link.path} target="_blank" key={JSON.stringify(link)}>
                         {link.name}
                       </a>
                     </li>
@@ -63,6 +73,21 @@ const Footer = () => {
                 })}
               </ul>
             </nav>
+          </div>
+          <div className="absolute flex bottom-0 p-4 text-center">
+            <p className="text-[#bbb] font-body text-sm">
+              Made using{" "}
+              {madeUsingLinks.map(link => (
+                <>
+                  <span className="text-[#50AEF1]" key={link.name}>
+                    <a href={link.path} target="blank" key={JSON.stringify(link)}>
+                      {link.name}
+                    </a>
+                  </span>
+                  {link.name === "Typescript" ? "." : ","}{" "}
+                </>
+              ))}
+            </p>
           </div>
         </div>
       </Container>
