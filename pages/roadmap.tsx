@@ -1,5 +1,6 @@
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next'
 
+import Layout from '../components/layout'
 import React from 'react'
 import axios from 'axios'
 
@@ -44,6 +45,8 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 function Roadmap(props: InferGetServerSidePropsType<typeof getServerSideProps>
 ) {
   return (
+    <Layout>
+
     <div className='flex flex-col items-center justify-center min-h-screen'>
       <h1 className='text-5xl font-semibold text-slate-50'>
         WIP
@@ -88,7 +91,7 @@ function Roadmap(props: InferGetServerSidePropsType<typeof getServerSideProps>
             }
             )}
           </div>
-          <footer className="bg-gray-900">
+          <footer className="">
             <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8">
               <div className="sm:flex sm:items-center sm:justify-between">
                 <p className="mt-4 text-sm text-center text-gray-400 lg:text-right lg:mt-0">
@@ -107,6 +110,7 @@ function Roadmap(props: InferGetServerSidePropsType<typeof getServerSideProps>
 
       )}
     </div>
+    </Layout>
   )
 }
 

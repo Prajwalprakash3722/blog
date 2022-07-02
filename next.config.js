@@ -1,17 +1,9 @@
 /**@type{import('next).NextConfig} */
-const withMDX = require("@next/mdx")({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-  },
-});
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-  experimental: {
-    outputStandalone: true,
-  },
-  // used preReact to reduce the bundle size and faster response rate.
+  output: "standalone",
+
+  //    used preReact to reduce the bundle size and faster response rate.
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
@@ -23,12 +15,3 @@ const nextConfig = {
     return config;
   },
 };
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true",
-});
-
-module.exports = nextConfig;
-module.exports = withBundleAnalyzer({});
-module.exports = withMDX({
-  pageExtensions: ["ts", "tsx", "mdx"],
-});
