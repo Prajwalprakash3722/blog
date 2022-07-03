@@ -1,19 +1,19 @@
 {
     "version": "https://jsonfeed.org/version/1",
     "title": "Prajwals Blog",
-    "home_page_url": "http://localhost:3000",
-    "feed_url": "http://localhost:3000/rss/feed.json",
+    "home_page_url": "https://www.blog.devcoffee.me",
+    "feed_url": "https://www.blog.devcoffee.me/rss/feed.json",
     "description": "Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.",
-    "icon": "http://localhost:3000/favicon.ico",
+    "icon": "https://www.blog.devcoffee.me/favicon.ico",
     "author": {
         "name": "Prajwal P",
         "url": "https://twitter.com/prajwal_3722"
     },
     "items": [
         {
-            "id": "http://localhost:3000/posts/typescript-javascript",
+            "id": "https://www.blog.devcoffee.me/posts/typescript-javascript",
             "content_html": "If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer",
-            "url": "http://localhost:3000/posts/typescript-javascript",
+            "url": "https://www.blog.devcoffee.me/posts/typescript-javascript",
             "title": "Why I Prefer Type-Script more than JavaScript …?",
             "summary": "If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer",
             "date_modified": "2022-02-03T07:51:20.775Z",
@@ -23,9 +23,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/the-problem-which-no-one-overlooks",
+            "id": "https://www.blog.devcoffee.me/posts/the-problem-which-no-one-overlooks",
             "content_html": "After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.",
-            "url": "http://localhost:3000/posts/the-problem-which-no-one-overlooks",
+            "url": "https://www.blog.devcoffee.me/posts/the-problem-which-no-one-overlooks",
             "title": "The Problem which no one Overlooks",
             "summary": "After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.",
             "date_modified": "2021-12-06T05:35:07.322Z",
@@ -35,9 +35,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/the-respect",
+            "id": "https://www.blog.devcoffee.me/posts/the-respect",
             "content_html": "Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying",
-            "url": "http://localhost:3000/posts/the-respect",
+            "url": "https://www.blog.devcoffee.me/posts/the-respect",
             "title": "The Respect !!!",
             "summary": "Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying",
             "date_modified": "2021-11-21T06:01:03.657Z",
@@ -47,9 +47,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/lets-talk-money",
+            "id": "https://www.blog.devcoffee.me/posts/lets-talk-money",
             "content_html": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
-            "url": "http://localhost:3000/posts/lets-talk-money",
+            "url": "https://www.blog.devcoffee.me/posts/lets-talk-money",
             "title": "Let's Talk Money: You've Worked Hard for It, Now Make It Work for You",
             "summary": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
             "date_modified": "2021-07-17T21:35:54.322Z",
@@ -59,9 +59,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/introduction-to-opencv",
+            "id": "https://www.blog.devcoffee.me/posts/introduction-to-opencv",
             "content_html": "A brief introduction to a popular module called Open-Cv",
-            "url": "http://localhost:3000/posts/introduction-to-opencv",
+            "url": "https://www.blog.devcoffee.me/posts/introduction-to-opencv",
             "title": "Introduction to Open-Cv",
             "summary": "A brief introduction to a popular module called Open-Cv",
             "date_modified": "2021-05-31T05:35:07.322Z",
@@ -71,9 +71,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/how-lucky-are-we",
+            "id": "https://www.blog.devcoffee.me/posts/how-lucky-are-we",
             "content_html": "F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.",
-            "url": "http://localhost:3000/posts/how-lucky-are-we",
+            "url": "https://www.blog.devcoffee.me/posts/how-lucky-are-we",
             "title": "How Lucky Are We……?",
             "summary": "F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.",
             "date_modified": "2021-04-02T05:35:07.322Z",
@@ -83,9 +83,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/the-slient-struggle",
+            "id": "https://www.blog.devcoffee.me/posts/the-slient-struggle",
             "content_html": "Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.",
-            "url": "http://localhost:3000/posts/the-slient-struggle",
+            "url": "https://www.blog.devcoffee.me/posts/the-slient-struggle",
             "title": "The Silent Struggle",
             "summary": "Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.",
             "date_modified": "2021-03-21T05:35:07.322Z",
@@ -95,9 +95,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/ikigai",
+            "id": "https://www.blog.devcoffee.me/posts/ikigai",
             "content_html": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
-            "url": "http://localhost:3000/posts/ikigai",
+            "url": "https://www.blog.devcoffee.me/posts/ikigai",
             "title": "Ikigai: The Japanese Secret to a Long and Happy Life.",
             "summary": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
             "date_modified": "2020-11-18T21:35:54.322Z",
@@ -107,9 +107,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/rich-dad-poor-dad",
+            "id": "https://www.blog.devcoffee.me/posts/rich-dad-poor-dad",
             "content_html": "It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.",
-            "url": "http://localhost:3000/posts/rich-dad-poor-dad",
+            "url": "https://www.blog.devcoffee.me/posts/rich-dad-poor-dad",
             "title": "Rich Dad Poor Dad: Assets and Liability management",
             "summary": "It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.",
             "date_modified": "2020-11-15T21:35:54.322Z",
@@ -119,9 +119,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/3000-stories",
+            "id": "https://www.blog.devcoffee.me/posts/3000-stories",
             "content_html": "Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement",
-            "url": "http://localhost:3000/posts/3000-stories",
+            "url": "https://www.blog.devcoffee.me/posts/3000-stories",
             "title": "Three Thousand Stitches: Ordinary People, Extraordinary Lives.",
             "summary": "Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement",
             "date_modified": "2020-11-13T21:35:54.322Z",

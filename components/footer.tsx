@@ -65,7 +65,7 @@ const Footer = () => {
                 {navLinks.map(link => {
                   return (
                     <li key={link.name}>
-                      <a className="text-white transition hover:text-white/75" href={link.path} target="_blank" key={JSON.stringify(link)}>
+                      <a className="text-white transition hover:text-white/75" href={link.path} target="_blank" key={link.name} rel="noreferrer">
                         {link.name}
                       </a>
                     </li>

@@ -10,7 +10,7 @@ function ErrorPage() {
           Not Found
         </div>
         <div className='text-slate-100 px-2 text-sm'>
-          You seem to be alone here, be aware even the Server Couldn't find you.
+          You seem to be alone here, be aware even the Server {`Couldn't`} find you.
         </div>
         <button className="mt-5">
           <a
