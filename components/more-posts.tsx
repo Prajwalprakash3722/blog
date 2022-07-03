@@ -1,11 +1,12 @@
 import Post from '../types/post'
-import PostPreview from './post-preview'
+import { useRouter } from 'next/router'
 
 type Props = {
   posts: Post[]
+  header: string
 }
 
-const MorePosts = ({ posts }: Props) => {
+const MorePosts = ({ posts, header }: Props) => {
 
 
 
@@ -26,13 +27,14 @@ const MorePosts = ({ posts }: Props) => {
     'Dec'
   ]
 
+  const router = useRouter()
   return (
     <section className='relative bg-[#1A1D23] p-8 rounded-lg my-4'>
       <h2 className="text-3xl font-bold leading-snug text-slate-100 my-4">
-        All articles
+        {header}
       </h2>
       <div className="flex flex-col items-stretch justify-center max-w-2xl">
-        {allYears.map(year => {
+        {allYears.filter((x, i, a) => a.indexOf(x) == i).map(year => {
           let postsByYear = posts.filter(post => post.date.split('-')[0] === year)
           return (
             <div key={year}>
@@ -41,8 +43,8 @@ const MorePosts = ({ posts }: Props) => {
               </h3>
               <div>
                 {postsByYear.map((post) => (
-                  <div>
-                    <a href={`posts/${post.slug}`}>
+                  <div key={post.title}>
+                    <a href={router.asPath.split('/').splice(0, 2).join('/') + `/` + post.slug}>
                       <div className="max-w-full divide-y-2 divide-gray-200">
                         <div className="p-2 group rounded-lg hover:bg-[#1D2433]">
                           <div className='flex flex-row items-center'>

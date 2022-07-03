@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Sat, 02 Jul 2022 08:00:04 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 03 Jul 2022 14:37:55 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,12 +14,21 @@
         </image>
         <copyright>All rights reserved 2022, Prajwal P</copyright>
         <item>
-            <title><![CDATA[Dynamic Routing and Static Generation]]></title>
-            <link>http://localhost:3000/posts/dynamic-routing</link>
-            <guid>http://localhost:3000/posts/dynamic-routing</guid>
-            <pubDate>Wed, 16 Mar 2022 05:35:07 GMT</pubDate>
-            <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.]]></description>
-            <content:encoded><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.]]></content:encoded>
+            <title><![CDATA[Why I Prefer Type-Script more than JavaScript …?]]></title>
+            <link>http://localhost:3000/posts/typescript-javascript</link>
+            <guid>http://localhost:3000/posts/typescript-javascript</guid>
+            <pubDate>Thu, 03 Feb 2022 07:51:20 GMT</pubDate>
+            <description><![CDATA[If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer]]></description>
+            <content:encoded><![CDATA[If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[The Problem which no one Overlooks]]></title>
+            <link>http://localhost:3000/posts/the-problem-which-no-one-overlooks</link>
+            <guid>http://localhost:3000/posts/the-problem-which-no-one-overlooks</guid>
+            <pubDate>Mon, 06 Dec 2021 05:35:07 GMT</pubDate>
+            <description><![CDATA[After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.]]></description>
+            <content:encoded><![CDATA[After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -32,30 +41,66 @@
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
-            <title><![CDATA[From MDX]]></title>
-            <link>http://localhost:3000/posts/hello-world-mdx</link>
-            <guid>http://localhost:3000/posts/hello-world-mdx</guid>
-            <pubDate>Thu, 16 Apr 2020 05:35:07 GMT</pubDate>
-            <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.]]></description>
-            <content:encoded><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.]]></content:encoded>
+            <title><![CDATA[Let's Talk Money: You've Worked Hard for It, Now Make It Work for You]]></title>
+            <link>http://localhost:3000/posts/lets-talk-money</link>
+            <guid>http://localhost:3000/posts/lets-talk-money</guid>
+            <pubDate>Sat, 17 Jul 2021 21:35:54 GMT</pubDate>
+            <description><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></description>
+            <content:encoded><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
-            <title><![CDATA[Preview Mode for Static Generation]]></title>
-            <link>http://localhost:3000/posts/preview</link>
-            <guid>http://localhost:3000/posts/preview</guid>
-            <pubDate>Sat, 16 Mar 2019 05:35:07 GMT</pubDate>
-            <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.]]></description>
-            <content:encoded><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.]]></content:encoded>
+            <title><![CDATA[Introduction to Open-Cv]]></title>
+            <link>http://localhost:3000/posts/introduction-to-opencv</link>
+            <guid>http://localhost:3000/posts/introduction-to-opencv</guid>
+            <pubDate>Mon, 31 May 2021 05:35:07 GMT</pubDate>
+            <description><![CDATA[A brief introduction to a popular module called Open-Cv]]></description>
+            <content:encoded><![CDATA[A brief introduction to a popular module called Open-Cv]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
-            <title><![CDATA[The Next.js MDX Blog Starter]]></title>
-            <link>http://localhost:3000/posts/hello-world</link>
-            <guid>http://localhost:3000/posts/hello-world</guid>
-            <pubDate>Mon, 16 Mar 2009 05:35:07 GMT</pubDate>
-            <description><![CDATA[Run your blog on [Next.js](https://nextjs.org/) with content authoring in [MDX](https://mdxjs.com/), design theme and styling with [Theme UI](https://theme-ui.com/components), and deploy with [Vercel](https://vercel.com/).]]></description>
-            <content:encoded><![CDATA[Run your blog on [Next.js](https://nextjs.org/) with content authoring in [MDX](https://mdxjs.com/), design theme and styling with [Theme UI](https://theme-ui.com/components), and deploy with [Vercel](https://vercel.com/).]]></content:encoded>
+            <title><![CDATA[How Lucky Are We……?]]></title>
+            <link>http://localhost:3000/posts/how-lucky-are-we</link>
+            <guid>http://localhost:3000/posts/how-lucky-are-we</guid>
+            <pubDate>Fri, 02 Apr 2021 05:35:07 GMT</pubDate>
+            <description><![CDATA[F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.]]></description>
+            <content:encoded><![CDATA[F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[The Silent Struggle]]></title>
+            <link>http://localhost:3000/posts/the-slient-struggle</link>
+            <guid>http://localhost:3000/posts/the-slient-struggle</guid>
+            <pubDate>Sun, 21 Mar 2021 05:35:07 GMT</pubDate>
+            <description><![CDATA[Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.]]></description>
+            <content:encoded><![CDATA[Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[Ikigai: The Japanese Secret to a Long and Happy Life.]]></title>
+            <link>http://localhost:3000/posts/ikigai</link>
+            <guid>http://localhost:3000/posts/ikigai</guid>
+            <pubDate>Wed, 18 Nov 2020 21:35:54 GMT</pubDate>
+            <description><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></description>
+            <content:encoded><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[Rich Dad Poor Dad: Assets and Liability management]]></title>
+            <link>http://localhost:3000/posts/rich-dad-poor-dad</link>
+            <guid>http://localhost:3000/posts/rich-dad-poor-dad</guid>
+            <pubDate>Sun, 15 Nov 2020 21:35:54 GMT</pubDate>
+            <description><![CDATA[It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.]]></description>
+            <content:encoded><![CDATA[It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[Three Thousand Stitches: Ordinary People, Extraordinary Lives.]]></title>
+            <link>http://localhost:3000/posts/3000-stories</link>
+            <guid>http://localhost:3000/posts/3000-stories</guid>
+            <pubDate>Fri, 13 Nov 2020 21:35:54 GMT</pubDate>
+            <description><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></description>
+            <content:encoded><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
     </channel>

@@ -88,7 +88,6 @@ export function getPostBySlug(slug: string, fields:any) {
 type Fields = {
   [key: string]: string
 }
-
 export function getAllPosts(fields: any) {
   const slugs = getPostSlugs()
   const posts = slugs

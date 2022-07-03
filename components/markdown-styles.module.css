@@ -4,17 +4,38 @@
 
 .markdown p,
 .markdown ul,
-.markdown code
-.markdown ol,
+.markdown code .markdown ol,
 .markdown blockquote {
   @apply my-6;
   overflow-wrap: break-word;
 }
 
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-[#E8E8FD] text-3xl mt-12 mb-4 leading-snug font-bold;
 }
 
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
+}
+.markdown ul {
+  @apply list-disc;
+}
+
+.markdown code {
+  @apply font-mono bg-gray-400 p-1 text-gray-900 break-words;
+}
+
+.markdown pre {
+  @apply font-mono bg-gray-400 p-2 text-gray-900 max-w-2xl text-left overflow-hidden whitespace-pre-line;
+}
+.markdown blockquote {
+  @apply relative p-4 text-xl italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500;
+}
+
+.markdown b{
+  @apply font-bold;
+}
+
+.markdown a {
+  @apply text-blue-500;
 }

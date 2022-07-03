@@ -17,8 +17,7 @@ const Index = ({ allPosts }: Props) => {
   const heroPost = allPosts[0]
   //first 10 posts 
   allPosts = allPosts.filter(post => post.preview !== true)
-  const morePosts = allPosts.slice(0, 10)
-  const latestPosts = allPosts.slice(0, 10)
+  const latestPosts = allPosts.slice(0, 6)
   return (
     <>
       <Layout newArticle={heroPost}>
@@ -28,7 +27,7 @@ const Index = ({ allPosts }: Props) => {
         <Container>
           <Intro />
           {latestPosts.length > 0 && <LatestPosts posts={latestPosts} />}
-          {morePosts.length > 0 && <MorePosts posts={morePosts} />}
+          {allPosts.length > 0 && <MorePosts posts={allPosts} header="All Posts" />}
           <Catagories posts={allPosts} />
         </Container>
       </Layout>

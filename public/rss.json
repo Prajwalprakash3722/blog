@@ -11,12 +11,24 @@
     },
     "items": [
         {
-            "id": "http://localhost:3000/posts/dynamic-routing",
-            "content_html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
-            "url": "http://localhost:3000/posts/dynamic-routing",
-            "title": "Dynamic Routing and Static Generation",
-            "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
-            "date_modified": "2022-03-16T05:35:07.322Z",
+            "id": "http://localhost:3000/posts/typescript-javascript",
+            "content_html": "If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer",
+            "url": "http://localhost:3000/posts/typescript-javascript",
+            "title": "Why I Prefer Type-Script more than JavaScript …?",
+            "summary": "If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer",
+            "date_modified": "2022-02-03T07:51:20.775Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
+            "id": "http://localhost:3000/posts/the-problem-which-no-one-overlooks",
+            "content_html": "After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.",
+            "url": "http://localhost:3000/posts/the-problem-which-no-one-overlooks",
+            "title": "The Problem which no one Overlooks",
+            "summary": "After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.",
+            "date_modified": "2021-12-06T05:35:07.322Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
@@ -35,36 +47,84 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/hello-world-mdx",
-            "content_html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
-            "url": "http://localhost:3000/posts/hello-world-mdx",
-            "title": "From MDX",
-            "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
-            "date_modified": "2020-04-16T05:35:07.322Z",
+            "id": "http://localhost:3000/posts/lets-talk-money",
+            "content_html": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
+            "url": "http://localhost:3000/posts/lets-talk-money",
+            "title": "Let's Talk Money: You've Worked Hard for It, Now Make It Work for You",
+            "summary": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
+            "date_modified": "2021-07-17T21:35:54.322Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
             }
         },
         {
-            "id": "http://localhost:3000/posts/preview",
-            "content_html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
-            "url": "http://localhost:3000/posts/preview",
-            "title": "Preview Mode for Static Generation",
-            "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.",
-            "date_modified": "2019-03-16T05:35:07.322Z",
+            "id": "http://localhost:3000/posts/introduction-to-opencv",
+            "content_html": "A brief introduction to a popular module called Open-Cv",
+            "url": "http://localhost:3000/posts/introduction-to-opencv",
+            "title": "Introduction to Open-Cv",
+            "summary": "A brief introduction to a popular module called Open-Cv",
+            "date_modified": "2021-05-31T05:35:07.322Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
             }
         },
         {
-            "id": "http://localhost:3000/posts/hello-world",
-            "content_html": "Run your blog on [Next.js](https://nextjs.org/) with content authoring in [MDX](https://mdxjs.com/), design theme and styling with [Theme UI](https://theme-ui.com/components), and deploy with [Vercel](https://vercel.com/).",
-            "url": "http://localhost:3000/posts/hello-world",
-            "title": "The Next.js MDX Blog Starter",
-            "summary": "Run your blog on [Next.js](https://nextjs.org/) with content authoring in [MDX](https://mdxjs.com/), design theme and styling with [Theme UI](https://theme-ui.com/components), and deploy with [Vercel](https://vercel.com/).",
-            "date_modified": "2009-03-16T05:35:07.322Z",
+            "id": "http://localhost:3000/posts/how-lucky-are-we",
+            "content_html": "F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.",
+            "url": "http://localhost:3000/posts/how-lucky-are-we",
+            "title": "How Lucky Are We……?",
+            "summary": "F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.",
+            "date_modified": "2021-04-02T05:35:07.322Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
+            "id": "http://localhost:3000/posts/the-slient-struggle",
+            "content_html": "Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.",
+            "url": "http://localhost:3000/posts/the-slient-struggle",
+            "title": "The Silent Struggle",
+            "summary": "Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.",
+            "date_modified": "2021-03-21T05:35:07.322Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
+            "id": "http://localhost:3000/posts/ikigai",
+            "content_html": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
+            "url": "http://localhost:3000/posts/ikigai",
+            "title": "Ikigai: The Japanese Secret to a Long and Happy Life.",
+            "summary": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
+            "date_modified": "2020-11-18T21:35:54.322Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
+            "id": "http://localhost:3000/posts/rich-dad-poor-dad",
+            "content_html": "It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.",
+            "url": "http://localhost:3000/posts/rich-dad-poor-dad",
+            "title": "Rich Dad Poor Dad: Assets and Liability management",
+            "summary": "It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.",
+            "date_modified": "2020-11-15T21:35:54.322Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
+            "id": "http://localhost:3000/posts/3000-stories",
+            "content_html": "Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement",
+            "url": "http://localhost:3000/posts/3000-stories",
+            "title": "Three Thousand Stitches: Ordinary People, Extraordinary Lives.",
+            "summary": "Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement",
+            "date_modified": "2020-11-13T21:35:54.322Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
