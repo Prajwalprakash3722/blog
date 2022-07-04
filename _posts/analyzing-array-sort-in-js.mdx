@@ -1,0 +1,52 @@
+---
+title: "Analyzing Array.sort() & measuring the performance in JavaScript"
+coverImage: "https://dmitripavlutin.com/static/3bfb3c0f29534428ff1b468213e85488/aaf91/cover-2.webp"
+date: "2022-07-04T22:22:22.775Z"
+ogImage:
+  url: "https://dmitripavlutin.com/static/3bfb3c0f29534428ff1b468213e85488/aaf91/cover-2.webp"
+preview: false
+category: "Software Development"
+---
+
+Ever wondered how does JavaScript sorts the array when you call `Array.sort()` ?
+
+Well It all depends on the runtime engine of the browser.
+
+for example,
+
+- Chrome uses V8 engine, which is a JavaScript engine written in c++. As per their documentation
+  [V8](https://v8.dev) is Google’s open source high-performance JavaScript and WebAssembly engine, written in C++. It is used in Chrome and in Node.js, among others. It implements ECMAScript and WebAssembly, and runs on Windows 7 or later, macOS 10.12+, and Linux systems that use x64, IA-32, ARM, or MIPS processors. V8 can run standalone, or can be embedded into any C++ application.
+
+- Firefox uses SpiderMonkey engine, which is a JavaScript engine written in C++. As per their documentation
+  [SpiderMonkey](https://spidermonkey.dev) is Mozilla’s JavaScript and WebAssembly Engine, used in Firefox, Servo and various other projects. It is written in C++, Rust and JavaScript. You can embed it into C++ and Rust projects, and it can be run as a stand-alone shell.
+
+- Safari uses JSC engine, which is a JavaScript engine written in C++. As per their documentation
+  [JSC](https://webkit.org/) WebKit is the web browser engine used by Safari, Mail, App Store, and many other apps on macOS, iOS, and Linux.
+
+- Microsoft Edge uses Chakra engine, which is a JavaScript engine written in C. As per their documentation
+  [ChakraCore](https://github.com/chakra-core/ChakraCore) is a JavaScript engine with a C API you can use to add support for JavaScript to any C or C compatible project. It can be compiled for x64 processors on Linux macOS and Windows. And x86 and ARM for Windows only. It is a future goal to support x86 and ARM processors on Linux and ARM on macOS.
+
+We will take the 2 most popular browsers as reference, and compare the performance of `Array.sort()` in each of them.
+
+- ## Google Chrome
+
+  Since v8 engine Chrome has been using TimSort algorithm for sorting the array.
+
+  ![avatar](https://www.openbookproject.net/books/bpp4awd/_static/ch10/timpeters.jpg)
+
+  TimSort developed by <u>Tim Peters</u> in 2002 for [python](https://github.com/python/cpython/blob/main/Objects/listsort.txt).
+  While Mergesort usually works in recursive fashion, Timsort works iteratively.
+
+  The Array is divided into Run blocks.
+  These runs are sorted using insertion sort one at a time, and they are then combined using the combine function from merge sort.
+  The Array is sorted solely using Insertion Sort if its size is smaller than run block.
+  Depending on the size of the array, the run's size can range from 32 to 64.
+
+## Algorithm:
+
+1. Divide the array into the number of blocks known as run.  
+2. Consider the size of run, either 32 or 64 (32 is the default).<br/>
+3. Sort the individual elements of every run one by one using insertion sort.  
+4. Merge the sorted runs one by one using the merge function of merge sort.  
+5. Double the size of merged sub-arrays after every iteration.
+

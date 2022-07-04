@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Intro from '../components/intro'
 import LatestPosts from '../components/latest-posts'
 import Layout from '../components/layout'
+import Meta from '../components/meta'
 import MorePosts from '../components/more-posts'
 import Post from '../types/post'
 import generateRssFeed from '../lib/generateRssFeed'
@@ -22,7 +23,8 @@ const Index = ({ allPosts }: Props) => {
     <>
       <Layout newArticle={heroPost}>
         <Head>
-          <title>Blog</title>
+          <title>{`Prajwal's`} Blog</title>
+          <Meta />
         </Head>
         <Container>
           <Intro />

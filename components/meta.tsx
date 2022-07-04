@@ -31,11 +31,11 @@ const Meta = () => {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      {/* <meta
+      <meta
         name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
+        content="Prajwal's blog for all the things I love to write about. I write about tech, design, life, and more."
       />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} /> */}
+      {/*<meta property="og:image" content={HOME_OG_IMAGE_URL} /> */}
     </Head>
   )
 }

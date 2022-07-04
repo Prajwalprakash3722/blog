@@ -44,7 +44,7 @@ const MorePosts = ({ posts, header }: Props) => {
               <div>
                 {postsByYear.map((post) => (
                   <div key={post.title}>
-                    <a href={router.asPath.split('/').splice(0, 2).join('/') + `/` + post.slug}>
+                    <a href={process.env.NODE_ENV === "production" ? process.env.VERCEL_URL + '/posts/' + post.slug : process.env.DEV_URL + '/posts/' + post.slug}>
                       <div className="max-w-full divide-y-2 divide-gray-200">
                         <div className="p-2 group rounded-lg hover:bg-[#1D2433]">
                           <div className='flex flex-row items-center'>

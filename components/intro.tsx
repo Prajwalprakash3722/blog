@@ -22,7 +22,7 @@ const Intro = () => {
               </span>
               <div className="relative inline-block px-8 py-3 group">
                 <span className="text-indigo-400 hover:text-gray-100 transition-opacity duration-200 group-hover:opacity-0">
-                  @prajwal3722
+                  @prajwal_3722
                 </span>
                 <span>
                   <ul className="absolute inset-0 flex items-center justify-center space-x-3 transition-opacity opacity-0 group-hover:opacity-100">

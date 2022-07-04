@@ -7,7 +7,7 @@
     "name": "Prajwal Prakash",
     "url": "https://www.devcoffee.me"
   },
-  "license": "MIT",
+  "license": " GNU GENERAL PUBLIC LICENSE Version 3",
   "scripts": {
     "dev": "next",
     "build": "next build",

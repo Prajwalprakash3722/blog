@@ -21,6 +21,10 @@
   @apply list-disc;
 }
 
+.markdown ol {
+  @apply list-decimal;
+}
+
 .markdown code {
   @apply font-mono bg-gray-400 p-1 text-gray-900 break-words;
 }
@@ -32,10 +36,17 @@
   @apply relative p-4 text-xl italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500;
 }
 
-.markdown b{
+.markdown b {
   @apply font-bold;
 }
 
 .markdown a {
   @apply text-blue-500;
+}
+
+.markdown img [avatar] {
+  @apply w-10 h-10 rounded-full mr-4;
+}
+.markdown u {
+  @apply underline;
 }
