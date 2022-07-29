@@ -21,11 +21,11 @@ const Footer = () => {
     },
     {
       name: 'Roadmap',
-      path: "/roadmap"
+      path: "https://blog.devcoffee.me/roadmap"
     },
     {
       name: 'RSS',
-      path: 'rss.xml'
+      path: 'https://blog.devcoffee.me/rss.xml'
     }
   ]
 
@@ -65,7 +65,7 @@ const Footer = () => {
                 {navLinks.map(link => {
                   return (
                     <li key={link.name}>
-                      <a className="text-white transition hover:text-white/75" href={link.path} target="_blank" key={link.name} rel="noreferrer">
+                      <a className="text-white transition hover:text-white/75" href={link.path} target={link.name !== "Home" ? "_blank" : "_self"} key={link.name} rel="noreferrer">
                         {link.name}
                       </a>
                     </li>
@@ -80,7 +80,7 @@ const Footer = () => {
               {madeUsingLinks.map(link => (
                 <>
                   <span className="text-[#50AEF1]" key={link.name}>
-                    <a href={link.path} target="blank" key={JSON.stringify(link)}>
+                    <a href={link.path} target="_blank" key={JSON.stringify(link)} rel="noreferrer">
                       {link.name}
                     </a>
                   </span>

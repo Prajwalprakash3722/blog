@@ -4,7 +4,7 @@ coverImage: "https://dmitripavlutin.com/static/3bfb3c0f29534428ff1b468213e85488/
 date: "2022-07-04T22:22:22.775Z"
 ogImage:
   url: "https://dmitripavlutin.com/static/3bfb3c0f29534428ff1b468213e85488/aaf91/cover-2.webp"
-preview: false
+preview: true
 category: "Software Development"
 ---
 
@@ -44,8 +44,14 @@ We will take the 2 most popular browsers as reference, and compare the performan
 
 ## Algorithm:
 
-1. Divide the array into the number of blocks known as run.  
+1. Divide the array into the number of blocks known as run.
 2. Consider the size of run, either 32 or 64 (32 is the default).<br/>
-3. Sort the individual elements of every run one by one using insertion sort.  
-4. Merge the sorted runs one by one using the merge function of merge sort.  
+3. Sort the individual elements of every run one by one using insertion sort.
+4. Merge the sorted runs one by one using the merge function of merge sort.
 5. Double the size of merged sub-arrays after every iteration.
+
+WKT the basic operation of insertion sort is Comparing.
+
+When we merge the sorted lists, we come up with a total n-1
+comparison because the last element which is left will need to be copied down in the combined list,
+ and there will be no comparison.

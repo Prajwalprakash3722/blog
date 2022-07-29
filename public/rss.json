@@ -11,6 +11,16 @@
     },
     "items": [
         {
+            "id": "http://localhost:3000/posts/cra-vs-vite",
+            "url": "http://localhost:3000/posts/cra-vs-vite",
+            "title": "CRA v/s Vite",
+            "date_modified": "2022-07-06T23:06:23.775Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "http://localhost:3000/posts/analyzing-array-sort-in-js",
             "url": "http://localhost:3000/posts/analyzing-array-sort-in-js",
             "title": "Analyzing Array.sort() & measuring the performance in JavaScript",
