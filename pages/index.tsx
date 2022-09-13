@@ -18,7 +18,7 @@ const Index = ({ allPosts }: Props) => {
   const heroPost = allPosts[0]
   //first 10 posts 
   allPosts = allPosts.filter(post => post.preview !== true)
-  const latestPosts = allPosts.slice(0, 6)
+  const latestPosts = allPosts.slice(0, 4)
   return (
     <>
       <Layout newArticle={heroPost}>

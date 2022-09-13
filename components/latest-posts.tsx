@@ -7,7 +7,7 @@ type Props = {
 
 const LatestPosts = ({ posts }: Props) => {
   return (
-    <section className='relative bg-[#1A1D23] p-8 rounded-lg my-4'>
+    <section className='relative bg-[#1A1D23] p-8 rounded-lg my-8'>
       <h2 className="text-3xl font-bold leading-snug text-slate-100 my-4">
         Latest Posts
       </h2>

@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Fri, 29 Jul 2022 06:28:24 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 13 Sep 2022 14:11:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>http://localhost:3000</link>
         </image>
         <copyright>All rights reserved 2022, Prajwal P</copyright>
+        <item>
+            <title><![CDATA[Namespaces in Typescript]]></title>
+            <link>http://localhost:3000/posts/namespaces-in-typescript</link>
+            <guid>http://localhost:3000/posts/namespaces-in-typescript</guid>
+            <pubDate>Tue, 13 Sep 2022 07:51:20 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
         <item>
             <title><![CDATA[CRA v/s Vite]]></title>
             <link>http://localhost:3000/posts/cra-vs-vite</link>
@@ -67,6 +74,14 @@
             <title><![CDATA[Introduction to Open-Cv]]></title>
             <link>http://localhost:3000/posts/introduction-to-opencv</link>
             <guid>http://localhost:3000/posts/introduction-to-opencv</guid>
+            <pubDate>Mon, 31 May 2021 05:35:07 GMT</pubDate>
+            <description><![CDATA[A brief introduction to a popular module called Open-Cv]]></description>
+            <content:encoded><![CDATA[A brief introduction to a popular module called Open-Cv]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <link>http://localhost:3000/posts/what does full-stack mean</link>
+            <guid>http://localhost:3000/posts/what does full-stack mean</guid>
             <pubDate>Mon, 31 May 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[A brief introduction to a popular module called Open-Cv]]></description>
             <content:encoded><![CDATA[A brief introduction to a popular module called Open-Cv]]></content:encoded>
