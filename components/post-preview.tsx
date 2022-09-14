@@ -52,7 +52,7 @@ const PostPreview = ({ title, date, slug, content, category }: Props) => {
           </div>
           <div className="hidden md:flex flex-col-reverse ml-3 sm:ml-6">
             <dt className="text-sm font-medium text-gray-600">Reading time</dt>
-            <dd className="text-xs text-slate-100">{Math.floor((content.split(' ').length) / 200)} mins</dd>
+            <dd className="text-xs text-slate-100">{Math.floor((content.split(' ').length) / 200) ?? 2} mins</dd>
           </div>
           <div className="hidden lg:flex flex-col-reverse ml-3 sm:ml-6">
             <dt className="text-sm font-medium text-gray-600">Category</dt>
