@@ -2,31 +2,95 @@
 title: "Namespaces in Typescript"
 excerpt: ""
 coverImage: "https://miro.medium.com/max/700/1*wSKGRwwoF3jirGDrWEscJg.png"
-date: "2022-09-13T07:51:20.775Z"
+date: "2022-09-14T07:51:20.775Z"
 ogImage:
   url: "https://miro.medium.com/max/700/1*wSKGRwwoF3jirGDrWEscJg.png"
 preview: false
 category: "Software Development"
 ---
 
+### Namespaces in Typescript
 
-# Namespaces in Typescript
+## Pls excuse the code syatax highlighting on my blog, I am still working on it. :(
 
-
-In this article we will try to grasp the concept of namespaces and how they are helpful and 
+In this article we will try to grasp the concept of namespaces and how they are helpful and
 finally we will learn how to use them in Typescript.
+
+[directly jump to coding->](#code)
 
 PS: Typescript is my go to language all time [here](https://blog.devcoffee.me/posts/typescript-javascript) is why.
 
 First of all what are namespaces ?
 
-
 As per wikipedia definition
 
- *In computing, a namespace is a set of signs (names) that are used to identify and refer to objects of various kinds. A namespace ensures that all of a given set of objects have unique names so that they can be easily identified.*
+_In computing, a namespace is a set of signs (names) that are used to identify and refer to objects of various kinds. A namespace ensures that all of a given set of objects have unique names so that they can be easily identified._
 
-Namespaces are used to group related `functions`, `interfaces`, and `classes`.
+Namespaces are used to group related
+
+- functions
+- interfaces
+- classes
 
 Namespaces are used to avoid naming conflicts, organize code into logical groups and to provide privacy for variables and functions.
 
-Concept of namespace is not new, we have been using them in some databases such as cassandra, 
+Concept of namespace is not new, we have been using them in some databases such as cassandra,
+
+Linux Kernel also uses namespaces to isolate the processes from each other;
+thus allowing high level fine-grain partitioning of resources.
+
+It uses namespaces to isolate the network, mount, user, pid, uts, ipc, cgroup etc.. (Maybe we can cover this in another episode)
+
+Now you might ask Why Namespaces at all ?
+
+Lets imagine namespaces as a _Box_, where we can put all the related stuff in it.
+Now we can use this box to share it with other people.
+But we can also keep it private and use it for our own purpose.
+You can add some crazy stuffs to the box but the thing is it will not affect content of other boxes.
+
+This helps making the code more orginised & clean.
+
+Smol excerpt on adavantages of namespaces:
+
+- Code Reusability
+- Distributed Development
+
+### <a id="code">How to use namespaces in Typescript ?</a>
+
+```typescript
+namespace RandomNameSpaceName {}
+```
+
+Smol Code Example to show how we can use same variable name, same funcion name in different namespaces.
+
+<script src="https://gist.github.com/Prajwalprakash3722/9a211072354cf6548776e54be38bc233.js"></script>
+
+The above code allows us to use the same variable and function name without collision.
+
+## But How to access the whatever we have defined in the namespaces ?
+
+To access the functions, variables, classes, interfaces, etc. we have to use the `export` keyword before the function or classname.
+
+<script src="https://gist.github.com/Prajwalprakash3722/94f56b8a7b54cd5eb21779ada675d644.js"></script>
+
+Let's see a simple & pratical real world application implementation of namespaces in Typescript.
+
+Assume that we have a To-Do application.
+
+<script src="https://gist.github.com/Prajwalprakash3722/a96c578ffdb1932d93d6c1f35263247a.js"></script>
+
+In the above code we have declared all the possible interfaces that we might use in the application.
+
+Note that We have 3 levels of namespaces
+
+- TodoApi
+- Controllers
+- Add/Get
+
+Now let's use the decalared namespaces in the application. (ofc application doesn't work; the code is just for demonstration)
+
+<script src="https://gist.github.com/Prajwalprakash3722/016b07c3a756cb6d382934e9ac99521e.js"></script>
+
+You can understand the code whole lot better, its cleaner, more orginised and easy to maintain.
+
+## At last namespaces are just set of names that are used to identify and refer to objects of various kinds.
