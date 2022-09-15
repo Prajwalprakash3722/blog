@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Wed, 14 Sep 2022 19:06:20 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 15 Sep 2022 05:23:08 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,10 +14,28 @@
         </image>
         <copyright>All rights reserved 2022, Prajwal P</copyright>
         <item>
+            <title><![CDATA[Generics in TypeScript]]></title>
+            <link>http://localhost:3000/posts/generics-in-typescript</link>
+            <guid>http://localhost:3000/posts/generics-in-typescript</guid>
+            <pubDate>Thu, 15 Sep 2022 07:51:20 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[Why India is obsessed with engineering?]]></title>
+            <link>http://localhost:3000/posts/why-is-obsessed-with-engineering</link>
+            <guid>http://localhost:3000/posts/why-is-obsessed-with-engineering</guid>
+            <pubDate>Thu, 15 Sep 2022 07:51:20 GMT</pubDate>
+            <description><![CDATA[In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..]]></description>
+            <content:encoded><![CDATA[In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
             <title><![CDATA[Namespaces in Typescript]]></title>
             <link>http://localhost:3000/posts/namespaces-in-typescript</link>
             <guid>http://localhost:3000/posts/namespaces-in-typescript</guid>
             <pubDate>Wed, 14 Sep 2022 07:51:20 GMT</pubDate>
+            <description><![CDATA[In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.]]></description>
+            <content:encoded><![CDATA[In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>

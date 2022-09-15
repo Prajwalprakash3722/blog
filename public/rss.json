@@ -11,9 +11,33 @@
     },
     "items": [
         {
+            "id": "http://localhost:3000/posts/generics-in-typescript",
+            "url": "http://localhost:3000/posts/generics-in-typescript",
+            "title": "Generics in TypeScript",
+            "date_modified": "2022-09-15T07:51:20.775Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
+            "id": "http://localhost:3000/posts/why-is-obsessed-with-engineering",
+            "content_html": "In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..",
+            "url": "http://localhost:3000/posts/why-is-obsessed-with-engineering",
+            "title": "Why India is obsessed with engineering?",
+            "summary": "In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..",
+            "date_modified": "2022-09-15T07:51:20.775Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "http://localhost:3000/posts/namespaces-in-typescript",
+            "content_html": "In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.",
             "url": "http://localhost:3000/posts/namespaces-in-typescript",
             "title": "Namespaces in Typescript",
+            "summary": "In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.",
             "date_modified": "2022-09-14T07:51:20.775Z",
             "author": {
                 "name": "Prajwal P",

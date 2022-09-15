@@ -29,7 +29,7 @@ const Index = ({ allPosts }: Props) => {
         <Container>
           <Intro />
           {latestPosts.length > 0 && <LatestPosts posts={latestPosts} />}
-          {allPosts.length > 0 && <MorePosts posts={allPosts} header="All Posts" />}
+          {allPosts.length > 0 && <MorePosts posts={allPosts} header="All Posts"/>}
           <Catagories posts={allPosts} />
         </Container>
       </Layout>
