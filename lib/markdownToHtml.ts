@@ -6,9 +6,9 @@
 //   return result.toString()
 // }
 
-import showdown from 'showdown'
+import showdown from "showdown";
 
 export default async function markdownToHtml(markdown: string) {
-  const converter = new showdown.Converter()
-  return converter.makeHtml(markdown)
+  const converter = new showdown.Converter();
+  return converter.makeHtml(markdown);
 }

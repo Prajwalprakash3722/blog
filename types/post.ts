@@ -1,15 +1,15 @@
 type PostType = {
-  slug: string
-  title: string
-  date: string
-  coverImage: string
-  excerpt: string
+  slug: string;
+  title: string;
+  date: string;
+  coverImage: string;
+  excerpt: string;
   ogImage: {
-    url: string
-  }
-  content: string
-  preview: boolean
-  category: string
-}
+    url: string;
+  };
+  content: string;
+  preview: boolean;
+  category: string;
+};
 
-export default PostType
+export default PostType;

@@ -6,7 +6,7 @@ const Intro = ({ totalPostNumber }: Props) => {
     <section className="flex flex-col min-h-fit items-center justify-center snap-normal my-8">
       <div className="flex flex-row items-center mb-8">
         <h1 className="text-5xl font-bold text-center text-[#E8E8FD] sm:text-6xl lg:text-9xl">
-          {((totalPostNumber >> 0).toString(2))}
+          {(totalPostNumber >> 0).toString(2)}
         </h1>
         <p className="text-center text-[#E8E8FD] font-sans">
           Articles Written till now :)

@@ -3,26 +3,30 @@ import fs from "fs";
 import { getAllPosts } from "./api";
 export default async function generateRssFeed() {
   const posts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'content',
-    'coverImage',
-    'excerpt',
-    'preview'
-  ])
-  const siteURL = process.env.NODE_ENV === 'production' ? 'https://www.blog.devcoffee.me' : 'http://localhost:3000'
+    "title",
+    "date",
+    "slug",
+    "content",
+    "coverImage",
+    "excerpt",
+    "preview",
+  ]);
+  const siteURL =
+    process.env.NODE_ENV === "production"
+      ? "https://www.blog.devcoffee.me"
+      : "http://localhost:3000";
   const date = new Date();
   const author = {
-    "name": "Prajwal P",
-    "email": "prajwalprakash3722@gmail.com",
-    "link": "https://twitter.com/prajwal_3722"
-  }
+    name: "Prajwal P",
+    email: "prajwalprakash3722@gmail.com",
+    link: "https://twitter.com/prajwal_3722",
+  };
 
   // Creating feed
   const feed = new Feed({
     title: "Prajwals Blog",
-    description: "Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.",
+    description:
+      "Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.",
     id: siteURL,
     link: siteURL,
     image: `${siteURL}/favicon.ico`,

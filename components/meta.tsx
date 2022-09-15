@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head";
 
 const Meta = () => {
   return (
@@ -37,7 +37,7 @@ const Meta = () => {
       />
       {/*<meta property="og:image" content={HOME_OG_IMAGE_URL} /> */}
     </Head>
-  )
-}
+  );
+};
 
-export default Meta
+export default Meta;

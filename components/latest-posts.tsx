@@ -1,13 +1,13 @@
-import Post from '../types/post'
-import PostPreview from './post-preview'
+import Post from "../types/post";
+import PostPreview from "./post-preview";
 
 type Props = {
-  posts: Post[]
-}
+  posts: Post[];
+};
 
 const LatestPosts = ({ posts }: Props) => {
   return (
-    <section className='relative bg-[#1A1D23] p-8 rounded-lg my-8'>
+    <section className="relative bg-[#1A1D23] p-8 rounded-lg my-8">
       <h2 className="text-3xl font-bold leading-snug text-slate-100 my-4">
         Latest Posts
       </h2>
@@ -26,7 +26,7 @@ const LatestPosts = ({ posts }: Props) => {
           ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default LatestPosts
+export default LatestPosts;

@@ -1,10 +1,12 @@
-import Highlight, { defaultProps } from "prism-react-renderer"
+import Highlight, { defaultProps } from "prism-react-renderer";
 
-import React from "react"
-import github from "prism-react-renderer/themes/github"
+import React from "react";
+import github from "prism-react-renderer/themes/github";
 
-const CodeBlock = ({ children, className }:any) => {
-  const language = className ? className.replace(/language-/, "") : "javascript"
+const CodeBlock = ({ children, className }: any) => {
+  const language = className
+    ? className.replace(/language-/, "")
+    : "javascript";
   return (
     <Highlight
       {...defaultProps}
@@ -27,7 +29,7 @@ const CodeBlock = ({ children, className }:any) => {
         </pre>
       )}
     </Highlight>
-  )
-}
+  );
+};
 
-export default CodeBlock
+export default CodeBlock;
