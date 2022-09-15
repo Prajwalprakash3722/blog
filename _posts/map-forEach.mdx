@@ -1,0 +1,105 @@
+---
+title: "Don't get confused between map() and forEach()"
+ogImage:
+  url: "https://i.ibb.co/28fN0Vd/Green-and-White-Simple-Blog-Post-Guide-Linked-In-Article-Cover-Image.png"
+category: Book Review
+coverImage: "https://i.ibb.co/28fN0Vd/Green-and-White-Simple-Blog-Post-Guide-Linked-In-Article-Cover-Image.png"
+date: "2022-09-15T21:35:54.322Z"
+preview: false
+excerpt: "JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`."
+---
+
+## Don't get confused between map() and forEach()
+
+JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever.
+
+I have been using JavaScript for more than 2 years and I have missed out of a fair share of features, misunderstood a lot of things.
+
+One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong.
+
+Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.
+
+## Let's see what MDN documentation says about them.
+
+_The `Array.prototype.forEach()` method executes a provided function once for each array element._
+
+What this means ?
+
+The function that is passed as a parameter to the forEach() method will be executed for each element in the array.
+
+_The `Array.prototype.map()` method creates a new array populated with the results of calling a provided function on every element in the calling array._
+
+What this means ?
+
+The function that is passed as a parameter to the map() method will be executed for each element in the array and the return value of the function will be added to the new array which will be returned by the map().
+
+## whoa thats a lot to consume, let's break it down.
+
+## forEach()
+
+forEach() is a method that is used to iterate over an array and execute a function for each element in the array.
+
+Let's see an example.
+
+<script src="https://gist.github.com/Prajwalprakash3722/bccc97b75210f74a6af42090d84bf1e3.js"></script>
+
+In the above code, we can see that a anoymous function (arrow functions) is passed as a parameter to the forEach() method.
+However, instead of returning a new array like map, it returns `undefined`.
+
+## map()
+
+map() is a method that is used to iterate over an array and execute a function for each element in the array and return a `new array`.
+
+Let's see one more example.
+
+<script src="https://gist.github.com/Prajwalprakash3722/4d0ab52d25743ef1a7e4200530130b98.js"></script>
+
+In the above code, we can see that a anoymous function is passed as a parameter to the map() method.
+This method will return a new array which we are using to print the values back to the console.
+
+## Any other differences ?
+
+If you have heard the concept of chaining in JavaScript, then you might have heard of the term `method chaining`.
+
+bascially in a nutshell `method chaining` is a way to call multiple methods on the same object.
+
+You cannot attach multiple methods with forEach() as it returns undefined.
+
+But you can chain many methods such as filter(), map(), reduce() etc with map() as it returns array.
+
+Smol example code to see method chaining.
+
+<script src="https://gist.github.com/Prajwalprakash3722/c180fc95434ecbda33ec18059587d0ed.js"></script>
+
+## Which of em is speed ???
+
+Both of em are equally speed, but I have seen people saying map() is more performant than forEach().
+
+But ultimatetly it depends on the situation,
+
+If you plan to use the returned array then use map() or else; just use forEach().
+
+## Smol Table for better Conclusion
+
+<table className="">
+  <thead className="">
+    <tr>
+      <th>forEach()</th>
+      <th>map()</th>
+    </tr>
+  </thead>
+  <tbody id="tbody">
+    <tr>
+      <td>Iterates over an array</td>
+      <td>Iterates over an array</td>
+    </tr>
+    <tr>
+      <td>Does not return anything</td>
+      <td>Returns a new array</td>
+    </tr>
+    <tr>
+      <td>Cannot chain methods</td>
+      <td>Can chain methods</td>
+    </tr>
+  </tbody>
+</table>

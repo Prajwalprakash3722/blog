@@ -33,7 +33,7 @@
   @apply font-mono bg-gray-400 p-2 text-gray-900 max-w-2xl text-left overflow-hidden whitespace-pre-line;
 }
 .markdown blockquote {
-  @apply relative p-4 text-xl italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500;
+  @apply relative p-1 text-[14px] italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500;
 }
 
 .markdown b {
@@ -49,4 +49,21 @@
 }
 .markdown u {
   @apply underline;
+}
+.markdown table {
+  @apply w-full text-sm text-left text-gray-400 border-collapse;
+}
+
+.markdown thead {
+  @apply text-xs uppercase bg-gray-700 text-gray-400;
+}
+#tbody {
+  @apply divide-y divide-gray-700;
+}
+
+.markdown th {
+  @apply py-3 px-6;
+}
+.markdown td {
+  @apply py-4 px-6;
 }

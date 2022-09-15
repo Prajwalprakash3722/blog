@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Thu, 15 Sep 2022 05:23:08 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 15 Sep 2022 08:57:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,19 +14,19 @@
         </image>
         <copyright>All rights reserved 2022, Prajwal P</copyright>
         <item>
+            <title><![CDATA[Don't get confused between map() and forEach()]]></title>
+            <link>http://localhost:3000/posts/map-forEach</link>
+            <guid>http://localhost:3000/posts/map-forEach</guid>
+            <pubDate>Thu, 15 Sep 2022 21:35:54 GMT</pubDate>
+            <description><![CDATA[JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.]]></description>
+            <content:encoded><![CDATA[JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
             <title><![CDATA[Generics in TypeScript]]></title>
             <link>http://localhost:3000/posts/generics-in-typescript</link>
             <guid>http://localhost:3000/posts/generics-in-typescript</guid>
             <pubDate>Thu, 15 Sep 2022 07:51:20 GMT</pubDate>
-            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
-        </item>
-        <item>
-            <title><![CDATA[Why India is obsessed with engineering?]]></title>
-            <link>http://localhost:3000/posts/why-is-obsessed-with-engineering</link>
-            <guid>http://localhost:3000/posts/why-is-obsessed-with-engineering</guid>
-            <pubDate>Thu, 15 Sep 2022 07:51:20 GMT</pubDate>
-            <description><![CDATA[In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..]]></description>
-            <content:encoded><![CDATA[In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -148,6 +148,15 @@
             <pubDate>Fri, 13 Nov 2020 21:35:54 GMT</pubDate>
             <description><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></description>
             <content:encoded><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[Why India is obsessed with engineering?]]></title>
+            <link>http://localhost:3000/posts/why-is-obsessed-with-engineering</link>
+            <guid>http://localhost:3000/posts/why-is-obsessed-with-engineering</guid>
+            <pubDate>Fri, 13 Nov 2020 07:51:20 GMT</pubDate>
+            <description><![CDATA[In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..]]></description>
+            <content:encoded><![CDATA[In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
     </channel>

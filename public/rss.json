@@ -11,21 +11,21 @@
     },
     "items": [
         {
-            "id": "http://localhost:3000/posts/generics-in-typescript",
-            "url": "http://localhost:3000/posts/generics-in-typescript",
-            "title": "Generics in TypeScript",
-            "date_modified": "2022-09-15T07:51:20.775Z",
+            "id": "http://localhost:3000/posts/map-forEach",
+            "content_html": "JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.",
+            "url": "http://localhost:3000/posts/map-forEach",
+            "title": "Don't get confused between map() and forEach()",
+            "summary": "JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.",
+            "date_modified": "2022-09-15T21:35:54.322Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
             }
         },
         {
-            "id": "http://localhost:3000/posts/why-is-obsessed-with-engineering",
-            "content_html": "In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..",
-            "url": "http://localhost:3000/posts/why-is-obsessed-with-engineering",
-            "title": "Why India is obsessed with engineering?",
-            "summary": "In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..",
+            "id": "http://localhost:3000/posts/generics-in-typescript",
+            "url": "http://localhost:3000/posts/generics-in-typescript",
+            "title": "Generics in TypeScript",
             "date_modified": "2022-09-15T07:51:20.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -190,6 +190,18 @@
             "title": "Three Thousand Stitches: Ordinary People, Extraordinary Lives.",
             "summary": "Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement",
             "date_modified": "2020-11-13T21:35:54.322Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
+            "id": "http://localhost:3000/posts/why-is-obsessed-with-engineering",
+            "content_html": "In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..",
+            "url": "http://localhost:3000/posts/why-is-obsessed-with-engineering",
+            "title": "Why India is obsessed with engineering?",
+            "summary": "In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..",
+            "date_modified": "2020-11-13T07:51:20.775Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
