@@ -1,4 +1,6 @@
-@import url('https://rsms.me/inter/inter.css');
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/one-dark.css");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
 @tailwind base;
 @tailwind components;
@@ -37,4 +39,25 @@
   100% {
     transform: rotate(0deg);
   }
+}
+
+.gist {
+  font-size: 13px;
+  line-height: 18px;
+}
+.gist pre {
+  font-family: Menlo, Monaco, "Bitstream Vera Sans Mono", "Courier New",
+    monospace !important;
+}
+.gist-meta {
+  font-family: Arial, sans-serif;
+  font-size: 13px !important;
+}
+.gist-meta a {
+  color: #3b5998 !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+.gist-meta a:hover {
+  text-decoration: underline;
 }

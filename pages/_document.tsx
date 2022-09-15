@@ -20,6 +20,13 @@ export default class MyDocument extends Document {
         });
     });
 });
+ function onLoad() {
+        var elements = document.querySelectorAll(".gist > .gist-file > .gist-meta");
+        elements.forEach(function (element) {
+          element.parentElement.removeChild(element);
+        });
+    }
+    onLoad();
             `}
           </Script>
         </body>
