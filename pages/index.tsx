@@ -27,7 +27,9 @@ const Index = ({ allPosts }: Props) => {
           <Meta />
         </Head>
         <Container>
-          <Intro />
+          <Intro
+            totalPostNumber={allPosts.length}
+             />
           {latestPosts.length > 0 && <LatestPosts posts={latestPosts} />}
           {allPosts.length > 0 && <MorePosts posts={allPosts} header="All Posts"/>}
           <Catagories posts={allPosts} />

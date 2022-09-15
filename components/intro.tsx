@@ -1,8 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
-const Intro = () => {
+interface Props {
+  totalPostNumber: number;
+}
+const Intro = ({ totalPostNumber }: Props) => {
   return (
     <section className="flex flex-col min-h-fit items-center justify-center snap-normal my-8">
-      <img src="/assets/genralImages/booleans.png" alt="Binary Numbers" />
+      <div className="flex flex-row items-center">
+        <h1 className="text-9xl font-bold text-center text-[#E8E8FD]">
+          {((totalPostNumber >> 0).toString(2))}
+        </h1>
+        <p className="text-center text-[#E8E8FD] font-sans">
+          Articles Written till now :)
+        </p>
+      </div>
       <div className="max-w-3xl sm:text-justify">
         <h1 className="text-[24.4px] font-semibold tracking-none leading-[150%] text-gray-400 mb-4 lg:leading-[200%] lg:mb-0">
           Hi <span className="wave">👋🏻</span>{" "}
@@ -11,7 +20,7 @@ const Intro = () => {
           pods,broke containers rather building them up, paid <s>$92</s> for AWS
           for making a small mistake, always eager to build/fix/<s>break</s>{" "}
           things & learn, currently interested in how <b>scalable</b> systems
-          are built? and this is my blog. <br /><br/>
+          are built? and this is my blog. <br />
           Here, I share through my writing; my experience as a Computer science
           student and everything I&apos;m learning about on React, Typescript,
           Go, Serverless, System Design and Testing.
