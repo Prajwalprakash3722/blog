@@ -1,6 +1,11 @@
 import Head from "next/head";
 
-const Meta = () => {
+interface Props {
+  description?: string;
+  imageUrl?: string;
+}
+
+const Meta = ({ description, imageUrl }: Props) => {
   return (
     <Head>
       <link
@@ -33,9 +38,13 @@ const Meta = () => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content="Prajwal's blog for all the things I love to write about. I write about tech, design, life, and more."
+        content={
+          description
+            ? description
+            : "Prajwal's blog for all the things I love to write about. I write about tech, design, life, and more."
+        }
       />
-      {/*<meta property="og:image" content={HOME_OG_IMAGE_URL} /> */}
+      <meta property="og:image" content={imageUrl ? imageUrl : ""} />
     </Head>
   );
 };

@@ -13,6 +13,8 @@ import PostTitle from "../../components/post-title";
 import PostType from "../../types/post";
 import markdownToHtml from "../../lib/markdownToHtml";
 import { useRouter } from "next/router";
+import Meta from "../../components/meta";
+import Link from "next/link";
 
 type Props = {
   post: PostType;
@@ -45,6 +47,11 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   }
   return (
     <>
+      <Meta
+        description={post.excerpt}
+        // title={post.title}
+        imageUrl={post.ogImage.url}
+      />
       <Layout>
         <Container>
           <Header />
@@ -52,7 +59,7 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <PostTitle>Loading…</PostTitle>
           ) : (
             <>
-              <article className="mb-32">
+              <article className="mb-20">
                 <Head>
                   <title>{post.title}</title>
                   <meta property="og:image" content={post.ogImage.url} />
@@ -63,6 +70,26 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                   date={post.date}
                 />
                 <PostBody content={post.content} />
+                <div className="hidden text-white text-left font-semibold lg:flex justify-between px-80">
+                  <div>
+                    <Link href="/">
+                      <a className="hover:text-slate-200">Home</a>
+                    </Link>
+                    {"/ "}
+                    <Link href="/#posts">
+                      <a className="hover:text-slate-200">Posts</a>
+                    </Link>
+                    {"/ "}
+                    <Link href={post.slug}>
+                      <a className="hover:text-slate-200">{post.title}</a>
+                    </Link>
+                  </div>
+                  <div>
+                    <Link href={`/posts/raw/` + post.slug}>
+                      <a className="hover:text-slate-200">View Raw</a>
+                    </Link>
+                  </div>
+                </div>
               </article>
             </>
           )}

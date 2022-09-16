@@ -11,7 +11,7 @@ type Props = {
 const Layout = ({ children, newArticle }: Props) => {
   return (
     <>
-      <Meta />
+      <Meta/>
       <div className="min-h-screen snap-y">
         <Alert newArticle={newArticle} />
         <main>{children}</main>

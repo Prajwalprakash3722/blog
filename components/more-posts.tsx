@@ -26,7 +26,7 @@ const MorePosts = ({ posts, header }: Props) => {
 
   const router = useRouter();
   return (
-    <section className="relative bg-[#1A1D23] p-8 rounded-lg my-4">
+    <section className="relative bg-[#1A1D23] p-8 rounded-lg my-4" id="posts">
       <h2 className="text-3xl font-bold leading-snug text-slate-100 my-4">
         {header}
       </h2>
