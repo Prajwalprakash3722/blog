@@ -11,6 +11,16 @@
     },
     "items": [
         {
+            "id": "http://localhost:3000/posts/learning-rust",
+            "url": "http://localhost:3000/posts/learning-rust",
+            "title": "Learning Rust -1",
+            "date_modified": "2022-09-16T07:51:20.775Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "http://localhost:3000/posts/map-forEach",
             "content_html": "JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.",
             "url": "http://localhost:3000/posts/map-forEach",
@@ -116,7 +126,7 @@
             "id": "http://localhost:3000/posts/bengaluru-daires",
             "content_html": "Bengaluru Daires is a collection of my beautiful memories, experiences and stories from the city of Bengaluru.",
             "url": "http://localhost:3000/posts/bengaluru-daires",
-            "title": "Bengaluru Daires",
+            "title": "Bengaluru Daires 1",
             "summary": "Bengaluru Daires is a collection of my beautiful memories, experiences and stories from the city of Bengaluru.",
             "date_modified": "2021-06-12T05:35:07.322Z",
             "author": {

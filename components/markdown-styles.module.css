@@ -26,7 +26,7 @@
 }
 
 .markdown code {
-  @apply font-mono bg-gray-400 p-1 text-gray-900 break-words;
+  @apply font-mono text-pink-600 break-words;
 }
 
 .markdown pre {
