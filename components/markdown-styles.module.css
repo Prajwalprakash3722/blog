@@ -18,7 +18,7 @@
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
 .markdown ul {
-  @apply list-disc;
+  @apply list-disc list-outside pl-8;
 }
 
 .markdown ol {

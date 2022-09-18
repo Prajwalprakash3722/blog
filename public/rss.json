@@ -1,19 +1,31 @@
 {
     "version": "https://jsonfeed.org/version/1",
     "title": "Prajwals Blog",
-    "home_page_url": "http://localhost:3000",
-    "feed_url": "http://localhost:3000/rss/feed.json",
+    "home_page_url": "https://www.blog.devcoffee.me",
+    "feed_url": "https://www.blog.devcoffee.me/rss/feed.json",
     "description": "Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.",
-    "icon": "http://localhost:3000/favicon.ico",
+    "icon": "https://www.blog.devcoffee.me/favicon.ico",
     "author": {
         "name": "Prajwal P",
         "url": "https://twitter.com/prajwal_3722"
     },
     "items": [
         {
-            "id": "http://localhost:3000/posts/learning-rust",
-            "url": "http://localhost:3000/posts/learning-rust",
-            "title": "Learning Rust -1",
+            "id": "https://www.blog.devcoffee.me/posts/heroku-alternatives",
+            "content_html": "However, Heroku is not the only PaaS  platform out there. In this article, we will look at some of the best Heroku alternatives as it has announced to stop supporting the free tier (hobby) plan from November 28th 2022.You can read more about this [here](https://blog.heroku.com/next-chapter/).\nI still remember the first time I deployed an application on Heroku, It was so easy to deploy.\nIt was a simple Flask application that I had cloned from [hastebin](https://hastebin.com/), I still think its deployed somewhere on Heroku. [hastebin-clone](https://haste-bin-clone.herokuapp.com/)\nIt literally deployed any code I threw at it that too for free. I was amazed at how easy it was to deploy an application on Heroku.It was essiential to any developer starting out.\nEarlier in the days it was not easy to run code on server, it required a special set of knowledge and skills to run code on a server.",
+            "url": "https://www.blog.devcoffee.me/posts/heroku-alternatives",
+            "title": "Heroku Alternatives",
+            "summary": "However, Heroku is not the only PaaS  platform out there. In this article, we will look at some of the best Heroku alternatives as it has announced to stop supporting the free tier (hobby) plan from November 28th 2022.You can read more about this [here](https://blog.heroku.com/next-chapter/).\nI still remember the first time I deployed an application on Heroku, It was so easy to deploy.\nIt was a simple Flask application that I had cloned from [hastebin](https://hastebin.com/), I still think its deployed somewhere on Heroku. [hastebin-clone](https://haste-bin-clone.herokuapp.com/)\nIt literally deployed any code I threw at it that too for free. I was amazed at how easy it was to deploy an application on Heroku.It was essiential to any developer starting out.\nEarlier in the days it was not easy to run code on server, it required a special set of knowledge and skills to run code on a server.",
+            "date_modified": "2022-09-18T21:35:54.322Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
+            "id": "https://www.blog.devcoffee.me/posts/learning-rust",
+            "url": "https://www.blog.devcoffee.me/posts/learning-rust",
+            "title": "learning_rust[0]",
             "date_modified": "2022-09-16T07:51:20.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -21,9 +33,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/map-forEach",
+            "id": "https://www.blog.devcoffee.me/posts/map-forEach",
             "content_html": "JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.",
-            "url": "http://localhost:3000/posts/map-forEach",
+            "url": "https://www.blog.devcoffee.me/posts/map-forEach",
             "title": "Don't get confused between map() and forEach()",
             "summary": "JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.",
             "date_modified": "2022-09-15T21:35:54.322Z",
@@ -33,8 +45,8 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/generics-in-typescript",
-            "url": "http://localhost:3000/posts/generics-in-typescript",
+            "id": "https://www.blog.devcoffee.me/posts/generics-in-typescript",
+            "url": "https://www.blog.devcoffee.me/posts/generics-in-typescript",
             "title": "Generics in TypeScript",
             "date_modified": "2022-09-15T07:51:20.775Z",
             "author": {
@@ -43,9 +55,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/namespaces-in-typescript",
+            "id": "https://www.blog.devcoffee.me/posts/namespaces-in-typescript",
             "content_html": "In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.",
-            "url": "http://localhost:3000/posts/namespaces-in-typescript",
+            "url": "https://www.blog.devcoffee.me/posts/namespaces-in-typescript",
             "title": "Namespaces in Typescript",
             "summary": "In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.",
             "date_modified": "2022-09-14T07:51:20.775Z",
@@ -55,8 +67,8 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/cra-vs-vite",
-            "url": "http://localhost:3000/posts/cra-vs-vite",
+            "id": "https://www.blog.devcoffee.me/posts/cra-vs-vite",
+            "url": "https://www.blog.devcoffee.me/posts/cra-vs-vite",
             "title": "CRA v/s Vite",
             "date_modified": "2022-07-06T23:06:23.775Z",
             "author": {
@@ -65,8 +77,8 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/analyzing-array-sort-in-js",
-            "url": "http://localhost:3000/posts/analyzing-array-sort-in-js",
+            "id": "https://www.blog.devcoffee.me/posts/analyzing-array-sort-in-js",
+            "url": "https://www.blog.devcoffee.me/posts/analyzing-array-sort-in-js",
             "title": "Analyzing Array.sort() & measuring the performance in JavaScript",
             "date_modified": "2022-07-04T22:22:22.775Z",
             "author": {
@@ -75,9 +87,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/typescript-javascript",
+            "id": "https://www.blog.devcoffee.me/posts/typescript-javascript",
             "content_html": "If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer",
-            "url": "http://localhost:3000/posts/typescript-javascript",
+            "url": "https://www.blog.devcoffee.me/posts/typescript-javascript",
             "title": "Why I Prefer Type-Script more than JavaScript …?",
             "summary": "If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer",
             "date_modified": "2022-02-03T07:51:20.775Z",
@@ -87,9 +99,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/the-problem-which-no-one-overlooks",
+            "id": "https://www.blog.devcoffee.me/posts/the-problem-which-no-one-overlooks",
             "content_html": "After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.",
-            "url": "http://localhost:3000/posts/the-problem-which-no-one-overlooks",
+            "url": "https://www.blog.devcoffee.me/posts/the-problem-which-no-one-overlooks",
             "title": "The Problem which no one Overlooks",
             "summary": "After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.",
             "date_modified": "2021-12-06T05:35:07.322Z",
@@ -99,9 +111,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/the-respect",
+            "id": "https://www.blog.devcoffee.me/posts/the-respect",
             "content_html": "Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying",
-            "url": "http://localhost:3000/posts/the-respect",
+            "url": "https://www.blog.devcoffee.me/posts/the-respect",
             "title": "The Respect !!!",
             "summary": "Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying",
             "date_modified": "2021-11-21T06:01:03.657Z",
@@ -111,9 +123,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/lets-talk-money",
+            "id": "https://www.blog.devcoffee.me/posts/lets-talk-money",
             "content_html": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
-            "url": "http://localhost:3000/posts/lets-talk-money",
+            "url": "https://www.blog.devcoffee.me/posts/lets-talk-money",
             "title": "Let's Talk Money: You've Worked Hard for It, Now Make It Work for You",
             "summary": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
             "date_modified": "2021-07-17T21:35:54.322Z",
@@ -123,9 +135,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/bengaluru-daires",
+            "id": "https://www.blog.devcoffee.me/posts/bengaluru-daires",
             "content_html": "Bengaluru Daires is a collection of my beautiful memories, experiences and stories from the city of Bengaluru.",
-            "url": "http://localhost:3000/posts/bengaluru-daires",
+            "url": "https://www.blog.devcoffee.me/posts/bengaluru-daires",
             "title": "Bengaluru Daires 1",
             "summary": "Bengaluru Daires is a collection of my beautiful memories, experiences and stories from the city of Bengaluru.",
             "date_modified": "2021-06-12T05:35:07.322Z",
@@ -135,9 +147,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/introduction-to-opencv",
+            "id": "https://www.blog.devcoffee.me/posts/introduction-to-opencv",
             "content_html": "A brief introduction to a popular module called Open-Cv",
-            "url": "http://localhost:3000/posts/introduction-to-opencv",
+            "url": "https://www.blog.devcoffee.me/posts/introduction-to-opencv",
             "title": "Introduction to Open-Cv",
             "summary": "A brief introduction to a popular module called Open-Cv",
             "date_modified": "2021-05-31T05:35:07.322Z",
@@ -147,9 +159,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/what does full-stack mean",
+            "id": "https://www.blog.devcoffee.me/posts/what does full-stack mean",
             "content_html": "A brief introduction to a popular module called Open-Cv",
-            "url": "http://localhost:3000/posts/what does full-stack mean",
+            "url": "https://www.blog.devcoffee.me/posts/what does full-stack mean",
             "summary": "A brief introduction to a popular module called Open-Cv",
             "date_modified": "2021-05-31T05:35:07.322Z",
             "author": {
@@ -158,9 +170,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/how-lucky-are-we",
+            "id": "https://www.blog.devcoffee.me/posts/how-lucky-are-we",
             "content_html": "F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.",
-            "url": "http://localhost:3000/posts/how-lucky-are-we",
+            "url": "https://www.blog.devcoffee.me/posts/how-lucky-are-we",
             "title": "How Lucky Are We……?",
             "summary": "F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.",
             "date_modified": "2021-04-02T05:35:07.322Z",
@@ -170,9 +182,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/the-slient-struggle",
+            "id": "https://www.blog.devcoffee.me/posts/the-slient-struggle",
             "content_html": "Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.",
-            "url": "http://localhost:3000/posts/the-slient-struggle",
+            "url": "https://www.blog.devcoffee.me/posts/the-slient-struggle",
             "title": "The Silent Struggle",
             "summary": "Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.",
             "date_modified": "2021-03-21T05:35:07.322Z",
@@ -182,9 +194,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/ikigai",
+            "id": "https://www.blog.devcoffee.me/posts/ikigai",
             "content_html": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
-            "url": "http://localhost:3000/posts/ikigai",
+            "url": "https://www.blog.devcoffee.me/posts/ikigai",
             "title": "Ikigai: The Japanese Secret to a Long and Happy Life.",
             "summary": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
             "date_modified": "2020-11-18T21:35:54.322Z",
@@ -194,9 +206,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/rich-dad-poor-dad",
+            "id": "https://www.blog.devcoffee.me/posts/rich-dad-poor-dad",
             "content_html": "It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.",
-            "url": "http://localhost:3000/posts/rich-dad-poor-dad",
+            "url": "https://www.blog.devcoffee.me/posts/rich-dad-poor-dad",
             "title": "Rich Dad Poor Dad: Assets and Liability management",
             "summary": "It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.",
             "date_modified": "2020-11-15T21:35:54.322Z",
@@ -206,9 +218,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/3000-stories",
+            "id": "https://www.blog.devcoffee.me/posts/3000-stories",
             "content_html": "Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement",
-            "url": "http://localhost:3000/posts/3000-stories",
+            "url": "https://www.blog.devcoffee.me/posts/3000-stories",
             "title": "Three Thousand Stitches: Ordinary People, Extraordinary Lives.",
             "summary": "Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement",
             "date_modified": "2020-11-13T21:35:54.322Z",
@@ -218,9 +230,9 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/why-is-obsessed-with-engineering",
+            "id": "https://www.blog.devcoffee.me/posts/why-is-obsessed-with-engineering",
             "content_html": "In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..",
-            "url": "http://localhost:3000/posts/why-is-obsessed-with-engineering",
+            "url": "https://www.blog.devcoffee.me/posts/why-is-obsessed-with-engineering",
             "title": "Why India is obsessed with engineering?",
             "summary": "In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..",
             "date_modified": "2020-11-13T07:51:20.775Z",
