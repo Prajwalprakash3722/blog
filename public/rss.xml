@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Prajwals Blog</title>
-        <link>https://www.blog.devcoffee.me</link>
+        <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Sun, 18 Sep 2022 17:09:42 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 19 Sep 2022 04:56:16 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
             <title>Prajwals Blog</title>
-            <url>https://www.blog.devcoffee.me/favicon.ico</url>
-            <link>https://www.blog.devcoffee.me</link>
+            <url>http://localhost:3000/favicon.ico</url>
+            <link>http://localhost:3000</link>
         </image>
         <copyright>All rights reserved 2022, Prajwal P</copyright>
         <item>
             <title><![CDATA[Heroku Alternatives]]></title>
-            <link>https://www.blog.devcoffee.me/posts/heroku-alternatives</link>
-            <guid>https://www.blog.devcoffee.me/posts/heroku-alternatives</guid>
+            <link>http://localhost:3000/posts/heroku-alternatives</link>
+            <guid>http://localhost:3000/posts/heroku-alternatives</guid>
             <pubDate>Sun, 18 Sep 2022 21:35:54 GMT</pubDate>
             <description><![CDATA[However, Heroku is not the only PaaS  platform out there. In this article, we will look at some of the best Heroku alternatives as it has announced to stop supporting the free tier (hobby) plan from November 28th 2022.You can read more about this [here](https://blog.heroku.com/next-chapter/).
 I still remember the first time I deployed an application on Heroku, It was so easy to deploy.
@@ -32,15 +32,15 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[learning_rust[0]]]></title>
-            <link>https://www.blog.devcoffee.me/posts/learning-rust</link>
-            <guid>https://www.blog.devcoffee.me/posts/learning-rust</guid>
+            <link>http://localhost:3000/posts/learning-rust</link>
+            <guid>http://localhost:3000/posts/learning-rust</guid>
             <pubDate>Fri, 16 Sep 2022 07:51:20 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Don't get confused between map() and forEach()]]></title>
-            <link>https://www.blog.devcoffee.me/posts/map-forEach</link>
-            <guid>https://www.blog.devcoffee.me/posts/map-forEach</guid>
+            <link>http://localhost:3000/posts/map-forEach</link>
+            <guid>http://localhost:3000/posts/map-forEach</guid>
             <pubDate>Thu, 15 Sep 2022 21:35:54 GMT</pubDate>
             <description><![CDATA[JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.]]></description>
             <content:encoded><![CDATA[JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.]]></content:encoded>
@@ -48,15 +48,15 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Generics in TypeScript]]></title>
-            <link>https://www.blog.devcoffee.me/posts/generics-in-typescript</link>
-            <guid>https://www.blog.devcoffee.me/posts/generics-in-typescript</guid>
+            <link>http://localhost:3000/posts/generics-in-typescript</link>
+            <guid>http://localhost:3000/posts/generics-in-typescript</guid>
             <pubDate>Thu, 15 Sep 2022 07:51:20 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Namespaces in Typescript]]></title>
-            <link>https://www.blog.devcoffee.me/posts/namespaces-in-typescript</link>
-            <guid>https://www.blog.devcoffee.me/posts/namespaces-in-typescript</guid>
+            <link>http://localhost:3000/posts/namespaces-in-typescript</link>
+            <guid>http://localhost:3000/posts/namespaces-in-typescript</guid>
             <pubDate>Wed, 14 Sep 2022 07:51:20 GMT</pubDate>
             <description><![CDATA[In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.]]></description>
             <content:encoded><![CDATA[In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.]]></content:encoded>
@@ -64,22 +64,22 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[CRA v/s Vite]]></title>
-            <link>https://www.blog.devcoffee.me/posts/cra-vs-vite</link>
-            <guid>https://www.blog.devcoffee.me/posts/cra-vs-vite</guid>
+            <link>http://localhost:3000/posts/cra-vs-vite</link>
+            <guid>http://localhost:3000/posts/cra-vs-vite</guid>
             <pubDate>Wed, 06 Jul 2022 23:06:23 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Analyzing Array.sort() & measuring the performance in JavaScript]]></title>
-            <link>https://www.blog.devcoffee.me/posts/analyzing-array-sort-in-js</link>
-            <guid>https://www.blog.devcoffee.me/posts/analyzing-array-sort-in-js</guid>
+            <link>http://localhost:3000/posts/analyzing-array-sort-in-js</link>
+            <guid>http://localhost:3000/posts/analyzing-array-sort-in-js</guid>
             <pubDate>Mon, 04 Jul 2022 22:22:22 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Why I Prefer Type-Script more than JavaScript …?]]></title>
-            <link>https://www.blog.devcoffee.me/posts/typescript-javascript</link>
-            <guid>https://www.blog.devcoffee.me/posts/typescript-javascript</guid>
+            <link>http://localhost:3000/posts/typescript-javascript</link>
+            <guid>http://localhost:3000/posts/typescript-javascript</guid>
             <pubDate>Thu, 03 Feb 2022 07:51:20 GMT</pubDate>
             <description><![CDATA[If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer]]></description>
             <content:encoded><![CDATA[If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer]]></content:encoded>
@@ -87,8 +87,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[The Problem which no one Overlooks]]></title>
-            <link>https://www.blog.devcoffee.me/posts/the-problem-which-no-one-overlooks</link>
-            <guid>https://www.blog.devcoffee.me/posts/the-problem-which-no-one-overlooks</guid>
+            <link>http://localhost:3000/posts/the-problem-which-no-one-overlooks</link>
+            <guid>http://localhost:3000/posts/the-problem-which-no-one-overlooks</guid>
             <pubDate>Mon, 06 Dec 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.]]></description>
             <content:encoded><![CDATA[After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.]]></content:encoded>
@@ -96,8 +96,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[The Respect !!!]]></title>
-            <link>https://www.blog.devcoffee.me/posts/the-respect</link>
-            <guid>https://www.blog.devcoffee.me/posts/the-respect</guid>
+            <link>http://localhost:3000/posts/the-respect</link>
+            <guid>http://localhost:3000/posts/the-respect</guid>
             <pubDate>Sun, 21 Nov 2021 06:01:03 GMT</pubDate>
             <description><![CDATA[Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying]]></description>
             <content:encoded><![CDATA[Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying]]></content:encoded>
@@ -105,8 +105,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Let's Talk Money: You've Worked Hard for It, Now Make It Work for You]]></title>
-            <link>https://www.blog.devcoffee.me/posts/lets-talk-money</link>
-            <guid>https://www.blog.devcoffee.me/posts/lets-talk-money</guid>
+            <link>http://localhost:3000/posts/lets-talk-money</link>
+            <guid>http://localhost:3000/posts/lets-talk-money</guid>
             <pubDate>Sat, 17 Jul 2021 21:35:54 GMT</pubDate>
             <description><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></description>
             <content:encoded><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></content:encoded>
@@ -114,8 +114,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Bengaluru Daires 1]]></title>
-            <link>https://www.blog.devcoffee.me/posts/bengaluru-daires</link>
-            <guid>https://www.blog.devcoffee.me/posts/bengaluru-daires</guid>
+            <link>http://localhost:3000/posts/bengaluru-daires</link>
+            <guid>http://localhost:3000/posts/bengaluru-daires</guid>
             <pubDate>Sat, 12 Jun 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[Bengaluru Daires is a collection of my beautiful memories, experiences and stories from the city of Bengaluru.]]></description>
             <content:encoded><![CDATA[Bengaluru Daires is a collection of my beautiful memories, experiences and stories from the city of Bengaluru.]]></content:encoded>
@@ -123,16 +123,16 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Introduction to Open-Cv]]></title>
-            <link>https://www.blog.devcoffee.me/posts/introduction-to-opencv</link>
-            <guid>https://www.blog.devcoffee.me/posts/introduction-to-opencv</guid>
+            <link>http://localhost:3000/posts/introduction-to-opencv</link>
+            <guid>http://localhost:3000/posts/introduction-to-opencv</guid>
             <pubDate>Mon, 31 May 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[A brief introduction to a popular module called Open-Cv]]></description>
             <content:encoded><![CDATA[A brief introduction to a popular module called Open-Cv]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
-            <link>https://www.blog.devcoffee.me/posts/what does full-stack mean</link>
-            <guid>https://www.blog.devcoffee.me/posts/what does full-stack mean</guid>
+            <link>http://localhost:3000/posts/what does full-stack mean</link>
+            <guid>http://localhost:3000/posts/what does full-stack mean</guid>
             <pubDate>Mon, 31 May 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[A brief introduction to a popular module called Open-Cv]]></description>
             <content:encoded><![CDATA[A brief introduction to a popular module called Open-Cv]]></content:encoded>
@@ -140,8 +140,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[How Lucky Are We……?]]></title>
-            <link>https://www.blog.devcoffee.me/posts/how-lucky-are-we</link>
-            <guid>https://www.blog.devcoffee.me/posts/how-lucky-are-we</guid>
+            <link>http://localhost:3000/posts/how-lucky-are-we</link>
+            <guid>http://localhost:3000/posts/how-lucky-are-we</guid>
             <pubDate>Fri, 02 Apr 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.]]></description>
             <content:encoded><![CDATA[F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.]]></content:encoded>
@@ -149,8 +149,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[The Silent Struggle]]></title>
-            <link>https://www.blog.devcoffee.me/posts/the-slient-struggle</link>
-            <guid>https://www.blog.devcoffee.me/posts/the-slient-struggle</guid>
+            <link>http://localhost:3000/posts/the-slient-struggle</link>
+            <guid>http://localhost:3000/posts/the-slient-struggle</guid>
             <pubDate>Sun, 21 Mar 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.]]></description>
             <content:encoded><![CDATA[Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.]]></content:encoded>
@@ -158,8 +158,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Ikigai: The Japanese Secret to a Long and Happy Life.]]></title>
-            <link>https://www.blog.devcoffee.me/posts/ikigai</link>
-            <guid>https://www.blog.devcoffee.me/posts/ikigai</guid>
+            <link>http://localhost:3000/posts/ikigai</link>
+            <guid>http://localhost:3000/posts/ikigai</guid>
             <pubDate>Wed, 18 Nov 2020 21:35:54 GMT</pubDate>
             <description><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></description>
             <content:encoded><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></content:encoded>
@@ -167,8 +167,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Rich Dad Poor Dad: Assets and Liability management]]></title>
-            <link>https://www.blog.devcoffee.me/posts/rich-dad-poor-dad</link>
-            <guid>https://www.blog.devcoffee.me/posts/rich-dad-poor-dad</guid>
+            <link>http://localhost:3000/posts/rich-dad-poor-dad</link>
+            <guid>http://localhost:3000/posts/rich-dad-poor-dad</guid>
             <pubDate>Sun, 15 Nov 2020 21:35:54 GMT</pubDate>
             <description><![CDATA[It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.]]></description>
             <content:encoded><![CDATA[It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.]]></content:encoded>
@@ -176,8 +176,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Three Thousand Stitches: Ordinary People, Extraordinary Lives.]]></title>
-            <link>https://www.blog.devcoffee.me/posts/3000-stories</link>
-            <guid>https://www.blog.devcoffee.me/posts/3000-stories</guid>
+            <link>http://localhost:3000/posts/3000-stories</link>
+            <guid>http://localhost:3000/posts/3000-stories</guid>
             <pubDate>Fri, 13 Nov 2020 21:35:54 GMT</pubDate>
             <description><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></description>
             <content:encoded><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></content:encoded>
@@ -185,8 +185,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Why India is obsessed with engineering?]]></title>
-            <link>https://www.blog.devcoffee.me/posts/why-is-obsessed-with-engineering</link>
-            <guid>https://www.blog.devcoffee.me/posts/why-is-obsessed-with-engineering</guid>
+            <link>http://localhost:3000/posts/why-is-obsessed-with-engineering</link>
+            <guid>http://localhost:3000/posts/why-is-obsessed-with-engineering</guid>
             <pubDate>Fri, 13 Nov 2020 07:51:20 GMT</pubDate>
             <description><![CDATA[In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..]]></description>
             <content:encoded><![CDATA[In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..]]></content:encoded>
