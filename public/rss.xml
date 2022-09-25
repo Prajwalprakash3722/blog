@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Mon, 19 Sep 2022 04:56:16 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 25 Sep 2022 17:44:32 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,15 @@
             <link>http://localhost:3000</link>
         </image>
         <copyright>All rights reserved 2022, Prajwal P</copyright>
+        <item>
+            <title><![CDATA[What I learnt from writing low level code for a semester.]]></title>
+            <link>http://localhost:3000/posts/what-i-learnt-from-writing-low-level-programming</link>
+            <guid>http://localhost:3000/posts/what-i-learnt-from-writing-low-level-programming</guid>
+            <pubDate>Sun, 25 Sep 2022 21:35:54 GMT</pubDate>
+            <description><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></description>
+            <content:encoded><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
         <item>
             <title><![CDATA[Heroku Alternatives]]></title>
             <link>http://localhost:3000/posts/heroku-alternatives</link>

@@ -1,0 +1,69 @@
+---
+title: "What I learnt from writing low level code for a semester."
+ogImage:
+  url: "https://thefirsthundred.net/wp-content/uploads/2019/08/high-vs-low-level-languages-copy-1200x675.png"
+category: Software Development
+coverImage: "https://thefirsthundred.net/wp-content/uploads/2019/08/high-vs-low-level-languages-copy-1200x675.png"
+date: "2022-09-25T21:35:54.322Z"
+preview: false
+excerpt: Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement
+---
+
+## What I learnt from writing low level code for a semester
+
+first of all let's try to understand what is `low level code`?,
+
+From `Wikipedia`:
+
+Low-level programming is a style of computer programming in which little or no abstraction is used between the instructions in the programming language and the architecture's machine code instructions.
+Low-level programming is the opposite of high-level programming, which uses a large amount of abstraction to make the process of developing a program easier.
+
+If thats a lot to consume let me simplify that for you:
+
+- Low level code doesnt not use any abstraction; Meaning its the most basic form of code.
+- Low level refers to code written directly for the computer.
+
+According to most people low level language is the most difficult to learn and understand.
+I was one of those people who thought that low level language is the most difficult to learn and understand.
+But after taking a course of `Micro Controllers and Embeded Systems` I can say that it is not that difficult to learn and understand.
+
+Low level langauge requires you to think in a different way, it requires you to think in a way that you have to think about the hardware and the software at the same time.
+
+It requires you to manage menory allocation and deallocation, you can also say thay in `c` you have to manage memory allocation and deallocation yourself.
+
+But truth to be spoken `Assembly` & `Machine Code` are true low level languages.
+
+High-level languages like `JavaScript` and `Python` may be the most popular programming languages today,
+but there’s no argument that these languages are doing a lot of work for the developer,
+
+Let's see some code comparisions between `ASM` and `c`:
+
+## Fibbonaci Series in ASM
+
+<script src="https://gist.github.com/Prajwalprakash3722/15a14dc3aa379b276a29f0d3f98e59ab.js"></script>
+
+## Fibbonaci Series in C
+
+<script src="https://gist.github.com/Prajwalprakash3722/9f49eb73185b66900a26b5cc4a983e53.js"></script>
+
+of course the no of lines of code is more in `asm`, code is not that readable and it is not that easy to understand.
+
+why? because we are writing code directly for the computer, we are not using any abstraction, libraries.
+no of keywords reserved in `asm` is less than `c` and `c++`. This again makes it difficult to understand.
+
+I found it extremely unproductive and it requires you to do a lot of work for very little results.
+It does however have a good side. It is very fast and it is very efficient, memory safe.
+
+I also used c to write Embeded code for a semester, I used `LPC1248` microcontroller and `C` to write code for it.
+here `arm` was also very much useful as we knew which memory location was used for which purpose, we knew which registers were used for which purpose.
+
+Couple things I observed was that `c` is very much similar to `ARM` in terms of syntax, it is just that `c` has a lot of abstraction and `c` is a lot more readable than `ARM` and the `ARM` code ran insanely fast compared to `c` code.
+
+## My Final Thoughts
+
+I think that low level languages are not that difficult to learn and understand, it just requires you to think in a different way.
+concept of Registers, memmory addresses and memory allocation and deallocation is very important to understand.
+You gain a pratical expirence of how the computer works.
+
+I think every software developer has to learn if not how to write but atleast to read and understand low level code.
+It explains how a processor works from the inside.
