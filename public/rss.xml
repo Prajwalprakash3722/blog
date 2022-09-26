@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Sun, 25 Sep 2022 17:44:32 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 26 Sep 2022 03:20:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,12 +14,19 @@
         </image>
         <copyright>All rights reserved 2022, Prajwal P</copyright>
         <item>
-            <title><![CDATA[What I learnt from writing low level code for a semester.]]></title>
+            <title><![CDATA[Automating Your Postman Tests]]></title>
+            <link>http://localhost:3000/posts/automating-postman-tests-1</link>
+            <guid>http://localhost:3000/posts/automating-postman-tests-1</guid>
+            <pubDate>Mon, 26 Sep 2022 21:35:54 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[What I learnt from writing low level code for a semester]]></title>
             <link>http://localhost:3000/posts/what-i-learnt-from-writing-low-level-programming</link>
             <guid>http://localhost:3000/posts/what-i-learnt-from-writing-low-level-programming</guid>
             <pubDate>Sun, 25 Sep 2022 21:35:54 GMT</pubDate>
-            <description><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></description>
-            <content:encoded><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></content:encoded>
+            <description><![CDATA[Low-level programming is a style of computer programming in which little or no abstraction is used between the instructions in the programming language and the architecture's machine code instructions. Low-level programming is the opposite of high-level programming, which uses a large amount of abstraction to make the process of developing a program easier.]]></description>
+            <content:encoded><![CDATA[Low-level programming is a style of computer programming in which little or no abstraction is used between the instructions in the programming language and the architecture's machine code instructions. Low-level programming is the opposite of high-level programming, which uses a large amount of abstraction to make the process of developing a program easier.]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>

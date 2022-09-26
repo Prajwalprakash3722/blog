@@ -11,11 +11,21 @@
     },
     "items": [
         {
+            "id": "http://localhost:3000/posts/automating-postman-tests-1",
+            "url": "http://localhost:3000/posts/automating-postman-tests-1",
+            "title": "Automating Your Postman Tests",
+            "date_modified": "2022-09-26T21:35:54.322Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "http://localhost:3000/posts/what-i-learnt-from-writing-low-level-programming",
-            "content_html": "Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement",
+            "content_html": "Low-level programming is a style of computer programming in which little or no abstraction is used between the instructions in the programming language and the architecture's machine code instructions. Low-level programming is the opposite of high-level programming, which uses a large amount of abstraction to make the process of developing a program easier.",
             "url": "http://localhost:3000/posts/what-i-learnt-from-writing-low-level-programming",
-            "title": "What I learnt from writing low level code for a semester.",
-            "summary": "Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement",
+            "title": "What I learnt from writing low level code for a semester",
+            "summary": "Low-level programming is a style of computer programming in which little or no abstraction is used between the instructions in the programming language and the architecture's machine code instructions. Low-level programming is the opposite of high-level programming, which uses a large amount of abstraction to make the process of developing a program easier.",
             "date_modified": "2022-09-25T21:35:54.322Z",
             "author": {
                 "name": "Prajwal P",
