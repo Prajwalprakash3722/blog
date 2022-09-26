@@ -15,6 +15,7 @@ import markdownToHtml from "../../lib/markdownToHtml";
 import { useRouter } from "next/router";
 import Meta from "../../components/meta";
 import Link from "next/link";
+import Seo from "../../components/Seo";
 
 type Props = {
   post: PostType;
@@ -47,11 +48,8 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   }
   return (
     <>
-      <Meta
-        description={post.excerpt}
-        // title={post.title}
-        imageUrl={post.ogImage.url}
-      />
+      <Meta description={post.excerpt} imageUrl={post.ogImage.url} />
+      <Seo post={post} />
       <Layout>
         <Container>
           <Header />
