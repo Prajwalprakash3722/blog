@@ -2,6 +2,7 @@ import { format, parseISO } from "date-fns";
 
 type Props = {
   dateString: string;
+  short?: boolean;
 };
 
 const diffDays = (date_1: Date, date_2: Date) => {
@@ -20,14 +21,23 @@ const days = [
   "Saturday",
 ];
 
-const DateFormatter = ({ dateString }: Props) => {
+const DateFormatter = ({ dateString, short }: Props) => {
   const date = parseISO(dateString);
   return (
     <time dateTime={dateString} className="text-slate-100 font-medium">
-      {days[new Date(date).getDay()]}, {format(date, "LLLL	d, yyyy")} -{" "}
-      {diffDays(new Date(), date) !== 0
-        ? `(${diffDays(new Date(), date)} days ago)`
-        : "Today"}
+      {short ? (
+        <span>
+          {days[date.getDay()]} {date.getDate()}{" "}
+          {date.toLocaleString("default", { month: "short" })}
+        </span>
+      ) : (
+        <span>
+          {days[new Date(date).getDay()]}, {format(date, "LLLL	d, yyyy")} -{" "}
+          {diffDays(new Date(), date) !== 0
+            ? `(${diffDays(new Date(), date)} days ago)`
+            : "Today"}
+        </span>
+      )}
     </time>
   );
 };

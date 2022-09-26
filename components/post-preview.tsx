@@ -47,7 +47,7 @@ const PostPreview = ({ title, date, slug, content, category }: Props) => {
             <dt className="text-sm font-medium text-gray-600">Published</dt>
             <dd className="text-xs text-gray-500">
               {" "}
-              <DateFormatter dateString={date} />
+              <DateFormatter dateString={date} short />
             </dd>
           </div>
           <div className="hidden md:flex flex-col-reverse ml-3 sm:ml-6">

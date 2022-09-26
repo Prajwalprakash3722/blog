@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 
-export default function Seo({ post }:any) {
+export default function Seo({ post }: any) {
   const { title, excerpt, slug, coverImage } = post;
   return (
     <>
