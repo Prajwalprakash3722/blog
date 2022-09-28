@@ -9,6 +9,38 @@ preview: true
 excerpt:
 ---
 
-## Automating Your Postman Tests
+## Automating Your Postman Tests - 1
 
-You might have used postman to test your `apis`.But have you ever thought of automating your tests?
+Postman is a collaboration platform for API development.
+Postman's features simplify each step of building an API and streamline collaboration so you can create better APIs—faster.
+
+This Post will be a Two part series, where we will be automating our Postman tests using the Postman API.
+In this first part, we'll see about writing some **manual tests** in Postman, inspect responses, create workflows, create **collection** and a test suite
+In the Second part we'll see how **CI/CD** pipeline can be setup for running the tests automatically.
+
+This article requires you to have a prequestiste basic understanding of how HTTP/HTTPS works, Methods of HTTP, and how to perform simple GET and POST requests.
+
+![Postman UI](public/assets/blog/automating-postman-tests-1/ui.png)
+
+Postman needs a live HTTP server to process its requests. For this , we'll use one of my starter express backend setup with database, which is available [here](https://github.com/Prajwalprakash3722/express-ts-backend).
+
+lets clone the starter application, install the necessary dependencies & start the server.
+
+```bash
+
+curl -4 localhost:5000
+
+```
+
+We should see a response like this
+
+```json
+{
+  "ok": true,
+  "message": "Hello from the Server"
+}
+```
+
+Let's start using postman now :)
+
+Let's create a simple request to default route

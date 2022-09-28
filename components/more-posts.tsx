@@ -1,5 +1,5 @@
 import Post from "../types/post";
-import { useRouter } from "next/router";
+import { format } from "date-fns";
 
 type Props = {
   posts: Post[];
@@ -9,22 +9,6 @@ type Props = {
 const MorePosts = ({ posts, header }: Props) => {
   let allYears = posts.map((post) => post.date.split("-")[0]);
 
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "June",
-    "July",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  const router = useRouter();
   return (
     <section className="relative bg-[#1A1D23] p-8 rounded-lg my-4" id="posts">
       <h2 className="text-3xl font-bold leading-snug text-slate-100 my-4">
@@ -50,9 +34,7 @@ const MorePosts = ({ posts, header }: Props) => {
                           <div className="p-2 group rounded-lg hover:bg-[#1D2433]">
                             <div className="flex flex-row items-center">
                               <p className="px-4 py-2 text-lg  text-[#A4A8B2] whitespace-nowrap ">
-                                {new Date(post.date).getDate() +
-                                  " " +
-                                  months[new Date(post.date).getUTCMonth()]}
+                                {format(new Date(post.date), "dd MMM") + " "}
                               </p>
                               <p className="break-words text-xl px-4 py-2 text-[#DFDFF3] font-medium md:text-2xl group-hover:text-[#5686F5]">
                                 {post.title}
