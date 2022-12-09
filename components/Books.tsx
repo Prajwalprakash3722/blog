@@ -5,7 +5,7 @@ const Books = () => {
   return (
     <section className="relative bg-[#1A1D23] p-8 rounded-lg my-4" id="posts">
       <h2 className="text-3xl font-bold leading-snug text-slate-100 my-4">
-        Books Adored or Being Adored by Me :{`)`}
+        Books Adored or Being Adored by Me :{`)`} [WIP] 📚
       </h2>
       <div className="flex justify-center max-w-2xl">
         <BookWidget />

@@ -34,7 +34,7 @@ const Index = ({ allPosts }: Props) => {
             <MorePosts posts={allPosts} header="All Posts" />
           )}
           <Catagories posts={allPosts} />
-          <Books />
+          {/* <Books /> */}
         </Container>
       </Layout>
     </>
@@ -53,7 +53,7 @@ export const getStaticProps = async () => {
     "category",
   ]);
   await generateRssFeed(); // calling to generate the feed
-  
+
   return {
     props: { allPosts },
   };
