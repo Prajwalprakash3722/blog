@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Tue, 27 Sep 2022 03:27:30 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 09 Dec 2022 10:06:34 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,20 @@
             <link>http://localhost:3000</link>
         </image>
         <copyright>All rights reserved 2022, Prajwal P</copyright>
+        <item>
+            <title><![CDATA[new AbortController()]]></title>
+            <link>http://localhost:3000/posts/abortController</link>
+            <guid>http://localhost:3000/posts/abortController</guid>
+            <pubDate>Fri, 09 Dec 2022 15:22:22 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA['REST' in Peace]]></title>
+            <link>http://localhost:3000/posts/rest-in-peace</link>
+            <guid>http://localhost:3000/posts/rest-in-peace</guid>
+            <pubDate>Fri, 30 Sep 2022 21:35:54 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
         <item>
             <title><![CDATA[Automating Your Postman Tests]]></title>
             <link>http://localhost:3000/posts/automating-postman-tests-1</link>
@@ -66,6 +80,13 @@ Earlier in the days it was not easy to run code on server, it required a special
             <title><![CDATA[Generics in TypeScript]]></title>
             <link>http://localhost:3000/posts/generics-in-typescript</link>
             <guid>http://localhost:3000/posts/generics-in-typescript</guid>
+            <pubDate>Thu, 15 Sep 2022 07:51:20 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[Generics in TypeScript]]></title>
+            <link>http://localhost:3000/posts/how-email-works</link>
+            <guid>http://localhost:3000/posts/how-email-works</guid>
             <pubDate>Thu, 15 Sep 2022 07:51:20 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>

@@ -1,0 +1,66 @@
+---
+title: "new AbortController()"
+coverImage: "https://miro.medium.com/max/720/0*mikeJHhoSXtzfs8x.webp"
+date: "2022-12-09T15:22:22.775Z"
+ogImage:
+  url: "https://miro.medium.com/max/720/0*mikeJHhoSXtzfs8x.webp"
+preview: false
+category: "Software Development"
+---
+
+Ever heard of AbortController, if not allow me to introduce you to the AbortController,
+
+I came across AbortController in my company code base, at first I didn't understand why it was used or how it helps the application,
+When I digged into it i was able to understand why it was used.
+
+First of all let's see the MDN definition of Abort Controller:
+
+The **`AbortController`** interface represents a controller object that allows you to abort one or more Web requests as and when desired.
+
+In simple words,
+
+It allows us to abort a network request that is currently in progress, and provides us with a few methods and properties to do so.
+
+**AbortController** allows us to cancel a network request before it completes, which can help improve the performance of our application. This is especially useful in scenarios where we are making multiple network requests at once, and we want to cancel any that are no longer needed.
+
+### Usage
+
+To use the AbortController, we first need to create an instance of it. This is done using the `new` keyword, like so:
+
+`const controller = new AbortController();`
+
+Once we have an instance of the **AbortController**, we can use it's `signal` attribute to access the `abort` method. This method allows us to cancel the network request that is associated with the AbortController instance.
+
+For Example if we are making `axios` request to the server we can simply pass the signal property of the **AbortController** like:
+
+<script src="https://gist.github.com/Prajwalprakash3722/db45e29a0008cc9557ab0949a2a7ebee.js"></script>
+
+In the code above, we are making a `axios` request to the `https://api.example.com/endpoint` URL, and passing the `signal` property of the `controller` instance as the `signal` option.
+
+Now if we want to cancel the network request we can simple call the `abort` method on the `controller` instance.
+
+`controller.abort()`
+
+This will cause the request to be cancelled, and any pending promised chained up with the request will be rejected with **AbortError** so that we can catch the error and handle it appropriately.
+
+### Diving deep into some additional Properties
+
+The AbortController also has a `onabort` property, which is an event that is triggered whenever the `abort` method is called on the controller.
+
+This allows to attach event listeners to the controller and perform certain actions when the network request is cancelled.
+
+For example, if we want to display a message to the user whenever a network request is cancelled, we can attach an event listener to the `onabort` property of the controller, like so:
+
+<script src="https://gist.github.com/Prajwalprakash3722/42d127fd5d10680b0703e123709b9f9f.js"></script>
+
+### Practical Scenario:
+
+Let's consider a application which fetched the number of friends and display them on the interface, let's assume **Rahul** has more number of friends and hence his network call will take more time, the user might not have patience to wait for the network call to be complete and presses **Rajus** name, **Raju** has few friends so his network call will be complete before **Rahul**'s network call.
+
+After a while the network call made for **Rahul** friends resolves and the displaying UI will be replaced by **Rahuls** friends even the user purposefully clicked **Rajus** name.
+
+Here **AbortController** will be helpful, when the user clicks the other name, we can just call the abort on the signal and cancel the request, hence increase the performance of the application as well.
+
+### conclusion
+
+The AbortController is a useful tool that allows us to cancel network requests in JavaScript. It provides us with the `abort` method, the `signal` property, and the `onabort` event, which give us **fine-grained control** over the network requests that are being made in the application.

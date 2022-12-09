@@ -1,0 +1,56 @@
+---
+title: "'REST' in Peace"
+ogImage:
+  url: "https://res.cloudinary.com/devcoffee/image/upload/v1664542222/Blog/C_R_U_D_dykasm.png"
+category: Software Development
+coverImage: "https://res.cloudinary.com/devcoffee/image/upload/v1664542222/Blog/C_R_U_D_dykasm.png"
+date: "2022-09-30T21:35:54.322Z"
+preview: true
+excerpt:
+---
+
+## 'REST' in Peace
+
+We have so-many patterns to fetch data from the server, One of the popular pattern is **REST**, But nowdays we have lots of other patterns,
+let's see is REST is still relevant to use in 2022?
+
+## What is REST?
+
+REST is a software architectural pattern that defines a set of constraints to be used for creating services.
+They also known as RESTful services, provide [interoperability](https://www.techopedia.com/definition/631/interoperability) between computer systems on the Internet.
+
+> Who invented REST?
+
+> REST was defined by Roy Fielding, a computer scientist. He presented the REST principles in his PhD dissertation in 2000.
+
+REST-compliant Web services allow requesting systems to access and manipulate textual representations of Web resources by using a uniform and predefined set of stateless operations.
+Other kinds of Web services, such as SOAP Web services, expose their own arbitrary sets of operations.
+
+If that's lot to consume for you; here is it in simple words,
+
+- REST is a way of communicating between two systems.
+- It is a set of rules that define how the communication should happen.
+
+REST stands for **RE**presentational **S**tate **T**ransfer.
+
+![REST Diagram](https://static.wixstatic.com/media/d74da4_f390d24148114c8580a94492f2f5ba4a~mv2.jpg/v1/fill/w_740,h_416,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/d74da4_f390d24148114c8580a94492f2f5ba4a~mv2.jpg)
+
+Below is what makes an API RESTful and what constraints and rules you should follow if you want to create RESTful APIs,
+
+let’s explain 2 key terms:
+
+- Client — the client is the person or software who uses the API. It can be a developer, for example you, as a developer, can use openweather API to read data from Openweather,and do more actions in a program that you write. Your program will call Openweather’s API. The client can also be a web browser.
+  When you go to Openweather website, your browser is the client who calls Openweather API and uses the returned data to render information on the screen.
+
+- Resource — a resource can be any object the API can provide information about.
+
+There are some limitations for the REST pattern, [here](https://www.brcline.com/blog/what-are-rest-apis-constraints) is a great article which explains the limitations of REST.
+
+According to me, REST is still relevant to use in 2022, but we have other patterns like GraphQL,tRPC which is more efficient than REST. How ?
+
+Well REST has mainly 2 major limitations such as Data Overfetching or Data Underfetching,
+
+- Data Overfetching: When you fetch data from the server, you get more data than you need. This is a waste of bandwidth and processing power.
+- Data Underfetching: When you fetch data from the server, you get less data than you need. So you need to make a call to other endpoint, This is a waste of time and bandwidth.
+
+**GraphQL** essestially solves the above limitation by declaring the data schema & the data you need in a single request.

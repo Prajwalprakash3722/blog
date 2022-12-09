@@ -9,6 +9,7 @@ import MorePosts from "../components/more-posts";
 import Post from "../types/post";
 import generateRssFeed from "../lib/generateRssFeed";
 import { getAllPosts } from "../lib/api";
+import Books from "../components/Books";
 
 type Props = {
   allPosts: Post[];
@@ -33,6 +34,7 @@ const Index = ({ allPosts }: Props) => {
             <MorePosts posts={allPosts} header="All Posts" />
           )}
           <Catagories posts={allPosts} />
+          <Books />
         </Container>
       </Layout>
     </>
@@ -51,7 +53,7 @@ export const getStaticProps = async () => {
     "category",
   ]);
   await generateRssFeed(); // calling to generate the feed
-
+  
   return {
     props: { allPosts },
   };
