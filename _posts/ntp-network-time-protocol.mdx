@@ -12,13 +12,12 @@ Not a lot of people might have heard of NTP,NTP is likely an essential part of m
 
 The Network Time Protocol (NTP) is a networking protocol that is used to synchronize the clocks of computer systems across a network.NTP is built on top of the User Datagram Protocol (UDP), which is a connectionless protocol that is used for transmitting data across a network.
 
-This is important because many applications and services rely on accurate time to function properly. 
-	For example, when you access a website, your computer needs to know the correct time to ensure that the secure connection is properly established.
+This is important because many applications and services rely on accurate time to function properly.
+For example, when you access a website, your computer needs to know the correct time to ensure that the secure connection is properly established.
 
 NTP works by using a hierarchical structure of time servers to provide a reliable and accurate time source.
 
 ![image](https://www.researchgate.net/profile/Bogdan-Jeliskoski/publication/336902538/figure/fig2/AS:819773176832002@1572460564851/Detailed-hierarchy-of-the-Stratum-servers.ppm)
-
 
 At the top of this hierarchy are the primary servers, which are connected to an accurate time source such as a GPS receiver or atomic clock. These primary servers then provide time information to secondary servers, which in turn provide time information to other computers on the network.
 
@@ -42,9 +41,7 @@ Using these timestamps, along with the transmit timestamp, which is the time at 
 
 NTP uses UDP as its transport layer because it needs to send time information quickly and efficiently. NTP packets are typically very small, so the overhead of using a more complex protocol like TCP would be unnecessary.
 
-
 Overall, the NTP packet is an essential part of the protocol, and is used to exchange time information between systems in order to synchronize their clocks. This helps to ensure that systems have accurate and synchronized time, which is important for many applications and services.
-
 
 [Inspiration](https://www.youtube.com/watch?v=BAo5C2qbLq8&t=436s&ab_channel=Computerphile),
 [Read More](https://blog.cloudflare.com/secure-time/),

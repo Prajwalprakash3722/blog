@@ -5,7 +5,13 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "e51b7f6db46e4c0894b5b34befeeb154"}'
+          ></script>
+        </Head>
         <body className="selection:bg-[#1D2433] selection:text-[#5686F5] bg-[#16181D]">
           <Main />
           <NextScript />
