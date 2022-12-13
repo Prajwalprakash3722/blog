@@ -11,6 +11,16 @@
     },
     "items": [
         {
+            "id": "https://www.blog.devcoffee.me/posts/ntp-network-time-protocol",
+            "url": "https://www.blog.devcoffee.me/posts/ntp-network-time-protocol",
+            "title": "NTP- Network Time Protocol",
+            "date_modified": "2022-12-13T16:40:40.775Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "https://www.blog.devcoffee.me/posts/abortController",
             "url": "https://www.blog.devcoffee.me/posts/abortController",
             "title": "new AbortController()",

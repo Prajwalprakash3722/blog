@@ -1,0 +1,51 @@
+---
+title: "NTP- Network Time Protocol"
+coverImage: "https://i.ibb.co/X3DVXkf/NTP-logo-1.jpg"
+date: "2022-12-13T16:40:40.775Z"
+ogImage:
+  url: "https://i.ibb.co/X3DVXkf/NTP-logo-1.jpg"
+preview: false
+category: "Software Development"
+---
+
+Not a lot of people might have heard of NTP,NTP is likely an essential part of many of the devices and services that you use on a daily basis. It helps to ensure that these systems have accurate and synchronized clocks, which is important for their proper functioning, Let's dive deep into this.
+
+The Network Time Protocol (NTP) is a networking protocol that is used to synchronize the clocks of computer systems across a network.NTP is built on top of the User Datagram Protocol (UDP), which is a connectionless protocol that is used for transmitting data across a network.
+
+This is important because many applications and services rely on accurate time to function properly. 
+	For example, when you access a website, your computer needs to know the correct time to ensure that the secure connection is properly established.
+
+NTP works by using a hierarchical structure of time servers to provide a reliable and accurate time source.
+
+![image](https://www.researchgate.net/profile/Bogdan-Jeliskoski/publication/336902538/figure/fig2/AS:819773176832002@1572460564851/Detailed-hierarchy-of-the-Stratum-servers.ppm)
+
+
+At the top of this hierarchy are the primary servers, which are connected to an accurate time source such as a GPS receiver or atomic clock. These primary servers then provide time information to secondary servers, which in turn provide time information to other computers on the network.
+
+To use NTP, a computer will send a request to one of the time servers in the hierarchy. The server will then respond with the current time, along with information about the accuracy of its time source and any potential delays in the network. The computer will then use this information to adjust its own clock to match the correct time.
+
+Main advantage of NTP is that it is a **decentralized protocol**, which means that it does not rely on a single time source. This makes it more resilient to network disruptions and outages, as the time information can be obtained from multiple servers.
+
+Another advantage of NTP is that it can handle network delays and other types of interference. This is done through a process called **clock synchronization**, which uses algorithms to compensate for the effects of network delays and other factors that can affect the accuracy of the time signal.
+
+### NTP Packet
+
+When a computer wants to synchronize its clock with an NTP server, it sends a request packet to the server. This packet contains information such as the version of the NTP protocol being used, and the type of request being made.
+
+When the server receives the request, it responds with a response packet. This packet contains the current time, along with information about the accuracy of the server's time source and any potential delays in the network.
+
+The response packet also contains a number of fields that are used by the client to calculate the correct time. This includes the originate timestamp, which is the time at which the request was sent, and the receive timestamp, which is the time at which the request was received by the server.
+
+Using these timestamps, along with the transmit timestamp, which is the time at which the response was sent, the client can calculate the round-trip delay, which is the amount of time it took for the request to be sent and the response to be received. The client can then use this information, along with the server's time, to adjust its own clock to match the correct time.
+
+### Why UDP and not TCP
+
+NTP uses UDP as its transport layer because it needs to send time information quickly and efficiently. NTP packets are typically very small, so the overhead of using a more complex protocol like TCP would be unnecessary.
+
+
+Overall, the NTP packet is an essential part of the protocol, and is used to exchange time information between systems in order to synchronize their clocks. This helps to ensure that systems have accurate and synchronized time, which is important for many applications and services.
+
+
+[Inspiration](https://www.youtube.com/watch?v=BAo5C2qbLq8&t=436s&ab_channel=Computerphile),
+[Read More](https://blog.cloudflare.com/secure-time/),
+[Read More](https://www.sciencedirect.com/topics/computer-science/network-time-protocol)
