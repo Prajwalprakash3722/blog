@@ -1,4 +1,5 @@
-import { useState } from 'react';
+/* eslint-disable react/jsx-no-comment-textnodes */
+import { useState } from "react";
 interface Props {
   totalPostNumber: number;
 }
@@ -6,8 +7,7 @@ const Intro = ({ totalPostNumber }: Props) => {
   return (
     <section className="flex flex-col min-h-fit items-center justify-center snap-normal my-8">
       <div className="flex flex-row items-center mb-8">
-        <h1 className="text-5xl font-bold text-center text-[#E8E8FD] sm:text-6xl lg:text-9xl"
-        >
+        <h1 className="text-5xl font-bold text-center text-[#E8E8FD] sm:text-6xl lg:text-9xl">
           {(totalPostNumber >> 0).toString(2)}
         </h1>
         <p className="text-center text-[#E8E8FD] font-sans">
@@ -23,7 +23,7 @@ const Intro = ({ totalPostNumber }: Props) => {
           for making a small mistake, always eager to build/fix/<s>break</s>{" "}
           things & learn, currently interested in how <b>scalable</b> systems
           are built? and this is my blog. <br />
-          <center>Ramblings on tech, philosophy, books.</center>
+          <p className="text-center">Ramblings on tech, philosophy, books.</p >
         </h1>
       </div>
       <div>
