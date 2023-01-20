@@ -23,7 +23,7 @@ const Intro = ({ totalPostNumber }: Props) => {
           for making a small mistake, always eager to build/fix/<s>break</s>{" "}
           things & learn, currently interested in how <b>scalable</b> systems
           are built? and this is my blog. <br />
-          <p className="text-center">Ramblings on tech, philosophy, books.</p >
+          <p className="text-center">Ramblings on tech, philosophy, books.</p>
         </h1>
       </div>
       <div>

@@ -20,7 +20,10 @@ const Catagories = ({ posts }: Props) => {
             <a href={`posts/tag/${category}`} key={category}>
               <div className="p-2 group rounded-lg hover:bg-[#1D2433] cursor-pointer">
                 <p className="break-words text-xl px-4 py-2 text-[#DFDFF3] font-medium md:text-2xl group-hover:text-[#5686F5] text-center">
-                  {category}
+                  {category}{" "}
+                  <sup>
+                    [{posts.filter((post) => post.category === category).length}]
+                  </sup>
                 </p>
               </div>
             </a>
