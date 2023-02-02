@@ -1,5 +1,4 @@
 import Post from "../types/post";
-import PostPreview from "./post-preview";
 
 type Props = {
   posts: Post[];
@@ -22,7 +21,8 @@ const Catagories = ({ posts }: Props) => {
                 <p className="break-words text-xl px-4 py-2 text-[#DFDFF3] font-medium md:text-2xl group-hover:text-[#5686F5] text-center">
                   {category}{" "}
                   <sup>
-                    [{posts.filter((post) => post.category === category).length}]
+                    [{posts.filter((post) => post.category === category).length}
+                    ]
                   </sup>
                 </p>
               </div>

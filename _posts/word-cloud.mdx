@@ -1,0 +1,169 @@
+---
+title: "Generating Word Cloud"
+coverImage: "https://www.wordclouds.com/pics/logo-fb-en.png"
+date: "2023-01-19T10:00:00.775Z"
+ogImage:
+  url: "https://www.wordclouds.com/pics/logo-fb-en.png"
+preview: true 
+category: "Software Development"
+---
+
+Ever wondered what is word cloud, its the pictorial representation of the words used in a particular corpus, more the frequency of a word bigger the size and vice versa.
+
+As I had posted the biggest blog post, I thought to analyze the words and see which words I used many times [except lol], So I tried to research more about word cloud and how to generate it, it turns out someone had already developed a library for it to do the most of the hard work [open source is the way to go :)].
+
+Let's try to generate word cloud for each and every post that is posted on this blog.
+
+## Small Steps at the begining: 
+Lets create a word cloud for a single post, that too my previous [post]() [check it out if you haven't already]
+
+We need the content of the blog post, we can simply scrape it of the url
+
+Let's download lynx, It's a fully-featured World Wide Web (WWW) browser for users on Unix, VMS, and other platforms running cursor-addressable, character-cell terminals or emulators. That includes vt100 terminals, other character-cell displays, and vt100 emulators such as Kermit or Procomm running on PCs or Macs.
+
+In nutshell, it helps to neatly scrape the html and encode all the special chaaracters into utf-8 format, you can install it using your operating system package manager, read more about it [here](https://lynx.invisible-island.net/)
+
+
+```
+lynx --dump https://blog.devcoffee.me/posts/look-ma-its-already-2023-and-i-am-dumb
+```  
+
+But we don't want the output to be printed on the terminal, lets save it to a `txt` file
+
+```
+lynx --dump https://blog.devcoffee.me/posts/look-ma-its-already-2023-and-i-am-dumb >> word_corpus.txt
+```  
+
+This will save the contents of the blog post to the `word_corpus.txt`
+
+Let's start consuming the words, (Here I will be using Python)
+
+Its not a bad idea to have a virtual env set up, helps you not to break the system
+
+```
+virtualenv env
+```
+
+Let's activate the env
+
+```
+source env/bin/activate
+```
+
+Let's install the modules that are necessary
+
+```
+pip3 install numpy pandas matplotlib seaborn Pillow wordcloud
+```
+
+import modules that are necessary
+
+``` 
+import numpy as np 
+import pandas as pd 
+from PIL import Image 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+%matplotlib inline
+
+# word cloud lib 
+from wordcloud import WordCloud, STOPWORDS
+
+```
+Let's read the contents of the text file
+
+```
+text_corpus = open('word_corpus.txt', 'r').read()
+```
+
+Let's define `STOPWORDS` We use the function set to remove any redundant stopwords.
+
+```
+stopwords = SET(STOPWORDS)
+```
+Create a word cloud object and generate a word cloud. For simplicity, let's generate a word cloud using only the first 2000 words in the novel.
+
+```
+# instantiate a word cloud object
+text_wc = WordCloud(
+    background_color='white',
+    stopwords=stopwords
+)
+
+# generate the word cloud
+text_wc.generate(text_corpus)
+```
+
+Awesome! Now that the `word` cloud is created, let's visualize it.
+
+```
+# resizing the word cloud for better clarity
+fig = plt.figure()
+fig.set_figwidth(14) # set width
+fig.set_figheight(18) # set height
+
+
+# displaying the word cloud
+plt.imshow(text_wc, interpolation='bilinear')
+plt.axis('off')
+plt.show()
+```
+
+![first](https://i.ibb.co/qxTjf7Z/download.png)
+
+This is very intresting, we can see what words I wrote the most, we can analyse the most common words are **lol**, **lot**, **time**, **one**, **started**.
+
+However some words displayed are not that much informative, lets add such words to the stopwords and regenerate the word cloud, its easy as appending a word to the dict
+
+```
+stopwords.add('html') 
+stopwords.add('https')
+stopwords.add('blog')
+stopwords.add('devcoffee')  
+stopwords.add('lol') 
+stopwords.add('rss') 
+stopwords.add('script') 
+stopwords.add('feed') 
+stopwords.add('twitter') 
+stopwords.add('xml')
+stopwords.add('roadmap') 
+
+# re-generate the word cloud
+text_wc.generate(text_corpus)
+
+# display the cloud
+fig = plt.figure()
+fig.set_figwidth(14) # set width
+fig.set_figheight(18)
+
+
+plt.imshow(text_wc, interpolation='bilinear')
+plt.axis('off')
+plt.show()
+```
+![final](https://i.ibb.co/0VC2Q25/final.png)
+
+Awesome, This looks really intresting, that's how easy it is to generate a word cloud, but as you can see we manually did most of the work, let's try to look for automating this script to run each time a article is uploaded to the blog.
+
+## Some Conditions
+
+* I don't want to have a API or backend as this is statically genetated at the compile time, adding a api call would simply waste the network memory and time.
+
+* Each post should have a word cloud at the end of the post.
+
+## Some Brainstorming
+
+* It does not make sense to call a script to generate the word cloud image on each compilation, instead we could try to implement this in the Browser suppoerted language such as Js [well we'll be using Ts]
+
+
+
+## Generating Word cloud for each Post
+
+
+
+
+
+
+
+
