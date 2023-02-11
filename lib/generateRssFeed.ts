@@ -9,7 +9,7 @@ export default async function generateRssFeed() {
     "content",
     "coverImage",
     "excerpt",
-    "preview",
+    "draft",
   ]);
   const siteURL =
     process.env.NODE_ENV === "production"

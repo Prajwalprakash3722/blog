@@ -4,15 +4,15 @@ import { useEffect, useState } from "react";
 
 import ErrorPage from "next/error";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import Meta from "../../../components/meta";
-import PostType from "../../../types/post";
 import PostTitle from "../../../components/post-title";
+import PostType from "../../../types/post";
+import { useRouter } from "next/router";
 
 type Props = {
   post: PostType;
   morePosts: PostType[];
-  preview?: boolean;
+  draft?: boolean;
 };
 
 const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {

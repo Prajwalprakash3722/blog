@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     "date",
     "slug",
     "content",
-    "preview",
+    "draft",
     "category",
   ]);
 

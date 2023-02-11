@@ -1,5 +1,5 @@
 import Post from "../types/post";
-import PostPreview from "./post-preview";
+import Postdraft from "./post-preview";
 
 type Props = {
   posts: Post[];
@@ -15,7 +15,7 @@ const LatestPosts = ({ posts }: Props) => {
         {posts
           // .sort((a, b) => 1 ? new Date(b.date).valueOf() - new Date(a.date).valueOf() : new Date(a.date).valueOf() - new Date(b.date).valueOf())
           .map((post) => (
-            <PostPreview
+            <Postdraft
               key={post.slug}
               title={post.title}
               date={post.date}

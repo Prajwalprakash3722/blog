@@ -1,3 +1,4 @@
+import Books from "../components/Books";
 import Catagories from "../components/categories";
 import Container from "../components/container";
 import Head from "next/head";
@@ -9,7 +10,6 @@ import MorePosts from "../components/more-posts";
 import Post from "../types/post";
 import generateRssFeed from "../lib/generateRssFeed";
 import { getAllPosts } from "../lib/api";
-import Books from "../components/Books";
 
 type Props = {
   allPosts: Post[];
@@ -18,7 +18,7 @@ type Props = {
 const Index = ({ allPosts }: Props) => {
   const heroPost = allPosts[0];
   //first 10 posts
-  allPosts = allPosts.filter((post) => post.preview !== true);
+  allPosts = allPosts.filter((post) => post.draft !== true);
   const latestPosts = allPosts.slice(0, 4);
   return (
     <>
@@ -49,7 +49,7 @@ export const getStaticProps = async () => {
     "date",
     "slug",
     "content",
-    "preview",
+    "draft",
     "category",
   ]);
   await generateRssFeed(); // calling to generate the feed

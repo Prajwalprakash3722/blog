@@ -1,0 +1,52 @@
+---
+title: "Exchanging data between microservices"
+coverImage: "https://i.ibb.co/pjZNJjn/service-A.png"
+date: "2023-02-06T18:00:00.775Z"
+ogImage:
+  url: "https://i.ibb.co/pjZNJjn/service-A.png"
+draft: true
+category: "Software Development"
+---
+
+## Exchanging data between microservices
+
+It's already 2023 and the software development is evolving lot faster than ever.
+
+There are several software architecture patterns that are used to build a application, it depends on the use case and the requirements [majorly non functional] of the application.
+
+The most popular architecture pattern is client-server architecture. It's a great way to build a scalable and maintainable application.
+But the client-server architecture has its own challenges. One of the biggest challenges is running multiple services on a single server.
+Most of the time, the server might not be powerful enough to run multiple services parellely, that's where microservices architecture comes into picture.
+
+The microservices architecture is an subset of client-server architecture. It's a great way to build a scalable and maintainable application. But the microservices architecture has its own challenges. One of the biggest challenges is exchanging data between microservices. In this article, I will knot down some of the points which I learnt.
+
+A common set of similar **methods** are grouped together to form a **microservice**. For example, [Ecommerce Application] a microservice can be a
+
+- user service
+- product service
+- payment service
+- shipping service, etc.
+
+Each microservice can have its own database and it's own business logic. The microservices are independent of each other. They can be developed and deployed independently.
+But the all the services need to communicate with each other at one point to be able to perform a task.
+For example, when a user places an order, the user service needs to communicate with the product service to check the availability of the product and the payment service to process the payment.
+
+user service --> product service --> payment service --> shipping service
+
+This is where the challenge arises, **how can we exchange data between services internally?**
+
+There are several ways to exchange data, it all boils down to the size, format and the frequency of data exchange and security requirements. [Better Applications can be developed from Good User requirements]
+
+> Walking on water and developing software from a specification are easy if both are frozen.
+> --Edward V. Berard
+
+We'll take a look at 4 exchanging protocols [methods]:
+
+- Synchronous Messaging<br/>
+REST APIs: A simple and common method to exchange data between microservices using HTTP requests and responses.
+
+- Asynchronous Messaging: Using a message broker, such as Apache Kafka or RabbitMQ, to exchange messages between microservices asynchronously.
+
+- gRPC: A high-performance, open-source framework for building remote procedure call (RPC) APIs.
+   
+- Event-Driven Architecture: Using events to trigger actions and exchange data between microservices.

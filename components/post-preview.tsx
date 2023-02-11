@@ -8,7 +8,7 @@ type Props = {
   category: string;
 };
 
-const PostPreview = ({ title, date, slug, content, category }: Props) => {
+const Postdraft = ({ title, date, slug, content, category }: Props) => {
   const colorGradients = [
     "bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400",
     "bg-gradient-to-r from-green-300 via-blue-500 to-purple-600",
@@ -66,4 +66,4 @@ const PostPreview = ({ title, date, slug, content, category }: Props) => {
   );
 };
 
-export default PostPreview;
+export default Postdraft;

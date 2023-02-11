@@ -8,7 +8,7 @@ type PostType = {
     url: string;
   };
   content: string;
-  preview: boolean;
+  draft: boolean;
   category: string;
 };
 

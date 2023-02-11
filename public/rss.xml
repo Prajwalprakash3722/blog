@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Thu, 02 Feb 2023 07:24:13 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 11 Feb 2023 10:31:11 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,20 @@
             <link>http://localhost:3000</link>
         </image>
         <copyright>All rights reserved 2023, Prajwal P</copyright>
+        <item>
+            <title><![CDATA['Accessibility' is the word losing it's meaning ?]]></title>
+            <link>http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning</link>
+            <guid>http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning</guid>
+            <pubDate>Mon, 06 Feb 2023 18:00:00 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[Exchanging data between microservices]]></title>
+            <link>http://localhost:3000/posts/best-way-to-exchange-data</link>
+            <guid>http://localhost:3000/posts/best-way-to-exchange-data</guid>
+            <pubDate>Mon, 06 Feb 2023 18:00:00 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
         <item>
             <title><![CDATA[Conquering Kudremukh: 'A Novice Trekkers Journey to the top']]></title>
             <link>http://localhost:3000/posts/conquering-kuduremukh</link>
@@ -201,6 +215,34 @@ Earlier in the days it was not easy to run code on server, it required a special
             <pubDate>Mon, 31 May 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[A brief introduction to a popular module called Open-Cv]]></description>
             <content:encoded><![CDATA[A brief introduction to a popular module called Open-Cv]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[The Only Friend……. (Series) Ep-04]]></title>
+            <link>http://localhost:3000/posts/The-Only-Friend-Ep-04</link>
+            <guid>http://localhost:3000/posts/The-Only-Friend-Ep-04</guid>
+            <pubDate>Sat, 17 Apr 2021 10:35:54 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[The Only Friend……. (Series) Ep-03]]></title>
+            <link>http://localhost:3000/posts/The-Only-Friend-Ep-03</link>
+            <guid>http://localhost:3000/posts/The-Only-Friend-Ep-03</guid>
+            <pubDate>Fri, 16 Apr 2021 10:35:54 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[The Only Friend……. (Series) Ep-02]]></title>
+            <link>http://localhost:3000/posts/The-Only-Friend-Ep-02</link>
+            <guid>http://localhost:3000/posts/The-Only-Friend-Ep-02</guid>
+            <pubDate>Thu, 15 Apr 2021 10:00:00 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[The Only Friend……. (Series) Ep-01]]></title>
+            <link>http://localhost:3000/posts/The-Only-Friend-Ep-01</link>
+            <guid>http://localhost:3000/posts/The-Only-Friend-Ep-01</guid>
+            <pubDate>Tue, 13 Apr 2021 10:35:54 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
