@@ -16,7 +16,6 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
     const subReddits = ["funny", "wholesome", "kindness", "meme"];
 
     const randomIndex = Math.floor(Math.random() * subReddits.length);
-    console.log(randomIndex);
     const memeObject: MemeObjectWithCount = await (
       await axios.get(
         `https://meme-api.herokuapp.com/gimme/${subReddits[randomIndex]}/9`
