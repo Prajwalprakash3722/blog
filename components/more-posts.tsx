@@ -7,7 +7,6 @@ type Props = {
 };
 
 const MorePosts = ({ posts, header }: Props) => {
-
   let allYears = posts.map((post) => post.date.split("-")[0]);
 
   return (
