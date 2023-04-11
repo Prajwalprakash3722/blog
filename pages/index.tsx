@@ -16,13 +16,13 @@ type Props = {
 };
 
 const Index = ({ allPosts }: Props) => {
-  const heroPost = allPosts[0];
-  //first 10 posts
   allPosts = allPosts.filter((post) => post.draft !== true);
   const latestPosts = allPosts.slice(0, 4);
   return (
     <>
-      <Layout newArticle={heroPost}>
+      <Layout newArticle={
+        latestPosts.length > 0 ? latestPosts[0] : undefined
+      }>
         <Head>
           <title>{`Prajwal's`} Blog</title>
           <Meta />

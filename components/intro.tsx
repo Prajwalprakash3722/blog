@@ -6,7 +6,7 @@ interface Props {
 const Intro = ({ totalPostNumber }: Props) => {
   return (
     <section className="flex flex-col min-h-fit items-center justify-center snap-normal my-8">
-      <div className="flex flex-row items-center mb-8">
+      <div className="flex flex-row items-center">
         <h1 className="text-5xl font-bold text-center text-[#E8E8FD] sm:text-6xl lg:text-9xl">
           {(totalPostNumber >> 0).toString(2)}
         </h1>
@@ -93,6 +93,15 @@ const Intro = ({ totalPostNumber }: Props) => {
             </button>
           </div>
         </div>
+      </div>
+      <div className="grid place-items-center">
+        {/*//@ts-expect-error*/}
+        <iframe height='160' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/39758934/activity-summary/54d68ee3333bba4aee07781644a977b34cdc96d4' className="my-6"></iframe>
+        {/*//@ts-expect-error*/}
+        <iframe height='454' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/39758934/latest-rides/54d68ee3333bba4aee07781644a977b34cdc96d4' className="my-6"></iframe>
+        <p>
+          <span className="text-gray-400 font-bold text-sm text-justify">Tracking my fitness, one ride at a time. Join me on this sweaty journey!</span>
+        </p>
       </div>
     </section>
   );
