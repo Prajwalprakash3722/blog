@@ -20,9 +20,7 @@ const Index = ({ allPosts }: Props) => {
   const latestPosts = allPosts.slice(0, 4);
   return (
     <>
-      <Layout newArticle={
-        latestPosts.length > 0 ? latestPosts[0] : undefined
-      }>
+      <Layout newArticle={latestPosts.length > 0 ? latestPosts[0] : undefined}>
         <Head>
           <title>{`Prajwal's`} Blog</title>
           <Meta />
