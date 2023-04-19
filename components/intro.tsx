@@ -7,12 +7,14 @@ const Intro = ({ totalPostNumber }: Props) => {
   return (
     <section className="flex flex-col min-h-fit items-center justify-center snap-normal my-8">
       <div className="flex flex-row items-center">
-        <h1 className="text-5xl font-bold text-center text-[#E8E8FD] sm:text-6xl lg:text-9xl">
-          {(totalPostNumber >> 0).toString(2)}
-        </h1>
-        <p className="text-center text-[#E8E8FD] font-sans">
-          Articles Written till now :)
-        </p>
+        <div className="flex flex-col justify-center text-center">
+          <h1 className=" font-extralight tracking-[0.20em] text-center text-[#424242] text-7xl md:text-8xl lg:text-9xl  ">
+            {(totalPostNumber >> 0).toString(2)}
+          </h1>
+          <p className="text-center text-white font-sans font-light  lg:tracking-[0.40em] lg:-mt-[4.6rem] mb-16 sm: sm:font-normal tracking-widest md:-mt-[3.4rem] md:tracking-[0.23em] -mt-12 ">
+            Articles Written till now :)
+          </p>
+        </div>
       </div>
       <div className="max-w-3xl sm:text-justify">
         <h1 className="text-[24.4px] font-semibold tracking-none leading-[150%] text-gray-400 mb-4 lg:leading-[200%] lg:mb-0">
