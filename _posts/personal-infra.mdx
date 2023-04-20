@@ -1,0 +1,84 @@
+---
+title: "Diving deep into my Personal Infrastructure"
+coverImage: "https://i.ibb.co/hydTStZ/Add-a-subheading-1.png"
+date: "2023-04-20T19:06:23.775Z"
+ogImage:
+  url: "https://i.ibb.co/hydTStZ/Add-a-subheading-1.png"
+draft: false
+category: "Software Development"
+---
+
+## Diving deep into my Personal Infrastructure
+
+We are 110 days in to 2023. Have you been able to keep your New Years Resolutions or goals, that you so keenly set back on Jan 1? Yea, its hard eh? We all have the best of intentions but once reality sets in, its hard to get out of our already-established routines.
+I shared some of my goals for 2023 [here](https://blog.devcoffee.me/posts/look-ma-its-already-2023-and-i-am-dumb).
+
+One of them was to setup a reliable personal infrastructure, I have been working on this for a while now and I am happy to say that I am almost there. I have been able to setup a reliable infrastructure that is completely customised for me.
+I didn't want to compromise on security, privacy, or accessibility.
+
+Before I dive into the details, Let me give you a quick overview of all the services I use in daily life.
+
+- Github
+- Github CI/CD
+- Vercel (for hosting)
+- Google Password Manager
+- Google Drive (for backups)
+- Calorie Counter App
+- Some Platforms for Deploying Backend Services and Databases & so on..
+
+So now, let me tell WHY the hell do I need a personal infrastructure?, I am just a student, not some big startup
+
+I’m a person who’s only satisfied if I feel I’m being productive. I like figuring things out.
+I like building things. And I want to do as much of that as I can. And part of being able to do that is to have the best personal infrastructure I can have.
+
+This helps me to figure out how to do things, how to build things, and how to make things better. And that’s what I want to do.
+
+Let's dive into the details.
+
+I have 5 main goals for my personal infrastructure.
+
+1. **Security** - I want to be able to keep my data safe and secure. I don't want to compromise on security.
+2. **Privacy** - I want to be able to keep my data private. I don't want to compromise on privacy.
+3. **Accessibility** - I want to be able to access my data from anywhere. I don't want to compromise on accessibility.
+4. **Reliability** - I want to be able to rely on my infrastructure. I don't want to compromise on reliability.
+5. **Customisation** - I want to be able to customise my infrastructure. I don't want to compromise on customisation.
+
+I have 3 VPS hosted on oracle cloud, 1 Raspberry Pi 3b+ and 1 old CPU with `2x Intel(R) Core(TM)2 Duo CPU E7500 @ 2.93GHz` and `8GB RAM` and `1TB` storage.
+
+So all the VPS are running on `Ubuntu 20.04 LTS` and the Raspberry Pi is running on `Raspbian`. and the cpu is running on `Fedora Server Edition 37`.
+
+Now how to interconnect all these devices? You guessed it right, I use `VPN` to interconnect all these devices. In my case, I use tailscale which according to me is the best out there in market.
+
+All the 3 VPS have a public IP address, but not the Raspberry Pi and the CPU. I use `Nginx` as a reverse proxy to route all the traffic to the correct VPS. Basically it pipes the traffic from public IP to the private IP, one of the VPS acts as a gateway to the internet.
+
+[![network-diagram](https://mermaid.ink/img/pako:eNqFUstuwjAQ_BVrT60UEI4hITn00l6QWmSB2kOViyFbsErsyHEoKfDvdR7i0UrFkWzvzmR2PfYeljpFiGFlRL4mz7NEETcmyqJRaEmv93Dg5WIjl2TCD-SNz-ldAm4hNIH7llwnG2KqMyEVUSLDA5mupNo5brOSGW7RFEi40bvq9GeLNTWM3AqLTZFH_vofPBNFvkBjKi6d_CkiXN7QdX36XfP-bSrrqKyh1l9NL8pF61RnyhTtlzafLXjp3DlT29NGqNJ281urq_xH7OREPS7OfSXuX0XsohR4kKFxd5K6C97XQAJ2jRkmELvtRq7WNoFEHR1RlFbPK7WE2JoSPSjz1LX0JIVrMYP4Q2wKl82Fetf6KoZ4DzuI6WDUH4eMhW6ijPoB9aCC2A9G_SAMI0qZA6KABUcPvhsJ2h-xAQ2jQeQPx8EwGPseYCqtNi_tk2xe5vEHZE3JvA?type=png)](https://mermaid.live/edit#pako:eNqFUstuwjAQ_BVrT60UEI4hITn00l6QWmSB2kOViyFbsErsyHEoKfDvdR7i0UrFkWzvzmR2PfYeljpFiGFlRL4mz7NEETcmyqJRaEmv93Dg5WIjl2TCD-SNz-ldAm4hNIH7llwnG2KqMyEVUSLDA5mupNo5brOSGW7RFEi40bvq9GeLNTWM3AqLTZFH_vofPBNFvkBjKi6d_CkiXN7QdX36XfP-bSrrqKyh1l9NL8pF61RnyhTtlzafLXjp3DlT29NGqNJ281urq_xH7OREPS7OfSXuX0XsohR4kKFxd5K6C97XQAJ2jRkmELvtRq7WNoFEHR1RlFbPK7WE2JoSPSjz1LX0JIVrMYP4Q2wKl82Fetf6KoZ4DzuI6WDUH4eMhW6ijPoB9aCC2A9G_SAMI0qZA6KABUcPvhsJ2h-xAQ2jQeQPx8EwGPseYCqtNi_tk2xe5vEHZE3JvA)
+
+I use cloudflare as my DNS provider, its free and secure and it has a lot of features. I use it to manage my domains. (Just the one lol :P) [devcoffee.me](https://devcoffee.me)
+
+`Docker` and `docker-compose` have been instrumental in helping me manage all of my services in one place. Recently, I decided to switch to Kubernetes and installed k3s to make my life even easier.
+
+I use `Gitea` as my self-hosted git repository because it gives me complete control over my code and allows me to manage my projects more effectively.
+
+As a replacement for `Google Drive`, I switched to `Nextcloud` for hosting my files. This has been a great alternative for me since it offers a similar user experience while keeping my data private.
+
+To download and manage torrent files, I use `Sonarr` and `Radarr`. These tools help me stay organized and keep track of all my downloads.
+
+For monitoring all my services, I use `Uptime Kuma`. This tool helps me stay informed about the health of my infrastructure and quickly address any issues that arise.
+
+On my Raspberry Pi, I have installed `Pi-Hole` to block ads and malware, making my browsing experience much safer.
+
+As a media server, I use `Jellyfin`, which has been great for organizing my media collection and streaming it to various devices.
+
+To browse files, I use `h5ai`, a simple file browser that allows me to easily view and access all of my files.
+
+I use `Homer` as a dashboard to view all my services in one place. It has been a great tool for me to keep track of all my services and quickly access them.
+
+`Ansible` helps me to automate the deployment of my infrastructure and scheduling tasks. Ex: regularly updating my os and installing security updates.
+
+My CPU is connected to Printer, I use `CUPS` to manage my printer. I can print from any device connected to my network. (maybe using ngnix reverse proxy for this and expose to internet; is it worth it? lol)
+
+I also plan to install `Jenkins` on my k3s cluster to automate my deployments or maybe use `argocd`, `Bitwarden` for password management, and a few other tools.
+
+This was just a introduction to my personal infrastructure. Maybe I will be writing a series of blog posts about my personal infrastructure and how I built it.
+
+I had a lot fun and learnt a lot while building my personal infrastructure, The best part is, there are always new tools and technologies to explore and integrate into my infrastructure. As I continue to evolve my personal infrastructure, I look forward to sharing my experiences and insights with others through my blog. Stay tuned for more!

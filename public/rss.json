@@ -11,6 +11,16 @@
     },
     "items": [
         {
+            "id": "http://localhost:3000/posts/personal-infra",
+            "url": "http://localhost:3000/posts/personal-infra",
+            "title": "Diving deep into my Personal Infrastructure",
+            "date_modified": "2023-04-20T19:06:23.775Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning",
             "url": "http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning",
             "title": "'Accessibility' is the word losing it's meaning ?",
@@ -183,16 +193,6 @@
             "title": "Namespaces in Typescript",
             "summary": "In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.",
             "date_modified": "2022-09-14T07:51:20.775Z",
-            "author": {
-                "name": "Prajwal P",
-                "url": "https://twitter.com/prajwal_3722"
-            }
-        },
-        {
-            "id": "http://localhost:3000/posts/cra-vs-vite",
-            "url": "http://localhost:3000/posts/cra-vs-vite",
-            "title": "CRA v/s Vite",
-            "date_modified": "2022-07-06T23:06:23.775Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
