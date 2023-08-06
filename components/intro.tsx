@@ -96,32 +96,6 @@ const Intro = ({ totalPostNumber }: Props) => {
           </div>
         </div>
       </div>
-      <div className="grid place-items-center">
-        <iframe
-          height="160"
-          width="300"
-          frameBorder="0"
-          allowTransparency={true}
-          scrolling="no"
-          src="https://www.strava.com/athletes/39758934/activity-summary/54d68ee3333bba4aee07781644a977b34cdc96d4"
-          className="my-6"
-        ></iframe>
-        <iframe
-          height="454"
-          width="300"
-          frameBorder="0"
-          allowTransparency={true}
-          scrolling="no"
-          src="https://www.strava.com/athletes/39758934/latest-rides/54d68ee3333bba4aee07781644a977b34cdc96d4"
-          className="my-6"
-        ></iframe>
-        <p>
-          <span className="text-gray-400 font-bold text-sm text-justify">
-            Tracking my fitness, one ride at a time. Join me on this sweaty
-            journey!
-          </span>
-        </p>
-      </div>
     </section>
   );
 };

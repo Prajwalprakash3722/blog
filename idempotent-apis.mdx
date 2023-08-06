@@ -1,0 +1,41 @@
+
+---
+title: "Building Resillent & Idempotent System using Spring Boot"
+ogImage:
+  url: "https://qphs.fs.quoracdn.net/main-qimg-594c9e1f7850bbee9d72edbf2f48bb0d-lq"
+category: Software Development
+coverImage: "https://qphs.fs.quoracdn.net/main-qimg-594c9e1f7850bbee9d72edbf2f48bb0d-lq"
+date: "2022-07-09T21:35:54.322Z"
+draft: false
+excerpt: 
+---
+Idempotent you must have heard of this word somewhere in your software journey, what is it? how does it affect us, how one can build Idempotent Systems?
+
+But instead of giving the definition of `Idempotent` I want you to imagine a situation. 
+
+Now, let's imagine a situation where you're broke and hungry, and you decide to order food from Swiggy. You have a bank balance of only 400/-, and you select paneer butter masala and roti, 
+which costs 350/-. After filling in all the necessary information, you go ahead with the order. However, for some mysterious reason, the order fails.
+
+There could be a few reasons why the order failed:
+
+1. The order request didn't even reach the server due to network interruptions. In this case, the client might be aware of the error and can attempt to retry the order.
+
+2. There was an internal server error (5xx) that prevented the order from being processed. Unfortunately, the client has no way of knowing this error and might mistakenly assume that the order failed.
+
+3. The order was successfully processed, but the response packet got lost in a network interruption. Again, the client has no way of knowing this and may attempt to place the order again.
+
+In this situation, if the error was due to the first reason, refreshing the page can save you from spending another 350/-. However, if it was due to the second or third reason, refreshing the page would lead to duplicate orders and potentially additional charges.
+
+Modern systems often employ automatic retries to improve user experience and increase the chances of successful communication. By designing systems with idempotence in mind, we can remove the impact of failures and provide a more reliable and consistent UX for users.
+
+Systems built with idempotence in mind can recover from failures, retry requests, and maintain data integrity without any inconsistencies.
+
+Now the formal definition Idempotent is a term used in software development to describe an operation or function that can be applied multiple times without changing the result beyond the initial application. In other words, performing the operation multiple times should have the same effect as performing it once. (I didn't write the definition lol)
+
+In the domain of HTTP methods, which are widely used in web development, we commonly encounter four main methods: `GET`, `POST`, `PUT`, and `DELETE`. These methods can be categorized into idempotent and non-idempotent based on their behavior. 
+Idempotent methods, such as `GET` and `PUT`, have the property that making multiple identical requests will not lead to different outcomes or modify the server's state. On the other hand, non-idempotent methods, like `POST`, are designed to create new resources making them non-idempotent by nature.
+
+Now let's see a small example of how to build a idempotent API in Spring Boot :)
+
+
+

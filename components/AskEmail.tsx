@@ -1,11 +1,11 @@
-import { FormEvent, FormEventHandler, useState } from "react";
+import { FormEvent, useState } from "react";
 
 function AskEmail() {
   const [email, setEmail] = useState("");
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(email); // replace with your desired logic
+    console.log(email);
   };
 
   return (
@@ -38,6 +38,7 @@ function AskEmail() {
         <p className="text-center text-gray-500 mt-4">
           I mostly write some notes to self: I can’t imagine that you’d be
           interested, but if, for some reason, you are, you are welcome.
+          (Most of my notes are handwritten, but I’m trying to write more on obsidian)
         </p>
         <p className="text-center text-gray-500 mt-2">
           (Obviously, I won’t share your email with anyone.)

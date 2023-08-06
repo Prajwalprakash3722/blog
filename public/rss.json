@@ -12,9 +12,11 @@
     "items": [
         {
             "id": "http://localhost:3000/posts/turning-21",
+            "content_html": "In this blog post, I share my thoughts and feelings as I celebrate my 21st birthday. Join me as I reflect on my journey so far, the expectations I had as a child, and the realization that I am now entering adulthood. I ponder what my younger self would think of the person I have become, and I express gratitude for the incredible people and experiences that have shaped my life. Come along as I navigate the excitement and nostalgia that come with turning 21.",
             "url": "http://localhost:3000/posts/turning-21",
             "title": "Turning 21",
-            "date_modified": "2023-07-03T22:58:54.322Z",
+            "summary": "In this blog post, I share my thoughts and feelings as I celebrate my 21st birthday. Join me as I reflect on my journey so far, the expectations I had as a child, and the realization that I am now entering adulthood. I ponder what my younger self would think of the person I have become, and I express gratitude for the incredible people and experiences that have shaped my life. Come along as I navigate the excitement and nostalgia that come with turning 21.",
+            "date_modified": "2023-07-03T15:58:54.322Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"

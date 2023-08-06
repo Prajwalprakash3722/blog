@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Mon, 03 Jul 2023 17:39:03 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 06 Aug 2023 11:36:26 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -17,7 +17,9 @@
             <title><![CDATA[Turning 21]]></title>
             <link>http://localhost:3000/posts/turning-21</link>
             <guid>http://localhost:3000/posts/turning-21</guid>
-            <pubDate>Mon, 03 Jul 2023 22:58:54 GMT</pubDate>
+            <pubDate>Mon, 03 Jul 2023 15:58:54 GMT</pubDate>
+            <description><![CDATA[In this blog post, I share my thoughts and feelings as I celebrate my 21st birthday. Join me as I reflect on my journey so far, the expectations I had as a child, and the realization that I am now entering adulthood. I ponder what my younger self would think of the person I have become, and I express gratitude for the incredible people and experiences that have shaped my life. Come along as I navigate the excitement and nostalgia that come with turning 21.]]></description>
+            <content:encoded><![CDATA[In this blog post, I share my thoughts and feelings as I celebrate my 21st birthday. Join me as I reflect on my journey so far, the expectations I had as a child, and the realization that I am now entering adulthood. I ponder what my younger self would think of the person I have become, and I express gratitude for the incredible people and experiences that have shaped my life. Come along as I navigate the excitement and nostalgia that come with turning 21.]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
