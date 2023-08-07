@@ -37,8 +37,8 @@ function AskEmail() {
         </form>
         <p className="text-center text-gray-500 mt-4">
           I mostly write some notes to self: I can’t imagine that you’d be
-          interested, but if, for some reason, you are, you are welcome.
-          (Most of my notes are handwritten, but I’m trying to write more on obsidian)
+          interested, but if, for some reason, you are, you are welcome. (Most
+          of my notes are handwritten, but I’m trying to write more on obsidian)
         </p>
         <p className="text-center text-gray-500 mt-2">
           (Obviously, I won’t share your email with anyone.)

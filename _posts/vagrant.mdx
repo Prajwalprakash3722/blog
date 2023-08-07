@@ -1,0 +1,148 @@
+---
+title: "Quickly spin up VM's using Vagrant"
+coverImage: "https://www.datocms-assets.com/2885/1620083141-blog-library-product-vagrant-logo-dark-graphics.jpg"
+date: "2023-08-07T21:35:54.322Z"
+ogImage:
+  url: "https://www.datocms-assets.com/2885/1620083141-blog-library-product-vagrant-logo-dark-graphics.jpg"
+draft: false
+category: "Software Development"
+---
+
+Vagrant is a tool to build up and operate Virtual Machines on the top of innumerable (actually few) virtual platform over an operating system, what do I mean by this?
+
+We all have used oracle virtual box for quickly spinning up a VM and prototyping on it, then deleting the entire instance once we are done.
+
+Let's be honest it is a tedious process which involves you setting up the hypervisor (in case of windows), virtual box (Linux) downloading the ISO files configuring the network and the boot up time. 
+`
+We get oracle virtual box or VM ware workstation (community edition) which includes a Graphical User Interface which in turn adds extra overload to process and memory. Which is never used most of the time. I go crazy each time I have to set up a new OS.
+
+What If I told you there is a saner way of doing all these while you don't go crazy, I Introduce you to Vagrant, a HashiCorp developed tool to solve the exact problems I mentioned.
+
+## Vagrant
+
+> Vagrant enables the creation and configuration of lightweight, reproducible, and portable development environments. - HashiCorp
+
+You can think vagrant similar to docker, it requires a specification file where all the necessary specification is configured, then it will automatically download the required OS image and spin it up and did I say it also provides you **SSH** access to the VM out of the box.
+
+Vagrant seamlessly collaborates with multiple virtualization tools on various operating systems. You'll find options like Hypervisor, VirtualBox, and my personal preference, libvirt. Now, if you're unfamiliar with the term "virtualization tool," you can explore more about it [here](https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor) and [here](https://www.makeuseof.com/best-virtual-machine-linux-kvm-virtualbox-qemu-hyper-v/).
+
+I personally like `libvirt`due to its efficient resource utilization and minimal overhead. However, there's a downside—there aren't as many official OS images supporting libvirt as a virtualization tool. But fear not, the community has contributed viable customizations and images, making it a robust choice. Anyone can customize the OS to work on the top of it and upload it to the community images of the vagrant.
+
+Enough talking, let's get into it :)
+
+First you need to install vagrant and choice of your virtualization tool, (if you are a beginner I advise you to go ahead with VirtualBox)
+
+## Prerequisites
+
+- You can find the vagrant installation details [here](https://developer.hashicorp.com/vagrant/downloads).
+
+- Install a virtualization product such as; [VirtualBox](https://www.virtualbox.org/), [VMware Fusion](https://customerconnect.vmware.com/downloads/get-download?downloadGroup=FUS-PUBTP-2021H1), or [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
+
+Vagrant requires a configuration file named `VagrantFile` (without any extension) where we'll decide all the configurations for the VM.
+
+```
+vagrant init
+```
+
+The above command automatically initializes the initial `VagrantFile` which has all the parameter's commented out
+
+_(refresh the page if you don't see the code snippet below)_
+
+<script src="https://gist.github.com/Prajwalprakash3722/fa046fe832f947cfa5081eef320119c0.js"></script>
+
+Let's try to understand what is going on
+
+```
+Vagrant.configure("2") do |config|
+```
+
+This is the version of the Vagrant that should be used
+
+```
+config.vm.box = "base"
+```
+
+This is the specification of the base OS that VM, Think box as an Operating System which is already configured
+
+since I am using `libvirt` as my tool, I need to select the boxes that support `libvirt`, you can do that [here](https://app.vagrantup.com/boxes/search?provider=libvirt), as I told there are not many offical boxes that support `libvirt` as provider, but the community ones are fairly good and are stable.
+
+Port forwarding can be also done
+
+```
+config.vm.network "forwarded_port", guest: 80, host: 8080
+```
+
+Here whatever service that is exposed in the machine on port number 80 is forwarded to your machines `8080` port.
+
+```
+config.vm.network "private_network", ip: "192.168.33.10"
+```
+
+This configuration allows you to set up a public network interface for your VM. This means that your VM will have its own IP address on the same network as your host machine. This is useful when you need to expose services running on the VM to the outside world.
+
+```
+config.vm.synced_folder "../data", "/vagrant_data"
+```
+
+Synced folders allow you to share files between your host machine and the VM. This is incredibly useful for development, as you can edit code on your host machine and have it immediately available within the VM. The first parameter specifies the path on your host machine, and the second parameter specifies the path within the VM, Very Similar to docker volumes or Kubernetes Persistent Volume.
+
+```
+config.vm.provider "libvirt" do |vb|
+  vb.gui = true  # Display the VirtualBox GUI when booting the machine
+  vb.memory = "1024"  # Customize the amount of memory on the VM
+end
+```
+
+This section allows you to configure provider-specific settings for libvirt. You can customize the amount of memory allocated to the VM.
+
+
+Now with all the above knowledge lets bring up 2 ubuntu VMs inside our system.
+
+<script src="https://gist.github.com/Prajwalprakash3722/d200bf2997dc55e856ca116f53ef1f55.js"></script>
+
+To bring the VMS up, we need to tell vagrant to find the file and bring up the containers
+
+```bash
+vagarnt up
+```
+
+Now Vagrant will download the ubuntu 22.04 generic box from the hashicorp cloud and start to provision the defined resources.
+
+After all you should be seeing a ` Machine booted and ready!` message then you can use the machines, but how to access them?
+
+Vagrant provides a special way of sshing to the VM's created using public and private key that is automatically configured while bring up the Vm's.
+
+Now we have 2 Vm's namely 
+	- ubuntu1
+	- ubuntu2
+
+Let's ssh to the first node, 
+```
+vagrant ssh ubuntu1
+```
+
+this will login you to the Vm and you can just use the VM as a normal machine make sure to port-forward if you want to access the services running on Vms from the host system.
+
+When done, either permanently destroy them:
+
+```
+vagrant destroy
+```
+
+(Note: This will permanantely destroy your Vm and related data unless you have a synced folder)
+
+Or suspend them for later:
+
+```bash
+vagrant suspend
+```
+
+To resume a suspended VM:
+
+```bash
+vagrant reload
+```
+
+That's Vagrant in a nutshell, hope you liked it.
+
+cheers :)

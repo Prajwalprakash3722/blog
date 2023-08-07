@@ -1,4 +1,3 @@
-
 ---
 title: "Building Resillent & Idempotent System using Spring Boot"
 ogImage:
@@ -7,13 +6,14 @@ category: Software Development
 coverImage: "https://qphs.fs.quoracdn.net/main-qimg-594c9e1f7850bbee9d72edbf2f48bb0d-lq"
 date: "2022-07-09T21:35:54.322Z"
 draft: false
-excerpt: 
+excerpt:
 ---
+
 Idempotent you must have heard of this word somewhere in your software journey, what is it? how does it affect us, how one can build Idempotent Systems?
 
-But instead of giving the definition of `Idempotent` I want you to imagine a situation. 
+But instead of giving the definition of `Idempotent` I want you to imagine a situation.
 
-Now, let's imagine a situation where you're broke and hungry, and you decide to order food from Swiggy. You have a bank balance of only 400/-, and you select paneer butter masala and roti, 
+Now, let's imagine a situation where you're broke and hungry, and you decide to order food from Swiggy. You have a bank balance of only 400/-, and you select paneer butter masala and roti,
 which costs 350/-. After filling in all the necessary information, you go ahead with the order. However, for some mysterious reason, the order fails.
 
 There could be a few reasons why the order failed:
@@ -32,10 +32,7 @@ Systems built with idempotence in mind can recover from failures, retry requests
 
 Now the formal definition Idempotent is a term used in software development to describe an operation or function that can be applied multiple times without changing the result beyond the initial application. In other words, performing the operation multiple times should have the same effect as performing it once. (I didn't write the definition lol)
 
-In the domain of HTTP methods, which are widely used in web development, we commonly encounter four main methods: `GET`, `POST`, `PUT`, and `DELETE`. These methods can be categorized into idempotent and non-idempotent based on their behavior. 
+In the domain of HTTP methods, which are widely used in web development, we commonly encounter four main methods: `GET`, `POST`, `PUT`, and `DELETE`. These methods can be categorized into idempotent and non-idempotent based on their behavior.
 Idempotent methods, such as `GET` and `PUT`, have the property that making multiple identical requests will not lead to different outcomes or modify the server's state. On the other hand, non-idempotent methods, like `POST`, are designed to create new resources making them non-idempotent by nature.
 
 Now let's see a small example of how to build a idempotent API in Spring Boot :)
-
-
-
