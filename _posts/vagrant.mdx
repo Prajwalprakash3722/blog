@@ -12,7 +12,7 @@ Vagrant is a tool to build up and operate Virtual Machines on the top of innumer
 
 We all have used oracle virtual box for quickly spinning up a VM and prototyping on it, then deleting the entire instance once we are done.
 
-Let's be honest it is a tedious process which involves you setting up the hypervisor (in case of windows), virtual box (Linux) downloading the ISO files configuring the network and the boot up time. 
+Let's be honest it is a tedious process which involves you setting up the hypervisor (in case of windows), virtual box (Linux) downloading the ISO files configuring the network and the boot up time.
 `
 We get oracle virtual box or VM ware workstation (community edition) which includes a Graphical User Interface which in turn adds extra overload to process and memory. Which is never used most of the time. I go crazy each time I have to set up a new OS.
 
@@ -95,7 +95,6 @@ end
 
 This section allows you to configure provider-specific settings for libvirt. You can customize the amount of memory allocated to the VM.
 
-
 Now with all the above knowledge lets bring up 2 ubuntu VMs inside our system.
 
 <script src="https://gist.github.com/Prajwalprakash3722/d200bf2997dc55e856ca116f53ef1f55.js"></script>
@@ -112,11 +111,10 @@ After all you should be seeing a ` Machine booted and ready!` message then you c
 
 Vagrant provides a special way of sshing to the VM's created using public and private key that is automatically configured while bring up the Vm's.
 
-Now we have 2 Vm's namely 
-	- ubuntu1
-	- ubuntu2
+Now we have 2 Vm's namely - ubuntu1 - ubuntu2
 
-Let's ssh to the first node, 
+Let's ssh to the first node,
+
 ```
 vagrant ssh ubuntu1
 ```
