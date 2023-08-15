@@ -7,6 +7,10 @@
     "name": "Prajwal Prakash",
     "url": "https://www.devcoffee.me"
   },
+  "engines": {
+    "npm": ">=9.0.0",
+    "node": ">=18.0.0"
+  },
   "license": " GNU GENERAL PUBLIC LICENSE Version 3",
   "scripts": {
     "dev": "next",
