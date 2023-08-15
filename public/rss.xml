@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Prajwals Blog</title>
-        <link>http://localhost:3000</link>
+        <link>https://www.blog.devcoffee.me</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Mon, 14 Aug 2023 06:27:59 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 15 Aug 2023 10:58:42 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
             <title>Prajwals Blog</title>
-            <url>http://localhost:3000/favicon.ico</url>
-            <link>http://localhost:3000</link>
+            <url>https://www.blog.devcoffee.me/favicon.ico</url>
+            <link>https://www.blog.devcoffee.me</link>
         </image>
         <copyright>All rights reserved 2023, Prajwal P</copyright>
         <item>
             <title><![CDATA[Diving Deep into top & htop]]></title>
-            <link>http://localhost:3000/posts/top</link>
-            <guid>http://localhost:3000/posts/top</guid>
+            <link>https://www.blog.devcoffee.me/posts/top</link>
+            <guid>https://www.blog.devcoffee.me/posts/top</guid>
             <pubDate>Sun, 13 Aug 2023 16:31:15 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Quickly spin up VM's using Vagrant]]></title>
-            <link>http://localhost:3000/posts/vagrant</link>
-            <guid>http://localhost:3000/posts/vagrant</guid>
+            <link>https://www.blog.devcoffee.me/posts/vagrant</link>
+            <guid>https://www.blog.devcoffee.me/posts/vagrant</guid>
             <pubDate>Mon, 07 Aug 2023 21:35:54 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Turning 21]]></title>
-            <link>http://localhost:3000/posts/turning-21</link>
-            <guid>http://localhost:3000/posts/turning-21</guid>
+            <link>https://www.blog.devcoffee.me/posts/turning-21</link>
+            <guid>https://www.blog.devcoffee.me/posts/turning-21</guid>
             <pubDate>Mon, 03 Jul 2023 15:58:54 GMT</pubDate>
             <description><![CDATA[In this blog post, I share my thoughts and feelings as I celebrate my 21st birthday. Join me as I reflect on my journey so far, the expectations I had as a child, and the realization that I am now entering adulthood. I ponder what my younger self would think of the person I have become, and I express gratitude for the incredible people and experiences that have shaped my life. Come along as I navigate the excitement and nostalgia that come with turning 21.]]></description>
             <content:encoded><![CDATA[In this blog post, I share my thoughts and feelings as I celebrate my 21st birthday. Join me as I reflect on my journey so far, the expectations I had as a child, and the realization that I am now entering adulthood. I ponder what my younger self would think of the person I have become, and I express gratitude for the incredible people and experiences that have shaped my life. Come along as I navigate the excitement and nostalgia that come with turning 21.]]></content:encoded>
@@ -38,85 +38,85 @@
         </item>
         <item>
             <title><![CDATA[Diving deep into my Personal Infrastructure]]></title>
-            <link>http://localhost:3000/posts/personal-infra</link>
-            <guid>http://localhost:3000/posts/personal-infra</guid>
+            <link>https://www.blog.devcoffee.me/posts/personal-infra</link>
+            <guid>https://www.blog.devcoffee.me/posts/personal-infra</guid>
             <pubDate>Thu, 20 Apr 2023 19:06:23 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA['Accessibility' is the word losing it's meaning ?]]></title>
-            <link>http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning</link>
-            <guid>http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning</guid>
+            <link>https://www.blog.devcoffee.me/posts/accessibility-is-the-word-losing-its-meaning</link>
+            <guid>https://www.blog.devcoffee.me/posts/accessibility-is-the-word-losing-its-meaning</guid>
             <pubDate>Sat, 01 Apr 2023 18:00:00 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Living in the present]]></title>
-            <link>http://localhost:3000/posts/life-living-death</link>
-            <guid>http://localhost:3000/posts/life-living-death</guid>
+            <link>https://www.blog.devcoffee.me/posts/life-living-death</link>
+            <guid>https://www.blog.devcoffee.me/posts/life-living-death</guid>
             <pubDate>Fri, 17 Mar 2023 18:00:00 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Exchanging data between microservices]]></title>
-            <link>http://localhost:3000/posts/best-way-to-exchange-data</link>
-            <guid>http://localhost:3000/posts/best-way-to-exchange-data</guid>
+            <link>https://www.blog.devcoffee.me/posts/best-way-to-exchange-data</link>
+            <guid>https://www.blog.devcoffee.me/posts/best-way-to-exchange-data</guid>
             <pubDate>Mon, 06 Feb 2023 18:00:00 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Conquering Kudremukh: 'A Novice Trekkers Journey to the top']]></title>
-            <link>http://localhost:3000/posts/conquering-kuduremukh</link>
-            <guid>http://localhost:3000/posts/conquering-kuduremukh</guid>
+            <link>https://www.blog.devcoffee.me/posts/conquering-kuduremukh</link>
+            <guid>https://www.blog.devcoffee.me/posts/conquering-kuduremukh</guid>
             <pubDate>Thu, 02 Feb 2023 13:00:00 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Generating Word Cloud]]></title>
-            <link>http://localhost:3000/posts/word-cloud</link>
-            <guid>http://localhost:3000/posts/word-cloud</guid>
+            <link>https://www.blog.devcoffee.me/posts/word-cloud</link>
+            <guid>https://www.blog.devcoffee.me/posts/word-cloud</guid>
             <pubDate>Thu, 19 Jan 2023 10:00:00 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Look ma it's already 2023 and I am still dumb]]></title>
-            <link>http://localhost:3000/posts/look-ma-its-already-2023-and-i-am-dumb</link>
-            <guid>http://localhost:3000/posts/look-ma-its-already-2023-and-i-am-dumb</guid>
+            <link>https://www.blog.devcoffee.me/posts/look-ma-its-already-2023-and-i-am-dumb</link>
+            <guid>https://www.blog.devcoffee.me/posts/look-ma-its-already-2023-and-i-am-dumb</guid>
             <pubDate>Sun, 08 Jan 2023 10:00:00 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[NTP- Network Time Protocol]]></title>
-            <link>http://localhost:3000/posts/ntp-network-time-protocol</link>
-            <guid>http://localhost:3000/posts/ntp-network-time-protocol</guid>
+            <link>https://www.blog.devcoffee.me/posts/ntp-network-time-protocol</link>
+            <guid>https://www.blog.devcoffee.me/posts/ntp-network-time-protocol</guid>
             <pubDate>Tue, 13 Dec 2022 16:40:40 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[new AbortController()]]></title>
-            <link>http://localhost:3000/posts/abortController</link>
-            <guid>http://localhost:3000/posts/abortController</guid>
+            <link>https://www.blog.devcoffee.me/posts/abortController</link>
+            <guid>https://www.blog.devcoffee.me/posts/abortController</guid>
             <pubDate>Fri, 09 Dec 2022 21:35:54 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA['REST' in Peace]]></title>
-            <link>http://localhost:3000/posts/rest-in-peace</link>
-            <guid>http://localhost:3000/posts/rest-in-peace</guid>
+            <link>https://www.blog.devcoffee.me/posts/rest-in-peace</link>
+            <guid>https://www.blog.devcoffee.me/posts/rest-in-peace</guid>
             <pubDate>Fri, 30 Sep 2022 21:35:54 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Automating Your Postman Tests]]></title>
-            <link>http://localhost:3000/posts/automating-postman-tests-1</link>
-            <guid>http://localhost:3000/posts/automating-postman-tests-1</guid>
+            <link>https://www.blog.devcoffee.me/posts/automating-postman-tests-1</link>
+            <guid>https://www.blog.devcoffee.me/posts/automating-postman-tests-1</guid>
             <pubDate>Mon, 26 Sep 2022 21:35:54 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[What I learnt from writing low level code for a semester]]></title>
-            <link>http://localhost:3000/posts/what-i-learnt-from-writing-low-level-programming</link>
-            <guid>http://localhost:3000/posts/what-i-learnt-from-writing-low-level-programming</guid>
+            <link>https://www.blog.devcoffee.me/posts/what-i-learnt-from-writing-low-level-programming</link>
+            <guid>https://www.blog.devcoffee.me/posts/what-i-learnt-from-writing-low-level-programming</guid>
             <pubDate>Sun, 25 Sep 2022 21:35:54 GMT</pubDate>
             <description><![CDATA[Low-level programming is a style of computer programming in which little or no abstraction is used between the instructions in the programming language and the architecture's machine code instructions. Low-level programming is the opposite of high-level programming, which uses a large amount of abstraction to make the process of developing a program easier.]]></description>
             <content:encoded><![CDATA[Low-level programming is a style of computer programming in which little or no abstraction is used between the instructions in the programming language and the architecture's machine code instructions. Low-level programming is the opposite of high-level programming, which uses a large amount of abstraction to make the process of developing a program easier.]]></content:encoded>
@@ -124,8 +124,8 @@
         </item>
         <item>
             <title><![CDATA[Heroku Alternatives]]></title>
-            <link>http://localhost:3000/posts/heroku-alternatives</link>
-            <guid>http://localhost:3000/posts/heroku-alternatives</guid>
+            <link>https://www.blog.devcoffee.me/posts/heroku-alternatives</link>
+            <guid>https://www.blog.devcoffee.me/posts/heroku-alternatives</guid>
             <pubDate>Sun, 18 Sep 2022 21:35:54 GMT</pubDate>
             <description><![CDATA[However, Heroku is not the only PaaS  platform out there. In this article, we will look at some of the best Heroku alternatives as it has announced to stop supporting the free tier (hobby) plan from November 28th 2022.You can read more about this [here](https://blog.heroku.com/next-chapter/).
 I still remember the first time I deployed an application on Heroku, It was so easy to deploy.
@@ -141,15 +141,15 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[learning_rust[0]]]></title>
-            <link>http://localhost:3000/posts/learning-rust</link>
-            <guid>http://localhost:3000/posts/learning-rust</guid>
+            <link>https://www.blog.devcoffee.me/posts/learning-rust</link>
+            <guid>https://www.blog.devcoffee.me/posts/learning-rust</guid>
             <pubDate>Fri, 16 Sep 2022 07:51:20 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Don't get confused between map() and forEach()]]></title>
-            <link>http://localhost:3000/posts/map-forEach</link>
-            <guid>http://localhost:3000/posts/map-forEach</guid>
+            <link>https://www.blog.devcoffee.me/posts/map-forEach</link>
+            <guid>https://www.blog.devcoffee.me/posts/map-forEach</guid>
             <pubDate>Thu, 15 Sep 2022 21:35:54 GMT</pubDate>
             <description><![CDATA[JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.]]></description>
             <content:encoded><![CDATA[JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.]]></content:encoded>
@@ -157,22 +157,22 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Generics in TypeScript]]></title>
-            <link>http://localhost:3000/posts/generics-in-typescript</link>
-            <guid>http://localhost:3000/posts/generics-in-typescript</guid>
+            <link>https://www.blog.devcoffee.me/posts/generics-in-typescript</link>
+            <guid>https://www.blog.devcoffee.me/posts/generics-in-typescript</guid>
             <pubDate>Thu, 15 Sep 2022 07:51:20 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Generics in TypeScript]]></title>
-            <link>http://localhost:3000/posts/how-email-works</link>
-            <guid>http://localhost:3000/posts/how-email-works</guid>
+            <link>https://www.blog.devcoffee.me/posts/how-email-works</link>
+            <guid>https://www.blog.devcoffee.me/posts/how-email-works</guid>
             <pubDate>Thu, 15 Sep 2022 07:51:20 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Namespaces in Typescript]]></title>
-            <link>http://localhost:3000/posts/namespaces-in-typescript</link>
-            <guid>http://localhost:3000/posts/namespaces-in-typescript</guid>
+            <link>https://www.blog.devcoffee.me/posts/namespaces-in-typescript</link>
+            <guid>https://www.blog.devcoffee.me/posts/namespaces-in-typescript</guid>
             <pubDate>Wed, 14 Sep 2022 07:51:20 GMT</pubDate>
             <description><![CDATA[In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.]]></description>
             <content:encoded><![CDATA[In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.]]></content:encoded>
@@ -180,22 +180,22 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Building Resillent & Idempotent System using Spring Boot]]></title>
-            <link>http://localhost:3000/posts/idempotent-apis</link>
-            <guid>http://localhost:3000/posts/idempotent-apis</guid>
+            <link>https://www.blog.devcoffee.me/posts/idempotent-apis</link>
+            <guid>https://www.blog.devcoffee.me/posts/idempotent-apis</guid>
             <pubDate>Sat, 09 Jul 2022 21:35:54 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Analyzing Array.sort() & measuring the performance in JavaScript]]></title>
-            <link>http://localhost:3000/posts/analyzing-array-sort-in-js</link>
-            <guid>http://localhost:3000/posts/analyzing-array-sort-in-js</guid>
+            <link>https://www.blog.devcoffee.me/posts/analyzing-array-sort-in-js</link>
+            <guid>https://www.blog.devcoffee.me/posts/analyzing-array-sort-in-js</guid>
             <pubDate>Mon, 04 Jul 2022 22:22:22 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[Why I Prefer Type-Script more than JavaScript …?]]></title>
-            <link>http://localhost:3000/posts/typescript-javascript</link>
-            <guid>http://localhost:3000/posts/typescript-javascript</guid>
+            <link>https://www.blog.devcoffee.me/posts/typescript-javascript</link>
+            <guid>https://www.blog.devcoffee.me/posts/typescript-javascript</guid>
             <pubDate>Thu, 03 Feb 2022 07:51:20 GMT</pubDate>
             <description><![CDATA[If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer]]></description>
             <content:encoded><![CDATA[If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer]]></content:encoded>
@@ -203,8 +203,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[The Problem which no one Overlooks]]></title>
-            <link>http://localhost:3000/posts/the-problem-which-no-one-overlooks</link>
-            <guid>http://localhost:3000/posts/the-problem-which-no-one-overlooks</guid>
+            <link>https://www.blog.devcoffee.me/posts/the-problem-which-no-one-overlooks</link>
+            <guid>https://www.blog.devcoffee.me/posts/the-problem-which-no-one-overlooks</guid>
             <pubDate>Mon, 06 Dec 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.]]></description>
             <content:encoded><![CDATA[After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.]]></content:encoded>
@@ -212,8 +212,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[The Respect !!!]]></title>
-            <link>http://localhost:3000/posts/the-respect</link>
-            <guid>http://localhost:3000/posts/the-respect</guid>
+            <link>https://www.blog.devcoffee.me/posts/the-respect</link>
+            <guid>https://www.blog.devcoffee.me/posts/the-respect</guid>
             <pubDate>Sun, 21 Nov 2021 06:01:03 GMT</pubDate>
             <description><![CDATA[Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying]]></description>
             <content:encoded><![CDATA[Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying]]></content:encoded>
@@ -221,8 +221,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Let's Talk Money: You've Worked Hard for It, Now Make It Work for You]]></title>
-            <link>http://localhost:3000/posts/lets-talk-money</link>
-            <guid>http://localhost:3000/posts/lets-talk-money</guid>
+            <link>https://www.blog.devcoffee.me/posts/lets-talk-money</link>
+            <guid>https://www.blog.devcoffee.me/posts/lets-talk-money</guid>
             <pubDate>Sat, 17 Jul 2021 21:35:54 GMT</pubDate>
             <description><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></description>
             <content:encoded><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></content:encoded>
@@ -230,8 +230,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Bengaluru Daires 1]]></title>
-            <link>http://localhost:3000/posts/bengaluru-daires</link>
-            <guid>http://localhost:3000/posts/bengaluru-daires</guid>
+            <link>https://www.blog.devcoffee.me/posts/bengaluru-daires</link>
+            <guid>https://www.blog.devcoffee.me/posts/bengaluru-daires</guid>
             <pubDate>Sat, 12 Jun 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[Bengaluru Daires is a collection of my beautiful memories, experiences and stories from the city of Bengaluru.]]></description>
             <content:encoded><![CDATA[Bengaluru Daires is a collection of my beautiful memories, experiences and stories from the city of Bengaluru.]]></content:encoded>
@@ -239,16 +239,16 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Introduction to Open-Cv]]></title>
-            <link>http://localhost:3000/posts/introduction-to-opencv</link>
-            <guid>http://localhost:3000/posts/introduction-to-opencv</guid>
+            <link>https://www.blog.devcoffee.me/posts/introduction-to-opencv</link>
+            <guid>https://www.blog.devcoffee.me/posts/introduction-to-opencv</guid>
             <pubDate>Mon, 31 May 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[A brief introduction to a popular module called Open-Cv]]></description>
             <content:encoded><![CDATA[A brief introduction to a popular module called Open-Cv]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
-            <link>http://localhost:3000/posts/what does full-stack mean</link>
-            <guid>http://localhost:3000/posts/what does full-stack mean</guid>
+            <link>https://www.blog.devcoffee.me/posts/what does full-stack mean</link>
+            <guid>https://www.blog.devcoffee.me/posts/what does full-stack mean</guid>
             <pubDate>Mon, 31 May 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[A brief introduction to a popular module called Open-Cv]]></description>
             <content:encoded><![CDATA[A brief introduction to a popular module called Open-Cv]]></content:encoded>
@@ -256,36 +256,36 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[The Only Friend……. (Series) Ep-04]]></title>
-            <link>http://localhost:3000/posts/The-Only-Friend-Ep-04</link>
-            <guid>http://localhost:3000/posts/The-Only-Friend-Ep-04</guid>
+            <link>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-04</link>
+            <guid>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-04</guid>
             <pubDate>Sat, 17 Apr 2021 10:35:54 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[The Only Friend……. (Series) Ep-03]]></title>
-            <link>http://localhost:3000/posts/The-Only-Friend-Ep-03</link>
-            <guid>http://localhost:3000/posts/The-Only-Friend-Ep-03</guid>
+            <link>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-03</link>
+            <guid>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-03</guid>
             <pubDate>Fri, 16 Apr 2021 10:35:54 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[The Only Friend……. (Series) Ep-02]]></title>
-            <link>http://localhost:3000/posts/The-Only-Friend-Ep-02</link>
-            <guid>http://localhost:3000/posts/The-Only-Friend-Ep-02</guid>
+            <link>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-02</link>
+            <guid>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-02</guid>
             <pubDate>Thu, 15 Apr 2021 10:00:00 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[The Only Friend……. (Series) Ep-01]]></title>
-            <link>http://localhost:3000/posts/The-Only-Friend-Ep-01</link>
-            <guid>http://localhost:3000/posts/The-Only-Friend-Ep-01</guid>
+            <link>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-01</link>
+            <guid>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-01</guid>
             <pubDate>Tue, 13 Apr 2021 10:35:54 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
             <title><![CDATA[How Lucky Are We……?]]></title>
-            <link>http://localhost:3000/posts/how-lucky-are-we</link>
-            <guid>http://localhost:3000/posts/how-lucky-are-we</guid>
+            <link>https://www.blog.devcoffee.me/posts/how-lucky-are-we</link>
+            <guid>https://www.blog.devcoffee.me/posts/how-lucky-are-we</guid>
             <pubDate>Fri, 02 Apr 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.]]></description>
             <content:encoded><![CDATA[F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.]]></content:encoded>
@@ -293,8 +293,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[The Silent Struggle]]></title>
-            <link>http://localhost:3000/posts/the-slient-struggle</link>
-            <guid>http://localhost:3000/posts/the-slient-struggle</guid>
+            <link>https://www.blog.devcoffee.me/posts/the-slient-struggle</link>
+            <guid>https://www.blog.devcoffee.me/posts/the-slient-struggle</guid>
             <pubDate>Sun, 21 Mar 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.]]></description>
             <content:encoded><![CDATA[Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.]]></content:encoded>
@@ -302,8 +302,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Ikigai: The Japanese Secret to a Long and Happy Life.]]></title>
-            <link>http://localhost:3000/posts/ikigai</link>
-            <guid>http://localhost:3000/posts/ikigai</guid>
+            <link>https://www.blog.devcoffee.me/posts/ikigai</link>
+            <guid>https://www.blog.devcoffee.me/posts/ikigai</guid>
             <pubDate>Wed, 18 Nov 2020 21:35:54 GMT</pubDate>
             <description><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></description>
             <content:encoded><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></content:encoded>
@@ -311,8 +311,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Rich Dad Poor Dad: Assets and Liability management]]></title>
-            <link>http://localhost:3000/posts/rich-dad-poor-dad</link>
-            <guid>http://localhost:3000/posts/rich-dad-poor-dad</guid>
+            <link>https://www.blog.devcoffee.me/posts/rich-dad-poor-dad</link>
+            <guid>https://www.blog.devcoffee.me/posts/rich-dad-poor-dad</guid>
             <pubDate>Sun, 15 Nov 2020 21:35:54 GMT</pubDate>
             <description><![CDATA[It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.]]></description>
             <content:encoded><![CDATA[It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.]]></content:encoded>
@@ -320,8 +320,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Three Thousand Stitches: Ordinary People, Extraordinary Lives.]]></title>
-            <link>http://localhost:3000/posts/3000-stories</link>
-            <guid>http://localhost:3000/posts/3000-stories</guid>
+            <link>https://www.blog.devcoffee.me/posts/3000-stories</link>
+            <guid>https://www.blog.devcoffee.me/posts/3000-stories</guid>
             <pubDate>Fri, 13 Nov 2020 21:35:54 GMT</pubDate>
             <description><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></description>
             <content:encoded><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></content:encoded>
@@ -329,8 +329,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[Why India is obsessed with engineering?]]></title>
-            <link>http://localhost:3000/posts/why-is-obsessed-with-engineering</link>
-            <guid>http://localhost:3000/posts/why-is-obsessed-with-engineering</guid>
+            <link>https://www.blog.devcoffee.me/posts/why-is-obsessed-with-engineering</link>
+            <guid>https://www.blog.devcoffee.me/posts/why-is-obsessed-with-engineering</guid>
             <pubDate>Fri, 13 Nov 2020 07:51:20 GMT</pubDate>
             <description><![CDATA[In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..]]></description>
             <content:encoded><![CDATA[In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..]]></content:encoded>
