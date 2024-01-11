@@ -17,16 +17,14 @@ const BookWrapper = ({ imgSrc, bookName, articleLink }: BookWrapperProps) => {
         className="flex flex-col items-center"
         onClick={() => {
           articleLink ? router.push(articleLink) : null;
-        }}
-      >
+        }}>
         <img src={imgSrc} className="h-48 w-96 object-contain" alt={bookName} />
         <h3 className="text-lg leading-snug text-slate-50 my-4">{bookName}</h3>
       </div>
       <div className="shadow w-full bg-grey-light mt-2">
         <div
           className="bg-teal-400 text-xs leading-none py-1 text-center text-white rounded-l-xl"
-          style={{ width: cent }}
-        >
+          style={{ width: cent }}>
           {cent}
         </div>
       </div>

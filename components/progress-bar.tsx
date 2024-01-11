@@ -10,8 +10,7 @@ const ProgressBar = ({ percent }: Props) => {
         <div
           className={`w-[${percent ? percent : 0}%] h-2 ${
             percent ? "bg-blue-500" : "bg-blue-50"
-          } rounded-full`}
-        ></div>
+          } rounded-full`}></div>
       </div>
     </div>
   );

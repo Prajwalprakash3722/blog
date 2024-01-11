@@ -64,8 +64,7 @@ function Roadmap(
                 return (
                   <div
                     className="flex flex-col items-center justify-center"
-                    key={meme.url}
-                  >
+                    key={meme.url}>
                     <img
                       src={meme.url}
                       className="w-1/2 h-auto"
@@ -78,8 +77,7 @@ function Roadmap(
                         className="absolute inline-block px-12 py-3 text-sm font-medium text-white bg-red-600 border border-red-600 rounded active:text-red-500 hover:bg-transparent hover:text-red-600 focus:outline-none focus:ring"
                         onClick={() => {
                           alert("Sorry Not Possible on My Site.");
-                        }}
-                      >
+                        }}>
                         Do You want to see this meme?
                       </button>
                     )}
@@ -103,8 +101,7 @@ function Roadmap(
                       href="
               https://github.com/D3vd"
                       className="text-indigo-400 hover:text-gray-500"
-                      target="_blank"
-                    >
+                      target="_blank">
                       @D3vd
                     </a>
                     . | Source Can be found{" "}
@@ -112,8 +109,7 @@ function Roadmap(
                       href="
               https://github.com/D3vd/Meme_Api"
                       className="text-indigo-400 hover:text-gray-500"
-                      target="_blank"
-                    >
+                      target="_blank">
                       here
                     </a>
                     .

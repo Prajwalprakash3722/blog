@@ -32,12 +32,10 @@ const Postdraft = ({ title, date, slug, content, category }: Props) => {
     <div className="relative group">
       {" "}
       <div
-        className={`absolute -inset-0.5 ${randomGradient} rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt`}
-      ></div>
+        className={`absolute -inset-0.5 ${randomGradient} rounded-lg blur opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt`}></div>
       <div className="relative px-7 py-4 bg-[#1A1D23] rounded-lg leading-none">
         <h3
-          className={`text-3xl mb-3 leading-snug text-transparent font-semibold bg-clip-text ${randomGradient}`}
-        >
+          className={`text-3xl mb-3 leading-snug text-transparent font-semibold bg-clip-text ${randomGradient}`}>
           <Link as={`/posts/${slug}`} href="/posts/[slug]">
             <a className="hover:underline">{title}</a>
           </Link>

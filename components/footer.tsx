@@ -68,8 +68,7 @@ const Footer = () => {
                         href={link.path}
                         target={link.name !== "Home" ? "_blank" : "_self"}
                         key={link.name}
-                        rel="noreferrer"
-                      >
+                        rel="noreferrer">
                         {link.name}
                       </a>
                     </li>
@@ -88,8 +87,7 @@ const Footer = () => {
                       href={link.path}
                       target="_blank"
                       key={JSON.stringify(link)}
-                      rel="noreferrer"
-                    >
+                      rel="noreferrer">
                       {link.name}
                     </a>
                   </span>

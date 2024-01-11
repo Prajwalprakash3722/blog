@@ -54,8 +54,7 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
               wordWrap: "break-word",
               whiteSpace: "pre-wrap",
             }}
-            className="bg-white min-h-screen select-none"
-          >
+            className="bg-white min-h-screen select-none">
             {post.content}
           </pre>
         </>

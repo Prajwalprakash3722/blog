@@ -15,16 +15,14 @@ const Alert = ({ newArticle }: Props) => {
     <div
       className={cn(
         "p-2 border-b bg-[#1C2333] border-neutral-800 text-[#4F79DE]"
-      )}
-    >
+      )}>
       <Container>
         {newArticle && (
           <div className="py-2 text-center text-sm">
             Read my new Post on{" "}
             <a
               href={`posts/${newArticle.slug}`}
-              className="underline hover:text-blue-600 duration-200 transition-colors"
-            >
+              className="underline hover:text-blue-600 duration-200 transition-colors">
               {newArticle.title}
             </a>
             .
