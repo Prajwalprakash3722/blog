@@ -1,0 +1,27 @@
+---
+title: "Migrating Terraform State from Cloud to Local"
+date: "2024-01-11T15:35:54.322Z"
+---
+
+I was using terraform cloud just to expirement and stuff, the workflow was taking too much time as I was poking around terraform for fun, wanted to shift the state from cloud to local, but when I deleted the cloud config and ranf `tf apply` it was 
+<br />
+<br />
+> sudo reflector --verbose -l 200 -n 20 -p https --sort rate --country IN --save
+/etc/pacman.d/mirrorlist <br />
+<br />
+
+--verbose: tells the reflector to output the process logs <br/>
+-l 200: Limits the number of mirrors to include in the list to 200.<br/>
+-n 20: Specifies that it should fetch the 20 most recently updated mirrors.<br/>
+-p https: Filters mirrors that support the HTTPS protocol.<br/>
+--sort rate: Sorts the mirrors based on download rate.<br/>
+--country IN: Filters mirrors by country, in this case, India.<br/>
+--save /etc/pacman.d/mirrorlist: Saves the updated mirror list to the specified file.<br/>
+
+<br />
+Then just the below command to update your system
+<br />
+> sudo pacman -Syyu
+<br />
+<br />
+tada :)
