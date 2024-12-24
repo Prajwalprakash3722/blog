@@ -11,9 +11,19 @@
     },
     "items": [
         {
+            "id": "http://localhost:3000/posts/how-yoga-changed-my-thinking",
+            "url": "http://localhost:3000/posts/how-yoga-changed-my-thinking",
+            "title": "How Yoga Changed My Thinking",
+            "date_modified": "2024-12-24T20:30:00.000Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "http://localhost:3000/posts/intermeit-fasting",
             "url": "http://localhost:3000/posts/intermeit-fasting",
-            "title": "Intermittent Fasting for 2 Months: My Journey (and Struggles!)",
+            "title": "Intermittent Fasting for 2 Months: My Journey",
             "date_modified": "2024-03-12T19:51:20.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -408,18 +418,6 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/custom_metrics_using_prometheus",
-            "content_html": "I recently finished my 6th Sem, went on vacation to the famous noeth east 7 states, came back decided to work somewhere until the end of my 7th sem, had applied at several places, got rejected at some, got accepted at some, and finally decided to work at a NGO called Sitara Akka.",
-            "url": "http://localhost:3000/posts/custom_metrics_using_prometheus",
-            "title": "Exploring Horizontally: A Journey into understanding product effectiveness using custom metrics",
-            "summary": "I recently finished my 6th Sem, went on vacation to the famous noeth east 7 states, came back decided to work somewhere until the end of my 7th sem, had applied at several places, got rejected at some, got accepted at some, and finally decided to work at a NGO called Sitara Akka.",
-            "date_modified": "2020-11-18T21:35:54.322Z",
-            "author": {
-                "name": "Prajwal P",
-                "url": "https://twitter.com/prajwal_3722"
-            }
-        },
-        {
             "id": "http://localhost:3000/posts/ikigai",
             "content_html": "Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!",
             "url": "http://localhost:3000/posts/ikigai",
@@ -450,16 +448,6 @@
             "title": "Three Thousand Stitches: Ordinary People, Extraordinary Lives.",
             "summary": "Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement",
             "date_modified": "2020-11-13T21:35:54.322Z",
-            "author": {
-                "name": "Prajwal P",
-                "url": "https://twitter.com/prajwal_3722"
-            }
-        },
-        {
-            "id": "http://localhost:3000/posts/lvm",
-            "url": "http://localhost:3000/posts/lvm",
-            "title": "WTF is LVM",
-            "date_modified": "2020-11-13T07:51:20.775Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
