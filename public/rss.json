@@ -11,6 +11,16 @@
     },
     "items": [
         {
+            "id": "http://localhost:3000/posts/2024-12-28-your-post-title-here",
+            "url": "http://localhost:3000/posts/2024-12-28-your-post-title-here",
+            "title": "Your Post Title Here",
+            "date_modified": "2024-12-28T03:55:30.000Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "http://localhost:3000/posts/how-yoga-changed-my-thinking",
             "url": "http://localhost:3000/posts/how-yoga-changed-my-thinking",
             "title": "How Yoga Changed My Thinking",
