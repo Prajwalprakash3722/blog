@@ -5,6 +5,7 @@ function AskEmail() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    // bro when doing this? opening a backlog in home JIRA.
     console.log(email);
   };
 

@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import Link from "next/link";
-import { useState } from "react";
 interface Props {
   totalPostNumber: number;
 }
@@ -10,6 +9,7 @@ const Intro = ({ totalPostNumber }: Props) => {
       <div className="flex flex-row items-center">
         <div className="flex flex-col justify-center text-center">
           <h1 className="font-extralight tracking-[0.20em] text-center text-[#424242] text-7xl md:text-8xl lg:text-9xl  ">
+          {/* this converts number to binary string, pun intended ;) */}
             {(totalPostNumber >> 0).toString(2)}
           </h1>
           <p className="text-center text-white font-sans font-light  lg:tracking-[0.40em] lg:-mt-[4.6rem] mb-16 sm: sm:font-normal tracking-widest md:-mt-[3.4rem] md:tracking-[0.23em] -mt-12 ">
@@ -19,14 +19,11 @@ const Intro = ({ totalPostNumber }: Props) => {
       </div>
       <div className="max-w-3xl sm:text-justify">
         <h1 className="text-[24.4px] font-semibold tracking-none leading-[150%] text-gray-400 mb-4 lg:leading-[200%] lg:mb-0">
-          Hi <span className="wave">👋🏻</span>{" "}
-          <span className="text-[#E8E8FD]">I&apos;m Prajwal</span>, Currently an
-          undergraduate student & avid book reader, who has messed up with
-          pods,broke containers rather building them up, paid <s>$92</s> for AWS
-          for making a small mistake, always eager to build/fix/<s>break</s>{" "}
-          things & learn, currently interested in how <b>scalable</b> systems
-          are built? and this is my blog. <br />
-          <p className="text-center">Ramblings on tech, philosophy, books.</p>
+        Hi <span className="wave">👋🏻</span>{" "}
+        <span className="text-[#E8E8FD]">I&apos;m Prajwal</span>. I currently work as an SRE 1 at{" "} PhonePe, India. I have a passion for writing about tech, philosophy, life, books, and my travel experiences. Exploring new places is something I truly enjoy.
+        My work primarily involves building scalable and reliable systems. You can check out some of the projects we work on at PhonePe here: <a href="https://phonepe.github.io/" target="_blank" rel="noreferrer">PhonePe GitHub</a> and <a href="https://tech.phonepe.com/" target="_blank" rel="noreferrer">PhonePe Tech Blog</a>.
+        Working on such large-scale systems is both interesting and rewarding, you learn new things almost everyday.
+        <p className="text-center">Thoughts on tech, philosophy, and books.</p>
         </h1>
       </div>
       <div>
