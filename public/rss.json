@@ -11,10 +11,12 @@
     },
     "items": [
         {
-            "id": "http://localhost:3000/posts/2024-12-28-your-post-title-here",
-            "url": "http://localhost:3000/posts/2024-12-28-your-post-title-here",
-            "title": "Your Post Title Here",
-            "date_modified": "2024-12-28T03:55:30.000Z",
+            "id": "http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning",
+            "content_html": "People often get confused about accessibility. Is it just about being able to reach something? Or is it about actually being able to use it? Let's break it down in simple terms.",
+            "url": "http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning",
+            "title": "Is 'Accessibility' Losing Its Meaning?",
+            "summary": "People often get confused about accessibility. Is it just about being able to reach something? Or is it about actually being able to use it? Let's break it down in simple terms.",
+            "date_modified": "2024-12-28T03:58:33.000Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
@@ -77,16 +79,6 @@
             "url": "http://localhost:3000/posts/personal-infra",
             "title": "Diving deep into my Personal Infrastructure",
             "date_modified": "2023-04-20T19:06:23.775Z",
-            "author": {
-                "name": "Prajwal P",
-                "url": "https://twitter.com/prajwal_3722"
-            }
-        },
-        {
-            "id": "http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning",
-            "url": "http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning",
-            "title": "'Accessibility' is the word losing it's meaning ?",
-            "date_modified": "2023-04-01T18:00:00.775Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"

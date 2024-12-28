@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Sat, 28 Dec 2024 03:56:08 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 28 Dec 2024 04:23:16 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,10 +14,12 @@
         </image>
         <copyright>All rights reserved 2024, Prajwal P</copyright>
         <item>
-            <title><![CDATA[Your Post Title Here]]></title>
-            <link>http://localhost:3000/posts/2024-12-28-your-post-title-here</link>
-            <guid>http://localhost:3000/posts/2024-12-28-your-post-title-here</guid>
-            <pubDate>Sat, 28 Dec 2024 03:55:30 GMT</pubDate>
+            <title><![CDATA[Is 'Accessibility' Losing Its Meaning?]]></title>
+            <link>http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning</link>
+            <guid>http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning</guid>
+            <pubDate>Sat, 28 Dec 2024 03:58:33 GMT</pubDate>
+            <description><![CDATA[People often get confused about accessibility. Is it just about being able to reach something? Or is it about actually being able to use it? Let's break it down in simple terms.]]></description>
+            <content:encoded><![CDATA[People often get confused about accessibility. Is it just about being able to reach something? Or is it about actually being able to use it? Let's break it down in simple terms.]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -62,13 +64,6 @@
             <link>http://localhost:3000/posts/personal-infra</link>
             <guid>http://localhost:3000/posts/personal-infra</guid>
             <pubDate>Thu, 20 Apr 2023 19:06:23 GMT</pubDate>
-            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
-        </item>
-        <item>
-            <title><![CDATA['Accessibility' is the word losing it's meaning ?]]></title>
-            <link>http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning</link>
-            <guid>http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning</guid>
-            <pubDate>Sat, 01 Apr 2023 18:00:00 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
