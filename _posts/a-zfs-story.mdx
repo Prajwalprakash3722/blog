@@ -1,0 +1,64 @@
+I'll help you expand the blog post to include details about the iCloud sync and auto-deletion functionality. Here's an enhanced version:
+
+
+
+```markdown
+---
+title: "A ZFS tale"
+coverImage: "https://mlfk3cv5yvnx.i.optimole.com/cb:HA53.300ea/w:930/h:465/q:mauto/f:best/https://www.ninjaone.com/wp-content/uploads/elementor/thumbs/nas-server-qvjtaupmg3of6wnktnyvy3q3s36by67es6tdpxmcoa.webp"
+date: "2025-01-12T03:58:33.000Z"
+ogImage:
+  url: "https://mlfk3cv5yvnx.i.optimole.com/cb:HA53.300ea/w:930/h:465/q:mauto/f:best/https://www.ninjaone.com/wp-content/uploads/elementor/thumbs/nas-server-qvjtaupmg3of6wnktnyvy3q3s36by67es6tdpxmcoa.webp"
+draft: false
+category: "Software Engineering"
+---
+
+# A ZFS tale
+I recently traded and got in return 1TB HDD from a friend, had another one collecting dust, and an old Core 2 Duo machine doing nothing. Perfect time to build a nas maybe!
+
+## The Hardware
+- Intel Core 2 Duo E7500 @ 2.93GHz
+- 4GB RAM
+- 2x 1TB HDDs (one mine, one traded)
+
+## What I Did
+1. Installed Arch Linux (because why make life easy?)
+2. Set up ZFS on the traded drive
+3. Got Nextcloud running for media storage
+
+Here's my simple `ZFS list` :
+```bash
+mediapool/photos    # photos
+mediapool/videos    # videos
+mediapool/documents # Important stuff
+```
+
+## iCloud Sync Setup
+
+I (ofc me & LLM) implemented a smart backup strategy between iCloud and my local storage:
+
+```python
+# Key features of my sync script:
+- Maintains a diffrential index to track what's been downloaded
+- Only syncs new/changed files from iCloud
+- Preserves directory structure: /mediapool/photos/YEAR/MONTH/
+- Handles API rate limits to avoid throttling
+- Converts HEIC to JPG during sync (idk who to curse, the browser codecs or apple for coming up with a werid image format)
+```
+
+The script runs every month and only downloads what's new, saving both bandwidth and API calls. It's been surprisingly reliable!
+
+## Lessons Learned
+- ZFS is amazing
+- Old hardware can still be useful
+
+## What's Next
+- Adding more drives (looking at you, friends with "obsolete" hardware), it's super easy to add / remove drives into zfs, just need to attach them and add them to the vdev
+- read up more about ZFS
+- Implementing backup strategies for my backup ;)
+- should I write a proper UI for the media management system, hate nextcloud it's super heavy, rn I'm looking at `filebrowser`.
+
+*P.S. If you have any spare drives lying around, no, I don't want them (I totally do).*
+
+## Code & Scripts
+All the scripts mentioned (iCloud sync, HEIC conversion) are available on my GitHub. Feel free to adapt them for your own use!

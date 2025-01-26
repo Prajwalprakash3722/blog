@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Sat, 28 Dec 2024 04:23:16 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 12 Jan 2025 05:56:11 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,7 +12,14 @@
             <url>http://localhost:3000/favicon.ico</url>
             <link>http://localhost:3000</link>
         </image>
-        <copyright>All rights reserved 2024, Prajwal P</copyright>
+        <copyright>All rights reserved 2025, Prajwal P</copyright>
+        <item>
+            <title><![CDATA[A ZFS Story]]></title>
+            <link>http://localhost:3000/posts/a-zfs-story</link>
+            <guid>http://localhost:3000/posts/a-zfs-story</guid>
+            <pubDate>Sun, 12 Jan 2025 03:58:33 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
         <item>
             <title><![CDATA[Is 'Accessibility' Losing Its Meaning?]]></title>
             <link>http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning</link>
@@ -88,13 +95,6 @@
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
-            <title><![CDATA[Generating Word Cloud]]></title>
-            <link>http://localhost:3000/posts/word-cloud</link>
-            <guid>http://localhost:3000/posts/word-cloud</guid>
-            <pubDate>Thu, 19 Jan 2023 10:00:00 GMT</pubDate>
-            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
-        </item>
-        <item>
             <title><![CDATA[Look ma it's already 2023 and I am still dumb]]></title>
             <link>http://localhost:3000/posts/look-ma-its-already-2023-and-i-am-dumb</link>
             <guid>http://localhost:3000/posts/look-ma-its-already-2023-and-i-am-dumb</guid>
@@ -113,13 +113,6 @@
             <link>http://localhost:3000/posts/abortController</link>
             <guid>http://localhost:3000/posts/abortController</guid>
             <pubDate>Fri, 09 Dec 2022 21:35:54 GMT</pubDate>
-            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
-        </item>
-        <item>
-            <title><![CDATA['REST' in Peace]]></title>
-            <link>http://localhost:3000/posts/rest-in-peace</link>
-            <guid>http://localhost:3000/posts/rest-in-peace</guid>
-            <pubDate>Fri, 30 Sep 2022 21:35:54 GMT</pubDate>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>

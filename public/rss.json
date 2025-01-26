@@ -11,6 +11,16 @@
     },
     "items": [
         {
+            "id": "http://localhost:3000/posts/a-zfs-story",
+            "url": "http://localhost:3000/posts/a-zfs-story",
+            "title": "A ZFS Story",
+            "date_modified": "2025-01-12T03:58:33.000Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning",
             "content_html": "People often get confused about accessibility. Is it just about being able to reach something? Or is it about actually being able to use it? Let's break it down in simple terms.",
             "url": "http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning",
@@ -115,16 +125,6 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/word-cloud",
-            "url": "http://localhost:3000/posts/word-cloud",
-            "title": "Generating Word Cloud",
-            "date_modified": "2023-01-19T10:00:00.775Z",
-            "author": {
-                "name": "Prajwal P",
-                "url": "https://twitter.com/prajwal_3722"
-            }
-        },
-        {
             "id": "http://localhost:3000/posts/look-ma-its-already-2023-and-i-am-dumb",
             "url": "http://localhost:3000/posts/look-ma-its-already-2023-and-i-am-dumb",
             "title": "Look ma it's already 2023 and I am still dumb",
@@ -149,16 +149,6 @@
             "url": "http://localhost:3000/posts/abortController",
             "title": "new AbortController()",
             "date_modified": "2022-12-09T21:35:54.322Z",
-            "author": {
-                "name": "Prajwal P",
-                "url": "https://twitter.com/prajwal_3722"
-            }
-        },
-        {
-            "id": "http://localhost:3000/posts/rest-in-peace",
-            "url": "http://localhost:3000/posts/rest-in-peace",
-            "title": "'REST' in Peace",
-            "date_modified": "2022-09-30T21:35:54.322Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
