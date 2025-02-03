@@ -17,15 +17,22 @@ const Intro = ({ totalPostNumber }: Props) => {
           </p>
         </div>
       </div>
-      <div className="max-w-3xl sm:text-justify">
-        <h1 className="text-[24.4px] font-semibold tracking-none leading-[150%] text-gray-400 mb-4 lg:leading-[200%] lg:mb-0">
-        Hi <span className="wave">👋🏻</span>{" "}
-        <span className="text-[#E8E8FD]">I&apos;m Prajwal</span>. I currently work as an SRE 1 at{" "} PhonePe, India. I have a passion for writing about tech, philosophy, life, books, and my travel experiences. Exploring new places is something I truly enjoy.
-        My work primarily involves building scalable and reliable systems. You can check out some of the projects we work on at PhonePe here: <a href="https://phonepe.github.io/" target="_blank" rel="noreferrer">PhonePe GitHub</a> and <a href="https://tech.phonepe.com/" target="_blank" rel="noreferrer">PhonePe Tech Blog</a>.
-        Working on such large-scale systems is both interesting and rewarding, you learn new things almost everyday.
-        <p className="text-center">Thoughts on tech, philosophy, and books.</p>
-        </h1>
-      </div>
+      <div className="max-w-3xl text-center">
+  <article className="text-[24.4px] font-semibold tracking-none leading-[150%] text-gray-400 mb-4 lg:leading-[200%] lg:mb-0">
+    <header>
+      Hi <span className="wave">👋🏻</span>{" "}
+      <span className="text-[#E8E8FD]">I&apos;m Prajwal</span>. I currently work as an SRE 1 at PhonePe, India. I have a passion for writing about tech, philosophy, life, books, and my travel experiences.
+    </header>
+    
+    <p>
+      My work primarily involves building scalable and reliable systems, When I&apos;m not in the tech zone, I&apos;m probably pushing myself at the gym, on a trip, or experimenting in the kitchen.
+    </p>
+
+    <p className="text-center">
+      Thoughts on tech, philosophy, and books.
+    </p>
+  </article>
+</div>
       <div>
         <div className="grid gap-8 items-start justify-center mt-4">
           <div className="relative">
