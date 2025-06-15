@@ -11,6 +11,16 @@
     },
     "items": [
         {
+            "id": "http://localhost:3000/posts/writing-plugin-system-for-golang-apps",
+            "url": "http://localhost:3000/posts/writing-plugin-system-for-golang-apps",
+            "title": "Building Your Go App Like LEGOs: A Simple Guide to Plugins",
+            "date_modified": "2025-06-15T12:35:54.322Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "http://localhost:3000/posts/invisible-threads",
             "url": "http://localhost:3000/posts/invisible-threads",
             "title": "Invisible Threads",

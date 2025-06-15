@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Mon, 03 Feb 2025 05:44:50 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 15 Jun 2025 07:15:41 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>http://localhost:3000</link>
         </image>
         <copyright>All rights reserved 2025, Prajwal P</copyright>
+        <item>
+            <title><![CDATA[Building Your Go App Like LEGOs: A Simple Guide to Plugins]]></title>
+            <link>http://localhost:3000/posts/writing-plugin-system-for-golang-apps</link>
+            <guid>http://localhost:3000/posts/writing-plugin-system-for-golang-apps</guid>
+            <pubDate>Sun, 15 Jun 2025 12:35:54 GMT</pubDate>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
         <item>
             <title><![CDATA[Invisible Threads]]></title>
             <link>http://localhost:3000/posts/invisible-threads</link>
