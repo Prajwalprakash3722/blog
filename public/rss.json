@@ -11,6 +11,16 @@
     },
     "items": [
         {
+            "id": "http://localhost:3000/posts/is_this_all_there_is_to_life",
+            "url": "http://localhost:3000/posts/is_this_all_there_is_to_life",
+            "title": "Is this all there is to life?",
+            "date_modified": "2025-08-01T00:00:00.000Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "http://localhost:3000/posts/writing-plugin-system-for-golang-apps",
             "url": "http://localhost:3000/posts/writing-plugin-system-for-golang-apps",
             "title": "Building Your Go App Like LEGOs: A Simple Guide to Plugins",

@@ -6,9 +6,10 @@ type Props = {
 };
 
 const diffDays = (date_1: Date, date_2: Date) => {
-  let difference = date_1.getTime() - date_2.getTime();
-  let TotalDays = Math.ceil(difference / (1000 * 3600 * 24));
-  return TotalDays;
+  const localDate1 = new Date(date_1.getFullYear(), date_1.getMonth(), date_1.getDate());
+  const localDate2 = new Date(date_2.getFullYear(), date_2.getMonth(), date_2.getDate());
+  const difference = localDate1.getTime() - localDate2.getTime();
+  return Math.floor(difference / (1000 * 60 * 60 * 24));
 };
 
 const days = [
@@ -32,10 +33,14 @@ const DateFormatter = ({ dateString, short }: Props) => {
         </span>
       ) : (
         <span>
-          {days[new Date(date).getDay()]}, {format(date, "LLLL	d, yyyy")} -{" "}
-          {diffDays(new Date(), date) !== 0
-            ? `(${diffDays(new Date(), date)} days ago)`
-            : "Today"}
+          {days[date.getDay()]}, {format(date, "LLLL d, yyyy")} -{" "}
+          {(() => {
+            const daysDiff = diffDays(new Date(), date);
+            if (daysDiff === 0) return "Today";
+            if (daysDiff === 1) return "(1 day ago)";
+            if (daysDiff > 1) return `(${daysDiff} days ago)`;
+            return "Today";
+          })()}
         </span>
       )}
     </time>
