@@ -5,77 +5,59 @@ interface Props {
 }
 const Intro = ({ totalPostNumber }: Props) => {
   return (
-    <section className="flex flex-col min-h-fit items-center justify-center snap-normal my-8">
-      <div className="flex flex-row items-center">
-        <div className="flex flex-col justify-center text-center">
-          <h1 className="font-extralight tracking-[0.20em] text-center text-[#424242] text-7xl md:text-8xl lg:text-9xl  ">
+    <section className="flex flex-col items-center justify-center py-20 md:py-32">
+      <div className="relative mb-12 group">
+        <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+        <h1 className="relative font-extralight tracking-tight text-center text-white text-8xl md:text-9xl lg:text-[10rem] leading-none select-none">
           {/* this converts number to binary string, pun intended ;) */}
-            {(totalPostNumber >> 0).toString(2)}
-          </h1>
-          <p className="text-center text-white font-sans font-light  lg:tracking-[0.40em] lg:-mt-[4.6rem] mb-16 sm: sm:font-normal tracking-widest md:-mt-[3.4rem] md:tracking-[0.23em] -mt-12 ">
-            Articles Written till now :)
-          </p>
-        </div>
+          {(totalPostNumber >> 0).toString(2)}
+        </h1>
+        <p className="absolute -bottom-6 left-0 right-0 text-center text-sm text-gray-500 font-mono tracking-widest uppercase opacity-50">
+          Articles Written till now :)
+        </p>
       </div>
-      <div className="max-w-3xl text-center">
-  <article className="text-[24.4px] font-semibold tracking-none leading-[150%] text-gray-400 mb-4 lg:leading-[200%] lg:mb-0">
-    <header>
-      Hi <span className="wave">👋🏻</span>{" "}
-      <span className="text-[#E8E8FD]">I&apos;m Prajwal</span>. I currently work as an SRE 1 at PhonePe, India. I have a passion for writing about tech, philosophy, life, books, and my travel experiences.
-    </header>
-    
-    <p>
-      My work primarily involves building scalable and reliable systems, When I&apos;m not in the tech zone, I&apos;m probably pushing myself at the gym, on a trip, or experimenting in the kitchen.
-    </p>
 
-    <p className="text-center">
-      Thoughts on tech, philosophy, and books.
-    </p>
-  </article>
-</div>
-      <div>
-        <div className="grid gap-8 items-start justify-center mt-4">
-          <div className="relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-            <button className="relative px-7 py-4 bg-[#1C2333] rounded-lg leading-none flex items-center divide-x divide-gray-600">
-              <span className="flex items-center space-x-5">
-                <a
-                  className="pr-6 text-gray-100 hover:text-indigo-400"
-                  href="https://www.devcoffee.me"
-                  target="_blank"
-                  rel="noreferrer">
-                  About me
-                </a>
-              </span>
-              <div className="relative inline-block px-8 py-3 group">
-                <span className="text-indigo-400 hover:text-gray-100 transition-opacity duration-200 opacity-0">
-                  @prajwal_3722
-                </span>
-                <span>
-                  <ul className="absolute inset-0 flex items-center justify-center space-x-3 transition-opacity opacity-100">
-                    <li>
-                      <Link
-                        className="block transition-opacity rounded-full hover:opacity-90 focus:outline-none focus:opacity-75"
-                        href="/til"
-                        target="_blank"
-                        rel="noreferrer">
-                        <span className="text-blue-400"> TIL </span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className="block transition-opacity rounded-full hover:opacity-90 focus:outline-none focus:opacity-75"
-                        href="/travel"
-                        target="_blank"
-                        rel="noreferrer">
-                        <span className="text-blue-400"> Travel </span>
-                      </Link>
-                    </li>
-                  </ul>
-                </span>
-              </div>
-            </button>
-          </div>
+      <div className="max-w-3xl text-center space-y-8 px-4">
+        <article className="text-xl md:text-2xl font-medium leading-relaxed text-gray-400 space-y-6">
+          <header>
+            Hi <span className="wave inline-block">👋🏻</span>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 font-bold">I&apos;m Prajwal</span>. I currently work as an SRE 1 at PhonePe, India. I have a passion for writing about tech, philosophy, life, books, and my travel experiences.
+          </header>
+
+          <p>
+            My work primarily involves building scalable and reliable systems, When I&apos;m not in the tech zone, I&apos;m probably pushing myself at the gym, on a trip, or experimenting in the kitchen.
+          </p>
+
+          <p className="text-center text-gray-500 text-lg">
+            Thoughts on tech, philosophy, and books.
+          </p>
+        </article>
+
+        <div className="flex flex-wrap justify-center gap-4 mt-8">
+          <a
+            href="https://www.devcoffee.me"
+            target="_blank"
+            rel="noreferrer"
+            className="px-6 py-3 bg-[#1C2333] text-gray-200 rounded-full hover:bg-[#252b3b] hover:text-white transition-all border border-white/5 hover:border-purple-500/30 flex items-center gap-2"
+          >
+            About me
+          </a>
+          <Link
+            href="/til"
+            className="px-6 py-3 bg-[#1C2333] text-gray-200 rounded-full hover:bg-[#252b3b] hover:text-white transition-all border border-white/5 hover:border-purple-500/30 flex items-center gap-2"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="text-blue-400">TIL</span>
+          </Link>
+          <Link
+            href="/travel"
+            className="px-6 py-3 bg-[#1C2333] text-gray-200 rounded-full hover:bg-[#252b3b] hover:text-white transition-all border border-white/5 hover:border-purple-500/30 flex items-center gap-2"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="text-blue-400">Travel</span>
+          </Link>
         </div>
       </div>
     </section>

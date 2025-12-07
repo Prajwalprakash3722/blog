@@ -1,15 +1,19 @@
-@import url("https://rsms.me/inter/inter.css") @import
-  url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .wave {
-  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.5s; /* Change to speed up or slow down */
-  animation-iteration-count: infinite; /* Never stop waving :) */
-  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  animation-name: wave-animation;
+  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;
+  /* Change to speed up or slow down */
+  animation-iteration-count: infinite;
+  /* Never stop waving :) */
+  transform-origin: 70% 70%;
+  /* Pivot around the bottom-left palm */
   display: inline-block;
 }
 
@@ -17,24 +21,33 @@
   0% {
     transform: rotate(0deg);
   }
+
   10% {
     transform: rotate(14deg);
-  } /* The following five values can be played with to make the waving more or less extreme */
+  }
+
+  /* The following five values can be played with to make the waving more or less extreme */
   20% {
     transform: rotate(-8deg);
   }
+
   30% {
     transform: rotate(14deg);
   }
+
   40% {
     transform: rotate(-4deg);
   }
+
   50% {
     transform: rotate(10deg);
   }
+
   60% {
     transform: rotate(0deg);
-  } /* Reset for the last half to pause */
+  }
+
+  /* Reset for the last half to pause */
   100% {
     transform: rotate(0deg);
   }
@@ -48,19 +61,23 @@
   font-size: 13px;
   line-height: 18px;
 }
+
 .gist pre {
   font-family: Menlo, Monaco, "Bitstream Vera Sans Mono", "Courier New",
     monospace !important;
 }
+
 .gist-meta {
   font-family: Arial, sans-serif;
   font-size: 13px !important;
 }
+
 .gist-meta a {
   color: #3b5998 !important;
   font-weight: bold;
   text-decoration: none;
 }
+
 .gist-meta a:hover {
   text-decoration: underline;
 }
@@ -68,6 +85,7 @@
 body .gist .highlight {
   background: #141414;
 }
+
 body .gist .blob-num,
 body .gist .blob-code-inner,
 body .gist .highlight,
@@ -86,20 +104,24 @@ body .gist .pl-vpu,
 body .gist .pl-mdr {
   color: #aab1bf;
 }
+
 body .gist .pl-mb,
 body .gist .pl-pdb {
   font-weight: 700;
 }
+
 body .gist .pl-c,
 body .gist .pl-c span,
 body .gist .pl-pdc {
   color: #5b6270;
   font-style: italic;
 }
+
 body .gist .pl-sr .pl-cce {
   color: #56b5c2;
   font-weight: 400;
 }
+
 body .gist .pl-ef,
 body .gist .pl-en,
 body .gist .pl-enf,
@@ -109,10 +131,12 @@ body .gist .pl-mh .pl-pdh,
 body .gist .pl-mr {
   color: #61afef;
 }
+
 body .gist .pl-ens,
 body .gist .pl-vi {
   color: #be5046;
 }
+
 body .gist .pl-enti,
 body .gist .pl-mai .pl-sf,
 body .gist .pl-ml,
@@ -124,6 +148,7 @@ body .gist .pl-st,
 body .gist .pl-vo {
   color: #56b5c2;
 }
+
 body .gist .pl-eoi,
 body .gist .pl-mri,
 body .gist .pl-pds,
@@ -132,54 +157,66 @@ body .gist .pl-s,
 body .gist .pl-s1 {
   color: #97c279;
 }
+
 body .gist .pl-k,
 body .gist .pl-kolp,
 body .gist .pl-mc,
 body .gist .pl-pde {
   color: #c578dd;
 }
+
 body .gist .pl-mi,
 body .gist .pl-pdi {
   color: #c578dd;
   font-style: italic;
 }
+
 body .gist .pl-mp,
 body .gist .pl-stp {
   color: #818896;
 }
+
 body .gist .pl-mdh,
 body .gist .pl-mdi,
 body .gist .pl-mdr {
   font-weight: 400;
 }
+
 body .gist .pl-mdht,
 body .gist .pl-mi1 {
   color: #97c279;
   background: #020;
 }
+
 body .gist .pl-md,
 body .gist .pl-mdhf {
   color: #df6b75;
   background: #200;
 }
+
 body .gist .pl-corl {
   color: #df6b75;
   text-decoration: underline;
 }
+
 body .gist .pl-ib {
   background: #df6b75;
 }
+
 body .gist .pl-ii {
   background: #e0c184;
   color: #fff;
 }
+
 body .gist .pl-iu {
   background: #e05151;
 }
+
 body .gist .pl-ms1 {
   color: #aab1bf;
   background: #373b41;
 }
+
 body .gist .pl-c1,
 body .gist .pl-cn,
 body .gist .pl-e,
@@ -196,6 +233,7 @@ body .gist .pl-sv,
 body .gist .pl-mb {
   color: #d19965;
 }
+
 body .gist .pl-enc,
 body .gist .pl-entc,
 body .gist .pl-pse .pl-s2,
@@ -208,6 +246,7 @@ body .gist .pl-v,
 body .gist .pl-pdb {
   color: #e4bf7a;
 }
+
 body .gist .pl-ent,
 body .gist .pl-entl,
 body .gist .pl-entm,
@@ -218,4 +257,62 @@ body .gist .pl-sol,
 body .gist .pl-mdh,
 body .gist .pl-mdi {
   color: #df6b75;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+
+  20% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+
+  40% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+
+  60% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(270deg);
+  }
+
+  80% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(360deg);
+  }
+
+  100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes vim-blink {
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.3s infinite;
+}
+
+.vim-cursor {
+  width: 8px;
+  height: 20px;
+  background-color: #10b981;
+  animation: vim-blink 700ms step-end infinite;
+  animation-delay: 700ms;
+  transform: translate(-4px, -10px);
 }

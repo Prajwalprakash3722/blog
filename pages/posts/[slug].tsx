@@ -70,21 +70,21 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <PostBody content={post.content} />
                 <div className="hidden text-white text-left font-semibold lg:flex justify-between px-80">
                   <div>
-                    <Link href="/">
-                      <a className="hover:text-slate-200">Home</a>
+                    <Link href="/" className="hover:text-slate-200">
+                      Home
                     </Link>
                     {"/ "}
-                    <Link href="/#posts">
-                      <a className="hover:text-slate-200">Posts</a>
+                    <Link href="/#posts" className="hover:text-slate-200">
+                      Posts
                     </Link>
                     {"/ "}
-                    <Link href={post.slug}>
-                      <a className="hover:text-slate-200">{post.title}</a>
+                    <Link href={post.slug} className="hover:text-slate-200">
+                      {post.title}
                     </Link>
                   </div>
                   <div>
-                    <Link href={`/posts/raw/` + post.slug}>
-                      <a className="hover:text-slate-200">View Raw</a>
+                    <Link href={`/posts/raw/` + post.slug} className="hover:text-slate-200">
+                      View Raw
                     </Link>
                   </div>
                 </div>

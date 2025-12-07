@@ -22,7 +22,7 @@ const Index = ({ allPosts }: Props) => {
     <>
       <Layout newArticle={latestPosts.length > 0 ? latestPosts[0] : undefined}>
         <Head>
-          <title>{`Prajwal's`} Blog</title>
+          <title>{`Prajwal's Blog`}</title>
           <Meta />
         </Head>
         <Container>

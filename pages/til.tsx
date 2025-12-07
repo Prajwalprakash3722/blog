@@ -26,13 +26,15 @@ function TILPage(props: InferGetStaticPropsType<typeof getStaticProps>) {
     <Layout>
       <Container>
         <Header />
-        <PostTitle>
-          <h1 className="text-center m-2">Today I Learned</h1>
-          <p className="text-center text-white font-sans font-light sm:font-normal tracking-wider text-xl mb-0">
-            A collection of bite sized notes notes on various topics that I’ve
-            learned over time.
+        <div className="flex flex-col items-center mb-12">
+          <h1 className="text-[#E8E8FD] text-3xl md:text-5xl font-bold tracking-tighter leading-tight md:leading-none mb-4 text-center">
+            Today I Learned
+          </h1>
+          <p className="text-center text-white font-sans font-light sm:font-normal tracking-wider text-xl max-w-2xl">
+            A collection of bite sized notes on various topics that I’ve learned
+            over time.
           </p>
-        </PostTitle>
+        </div>
         <div className="flex flex-col gap-4 p-4 text-white mx-auto">
           {props.allPosts.map((post) => (
             <div key={post.slug} className="bg-gray-800 rounded-md p-4">
@@ -45,9 +47,8 @@ function TILPage(props: InferGetStaticPropsType<typeof getStaticProps>) {
                         <DateFormatter dateString={post.date} short={true} />
                       </div>
                       <ChevronUpIcon
-                        className={`${
-                          open ? "rotate-180 transform" : ""
-                        } h-5 w-5 text-white`}
+                        className={`${open ? "rotate-180 transform" : ""
+                          } h-5 w-5 text-white`}
                       />
                     </Disclosure.Button>
                     <Transition
