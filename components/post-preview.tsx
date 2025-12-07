@@ -5,11 +5,12 @@ type Props = {
   title: string;
   date: string;
   slug: string;
-  content: string;
+  excerpt: string;
+  readingTime?: string;
   category: string;
 };
 
-const Postdraft = ({ title, date, slug, content, category }: Props) => {
+const Postdraft = ({ title, date, slug, excerpt, readingTime, category }: Props) => {
   return (
     <Link href={`/posts/${slug}`} className="group relative block h-full">
       <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-25 transition duration-500 group-hover:duration-200" />
@@ -29,7 +30,7 @@ const Postdraft = ({ title, date, slug, content, category }: Props) => {
           </h3>
 
           <p className="text-gray-400 text-sm leading-relaxed line-clamp-3 mb-4">
-            {content.replace(/<[^>]*>?/gm, '').substring(0, 150)}...
+            {excerpt}
           </p>
         </div>
 
@@ -38,7 +39,7 @@ const Postdraft = ({ title, date, slug, content, category }: Props) => {
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            {Math.floor(content.split(" ").length / 200) || 1} min read
+            {readingTime || "1 min read"}
           </span>
         </div>
       </div>

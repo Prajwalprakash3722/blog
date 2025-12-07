@@ -1,3 +1,4 @@
+import React from "react";
 import Container from "./container";
 
 const Footer = () => {
@@ -81,18 +82,17 @@ const Footer = () => {
             <p className="text-[#bbb] font-body text-sm">
               Made using{" "}
               {madeUsingLinks.map((link) => (
-                <>
-                  <span className="text-[#50AEF1]" key={link.name}>
+                <React.Fragment key={link.name}>
+                  <span className="text-[#50AEF1]">
                     <a
                       href={link.path}
                       target="_blank"
-                      key={JSON.stringify(link)}
                       rel="noreferrer">
                       {link.name}
                     </a>
                   </span>
                   {link.name === "Typescript" ? "." : ","}{" "}
-                </>
+                </React.Fragment>
               ))}
             </p>
           </div>

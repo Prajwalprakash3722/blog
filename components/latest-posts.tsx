@@ -21,7 +21,8 @@ const LatestPosts = ({ posts }: Props) => {
             title={post.title}
             date={post.date}
             slug={post.slug}
-            content={post.content}
+            excerpt={post.excerpt}
+            readingTime={post.readingTime}
             category={post.category}
           />
         ))}

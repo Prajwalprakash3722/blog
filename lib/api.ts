@@ -42,6 +42,16 @@ export function getPostBySlug(slug: string, fields: any, dir = postsDirectory) {
     if (data[field]) {
       items[field] = data[field];
     }
+
+    if (field === "excerpt" && !items[field]) {
+      items[field] = content.replace(/<[^>]*>?/gm, "").substring(0, 150) + "...";
+    }
+
+    if (field === "readingTime") {
+      const words = content.split(/\s+/g).length;
+      const minutes = Math.ceil(words / 200);
+      items[field] = `${minutes} min read`;
+    }
   });
 
   return items;

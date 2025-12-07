@@ -12,8 +12,10 @@
     "items": [
         {
             "id": "http://localhost:3000/posts/is_this_all_there_is_to_life",
+            "content_html": "\nAnother message.\nAnother silence that won’t ever speak again.\nAnother friend, gone.\n\nI wish I could say this was the first time. But it’s not.\nAnd th...",
             "url": "http://localhost:3000/posts/is_this_all_there_is_to_life",
             "title": "Is this all there is to life?",
+            "summary": "\nAnother message.\nAnother silence that won’t ever speak again.\nAnother friend, gone.\n\nI wish I could say this was the first time. But it’s not.\nAnd th...",
             "date_modified": "2025-08-01T00:00:00.000Z",
             "author": {
                 "name": "Prajwal P",
@@ -22,8 +24,10 @@
         },
         {
             "id": "http://localhost:3000/posts/writing-plugin-system-for-golang-apps",
+            "content_html": "\n### **Building Your Go App Like LEGOs: A Simple Guide to Plugins**\n\nAs a system grows, adding new features can feel like performing open-heart surger...",
             "url": "http://localhost:3000/posts/writing-plugin-system-for-golang-apps",
             "title": "Building Your Go App Like LEGOs: A Simple Guide to Plugins",
+            "summary": "\n### **Building Your Go App Like LEGOs: A Simple Guide to Plugins**\n\nAs a system grows, adding new features can feel like performing open-heart surger...",
             "date_modified": "2025-06-15T12:35:54.322Z",
             "author": {
                 "name": "Prajwal P",
@@ -32,8 +36,10 @@
         },
         {
             "id": "http://localhost:3000/posts/invisible-threads",
+            "content_html": "\n## Invisible Threads\n\nHave you ever noticed how people sometimes look at others differently just because they don't have nice clothes or a fancy job?...",
             "url": "http://localhost:3000/posts/invisible-threads",
             "title": "Invisible Threads",
+            "summary": "\n## Invisible Threads\n\nHave you ever noticed how people sometimes look at others differently just because they don't have nice clothes or a fancy job?...",
             "date_modified": "2025-02-02T14:51:20.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -42,8 +48,10 @@
         },
         {
             "id": "http://localhost:3000/posts/a-zfs-story",
+            "content_html": "\n# A ZFS tale\nI recently traded and got in return 1TB HDD from a friend, had another one collecting dust, and an old Core 2 Duo machine doing nothing....",
             "url": "http://localhost:3000/posts/a-zfs-story",
             "title": "A ZFS tale",
+            "summary": "\n# A ZFS tale\nI recently traded and got in return 1TB HDD from a friend, had another one collecting dust, and an old Core 2 Duo machine doing nothing....",
             "date_modified": "2025-01-12T03:58:33.000Z",
             "author": {
                 "name": "Prajwal P",
@@ -64,8 +72,10 @@
         },
         {
             "id": "http://localhost:3000/posts/how-yoga-changed-my-thinking",
+            "content_html": "\n# How Yoga Changed My Thinking\n\nI found my way back to yoga this year. As a kid, I was an ardent lover of it but somehow drifted away. Now I'm back, ...",
             "url": "http://localhost:3000/posts/how-yoga-changed-my-thinking",
             "title": "How Yoga Changed My Thinking",
+            "summary": "\n# How Yoga Changed My Thinking\n\nI found my way back to yoga this year. As a kid, I was an ardent lover of it but somehow drifted away. Now I'm back, ...",
             "date_modified": "2024-12-24T20:30:00.000Z",
             "author": {
                 "name": "Prajwal P",
@@ -74,8 +84,10 @@
         },
         {
             "id": "http://localhost:3000/posts/intermeit-fasting",
+            "content_html": "\n# Intermittent Fasting for 2 Months: My Journey (and Struggles!)\n\nTwo months down, and feeling energized!   I'm not the fittest, but I wanted to make...",
             "url": "http://localhost:3000/posts/intermeit-fasting",
             "title": "Intermittent Fasting for 2 Months: My Journey",
+            "summary": "\n# Intermittent Fasting for 2 Months: My Journey (and Struggles!)\n\nTwo months down, and feeling energized!   I'm not the fittest, but I wanted to make...",
             "date_modified": "2024-03-12T19:51:20.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -84,8 +96,10 @@
         },
         {
             "id": "http://localhost:3000/posts/top",
+            "content_html": "\nYou might be familiar with the Windows Task Manager - the go-to tool for monitoring and managing processes. In the Linux world, the equivalent comman...",
             "url": "http://localhost:3000/posts/top",
             "title": "Diving Deep into top & htop",
+            "summary": "\nYou might be familiar with the Windows Task Manager - the go-to tool for monitoring and managing processes. In the Linux world, the equivalent comman...",
             "date_modified": "2023-08-13T16:31:15.322Z",
             "author": {
                 "name": "Prajwal P",
@@ -94,8 +108,10 @@
         },
         {
             "id": "http://localhost:3000/posts/vagrant",
+            "content_html": "\nVagrant is a tool to build up and operate Virtual Machines on the top of innumerable (actually few) virtual platform over an operating system, what d...",
             "url": "http://localhost:3000/posts/vagrant",
             "title": "Quickly spin up VM's using Vagrant",
+            "summary": "\nVagrant is a tool to build up and operate Virtual Machines on the top of innumerable (actually few) virtual platform over an operating system, what d...",
             "date_modified": "2023-08-07T21:35:54.322Z",
             "author": {
                 "name": "Prajwal P",
@@ -116,8 +132,10 @@
         },
         {
             "id": "http://localhost:3000/posts/personal-infra",
+            "content_html": "\n## Diving deep into my Personal Infrastructure\n\nWe are 110 days in to 2023. Have you been able to keep your New Years Resolutions or goals, that you ...",
             "url": "http://localhost:3000/posts/personal-infra",
             "title": "Diving deep into my Personal Infrastructure",
+            "summary": "\n## Diving deep into my Personal Infrastructure\n\nWe are 110 days in to 2023. Have you been able to keep your New Years Resolutions or goals, that you ...",
             "date_modified": "2023-04-20T19:06:23.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -126,8 +144,10 @@
         },
         {
             "id": "http://localhost:3000/posts/life-living-death",
+            "content_html": "\n## Living in the present\n\nRecently I came across a video, where the creator tried to live his last 7 days with no regrets, If there is one topic I li...",
             "url": "http://localhost:3000/posts/life-living-death",
             "title": "Living in the present",
+            "summary": "\n## Living in the present\n\nRecently I came across a video, where the creator tried to live his last 7 days with no regrets, If there is one topic I li...",
             "date_modified": "2023-03-17T18:00:00.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -136,8 +156,10 @@
         },
         {
             "id": "http://localhost:3000/posts/best-way-to-exchange-data",
+            "content_html": "\n## Exchanging data between microservices\n\nIt's already 2023 and the software development is evolving lot faster than ever.\n\nThere are several softwar...",
             "url": "http://localhost:3000/posts/best-way-to-exchange-data",
             "title": "Exchanging data between microservices",
+            "summary": "\n## Exchanging data between microservices\n\nIt's already 2023 and the software development is evolving lot faster than ever.\n\nThere are several softwar...",
             "date_modified": "2023-02-06T18:00:00.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -146,8 +168,10 @@
         },
         {
             "id": "http://localhost:3000/posts/conquering-kuduremukh",
+            "content_html": "\nThis Post is different from other posts on this blog, Remember I had made a goal, **Go on 12 Treks in 2023**.\nWell, this is the first of many, introd...",
             "url": "http://localhost:3000/posts/conquering-kuduremukh",
             "title": "Conquering Kudremukh: 'A Novice Trekkers Journey to the top'",
+            "summary": "\nThis Post is different from other posts on this blog, Remember I had made a goal, **Go on 12 Treks in 2023**.\nWell, this is the first of many, introd...",
             "date_modified": "2023-02-02T13:00:00.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -156,8 +180,10 @@
         },
         {
             "id": "http://localhost:3000/posts/look-ma-its-already-2023-and-i-am-dumb",
+            "content_html": "\n## Look ma it's already 2023 and I am still dumb\n\nAs the end of the year approaches, I find myself reflecting on the past 12 months and feeling incre...",
             "url": "http://localhost:3000/posts/look-ma-its-already-2023-and-i-am-dumb",
             "title": "Look ma it's already 2023 and I am still dumb",
+            "summary": "\n## Look ma it's already 2023 and I am still dumb\n\nAs the end of the year approaches, I find myself reflecting on the past 12 months and feeling incre...",
             "date_modified": "2023-01-08T10:00:00.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -166,8 +192,10 @@
         },
         {
             "id": "http://localhost:3000/posts/ntp-network-time-protocol",
+            "content_html": "\nNot a lot of people might have heard of NTP,NTP is likely an essential part of many of the devices and services that you use on a daily basis. It hel...",
             "url": "http://localhost:3000/posts/ntp-network-time-protocol",
             "title": "NTP- Network Time Protocol",
+            "summary": "\nNot a lot of people might have heard of NTP,NTP is likely an essential part of many of the devices and services that you use on a daily basis. It hel...",
             "date_modified": "2022-12-13T16:40:40.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -176,8 +204,10 @@
         },
         {
             "id": "http://localhost:3000/posts/abortController",
+            "content_html": "\nEver heard of AbortController, if not allow me to introduce you to the AbortController,\n\nI came across AbortController in my company code base, at fi...",
             "url": "http://localhost:3000/posts/abortController",
             "title": "new AbortController()",
+            "summary": "\nEver heard of AbortController, if not allow me to introduce you to the AbortController,\n\nI came across AbortController in my company code base, at fi...",
             "date_modified": "2022-12-09T21:35:54.322Z",
             "author": {
                 "name": "Prajwal P",
@@ -186,8 +216,10 @@
         },
         {
             "id": "http://localhost:3000/posts/automating-postman-tests-1",
+            "content_html": "\n## Automating Your Postman Tests - 1\n\nPostman is a collaboration platform for API development.\nPostman's features simplify each step of building an A...",
             "url": "http://localhost:3000/posts/automating-postman-tests-1",
             "title": "Automating Your Postman Tests",
+            "summary": "\n## Automating Your Postman Tests - 1\n\nPostman is a collaboration platform for API development.\nPostman's features simplify each step of building an A...",
             "date_modified": "2022-09-26T21:35:54.322Z",
             "author": {
                 "name": "Prajwal P",
@@ -220,8 +252,10 @@
         },
         {
             "id": "http://localhost:3000/posts/learning-rust",
+            "content_html": "\n## learning_rust[0]\n\nAfter a heated up discussion with myself & my brain about which static typed langauge to learn,\nI was thinking about learning `G...",
             "url": "http://localhost:3000/posts/learning-rust",
             "title": "learning_rust[0]",
+            "summary": "\n## learning_rust[0]\n\nAfter a heated up discussion with myself & my brain about which static typed langauge to learn,\nI was thinking about learning `G...",
             "date_modified": "2022-09-16T07:51:20.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -242,8 +276,10 @@
         },
         {
             "id": "http://localhost:3000/posts/generics-in-typescript",
+            "content_html": "\n## Generics in TypeScript\n...",
             "url": "http://localhost:3000/posts/generics-in-typescript",
             "title": "Generics in TypeScript",
+            "summary": "\n## Generics in TypeScript\n...",
             "date_modified": "2022-09-15T07:51:20.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -252,8 +288,10 @@
         },
         {
             "id": "http://localhost:3000/posts/how-email-works",
+            "content_html": "\n# How Email Works ?\n\nRecently I was building a Hobby Project which was entirely based on emailing services, I decided to host my own Email server to ...",
             "url": "http://localhost:3000/posts/how-email-works",
             "title": "Generics in TypeScript",
+            "summary": "\n# How Email Works ?\n\nRecently I was building a Hobby Project which was entirely based on emailing services, I decided to host my own Email server to ...",
             "date_modified": "2022-09-15T07:51:20.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -274,8 +312,10 @@
         },
         {
             "id": "http://localhost:3000/posts/idempotent-apis",
+            "content_html": "\nIdempotent you must have heard of this word somewhere in your software journey, what is it? how does it affect us, how one can build Idempotent Syste...",
             "url": "http://localhost:3000/posts/idempotent-apis",
             "title": "Building Resillent & Idempotent System using Spring Boot",
+            "summary": "\nIdempotent you must have heard of this word somewhere in your software journey, what is it? how does it affect us, how one can build Idempotent Syste...",
             "date_modified": "2022-07-09T21:35:54.322Z",
             "author": {
                 "name": "Prajwal P",
@@ -284,8 +324,10 @@
         },
         {
             "id": "http://localhost:3000/posts/analyzing-array-sort-in-js",
+            "content_html": "\nEver wondered how does JavaScript sorts the array when you call `Array.sort()` ?\n\nWell It all depends on the runtime engine of the browser.\n\nfor exam...",
             "url": "http://localhost:3000/posts/analyzing-array-sort-in-js",
             "title": "Analyzing Array.sort() & measuring the performance in JavaScript",
+            "summary": "\nEver wondered how does JavaScript sorts the array when you call `Array.sort()` ?\n\nWell It all depends on the runtime engine of the browser.\n\nfor exam...",
             "date_modified": "2022-07-04T22:22:22.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -377,8 +419,10 @@
         },
         {
             "id": "http://localhost:3000/posts/The-Only-Friend-Ep-04",
+            "content_html": "\nIncrease the charge by 150J Dr Mathur Said to the nurse, The heartbeat was still nil.\nFinally, it was increased to 250J the heart responded, CPR was ...",
             "url": "http://localhost:3000/posts/The-Only-Friend-Ep-04",
             "title": "The Only Friend……. (Series) Ep-04",
+            "summary": "\nIncrease the charge by 150J Dr Mathur Said to the nurse, The heartbeat was still nil.\nFinally, it was increased to 250J the heart responded, CPR was ...",
             "date_modified": "2021-04-17T10:35:54.322Z",
             "author": {
                 "name": "Prajwal P",
@@ -387,8 +431,10 @@
         },
         {
             "id": "http://localhost:3000/posts/The-Only-Friend-Ep-03",
+            "content_html": "\nDr Mathur was surprised to find Geetha, He thought, what happened to her since she was very healthy?\nThe nurse told him she suddenly went to cardiac ...",
             "url": "http://localhost:3000/posts/The-Only-Friend-Ep-03",
             "title": "The Only Friend……. (Series) Ep-03",
+            "summary": "\nDr Mathur was surprised to find Geetha, He thought, what happened to her since she was very healthy?\nThe nurse told him she suddenly went to cardiac ...",
             "date_modified": "2021-04-16T10:35:54.322Z",
             "author": {
                 "name": "Prajwal P",
@@ -397,8 +443,10 @@
         },
         {
             "id": "http://localhost:3000/posts/The-Only-Friend-Ep-02",
+            "content_html": "\nThis baby was the result of their fourth IVF try,\nwhich was their last attempt.\nThree unsuccessful rounds of IVF had exhausted the mother-to-be Geeth...",
             "url": "http://localhost:3000/posts/The-Only-Friend-Ep-02",
             "title": "The Only Friend……. (Series) Ep-02",
+            "summary": "\nThis baby was the result of their fourth IVF try,\nwhich was their last attempt.\nThree unsuccessful rounds of IVF had exhausted the mother-to-be Geeth...",
             "date_modified": "2021-04-15T10:00:00.775Z",
             "author": {
                 "name": "Prajwal P",
@@ -407,8 +455,10 @@
         },
         {
             "id": "http://localhost:3000/posts/The-Only-Friend-Ep-01",
+            "content_html": "\nYou could hear the baby’s cries all over the hospital as soon as the doctor slapped the baby’s butt,\nI saw A man running towards the babies ward smil...",
             "url": "http://localhost:3000/posts/The-Only-Friend-Ep-01",
             "title": "The Only Friend……. (Series) Ep-01",
+            "summary": "\nYou could hear the baby’s cries all over the hospital as soon as the doctor slapped the baby’s butt,\nI saw A man running towards the babies ward smil...",
             "date_modified": "2021-04-13T10:35:54.322Z",
             "author": {
                 "name": "Prajwal P",

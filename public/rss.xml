@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Sun, 07 Dec 2025 09:05:46 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 07 Dec 2025 09:38:18 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -18,6 +18,20 @@
             <link>http://localhost:3000/posts/is_this_all_there_is_to_life</link>
             <guid>http://localhost:3000/posts/is_this_all_there_is_to_life</guid>
             <pubDate>Fri, 01 Aug 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[
+Another message.
+Another silence that won’t ever speak again.
+Another friend, gone.
+
+I wish I could say this was the first time. But it’s not.
+And th...]]></description>
+            <content:encoded><![CDATA[
+Another message.
+Another silence that won’t ever speak again.
+Another friend, gone.
+
+I wish I could say this was the first time. But it’s not.
+And th...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -25,6 +39,14 @@
             <link>http://localhost:3000/posts/writing-plugin-system-for-golang-apps</link>
             <guid>http://localhost:3000/posts/writing-plugin-system-for-golang-apps</guid>
             <pubDate>Sun, 15 Jun 2025 12:35:54 GMT</pubDate>
+            <description><![CDATA[
+### **Building Your Go App Like LEGOs: A Simple Guide to Plugins**
+
+As a system grows, adding new features can feel like performing open-heart surger...]]></description>
+            <content:encoded><![CDATA[
+### **Building Your Go App Like LEGOs: A Simple Guide to Plugins**
+
+As a system grows, adding new features can feel like performing open-heart surger...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -32,6 +54,14 @@
             <link>http://localhost:3000/posts/invisible-threads</link>
             <guid>http://localhost:3000/posts/invisible-threads</guid>
             <pubDate>Sun, 02 Feb 2025 14:51:20 GMT</pubDate>
+            <description><![CDATA[
+## Invisible Threads
+
+Have you ever noticed how people sometimes look at others differently just because they don't have nice clothes or a fancy job?...]]></description>
+            <content:encoded><![CDATA[
+## Invisible Threads
+
+Have you ever noticed how people sometimes look at others differently just because they don't have nice clothes or a fancy job?...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -39,6 +69,12 @@
             <link>http://localhost:3000/posts/a-zfs-story</link>
             <guid>http://localhost:3000/posts/a-zfs-story</guid>
             <pubDate>Sun, 12 Jan 2025 03:58:33 GMT</pubDate>
+            <description><![CDATA[
+# A ZFS tale
+I recently traded and got in return 1TB HDD from a friend, had another one collecting dust, and an old Core 2 Duo machine doing nothing....]]></description>
+            <content:encoded><![CDATA[
+# A ZFS tale
+I recently traded and got in return 1TB HDD from a friend, had another one collecting dust, and an old Core 2 Duo machine doing nothing....]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -55,6 +91,14 @@
             <link>http://localhost:3000/posts/how-yoga-changed-my-thinking</link>
             <guid>http://localhost:3000/posts/how-yoga-changed-my-thinking</guid>
             <pubDate>Tue, 24 Dec 2024 20:30:00 GMT</pubDate>
+            <description><![CDATA[
+# How Yoga Changed My Thinking
+
+I found my way back to yoga this year. As a kid, I was an ardent lover of it but somehow drifted away. Now I'm back, ...]]></description>
+            <content:encoded><![CDATA[
+# How Yoga Changed My Thinking
+
+I found my way back to yoga this year. As a kid, I was an ardent lover of it but somehow drifted away. Now I'm back, ...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -62,6 +106,14 @@
             <link>http://localhost:3000/posts/intermeit-fasting</link>
             <guid>http://localhost:3000/posts/intermeit-fasting</guid>
             <pubDate>Tue, 12 Mar 2024 19:51:20 GMT</pubDate>
+            <description><![CDATA[
+# Intermittent Fasting for 2 Months: My Journey (and Struggles!)
+
+Two months down, and feeling energized!   I'm not the fittest, but I wanted to make...]]></description>
+            <content:encoded><![CDATA[
+# Intermittent Fasting for 2 Months: My Journey (and Struggles!)
+
+Two months down, and feeling energized!   I'm not the fittest, but I wanted to make...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -69,6 +121,10 @@
             <link>http://localhost:3000/posts/top</link>
             <guid>http://localhost:3000/posts/top</guid>
             <pubDate>Sun, 13 Aug 2023 16:31:15 GMT</pubDate>
+            <description><![CDATA[
+You might be familiar with the Windows Task Manager - the go-to tool for monitoring and managing processes. In the Linux world, the equivalent comman...]]></description>
+            <content:encoded><![CDATA[
+You might be familiar with the Windows Task Manager - the go-to tool for monitoring and managing processes. In the Linux world, the equivalent comman...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -76,6 +132,10 @@
             <link>http://localhost:3000/posts/vagrant</link>
             <guid>http://localhost:3000/posts/vagrant</guid>
             <pubDate>Mon, 07 Aug 2023 21:35:54 GMT</pubDate>
+            <description><![CDATA[
+Vagrant is a tool to build up and operate Virtual Machines on the top of innumerable (actually few) virtual platform over an operating system, what d...]]></description>
+            <content:encoded><![CDATA[
+Vagrant is a tool to build up and operate Virtual Machines on the top of innumerable (actually few) virtual platform over an operating system, what d...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -92,6 +152,14 @@
             <link>http://localhost:3000/posts/personal-infra</link>
             <guid>http://localhost:3000/posts/personal-infra</guid>
             <pubDate>Thu, 20 Apr 2023 19:06:23 GMT</pubDate>
+            <description><![CDATA[
+## Diving deep into my Personal Infrastructure
+
+We are 110 days in to 2023. Have you been able to keep your New Years Resolutions or goals, that you ...]]></description>
+            <content:encoded><![CDATA[
+## Diving deep into my Personal Infrastructure
+
+We are 110 days in to 2023. Have you been able to keep your New Years Resolutions or goals, that you ...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -99,6 +167,14 @@
             <link>http://localhost:3000/posts/life-living-death</link>
             <guid>http://localhost:3000/posts/life-living-death</guid>
             <pubDate>Fri, 17 Mar 2023 18:00:00 GMT</pubDate>
+            <description><![CDATA[
+## Living in the present
+
+Recently I came across a video, where the creator tried to live his last 7 days with no regrets, If there is one topic I li...]]></description>
+            <content:encoded><![CDATA[
+## Living in the present
+
+Recently I came across a video, where the creator tried to live his last 7 days with no regrets, If there is one topic I li...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -106,6 +182,18 @@
             <link>http://localhost:3000/posts/best-way-to-exchange-data</link>
             <guid>http://localhost:3000/posts/best-way-to-exchange-data</guid>
             <pubDate>Mon, 06 Feb 2023 18:00:00 GMT</pubDate>
+            <description><![CDATA[
+## Exchanging data between microservices
+
+It's already 2023 and the software development is evolving lot faster than ever.
+
+There are several softwar...]]></description>
+            <content:encoded><![CDATA[
+## Exchanging data between microservices
+
+It's already 2023 and the software development is evolving lot faster than ever.
+
+There are several softwar...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -113,6 +201,12 @@
             <link>http://localhost:3000/posts/conquering-kuduremukh</link>
             <guid>http://localhost:3000/posts/conquering-kuduremukh</guid>
             <pubDate>Thu, 02 Feb 2023 13:00:00 GMT</pubDate>
+            <description><![CDATA[
+This Post is different from other posts on this blog, Remember I had made a goal, **Go on 12 Treks in 2023**.
+Well, this is the first of many, introd...]]></description>
+            <content:encoded><![CDATA[
+This Post is different from other posts on this blog, Remember I had made a goal, **Go on 12 Treks in 2023**.
+Well, this is the first of many, introd...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -120,6 +214,14 @@
             <link>http://localhost:3000/posts/look-ma-its-already-2023-and-i-am-dumb</link>
             <guid>http://localhost:3000/posts/look-ma-its-already-2023-and-i-am-dumb</guid>
             <pubDate>Sun, 08 Jan 2023 10:00:00 GMT</pubDate>
+            <description><![CDATA[
+## Look ma it's already 2023 and I am still dumb
+
+As the end of the year approaches, I find myself reflecting on the past 12 months and feeling incre...]]></description>
+            <content:encoded><![CDATA[
+## Look ma it's already 2023 and I am still dumb
+
+As the end of the year approaches, I find myself reflecting on the past 12 months and feeling incre...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -127,6 +229,10 @@
             <link>http://localhost:3000/posts/ntp-network-time-protocol</link>
             <guid>http://localhost:3000/posts/ntp-network-time-protocol</guid>
             <pubDate>Tue, 13 Dec 2022 16:40:40 GMT</pubDate>
+            <description><![CDATA[
+Not a lot of people might have heard of NTP,NTP is likely an essential part of many of the devices and services that you use on a daily basis. It hel...]]></description>
+            <content:encoded><![CDATA[
+Not a lot of people might have heard of NTP,NTP is likely an essential part of many of the devices and services that you use on a daily basis. It hel...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -134,6 +240,14 @@
             <link>http://localhost:3000/posts/abortController</link>
             <guid>http://localhost:3000/posts/abortController</guid>
             <pubDate>Fri, 09 Dec 2022 21:35:54 GMT</pubDate>
+            <description><![CDATA[
+Ever heard of AbortController, if not allow me to introduce you to the AbortController,
+
+I came across AbortController in my company code base, at fi...]]></description>
+            <content:encoded><![CDATA[
+Ever heard of AbortController, if not allow me to introduce you to the AbortController,
+
+I came across AbortController in my company code base, at fi...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -141,6 +255,16 @@
             <link>http://localhost:3000/posts/automating-postman-tests-1</link>
             <guid>http://localhost:3000/posts/automating-postman-tests-1</guid>
             <pubDate>Mon, 26 Sep 2022 21:35:54 GMT</pubDate>
+            <description><![CDATA[
+## Automating Your Postman Tests - 1
+
+Postman is a collaboration platform for API development.
+Postman's features simplify each step of building an A...]]></description>
+            <content:encoded><![CDATA[
+## Automating Your Postman Tests - 1
+
+Postman is a collaboration platform for API development.
+Postman's features simplify each step of building an A...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -174,6 +298,16 @@ Earlier in the days it was not easy to run code on server, it required a special
             <link>http://localhost:3000/posts/learning-rust</link>
             <guid>http://localhost:3000/posts/learning-rust</guid>
             <pubDate>Fri, 16 Sep 2022 07:51:20 GMT</pubDate>
+            <description><![CDATA[
+## learning_rust[0]
+
+After a heated up discussion with myself & my brain about which static typed langauge to learn,
+I was thinking about learning `G...]]></description>
+            <content:encoded><![CDATA[
+## learning_rust[0]
+
+After a heated up discussion with myself & my brain about which static typed langauge to learn,
+I was thinking about learning `G...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -190,6 +324,12 @@ Earlier in the days it was not easy to run code on server, it required a special
             <link>http://localhost:3000/posts/generics-in-typescript</link>
             <guid>http://localhost:3000/posts/generics-in-typescript</guid>
             <pubDate>Thu, 15 Sep 2022 07:51:20 GMT</pubDate>
+            <description><![CDATA[
+## Generics in TypeScript
+...]]></description>
+            <content:encoded><![CDATA[
+## Generics in TypeScript
+...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -197,6 +337,14 @@ Earlier in the days it was not easy to run code on server, it required a special
             <link>http://localhost:3000/posts/how-email-works</link>
             <guid>http://localhost:3000/posts/how-email-works</guid>
             <pubDate>Thu, 15 Sep 2022 07:51:20 GMT</pubDate>
+            <description><![CDATA[
+# How Email Works ?
+
+Recently I was building a Hobby Project which was entirely based on emailing services, I decided to host my own Email server to ...]]></description>
+            <content:encoded><![CDATA[
+# How Email Works ?
+
+Recently I was building a Hobby Project which was entirely based on emailing services, I decided to host my own Email server to ...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -213,6 +361,10 @@ Earlier in the days it was not easy to run code on server, it required a special
             <link>http://localhost:3000/posts/idempotent-apis</link>
             <guid>http://localhost:3000/posts/idempotent-apis</guid>
             <pubDate>Sat, 09 Jul 2022 21:35:54 GMT</pubDate>
+            <description><![CDATA[
+Idempotent you must have heard of this word somewhere in your software journey, what is it? how does it affect us, how one can build Idempotent Syste...]]></description>
+            <content:encoded><![CDATA[
+Idempotent you must have heard of this word somewhere in your software journey, what is it? how does it affect us, how one can build Idempotent Syste...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -220,6 +372,18 @@ Earlier in the days it was not easy to run code on server, it required a special
             <link>http://localhost:3000/posts/analyzing-array-sort-in-js</link>
             <guid>http://localhost:3000/posts/analyzing-array-sort-in-js</guid>
             <pubDate>Mon, 04 Jul 2022 22:22:22 GMT</pubDate>
+            <description><![CDATA[
+Ever wondered how does JavaScript sorts the array when you call `Array.sort()` ?
+
+Well It all depends on the runtime engine of the browser.
+
+for exam...]]></description>
+            <content:encoded><![CDATA[
+Ever wondered how does JavaScript sorts the array when you call `Array.sort()` ?
+
+Well It all depends on the runtime engine of the browser.
+
+for exam...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -289,6 +453,12 @@ Earlier in the days it was not easy to run code on server, it required a special
             <link>http://localhost:3000/posts/The-Only-Friend-Ep-04</link>
             <guid>http://localhost:3000/posts/The-Only-Friend-Ep-04</guid>
             <pubDate>Sat, 17 Apr 2021 10:35:54 GMT</pubDate>
+            <description><![CDATA[
+Increase the charge by 150J Dr Mathur Said to the nurse, The heartbeat was still nil.
+Finally, it was increased to 250J the heart responded, CPR was ...]]></description>
+            <content:encoded><![CDATA[
+Increase the charge by 150J Dr Mathur Said to the nurse, The heartbeat was still nil.
+Finally, it was increased to 250J the heart responded, CPR was ...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -296,6 +466,12 @@ Earlier in the days it was not easy to run code on server, it required a special
             <link>http://localhost:3000/posts/The-Only-Friend-Ep-03</link>
             <guid>http://localhost:3000/posts/The-Only-Friend-Ep-03</guid>
             <pubDate>Fri, 16 Apr 2021 10:35:54 GMT</pubDate>
+            <description><![CDATA[
+Dr Mathur was surprised to find Geetha, He thought, what happened to her since she was very healthy?
+The nurse told him she suddenly went to cardiac ...]]></description>
+            <content:encoded><![CDATA[
+Dr Mathur was surprised to find Geetha, He thought, what happened to her since she was very healthy?
+The nurse told him she suddenly went to cardiac ...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -303,6 +479,14 @@ Earlier in the days it was not easy to run code on server, it required a special
             <link>http://localhost:3000/posts/The-Only-Friend-Ep-02</link>
             <guid>http://localhost:3000/posts/The-Only-Friend-Ep-02</guid>
             <pubDate>Thu, 15 Apr 2021 10:00:00 GMT</pubDate>
+            <description><![CDATA[
+This baby was the result of their fourth IVF try,
+which was their last attempt.
+Three unsuccessful rounds of IVF had exhausted the mother-to-be Geeth...]]></description>
+            <content:encoded><![CDATA[
+This baby was the result of their fourth IVF try,
+which was their last attempt.
+Three unsuccessful rounds of IVF had exhausted the mother-to-be Geeth...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
@@ -310,6 +494,12 @@ Earlier in the days it was not easy to run code on server, it required a special
             <link>http://localhost:3000/posts/The-Only-Friend-Ep-01</link>
             <guid>http://localhost:3000/posts/The-Only-Friend-Ep-01</guid>
             <pubDate>Tue, 13 Apr 2021 10:35:54 GMT</pubDate>
+            <description><![CDATA[
+You could hear the baby’s cries all over the hospital as soon as the doctor slapped the baby’s butt,
+I saw A man running towards the babies ward smil...]]></description>
+            <content:encoded><![CDATA[
+You could hear the baby’s cries all over the hospital as soon as the doctor slapped the baby’s butt,
+I saw A man running towards the babies ward smil...]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>

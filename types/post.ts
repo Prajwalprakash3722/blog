@@ -10,6 +10,7 @@ type PostType = {
   content: string;
   draft: boolean;
   category: string;
+  readingTime?: string;
 };
 
 export default PostType;
