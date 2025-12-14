@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "http://localhost:3000/posts/ai-is-finally-listening",
+            "content_html": "The tech world is finally waking up to accessibility. From Apple's Live Captions to the potential of LLMs, we're seeing real progress. but are we truly there yet?",
+            "url": "http://localhost:3000/posts/ai-is-finally-listening",
+            "title": "AI is Finally Listening: Are we starting to Get Accessibility Right",
+            "summary": "The tech world is finally waking up to accessibility. From Apple's Live Captions to the potential of LLMs, we're seeing real progress. but are we truly there yet?",
+            "date_modified": "2025-12-14T12:00:00.000Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "http://localhost:3000/posts/is_this_all_there_is_to_life",
             "content_html": "\nAnother message.\nAnother silence that won’t ever speak again.\nAnother friend, gone.\n\nI wish I could say this was the first time. But it’s not.\nAnd th...",
             "url": "http://localhost:3000/posts/is_this_all_there_is_to_life",
