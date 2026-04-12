@@ -45,9 +45,9 @@ function Roadmap(
   return (
     <Layout>
       <Header />
-      <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-5xl font-semibold text-slate-50">WIP</h1>
-        <p className="text-xl text-slate-50">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-surface-base">
+        <h1 className="text-5xl font-semibold text-text-heading">WIP</h1>
+        <p className="text-xl text-text-heading">
           This page is a work in progress, but you can see some memes.
         </p>
         {props.memeObject && (
