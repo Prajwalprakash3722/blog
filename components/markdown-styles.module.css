@@ -1,69 +1,101 @@
 .markdown {
-  @apply text-[16.2px] leading-relaxed;
+  @apply text-base leading-[1.8];
 }
 
 .markdown p,
 .markdown ul,
-.markdown code .markdown ol,
+.markdown ol,
 .markdown blockquote {
-  @apply my-6;
+  @apply my-5;
   overflow-wrap: break-word;
 }
 
 .markdown h2 {
-  @apply text-[#E8E8FD] text-[21.6px] mt-8 mb-4 leading-snug font-bold;
+  @apply text-[22px] mt-10 mb-4 leading-snug font-bold tracking-tight;
+  color: var(--text-heading);
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-lg mt-8 mb-3 leading-snug font-bold;
+  color: var(--text-heading);
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
 }
+
 .markdown ul {
   @apply list-disc list-outside pl-8;
 }
 
 .markdown ol {
-  @apply list-decimal;
+  @apply list-decimal list-outside pl-8;
 }
 
 .markdown code {
-  @apply font-mono text-pink-600 break-words;
+  font-family: "JetBrains Mono", monospace;
+  @apply text-sm break-words px-1.5 py-0.5 rounded;
+  color: var(--accent-link);
+  background: var(--surface-raised);
 }
 
 .markdown pre {
-  @apply font-mono bg-gray-400 p-2 text-gray-900 max-w-2xl text-left overflow-hidden whitespace-pre-line;
-}
-.markdown blockquote {
-  @apply relative p-1 text-[14px] italic border-l-4 bg-neutral-100 text-neutral-600 border-neutral-500;
+  font-family: "JetBrains Mono", monospace;
+  @apply text-sm p-5 rounded-md overflow-x-auto my-6 leading-[1.7];
+  background: var(--surface-raised);
+  color: var(--text-body);
+  border: 1px solid var(--surface-muted);
 }
 
-.markdown b {
+.markdown pre code {
+  @apply p-0 bg-transparent text-inherit;
+}
+
+.markdown blockquote {
+  @apply relative p-4 text-[15px] italic rounded-md;
+  background: var(--surface-raised);
+  color: var(--text-secondary);
+  font-family: "Source Serif 4", Georgia, serif;
+}
+
+.markdown b,
+.markdown strong {
   @apply font-bold;
+  color: var(--text-heading);
 }
 
 .markdown a {
-  @apply text-blue-500;
+  color: var(--accent-link);
+  @apply underline underline-offset-2;
+  text-decoration-color: oklch(65% 0.06 30);
 }
 
-.markdown img [avatar] {
-  @apply w-10 h-10 rounded-full mr-4;
+.markdown a:hover {
+  color: var(--accent-brand);
 }
+
+.markdown img {
+  @apply rounded-md my-6 w-full;
+}
+
 .markdown u {
   @apply underline;
 }
+
 .markdown table {
-  @apply w-full text-sm text-left text-gray-400 border-collapse;
+  @apply w-full text-sm text-left border-collapse my-6;
+  color: var(--text-body);
 }
 
 .markdown thead {
-  @apply text-xs uppercase bg-gray-700 text-gray-400;
-}
-#tbody {
-  @apply divide-y divide-gray-700;
+  @apply text-xs uppercase;
+  background: var(--surface-raised);
+  color: var(--text-secondary);
 }
 
 .markdown th {
-  @apply py-3 px-6;
+  @apply py-3 px-4;
 }
+
 .markdown td {
-  @apply py-4 px-6;
+  @apply py-3 px-4;
+  border-bottom: 1px solid var(--surface-muted);
 }

@@ -1,4 +1,3 @@
-import Avatar from "./avatar";
 import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
 import PostTitle from "./post-title";
@@ -12,14 +11,14 @@ type Props = {
 const PostHeader = ({ title, coverImage, date }: Props) => {
   return (
     <>
-      <PostTitle>{title}</PostTitle>
-      <div className="m-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} />
-      </div>
-      <div className="max-w-2xl mx-auto">
-        <div className="mb-6 text-lg">
+      <div className="mb-4">
+        <div className="font-mono text-xs text-text-secondary mb-4">
           <DateFormatter dateString={date} />
         </div>
+        <PostTitle>{title}</PostTitle>
+      </div>
+      <div className="my-8">
+        <CoverImage title={title} src={coverImage} />
       </div>
     </>
   );

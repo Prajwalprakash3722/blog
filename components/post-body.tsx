@@ -7,14 +7,14 @@ type Props = {
 
 const PostBody = ({ content, post = true }: Props) => {
   return (
-    <div className="max-w-screen-xl mx-auto text-justify">
+    <div className="max-w-[65ch] mx-auto">
       <div
         className={
           markdownStyles["markdown"] +
           ` ${
             !post
-              ? "px-4 pb-2 pt-4 text-sm text-gray-300"
-              : "text-[#98A0B3] leading-[38.475px]"
+              ? "px-4 pb-2 pt-4 text-sm text-text-secondary"
+              : "text-text-body leading-[1.8] font-body"
           } `
         }
         dangerouslySetInnerHTML={{ __html: content }}
