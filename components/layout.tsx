@@ -12,9 +12,12 @@ const Layout = ({ children, newArticle }: Props) => {
   return (
     <>
       <Meta />
-      <div className="min-h-screen snap-y">
+      <a href="#main-content" className="skip-to-content">
+        Skip to content
+      </a>
+      <div className="min-h-screen">
         <Alert newArticle={newArticle} />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
       </div>
       <Footer />
     </>
