@@ -13,8 +13,8 @@ const PostBody = ({ content, post = true }: Props) => {
           markdownStyles["markdown"] +
           ` ${
             !post
-              ? "px-4 pb-2 pt-4 text-sm text-text-secondary"
-              : "text-text-body leading-[1.8] font-body"
+              ? "px-4 pb-2 pt-4 text-base text-text-secondary"
+              : "text-lg text-text-body leading-[1.8] font-body"
           } `
         }
         dangerouslySetInnerHTML={{ __html: content }}

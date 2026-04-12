@@ -1,23 +1,23 @@
 .markdown {
-  @apply text-base leading-[1.8];
+  @apply text-lg leading-[1.8];
 }
 
 .markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
-  @apply my-5;
+  @apply my-6;
   overflow-wrap: break-word;
 }
 
 .markdown h2 {
-  @apply text-[22px] mt-10 mb-4 leading-snug font-bold tracking-tight;
+  @apply text-2xl mt-12 mb-5 leading-snug font-bold tracking-tight;
   color: var(--text-heading);
   font-family: "Bricolage Grotesque", system-ui, sans-serif;
 }
 
 .markdown h3 {
-  @apply text-lg mt-8 mb-3 leading-snug font-bold;
+  @apply text-xl mt-10 mb-4 leading-snug font-bold;
   color: var(--text-heading);
   font-family: "Bricolage Grotesque", system-ui, sans-serif;
 }
@@ -32,14 +32,14 @@
 
 .markdown code {
   font-family: "JetBrains Mono", monospace;
-  @apply text-sm break-words px-1.5 py-0.5 rounded;
+  @apply text-base break-words px-1.5 py-0.5 rounded;
   color: var(--accent-link);
   background: var(--surface-raised);
 }
 
 .markdown pre {
   font-family: "JetBrains Mono", monospace;
-  @apply text-sm p-5 rounded-md overflow-x-auto my-6 leading-[1.7];
+  @apply text-base p-6 rounded-md overflow-x-auto my-8 leading-[1.7];
   background: var(--surface-raised);
   color: var(--text-body);
   border: 1px solid var(--surface-muted);
@@ -50,7 +50,7 @@
 }
 
 .markdown blockquote {
-  @apply relative p-4 text-[15px] italic rounded-md;
+  @apply relative p-5 text-base italic rounded-md;
   background: var(--surface-raised);
   color: var(--text-secondary);
   font-family: "Source Serif 4", Georgia, serif;
@@ -73,7 +73,7 @@
 }
 
 .markdown img {
-  @apply rounded-md my-6 w-full;
+  @apply rounded-md my-8 w-full;
 }
 
 .markdown u {
@@ -81,21 +81,21 @@
 }
 
 .markdown table {
-  @apply w-full text-sm text-left border-collapse my-6;
+  @apply w-full text-base text-left border-collapse my-8;
   color: var(--text-body);
 }
 
 .markdown thead {
-  @apply text-xs uppercase;
+  @apply text-sm uppercase;
   background: var(--surface-raised);
   color: var(--text-secondary);
 }
 
 .markdown th {
-  @apply py-3 px-4;
+  @apply py-3 px-5;
 }
 
 .markdown td {
-  @apply py-3 px-4;
+  @apply py-3 px-5;
   border-bottom: 1px solid var(--surface-muted);
 }

@@ -6,8 +6,8 @@ type Props = {
 
 const Categories = ({ posts }: Props) => {
   return (
-    <section className="my-12 md:my-16">
-      <h2 className="font-display text-2xl md:text-3xl font-extrabold tracking-tight text-text-heading mb-8">
+    <section className="my-16 md:my-20">
+      <h2 className="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-text-heading mb-10">
         Categories
       </h2>
       <div className="flex flex-wrap gap-3">
@@ -19,7 +19,7 @@ const Categories = ({ posts }: Props) => {
             <a
               href={`posts/tag/${category}`}
               key={category}
-              className="px-4 py-2 bg-surface-raised border border-surface-muted rounded font-mono text-sm text-text-body hover:text-accent-link hover:border-accent-terminal-muted transition-colors"
+              className="px-5 py-2.5 bg-surface-raised border border-surface-muted rounded font-mono text-base text-text-body hover:text-accent-link hover:border-accent-terminal-muted transition-colors"
             >
               {category}
               <sup className="ml-1 text-text-muted">

@@ -20,30 +20,30 @@ const PostPreview = ({
 }: Props) => {
   return (
     <Link href={`/posts/${slug}`} className="group block h-full">
-      <article className="h-full flex flex-col justify-between p-5 bg-surface-raised border border-surface-muted rounded-md hover:border-accent-terminal-muted transition-colors">
+      <article className="h-full flex flex-col justify-between p-6 bg-surface-raised border border-surface-muted rounded-md hover:border-accent-terminal-muted transition-colors">
         <div>
-          <div className="flex items-center justify-between mb-3">
-            <span className="font-mono text-[10px] tracking-[0.08em] uppercase text-accent-link font-semibold">
+          <div className="flex items-center justify-between mb-4">
+            <span className="font-mono text-xs tracking-[0.08em] uppercase text-accent-link font-semibold">
               {category}
             </span>
-            <span className="font-mono text-[10px] text-text-muted">
+            <span className="font-mono text-xs text-text-muted">
               <DateFormatter dateString={date} short />
             </span>
           </div>
 
-          <h3 className="font-display text-lg md:text-xl font-bold text-text-heading leading-snug mb-2 group-hover:text-accent-link transition-colors">
+          <h3 className="font-display text-xl md:text-2xl font-bold text-text-heading leading-snug mb-3 group-hover:text-accent-link transition-colors">
             {title}
           </h3>
 
-          <p className="text-sm text-text-secondary leading-relaxed line-clamp-3">
+          <p className="text-base text-text-secondary leading-relaxed line-clamp-3">
             {excerpt}
           </p>
         </div>
 
-        <div className="flex items-center mt-4 pt-3 border-t border-surface-muted">
-          <span className="flex items-center font-mono text-[10px] text-text-muted">
+        <div className="flex items-center mt-5 pt-4 border-t border-surface-muted">
+          <span className="flex items-center font-mono text-xs text-text-muted">
             <svg
-              className="w-3.5 h-3.5 mr-1.5"
+              className="w-4 h-4 mr-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
