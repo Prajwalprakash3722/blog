@@ -3,11 +3,11 @@ import BookWidget from "./BookWidget";
 
 const Books = () => {
   return (
-    <section className="relative bg-[#1A1D23] p-8 rounded-lg my-4" id="posts">
-      <h2 className="text-3xl font-bold leading-snug text-slate-100 my-4">
-        Books Adored or Being Adored by Me :{`)`} [WIP] 📚
+    <section className="my-12 md:my-16" id="posts">
+      <h2 className="font-display text-2xl md:text-3xl font-extrabold tracking-tight text-text-heading mb-8">
+        Books I&apos;m Reading
       </h2>
-      <div className="flex justify-center max-w-2xl">
+      <div className="max-w-2xl">
         <BookWidget />
       </div>
     </section>
