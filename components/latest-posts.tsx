@@ -1,5 +1,5 @@
 import Post from "../types/post";
-import Postdraft from "./post-preview";
+import PostPreview from "./post-preview";
 
 type Props = {
   posts: Post[];
@@ -7,16 +7,13 @@ type Props = {
 
 const LatestPosts = ({ posts }: Props) => {
   return (
-    <section className="my-16 md:my-24">
-      <div className="flex items-center justify-between mb-12">
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
-          Latest Posts
-        </h2>
-        <div className="hidden md:block h-px flex-1 bg-white/10 ml-8" />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+    <section className="my-12 md:my-16">
+      <h2 className="font-display text-2xl md:text-3xl font-extrabold tracking-tight text-text-heading mb-8">
+        Latest
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {posts.map((post) => (
-          <Postdraft
+          <PostPreview
             key={post.slug}
             title={post.title}
             date={post.date}
