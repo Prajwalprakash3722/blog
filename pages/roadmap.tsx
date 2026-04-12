@@ -52,7 +52,7 @@ function Roadmap(
         </p>
         {props.memeObject && (
           <>
-            <p className="text-xl text-slate-50">
+            <p className="text-xl text-text-heading">
               Current Category:
               <strong className="capitalize border border-pink-500 text-red-500 bg-pink-100 px-5 py-1.5 rounded-full text-[10px] tracking-wide m-4">
                 {props.memeObject.memes[0].subreddit} memes
@@ -84,7 +84,7 @@ function Roadmap(
                     {meme.nsfw ? (
                       <span className="text-red-500">NSFW</span>
                     ) : (
-                      <p className="text-xl text-slate-50 max-w-2xl p-4">
+                      <p className="text-xl text-text-heading max-w-2xl p-4">
                         {meme.title}
                       </p>
                     )}
