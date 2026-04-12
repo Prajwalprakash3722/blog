@@ -1,17 +1,20 @@
-import React from "react";
 interface Props {
   percent: number;
 }
 
 const ProgressBar = ({ percent }: Props) => {
   return (
-    <div>
-      <div className="my-4 overflow-hidden bg-gray-200 rounded-full">
-        <div
-          className={`w-[${percent ? percent : 0}%] h-2 ${
-            percent ? "bg-blue-500" : "bg-blue-50"
-          } rounded-full`}></div>
-      </div>
+    <div
+      className="fixed top-0 left-0 right-0 z-40 h-0.5"
+      style={{ backgroundColor: "var(--surface-muted)" }}
+    >
+      <div
+        className="h-full transition-[width] duration-150 ease-out"
+        style={{
+          width: `${percent}%`,
+          backgroundColor: "var(--accent-brand)",
+        }}
+      />
     </div>
   );
 };
