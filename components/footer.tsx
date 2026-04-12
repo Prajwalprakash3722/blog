@@ -3,99 +3,35 @@ import Container from "./container";
 
 const Footer = () => {
   const navLinks = [
-    {
-      name: "Home",
-      path: "/",
-    },
-    {
-      name: "Twitter",
-      path: "https://twitter.com/prajwal_3722",
-    },
-    {
-      name: "Github",
-      path: "https://github.com/Prajwalprakash3722",
-    },
-    {
-      name: "Portfolio",
-      path: "http://www.devcoffee.me",
-    },
-    {
-      name: "Roadmap",
-      path: "https://blog.devcoffee.me/roadmap",
-    },
-    {
-      name: "RSS",
-      path: "https://blog.devcoffee.me/rss.xml",
-    },
-  ];
-
-  const madeUsingLinks = [
-    {
-      name: "Next.JS",
-      path: "https://nextjs.org/",
-    },
-    {
-      name: "Tailwind",
-      path: "https://tailwindcss.com/",
-    },
-    {
-      name: "Typescript",
-      path: "https://www.typescriptlang.org/",
-    },
+    { name: "github", path: "https://github.com/Prajwalprakash3722" },
+    { name: "twitter", path: "https://twitter.com/prajwal_3722" },
+    { name: "portfolio", path: "https://www.devcoffee.me" },
+    { name: "rss", path: "https://blog.devcoffee.me/rss.xml" },
   ];
 
   return (
-    <footer className="border-t-2 border-gray-400">
+    <footer className="border-t border-surface-muted">
       <Container>
-        <div className="relative max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8 lg:pt-24">
-          <div className="lg:flex lg:items-end lg:justify-around">
-            <div>
-              <p className="max-w-md mx-auto mt-6 leading-relaxed text-center text-gray-400 lg:text-left">
-                © {new Date().getFullYear()} Prajwal P
-              </p>
-            </div>
-
-            <nav className="mt-12 lg:mt-0" aria-labelledby="footer-navigation">
-              <h2 className="sr-only" id="footer-navigation">
-                Footer navigation
-              </h2>
-
-              <ul className="flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
-                {navLinks.map((link) => {
-                  return (
-                    <li key={link.name}>
-                      <a
-                        className="text-white transition hover:text-white/75"
-                        href={link.path}
-                        target={link.name !== "Home" ? "_blank" : "_self"}
-                        key={link.name}
-                        rel="noreferrer">
-                        {link.name}
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-          </div>
-          <div className="absolute flex bottom-0 p-4 text-center">
-            <p className="text-[#bbb] font-body text-sm">
-              Made using{" "}
-              {madeUsingLinks.map((link) => (
-                <React.Fragment key={link.name}>
-                  <span className="text-[#50AEF1]">
-                    <a
-                      href={link.path}
-                      target="_blank"
-                      rel="noreferrer">
-                      {link.name}
-                    </a>
-                  </span>
-                  {link.name === "Typescript" ? "." : ","}{" "}
-                </React.Fragment>
+        <div className="py-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="font-mono text-xs text-text-muted">
+            &copy; {new Date().getFullYear()} Prajwal P
+          </p>
+          <nav aria-label="Footer navigation">
+            <ul className="flex gap-6">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    className="font-mono text-xs text-text-secondary hover:text-accent-terminal transition-colors"
+                    href={link.path}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {link.name}
+                  </a>
+                </li>
               ))}
-            </p>
-          </div>
+            </ul>
+          </nav>
         </div>
       </Container>
     </footer>
