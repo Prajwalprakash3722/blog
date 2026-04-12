@@ -7,43 +7,39 @@ type Props = {
 };
 
 const MorePosts = ({ posts, header }: Props) => {
-  let allYears = posts.map((post) => post.date.split("-")[0]);
+  const allYears = posts.map((post) => post.date.split("-")[0]);
 
   return (
-    <section className="relative bg-[#1A1D23] p-8 rounded-lg my-4" id="posts">
-      <h2 className="text-3xl font-bold leading-snug text-slate-100 my-4">
+    <section className="my-12 md:my-16" id="posts">
+      <h2 className="font-display text-2xl md:text-3xl font-extrabold tracking-tight text-text-heading mb-8">
         {header}
       </h2>
-      <div className="flex flex-col items-stretch justify-center max-w-2xl">
+      <div className="flex flex-col max-w-2xl">
         {allYears
-          .filter((x, i, a) => a.indexOf(x) == i)
+          .filter((x, i, a) => a.indexOf(x) === i)
           .map((year) => {
-            let postsByYear = posts.filter(
+            const postsByYear = posts.filter(
               (post) => post.date.split("-")[0] === year
             );
             return (
-              <div key={year}>
-                <h3 className="text-2xl font-bold leading-snug text-slate-100 my-4 underline">
+              <div key={year} className="mb-8">
+                <h3 className="font-display text-lg font-bold text-text-heading mb-3">
                   {year}
                 </h3>
-                <div>
+                <div className="flex flex-col">
                   {postsByYear.map((post) => (
-                    <div key={post.title}>
-                      <a href={"https://blog.devcoffee.me/posts/" + post.slug}>
-                        <div className="max-w-full divide-y-2 divide-gray-200">
-                          <div className="p-2 group rounded-lg hover:bg-[#1D2433]">
-                            <div className="flex flex-row items-center">
-                              <p className="px-4 py-2 text-lg  text-[#A4A8B2] whitespace-nowrap ">
-                                {format(new Date(post.date), "dd MMM") + " "}
-                              </p>
-                              <p className="break-words text-xl px-4 py-2 text-[#DFDFF3] font-medium md:text-2xl group-hover:text-[#5686F5]">
-                                {post.title}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
+                    <a
+                      key={post.slug}
+                      href={`/posts/${post.slug}`}
+                      className="group flex items-center py-2.5 px-3 -mx-3 rounded hover:bg-surface-raised transition-colors"
+                    >
+                      <span className="font-mono text-xs text-text-muted min-w-[60px] shrink-0">
+                        {format(new Date(post.date), "dd MMM")}
+                      </span>
+                      <span className="text-[15px] font-medium text-text-body group-hover:text-accent-link transition-colors">
+                        {post.title}
+                      </span>
+                    </a>
                   ))}
                 </div>
               </div>

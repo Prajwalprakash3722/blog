@@ -1,4 +1,4 @@
-import Catagories from "../components/categories";
+import Categories from "../components/categories";
 import Container from "../components/container";
 import Head from "next/head";
 import Intro from "../components/intro";
@@ -32,7 +32,7 @@ const Index = ({ allPosts }: Props) => {
             <MorePosts posts={allPosts} header="All Posts" />
           )}
           <AskEmail />
-          <Catagories posts={allPosts} />
+          <Categories posts={allPosts} />
         </Container>
       </Layout>
     </>
