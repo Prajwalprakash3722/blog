@@ -2,7 +2,6 @@ import Categories from "../components/categories";
 import Container from "../components/container";
 import Head from "next/head";
 import Intro from "../components/intro";
-import LatestPosts from "../components/latest-posts";
 import Layout from "../components/layout";
 import Meta from "../components/meta";
 import MorePosts from "../components/more-posts";
@@ -17,17 +16,15 @@ type Props = {
 
 const Index = ({ allPosts }: Props) => {
   allPosts = allPosts.filter((post) => post.draft !== true);
-  const latestPosts = allPosts.slice(0, 4);
   return (
     <>
-      <Layout newArticle={latestPosts.length > 0 ? latestPosts[0] : undefined}>
+      <Layout newArticle={allPosts.length > 0 ? allPosts[0] : undefined}>
         <Head>
           <title>{`Prajwal's Blog`}</title>
           <Meta />
         </Head>
-        <Container>
+        <Container wide>
           <Intro totalPostNumber={allPosts.length} />
-          {latestPosts.length > 0 && <LatestPosts posts={latestPosts} />}
           {allPosts.length > 0 && (
             <MorePosts posts={allPosts} header="All Posts" />
           )}

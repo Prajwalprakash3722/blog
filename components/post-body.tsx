@@ -7,7 +7,7 @@ type Props = {
 
 const PostBody = ({ content, post = true }: Props) => {
   return (
-    <div className="max-w-[65ch] mx-auto">
+    <div className="max-w-[72ch] mx-auto">
       <div
         className={
           markdownStyles["markdown"] +

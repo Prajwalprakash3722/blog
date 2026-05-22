@@ -52,7 +52,7 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Seo post={post} />
       <ProgressBar percent={width} />
       <Layout>
-        <Container>
+        <Container wide>
           <Header />
           {router.isFallback ? (
             <PostTitle>Loading&hellip;</PostTitle>
@@ -72,12 +72,18 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
                 {/* Breadcrumb */}
                 <div className="mt-12 pt-6 border-t border-surface-muted flex justify-between items-center">
-                  <nav className="font-mono text-xs text-text-muted" aria-label="Breadcrumb">
-                    <Link href="/" className="text-accent-terminal hover:text-accent-link transition-colors">
+                  <nav
+                    className="font-mono text-xs text-text-muted"
+                    aria-label="Breadcrumb">
+                    <Link
+                      href="/"
+                      className="text-accent-terminal hover:text-accent-link transition-colors">
                       home
                     </Link>
                     {" / "}
-                    <Link href="/#posts" className="text-accent-terminal hover:text-accent-link transition-colors">
+                    <Link
+                      href="/#posts"
+                      className="text-accent-terminal hover:text-accent-link transition-colors">
                       posts
                     </Link>
                     {" / "}
@@ -85,8 +91,7 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                   </nav>
                   <Link
                     href={`/posts/raw/${post.slug}`}
-                    className="font-mono text-xs text-text-muted hover:text-accent-terminal transition-colors"
-                  >
+                    className="font-mono text-xs text-text-muted hover:text-accent-terminal transition-colors">
                     view raw
                   </Link>
                 </div>

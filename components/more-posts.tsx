@@ -10,11 +10,14 @@ const MorePosts = ({ posts, header }: Props) => {
   const allYears = posts.map((post) => post.date.split("-")[0]);
 
   return (
-    <section className="my-16 md:my-20" id="posts">
-      <h2 className="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-text-heading mb-10">
-        {header}
-      </h2>
-      <div className="flex flex-col max-w-2xl">
+    <section className="my-16 md:my-20 scroll-mt-10" id="posts">
+      <div className="mb-8 border-b border-surface-muted pb-4">
+        <h2 className="font-display text-3xl md:text-4xl font-extrabold tracking-tight text-text-heading">
+          {header}
+        </h2>
+      </div>
+
+      <div className="flex max-w-[880px] flex-col">
         {allYears
           .filter((x, i, a) => a.indexOf(x) === i)
           .map((year) => {
@@ -22,22 +25,26 @@ const MorePosts = ({ posts, header }: Props) => {
               (post) => post.date.split("-")[0] === year
             );
             return (
-              <div key={year} className="mb-10">
-                <h3 className="font-display text-xl font-bold text-text-heading mb-4">
+              <div key={year} className="mb-12">
+                <h3 className="mb-2 font-mono text-sm font-semibold text-text-muted">
                   {year}
                 </h3>
-                <div className="flex flex-col">
+                <div className="divide-y divide-surface-muted border-t border-surface-muted">
                   {postsByYear.map((post) => (
                     <a
                       key={post.slug}
                       href={`/posts/${post.slug}`}
-                      className="group flex items-center py-3 px-3 -mx-3 rounded hover:bg-surface-raised transition-colors"
-                    >
-                      <span className="font-mono text-sm text-text-muted min-w-[70px] shrink-0">
+                      className="group -mx-3 grid gap-2 rounded px-3 py-4 transition-colors hover:bg-surface-raised md:grid-cols-[5.5rem_minmax(0,1fr)_10rem] md:items-baseline md:gap-6">
+                      <time className="font-mono text-sm text-text-muted">
                         {format(new Date(post.date), "dd MMM")}
+                      </time>
+
+                      <span className="text-xl font-semibold leading-snug text-text-body transition-colors group-hover:text-accent-link">
+                        {post.title || "Untitled"}
                       </span>
-                      <span className="text-lg font-medium text-text-body group-hover:text-accent-link transition-colors">
-                        {post.title}
+
+                      <span className="font-mono text-xs tracking-[0.08em] uppercase text-text-muted md:text-right">
+                        {post.category}
                       </span>
                     </a>
                   ))}
