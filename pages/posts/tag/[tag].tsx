@@ -4,13 +4,10 @@ import Container from "../../../components/container";
 import Header from "../../../components/header";
 import Layout from "../../../components/layout";
 import MorePosts from "../../../components/more-posts";
-import { getAllPosts } from "../../../lib/api";
-import { useRouter } from "next/router";
+import { getPublishedPosts } from "../../../lib/api";
+import { slugify } from "../../../lib/slugify";
 
 const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const router = useRouter();
-  const tag = router.query.tag as string;
-
   return (
     <>
       <Layout>
@@ -18,7 +15,7 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
           <Header />
           <MorePosts
             posts={props.posts.filteredPosts}
-            header={`${tag} related Posts`}
+            header={`${props.posts.category} related Posts`}
           />
         </Container>
       </Layout>
@@ -27,7 +24,7 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const posts = getAllPosts([
+  const posts = getPublishedPosts([
     "title",
     "date",
     "slug",
@@ -35,28 +32,35 @@ export const getStaticProps: GetStaticProps = async (context) => {
     "draft",
     "category",
   ]);
+  const tag = context?.params?.tag as string;
 
   const filteredPosts = posts.filter(
-    (post) => post.category === context?.params?.tag
+    (post) => slugify(post.category) === tag
   );
 
   return {
     props: {
       posts: {
         filteredPosts,
+        category: filteredPosts[0]?.category || tag,
       },
     },
   };
 };
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["category"]);
+  const posts = getPublishedPosts(["category"]);
+  const tagSlugs = posts
+    .map((post) => slugify(post.category))
+    .filter((tagSlug, index, allTagSlugs) => {
+      return tagSlug && allTagSlugs.indexOf(tagSlug) === index;
+    });
 
   return {
-    paths: posts.map((post) => {
+    paths: tagSlugs.map((tagSlug) => {
       return {
         params: {
-          tag: post.category,
+          tag: tagSlug,
         },
       };
     }),

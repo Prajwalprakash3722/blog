@@ -1,5 +1,5 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { getAllPosts, getPostBySlug } from "../../lib/api";
+import { getPostBySlug, getPublishedPosts } from "../../lib/api";
 import { useEffect, useState } from "react";
 
 import Container from "../../components/container";
@@ -116,7 +116,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     "coverImage",
     "excerpt",
   ]);
-  const posts = getAllPosts(["title"]);
+  const posts = getPublishedPosts(["title"]);
   const content = await markdownToHtml(post.content || "");
 
   return {
@@ -131,7 +131,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
+  const posts = getPublishedPosts(["slug"]);
 
   return {
     paths: posts.map((post) => {

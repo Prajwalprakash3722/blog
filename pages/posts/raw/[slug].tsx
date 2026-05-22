@@ -1,5 +1,5 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { getAllPosts, getPostBySlug } from "../../../lib/api";
+import { getPostBySlug, getPublishedPosts } from "../../../lib/api";
 import { useEffect, useState } from "react";
 
 import ErrorPage from "next/error";
@@ -80,7 +80,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     "ogImage",
     "coverImage",
   ]);
-  const posts = getAllPosts(["title"]);
+  const posts = getPublishedPosts(["title"]);
 
   return {
     props: {
@@ -93,7 +93,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(["slug"]);
+  const posts = getPublishedPosts(["slug"]);
 
   return {
     paths: posts.map((post) => {

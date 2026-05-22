@@ -1,4 +1,5 @@
 import Post from "../types/post";
+import { slugify } from "../lib/slugify";
 
 type Props = {
   posts: Post[];
@@ -17,7 +18,7 @@ const Categories = ({ posts }: Props) => {
           .sort()
           .map((category) => (
             <a
-              href={`posts/tag/${category}`}
+              href={`/posts/tag/${slugify(category)}`}
               key={category}
               className="px-5 py-2.5 bg-surface-raised border border-surface-muted rounded font-mono text-base text-text-body hover:text-accent-link hover:border-accent-terminal-muted transition-colors"
             >

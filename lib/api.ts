@@ -25,7 +25,7 @@ export function getPostBySlug(slug: string, fields: any, dir = postsDirectory) {
   const { data, content } = matter(fileContents);
 
   type Items = {
-    [key: string]: string;
+    [key: string]: any;
   };
 
   const items: Items = {};
@@ -67,6 +67,20 @@ export function getAllPosts(fields: any) {
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
+}
+
+export function getPublishedPosts(fields: any) {
+  const requestedFields = Array.from(new Set([...fields, "draft"]));
+
+  return getAllPosts(requestedFields)
+    .filter((post) => post.draft !== true)
+    .map((post) => {
+      if (!fields.includes("draft")) {
+        delete post.draft;
+      }
+
+      return post;
+    });
 }
 
 export function getAllTil(fields: any) {

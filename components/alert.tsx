@@ -17,7 +17,7 @@ const Alert = ({ newArticle }: Props) => {
           <div className="py-1 text-center font-mono text-xs text-text-secondary">
             new:{" "}
             <a
-              href={`posts/${newArticle.slug}`}
+              href={`/posts/${newArticle.slug}`}
               className="text-accent-link underline underline-offset-2 hover:text-accent-brand transition-colors"
             >
               {newArticle.title}

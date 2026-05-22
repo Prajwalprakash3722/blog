@@ -1,8 +1,8 @@
 import { Feed } from "feed";
 import fs from "fs";
-import { getAllPosts } from "./api";
+import { getPublishedPosts } from "./api";
 export default async function generateRssFeed() {
-  const posts = getAllPosts([
+  const posts = getPublishedPosts([
     "title",
     "date",
     "slug",

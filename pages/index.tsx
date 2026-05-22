@@ -7,7 +7,7 @@ import Meta from "../components/meta";
 import MorePosts from "../components/more-posts";
 import Post from "../types/post";
 import generateRssFeed from "../lib/generateRssFeed";
-import { getAllPosts } from "../lib/api";
+import { getPublishedPosts } from "../lib/api";
 import AskEmail from "../components/AskEmail";
 
 type Props = {
@@ -15,7 +15,6 @@ type Props = {
 };
 
 const Index = ({ allPosts }: Props) => {
-  allPosts = allPosts.filter((post) => post.draft !== true);
   return (
     <>
       <Layout newArticle={allPosts.length > 0 ? allPosts[0] : undefined}>
@@ -39,7 +38,7 @@ const Index = ({ allPosts }: Props) => {
 export default Index;
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
+  const allPosts = getPublishedPosts([
     "title",
     "date",
     "slug",
