@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://www.blog.devcoffee.me/posts/2026-06-02-some-things-keep-breaking",
+            "content_html": "Somewhere around 9:30 PM in Gokarna, I am watching the waves break again and again, and nothing in the sea seems surprised by it.",
+            "url": "https://www.blog.devcoffee.me/posts/2026-06-02-some-things-keep-breaking",
+            "title": "Some Things Keep Breaking",
+            "summary": "Somewhere around 9:30 PM in Gokarna, I am watching the waves break again and again, and nothing in the sea seems surprised by it.",
+            "date_modified": "2026-06-02T00:00:00.000Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "https://www.blog.devcoffee.me/posts/2026-05-23-some-friendships-end-without-a-funeral",
             "content_html": "Nobody tells you that some people leave your life so slowly that you do not notice the goodbye happening.",
             "url": "https://www.blog.devcoffee.me/posts/2026-05-23-some-friendships-end-without-a-funeral",

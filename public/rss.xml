@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>https://www.blog.devcoffee.me</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Sat, 23 May 2026 07:51:07 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 02 Jun 2026 14:15:56 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,15 @@
             <link>https://www.blog.devcoffee.me</link>
         </image>
         <copyright>All rights reserved 2026, Prajwal P</copyright>
+        <item>
+            <title><![CDATA[Some Things Keep Breaking]]></title>
+            <link>https://www.blog.devcoffee.me/posts/2026-06-02-some-things-keep-breaking</link>
+            <guid>https://www.blog.devcoffee.me/posts/2026-06-02-some-things-keep-breaking</guid>
+            <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Somewhere around 9:30 PM in Gokarna, I am watching the waves break again and again, and nothing in the sea seems surprised by it.]]></description>
+            <content:encoded><![CDATA[Somewhere around 9:30 PM in Gokarna, I am watching the waves break again and again, and nothing in the sea seems surprised by it.]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
         <item>
             <title><![CDATA[Some Friendships End Without a Funeral]]></title>
             <link>https://www.blog.devcoffee.me/posts/2026-05-23-some-friendships-end-without-a-funeral</link>
