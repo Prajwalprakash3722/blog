@@ -3,11 +3,16 @@ import { join } from "path";
 import matter from "gray-matter";
 
 const postsDirectory = join(process.cwd(), "/_posts");
+const travelDirectory = join(process.cwd(), "/_travel");
 const tilDirectory = join(process.cwd(), "/_til");
 const journalDirectory = join(process.cwd(), "/_journal");
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
+}
+
+export function getTravelSlugs() {
+  return fs.readdirSync(travelDirectory);
 }
 
 export function getTilSlugs() {
@@ -57,6 +62,10 @@ export function getPostBySlug(slug: string, fields: any, dir = postsDirectory) {
   return items;
 }
 
+export function getTravelBySlug(slug: string, fields: any) {
+  return getPostBySlug(slug, fields, travelDirectory);
+}
+
 type Fields = {
   [key: string]: string;
 };
@@ -73,6 +82,28 @@ export function getPublishedPosts(fields: any) {
   const requestedFields = Array.from(new Set([...fields, "draft"]));
 
   return getAllPosts(requestedFields)
+    .filter((post) => post.draft !== true)
+    .map((post) => {
+      if (!fields.includes("draft")) {
+        delete post.draft;
+      }
+
+      return post;
+    });
+}
+
+export function getAllTravel(fields: any) {
+  const slugs = getTravelSlugs();
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug, fields, travelDirectory))
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return posts;
+}
+
+export function getPublishedTravel(fields: any) {
+  const requestedFields = Array.from(new Set([...fields, "draft"]));
+
+  return getAllTravel(requestedFields)
     .filter((post) => post.draft !== true)
     .map((post) => {
       if (!fields.includes("draft")) {

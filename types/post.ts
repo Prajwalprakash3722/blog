@@ -10,6 +10,7 @@ type PostType = {
   content: string;
   draft: boolean;
   category: string;
+  destination?: string;
   readingTime?: string;
 };
 
