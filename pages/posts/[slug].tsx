@@ -67,6 +67,7 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                   title={post.title}
                   coverImage={post.coverImage}
                   date={post.date}
+                  readingTime={post.readingTime}
                 />
                 <PostBody content={post.content} />
 
@@ -115,6 +116,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     "ogImage",
     "coverImage",
     "excerpt",
+    "readingTime",
   ]);
   const posts = getPublishedPosts(["title"]);
   const content = await markdownToHtml(post.content || "");

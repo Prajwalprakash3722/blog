@@ -147,6 +147,7 @@ const TravelPost = (
                 title={trip.title}
                 coverImage={trip.coverImage}
                 date={trip.date}
+                readingTime={trip.readingTime}
               />
               <PostBody content={trip.content} />
 

@@ -34,7 +34,7 @@ const MorePosts = ({ posts, header }: Props) => {
                     <a
                       key={post.slug}
                       href={`/posts/${post.slug}`}
-                      className="group -mx-3 grid gap-2 rounded px-3 py-4 transition-colors hover:bg-surface-raised md:grid-cols-[5.5rem_minmax(0,1fr)_10rem] md:items-baseline md:gap-6">
+                      className="group -mx-3 grid gap-2 rounded px-3 py-4 transition-colors hover:bg-surface-raised md:grid-cols-[5.5rem_minmax(0,1fr)_13rem] md:items-baseline md:gap-6">
                       <time className="font-mono text-sm text-text-muted">
                         {format(new Date(post.date), "dd MMM")}
                       </time>
@@ -43,8 +43,9 @@ const MorePosts = ({ posts, header }: Props) => {
                         {post.title || "Untitled"}
                       </span>
 
-                      <span className="font-mono text-xs tracking-[0.08em] uppercase text-text-muted md:text-right">
-                        {post.category}
+                      <span className="flex flex-wrap gap-x-2 gap-y-1 font-mono text-xs tracking-[0.08em] uppercase text-text-muted md:justify-end md:text-right">
+                        <span>{post.category}</span>
+                        {post.readingTime && <span>{post.readingTime}</span>}
                       </span>
                     </a>
                   ))}
