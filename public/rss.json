@@ -11,12 +11,12 @@
     },
     "items": [
         {
-            "id": "http://localhost:3000/posts/2026-07-03-the-kid-inside-me-is-still-here",
-            "content_html": "Today I turn 24, and I keep thinking about the little kid inside me, the one I promised not to lose when I turned 21.",
-            "url": "http://localhost:3000/posts/2026-07-03-the-kid-inside-me-is-still-here",
-            "title": "The Kid Inside Me Is Still Here",
-            "summary": "Today I turn 24, and I keep thinking about the little kid inside me, the one I promised not to lose when I turned 21.",
-            "date_modified": "2026-07-03T00:00:00.000Z",
+            "id": "http://localhost:3000/posts/2026-06-21-live-captions-at-the-movies",
+            "content_html": "I watched Obsession without subtitles using my iPhone's Live Captions, and for once, technology made a missing piece feel a little less missing.",
+            "url": "http://localhost:3000/posts/2026-06-21-live-captions-at-the-movies",
+            "title": "Live Captions at the Movies",
+            "summary": "I watched Obsession without subtitles using my iPhone's Live Captions, and for once, technology made a missing piece feel a little less missing.",
+            "date_modified": "2026-06-21T00:00:00.000Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
