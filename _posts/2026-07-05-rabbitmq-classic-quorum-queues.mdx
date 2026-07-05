@@ -1,0 +1,657 @@
+---
+title: "RabbitMQ Classic Queues, Quorum Queues and Reliability"
+excerpt: "RabbitMQ queues confused me more than I expected. Classic queues, quorum queues, acks, confirms, dead letters, sideline queues, Raft, all this shit sounds scary until you draw the flow."
+coverImage: "/assets/blog/rabbitmq-queues/quorum-queue-leader-followers.png"
+date: "2026-07-05T18:00:00.000Z"
+ogImage:
+  url: "/assets/blog/rabbitmq-queues/quorum-queue-leader-followers.png"
+draft: false
+category: "Software Development"
+---
+
+## RabbitMQ Classic Queues, Quorum Queues and Reliability
+
+Recently I was trying to learn RabbitMQ properly.
+
+Not just the "producer sends message and consumer reads message" part, because that is the easy part. I wanted to understand what actually happens when we say a queue is durable, what is a quorum queue, why people keep saying publisher confirms and consumer acknowledgements, and what the hell is Raft doing inside a message broker.
+
+And as usual, once you go one layer deeper, everything becomes a rabbit hole.
+
+RabbitMQ looks simple from outside:
+
+```text
+producer -> rabbitmq -> consumer
+```
+
+But internally it is more like:
+
+```text
+producer -> exchange -> binding -> queue -> consumer
+```
+
+and each part has its own job.
+
+Let's knot down what I learnt.
+
+## First, what is a queue?
+
+A queue is just a place where messages wait.
+
+Producer puts messages into RabbitMQ. Consumer takes messages from RabbitMQ.
+
+But the producer usually does not publish directly to a queue. It publishes to an **exchange**. The exchange looks at the routing key and bindings and decides which queue should get the message.
+
+![Producer publishes to an exchange, and RabbitMQ routes the message through a binding into a queue](/assets/blog/rabbitmq-queues/exchange-routing-flow.png)
+
+So when someone says "message went to RabbitMQ", ask:
+
+- Which exchange?
+- Which routing key?
+- Which queue?
+- Which consumer?
+
+Because if a message disappears, most of the time the issue is not magic, it is routing.
+
+## Classic queue
+
+Classic queue is the normal queue type in RabbitMQ.
+
+It is simple, old, and useful for a lot of cases. If you just need a queue where messages sit and consumers read from it, classic queue is usually fine.
+
+Example:
+
+```bash
+rabbitmqadmin declare queue --name classic.demo --type classic --durable true
+```
+
+The important thing is this: a classic queue is usually owned by one node.
+
+If I have a 3 node cluster:
+
+```text
+rabbit1
+rabbit2
+rabbit3
+```
+
+and I create a classic queue, it might live on `rabbit1`.
+
+![A classic RabbitMQ queue living on one node inside a three node cluster](/assets/blog/rabbitmq-queues/classic-queue-single-node.png)
+
+So if your classic queue is on `rabbit1`, then `rabbit1` is important for that queue.
+
+This was the first thing that clicked for me:
+
+> Cluster has 3 nodes does not mean every queue has 3 copies.
+
+The cluster can have 3 nodes, but a classic queue can still have only one queue member.
+
+## Durable vs transient queue
+
+This confused me in the beginning.
+
+Durable queue means the queue definition survives broker restart.
+
+```text
+durable queue = queue exists after restart
+transient queue = queue goes away after restart
+```
+
+But durable queue does not automatically mean every message survives restart.
+
+For that you need two things:
+
+```text
+durable queue + persistent message
+```
+
+Simple table:
+
+| Queue     | Message    | After restart                     |
+| --------- | ---------- | --------------------------------- |
+| transient | transient  | queue gone, message gone          |
+| transient | persistent | queue gone, message gone          |
+| durable   | transient  | queue exists, message may be gone |
+| durable   | persistent | queue exists, message can survive |
+
+This is one of those tiny details that can absolutely ruin your day.
+
+You thought "I made the queue durable bro", but your publisher was sending transient messages. Nice. Data gone.
+
+## Quorum queue
+
+Quorum queue is RabbitMQ's replicated queue type.
+
+It is meant for queues where losing messages is not okay.
+
+Example:
+
+```bash
+rabbitmqadmin declare queue --name orders.queue --type quorum --durable true
+```
+
+A quorum queue uses Raft internally.
+
+Raft is a consensus algorithm. Big fancy distributed systems word, but the idea is simple:
+
+> Multiple nodes need to agree on the same truth.
+
+If you want to properly understand Raft, these two are worth opening:
+
+- [Raft official site](https://raft.github.io/)
+- [The Secret Lives of Data - Raft](https://thesecretlivesofdata.com/raft/)
+
+In a 3 node RabbitMQ cluster, a quorum queue usually has 3 members:
+
+```text
+orders.queue members:
+- rabbit1
+- rabbit2
+- rabbit3
+```
+
+One node is the leader. The others are followers.
+
+![A quorum queue with one leader node and two follower nodes replicating messages](/assets/blog/rabbitmq-queues/quorum-queue-leader-followers.png)
+
+When a producer publishes a message:
+
+1. Message reaches the quorum queue leader.
+2. Leader writes it.
+3. Leader replicates it to followers.
+4. Majority agrees.
+5. Message is considered committed.
+6. Consumer can read it.
+
+In 3 nodes, majority is 2.
+
+```text
+3 members -> majority 2 -> can survive 1 member failure
+5 members -> majority 3 -> can survive 2 member failures
+```
+
+This is why quorum queues are safer, but not free.
+
+Every message has extra work:
+
+- write locally
+- replicate
+- wait for majority
+- track log position
+- handle leader election if leader dies
+
+So yes, quorum queue will generally have more latency than a simple classic queue. That is the cost of not losing important messages.
+
+## Is the message copied to all nodes?
+
+In a 3 member quorum queue, yes the queue has members on all 3 nodes.
+
+So if you publish one message to a quorum queue, that message becomes part of the replicated queue log across those members.
+
+But RabbitMQ does not need to wait for all 3 nodes before saying the message is safe. It needs a majority.
+
+For 3:
+
+```text
+leader + 1 follower = majority
+```
+
+So if one follower is slow, the queue can still continue.
+
+![A producer publishing to a quorum queue leader, with majority replication before publisher confirm](/assets/blog/rabbitmq-queues/quorum-publish-majority-confirm.png)
+
+This is the balance:
+
+- classic queue: less coordination, less safety
+- quorum queue: more coordination, more safety
+
+## What happens when consumer reads the message?
+
+Consumer reading a message does not delete it immediately.
+
+This is very important.
+
+RabbitMQ has the concept of acknowledgement.
+
+```text
+consumer receives message != message deleted
+consumer sends ack = message can be removed
+```
+
+Flow:
+
+![A queue delivering a message to a consumer and deleting it only after the consumer acknowledgement](/assets/blog/rabbitmq-queues/consumer-acknowledgement-flow.png)
+
+If the consumer crashes before ack:
+
+```text
+message goes back to queue
+another consumer can retry
+```
+
+If the consumer acks and then your application crashes:
+
+```text
+RabbitMQ thinks work is done
+message is gone
+```
+
+So do not ack before actually completing the work.
+
+Bad:
+
+```text
+receive -> ack -> process -> crash
+```
+
+Good:
+
+```text
+receive -> process -> ack
+```
+
+For quorum queues, the ack/removal state is also replicated. Internally it may clean disk bytes later because logs get compacted, but logically the message is gone once the acknowledgement is committed.
+
+## Publisher confirms
+
+Consumer ack is from consumer to RabbitMQ.
+
+Publisher confirm is from RabbitMQ to producer.
+
+Do not mix them.
+
+![Publisher confirms flow from RabbitMQ to producer, while consumer acknowledgements flow from consumer to RabbitMQ](/assets/blog/rabbitmq-queues/publisher-confirm-vs-consumer-ack.png)
+
+Publisher confirm answers:
+
+> Did RabbitMQ safely accept my message?
+
+Consumer ack answers:
+
+> Did the consumer successfully process the message?
+
+If you care about reliability, use both.
+
+For quorum queues, publisher confirms are even more important because a confirm means the message has gone through the quorum queue safety path.
+
+Without publisher confirms, the producer is basically throwing messages and hoping for the best.
+
+Hope is not a reliability strategy lol.
+
+## What if a node dies?
+
+Let's say we have a quorum queue with 3 members:
+
+```text
+rabbit1
+rabbit2
+rabbit3
+```
+
+If `rabbit2` dies:
+
+```text
+still 2 nodes alive
+majority exists
+queue works
+```
+
+If `rabbit2` and `rabbit3` die:
+
+```text
+only 1 node alive
+majority lost
+queue unavailable
+```
+
+This is not RabbitMQ being stupid. This is the whole point of quorum.
+
+If the minority side was allowed to continue accepting writes, then when the other nodes come back you could have two different versions of truth.
+
+Distributed systems are annoying exactly because of this.
+
+## What if I add more nodes later?
+
+This was another thing that I misunderstood.
+
+Suppose your cluster has 3 nodes and your quorum queue has 3 members.
+
+Then you add 2 more nodes:
+
+```text
+rabbit1
+rabbit2
+rabbit3
+rabbit4
+rabbit5
+```
+
+Existing quorum queues do not automatically become 5 member queues.
+
+Cluster membership is not same as queue membership.
+
+![A five node RabbitMQ cluster where only the first three nodes are quorum queue members](/assets/blog/rabbitmq-queues/cluster-nodes-vs-queue-members.png)
+
+The queue still has its old members until you explicitly grow/rebalance the queue.
+
+You can add members to a quorum queue, but do it intentionally.
+
+Do not make every queue live on every node because it feels safe. More replicas means more writes, more coordination, more disk, and more latency.
+
+Typical quorum queue sizes:
+
+| Members | Majority | Failure tolerance |
+| ------- | -------- | ----------------- |
+| 3       | 2        | 1 node            |
+| 5       | 3        | 2 nodes           |
+| 7       | 4        | 3 nodes           |
+
+Even numbers are usually not worth it.
+
+```text
+4 members -> majority 3 -> still tolerates only 1 failure
+6 members -> majority 4 -> still tolerates only 2 failures
+```
+
+So 3 or 5 is usually the sane choice.
+
+## Classic queue vs quorum queue
+
+Here is the simple mental model.
+
+Use classic queue when:
+
+- queue is not super critical
+- you want lower overhead
+- you have temporary queues
+- you have high churn queues
+- you do not need queue-level replication
+
+Use quorum queue when:
+
+- message loss hurts
+- queue is long lived
+- queue is important to business flow
+- you need replication
+- you are ready to use publisher confirms and consumer acknowledgements
+
+Do not use quorum queues just because "distributed sounds cool".
+
+If you use quorum queues without publisher confirms and manual acks, you are paying the cost but not getting the full reliability benefit.
+
+## Sideline queue / dead letter queue
+
+Sometimes a message is bad.
+
+Maybe payload is wrong.
+Maybe downstream service is down.
+Maybe the consumer has a bug.
+Maybe this one message keeps failing again and again and blocks the flow.
+
+This is called a poison message.
+
+Instead of retrying forever like an idiot, we send it aside.
+
+That aside queue is often called:
+
+- dead letter queue
+- sideline queue
+- parking lot queue
+- error queue
+- quarantine queue
+
+The idea is:
+
+![A failed message being routed from the main orders queue to a sideline queue through a dead letter exchange](/assets/blog/rabbitmq-queues/dead-letter-sideline-queue-flow.png)
+
+RabbitMQ's mechanism is dead lettering.
+
+"Sideline queue" is usually just the business name teams give to the queue where failed messages are parked.
+
+This helps because the main queue can continue processing good messages.
+
+Without this:
+
+```text
+one bad message -> retry loop -> consumer busy -> queue grows -> everyone cries
+```
+
+With sideline:
+
+```text
+bad message -> parked aside -> main flow continues
+```
+
+This is one of those reliability patterns that sounds small but saves production systems.
+
+## Reliability checklist
+
+If I had to build a serious RabbitMQ flow, I would check these things:
+
+### 1. Durable queues
+
+Queue should survive restart.
+
+```text
+durable = true
+```
+
+For quorum queues this is already the model.
+
+### 2. Persistent messages
+
+Message should survive restart.
+
+```text
+delivery_mode = 2
+```
+
+### 3. Publisher confirms
+
+Producer should know RabbitMQ safely accepted the message.
+
+Without this, producer failure cases become guesswork.
+
+### 4. Manual consumer acknowledgements
+
+Consumer should ack only after work is done.
+
+Not before.
+
+### 5. Prefetch
+
+Do not let one consumer take unlimited messages and sit on them.
+
+Prefetch controls how many unacked messages a consumer can hold.
+
+```text
+prefetch = 10
+```
+
+means one consumer can hold 10 unacked messages at a time.
+
+### 6. Dead letter / sideline queue
+
+Bad messages should not destroy the main queue.
+
+Put failed messages somewhere visible.
+
+### 7. Idempotent consumers
+
+Even with RabbitMQ reliability, duplicates can happen.
+
+At-least-once delivery means:
+
+```text
+message can be delivered more than once
+```
+
+So consumer should be able to safely process duplicate messages.
+
+Example:
+
+```text
+payment_completed event comes twice
+do not ship two products bro
+```
+
+Use idempotency keys, unique constraints, processed message tables, or whatever fits your system.
+
+### 8. Monitoring
+
+Watch these:
+
+- ready messages
+- unacked messages
+- consumer count
+- publish rate
+- deliver rate
+- ack rate
+- node memory
+- disk free
+- connection count
+- queue leader
+- quorum queue members online
+
+If ready messages keep growing, consumers are not keeping up.
+
+If unacked messages keep growing, consumers are taking messages but not finishing.
+
+If publishers are blocked, check memory and disk alarms.
+
+## Management UI, what to actually look at
+
+RabbitMQ UI looks like a cockpit when you first open it.
+
+But for queues, focus on these:
+
+### Ready
+
+Messages waiting in queue.
+
+```text
+ready = not delivered yet
+```
+
+### Unacked
+
+Messages delivered to consumers but not acknowledged yet.
+
+```text
+unacked = consumer has it, RabbitMQ is waiting
+```
+
+### Consumers
+
+Number of consumers attached to the queue.
+
+If this is zero, nobody is reading.
+
+### Type
+
+Classic or quorum.
+
+### Leader
+
+For quorum queue, tells which node is currently leading the queue.
+
+### Members / online
+
+For quorum queue, tells which nodes are members and which are currently reachable.
+
+If your quorum queue has 3 members but only 1 online, you have a problem.
+
+## How this shit helps
+
+RabbitMQ is useful because it decouples services.
+
+Without queue:
+
+```text
+checkout service -> payment service -> invoice service -> email service
+```
+
+If email service is down, checkout might become slow or fail.
+
+With queue:
+
+![Checkout service publishing to an exchange, with payment, invoice and email workers consuming from separate queues](/assets/blog/rabbitmq-queues/async-checkout-queue-flow.png)
+
+Now checkout can publish an event and move on.
+
+If email service is slow, email queue grows, but checkout does not need to wait for it.
+
+This gives:
+
+- async processing
+- buffering during spikes
+- retry
+- failure isolation
+- independent scaling
+- better user experience
+
+But RabbitMQ is not a magic reliability machine.
+
+You still need to design for failures.
+
+The broker can help you, but it will not fix a stupid consumer that acks too early, or a producer that never checks confirms, or a team that has no dead letter queue.
+
+## Final mental model
+
+Classic queue:
+
+```text
+simple queue, usually one queue member, lower overhead
+```
+
+Quorum queue:
+
+```text
+replicated durable queue, Raft based, majority decides truth
+```
+
+Consumer acknowledgement:
+
+```text
+consumer tells RabbitMQ work is done
+```
+
+Publisher confirm:
+
+```text
+RabbitMQ tells producer message is safely accepted
+```
+
+Dead letter / sideline queue:
+
+```text
+place where failed messages go so main flow does not get stuck
+```
+
+Reliability:
+
+```text
+durable queue
++ persistent messages
++ publisher confirms
++ manual consumer acks
++ dead letter queue
++ idempotent consumers
++ monitoring
+```
+
+That is the whole game.
+
+RabbitMQ is not hard because queues are hard.
+
+RabbitMQ is hard because reliability is hard.
+
+## References
+
+- [RabbitMQ Quorum Queues](https://www.rabbitmq.com/docs/quorum-queues)
+- [RabbitMQ Classic Queues](https://www.rabbitmq.com/docs/classic-queues)
+- [RabbitMQ Reliability Guide](https://www.rabbitmq.com/docs/reliability)
+- [RabbitMQ Consumer Acknowledgements and Publisher Confirms](https://www.rabbitmq.com/docs/confirms)
+- [RabbitMQ Dead Letter Exchanges](https://www.rabbitmq.com/docs/dlx)
+- [Raft official site](https://raft.github.io/)
+- [The Secret Lives of Data - Raft](https://thesecretlivesofdata.com/raft/)
