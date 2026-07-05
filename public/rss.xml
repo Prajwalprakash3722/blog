@@ -4,7 +4,7 @@
         <title>Prajwals Blog</title>
         <link>http://localhost:3000</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Sun, 21 Jun 2026 13:52:02 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 05 Jul 2026 08:06:37 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,24 @@
             <link>http://localhost:3000</link>
         </image>
         <copyright>All rights reserved 2026, Prajwal P</copyright>
+        <item>
+            <title><![CDATA[RabbitMQ Classic Queues, Quorum Queues and Reliability]]></title>
+            <link>http://localhost:3000/posts/2026-07-05-rabbitmq-classic-quorum-queues</link>
+            <guid>http://localhost:3000/posts/2026-07-05-rabbitmq-classic-quorum-queues</guid>
+            <pubDate>Sun, 05 Jul 2026 18:00:00 GMT</pubDate>
+            <description><![CDATA[RabbitMQ queues confused me more than I expected. Classic queues, quorum queues, acks, confirms, dead letters, sideline queues, Raft, all this shit sounds scary until you draw the flow.]]></description>
+            <content:encoded><![CDATA[RabbitMQ queues confused me more than I expected. Classic queues, quorum queues, acks, confirms, dead letters, sideline queues, Raft, all this shit sounds scary until you draw the flow.]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
+            <title><![CDATA[Leaving My First House]]></title>
+            <link>http://localhost:3000/posts/2026-07-05-leaving-my-first-house</link>
+            <guid>http://localhost:3000/posts/2026-07-05-leaving-my-first-house</guid>
+            <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[After one and a half years, I am moving out of the first house I lived in alone. It taught me food, silence, discipline, and the strange truth that sometimes you are your own biggest problem.]]></description>
+            <content:encoded><![CDATA[After one and a half years, I am moving out of the first house I lived in alone. It taught me food, silence, discipline, and the strange truth that sometimes you are your own biggest problem.]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
         <item>
             <title><![CDATA[Live Captions at the Movies]]></title>
             <link>http://localhost:3000/posts/2026-06-21-live-captions-at-the-movies</link>
