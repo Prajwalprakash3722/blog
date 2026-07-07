@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "http://localhost:3000/posts/2026-07-06-aerospike-unreplicated-records",
+            "content_html": "Aerospike unreplicated records show up after a restart which can be pretty daunting at first, But once you understand primary index, partitions, CAP, AP mode, strong consistency, roster and recovery, the metric becomes much less magical.",
+            "url": "http://localhost:3000/posts/2026-07-06-aerospike-unreplicated-records",
+            "title": "Aerospike Unreplicated Records After Restart",
+            "summary": "Aerospike unreplicated records show up after a restart which can be pretty daunting at first, But once you understand primary index, partitions, CAP, AP mode, strong consistency, roster and recovery, the metric becomes much less magical.",
+            "date_modified": "2026-07-11T07:21:04.000Z",
+            "author": {
+                "name": "Prajwal P",
+                "url": "https://twitter.com/prajwal_3722"
+            }
+        },
+        {
             "id": "http://localhost:3000/posts/2026-07-05-rabbitmq-classic-quorum-queues",
             "content_html": "RabbitMQ queues confused me more than I expected. Classic queues, quorum queues, acks, confirms, dead letters, sideline queues, Raft, all this shit sounds scary until you draw the flow.",
             "url": "http://localhost:3000/posts/2026-07-05-rabbitmq-classic-quorum-queues",
@@ -23,12 +35,12 @@
             }
         },
         {
-            "id": "http://localhost:3000/posts/2026-07-05-leaving-my-first-house",
-            "content_html": "After one and a half years, I am moving out of the first house I lived in alone. It taught me food, silence, discipline, and the strange truth that sometimes you are your own biggest problem.",
-            "url": "http://localhost:3000/posts/2026-07-05-leaving-my-first-house",
-            "title": "Leaving My First House",
-            "summary": "After one and a half years, I am moving out of the first house I lived in alone. It taught me food, silence, discipline, and the strange truth that sometimes you are your own biggest problem.",
-            "date_modified": "2026-07-05T00:00:00.000Z",
+            "id": "http://localhost:3000/posts/2026-07-03-the-kid-inside-me-is-still-here",
+            "content_html": "Today I turn 24, and I keep thinking about the little kid inside me, the one I promised not to lose when I turned 21.",
+            "url": "http://localhost:3000/posts/2026-07-03-the-kid-inside-me-is-still-here",
+            "title": "The Kid Inside Me Is Still Here",
+            "summary": "Today I turn 24, and I keep thinking about the little kid inside me, the one I promised not to lose when I turned 21.",
+            "date_modified": "2026-07-03T00:00:00.000Z",
             "author": {
                 "name": "Prajwal P",
                 "url": "https://twitter.com/prajwal_3722"
