@@ -177,7 +177,7 @@ digest -> index entry -> where the record lives
 
 The actual record can live in memory or on storage depending on namespace configuration. But the primary index is the fast map Aerospike uses to avoid wandering around blindly.
 
-![alt text](image.png)
+![Aerospike primary index mapping a key digest to record metadata and storage location](/assets/blog/aerospike-unreplicated-records/primary-index-flow.png)
 
 So when you read a record:
 
@@ -221,9 +221,7 @@ key -> digest -> partition
 
 Then the cluster knows which node is master for that partition and which node has the replica copy.
 
-Diagram source:
-
-![alt text](image-1.png)
+![Aerospike key digest mapping to a partition with master and replica ownership](/assets/blog/aerospike-unreplicated-records/partition-ownership-flow.png)
 
 This one thing clears up a lot.
 
@@ -486,7 +484,7 @@ The roster matters because strong consistency needs to know:
 
 Simple picture:
 
-![alt text](image-2.png)
+![Aerospike strong consistency namespace roster inside a larger cluster](/assets/blog/aerospike-unreplicated-records/strong-consistency-roster.png)
 
 A Cluster can have 4 nodes but out of 4 nodes 3 nodes can participate in a roaster, If roster management is wrong, strong consistency can get conservative and make partitions unavailable.
 
@@ -508,7 +506,7 @@ key: user:42
 
 Flow:
 
-![alt text](image-3.png)
+![Aerospike write flow updating the primary index, storage, and replica before success](/assets/blog/aerospike-unreplicated-records/write-replication-flow.png)
 
 The important idea:
 
@@ -636,7 +634,7 @@ record exists
 
 Delete flow:
 
-![alt text](image-4.png)
+![Aerospike durable delete flow using a tombstone replicated to another node](/assets/blog/aerospike-unreplicated-records/durable-delete-tombstone-flow.png)
 
 So delete is not just:
 
@@ -726,7 +724,7 @@ So when the node comes back, some records can temporarily be treated as unreplic
 
 Mental model:
 
-![alt text](image-5.png)
+![Aerospike restart recovery flow showing index rebuild, partition comparison, and unreplicated records draining](/assets/blog/aerospike-unreplicated-records/restart-unreplicated-records-flow.png)
 
 So after restart:
 
@@ -814,7 +812,7 @@ This happens when:
 
 Flow:
 
-![alt text](image-6.png)
+![Aerospike migration flow moving partition ownership and replica state between nodes](/assets/blog/aerospike-unreplicated-records/migration-partition-ownership-flow.png)
 
 During this time, metrics can look busy and partition ownership can look uneven.
 

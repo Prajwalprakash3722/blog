@@ -2,30 +2,39 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Prajwals Blog</title>
-        <link>http://localhost:3000</link>
+        <link>https://www.blog.devcoffee.me</link>
         <description>Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.</description>
-        <lastBuildDate>Tue, 07 Jul 2026 13:42:47 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 10 Jul 2026 15:27:22 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
             <title>Prajwals Blog</title>
-            <url>http://localhost:3000/favicon.ico</url>
-            <link>http://localhost:3000</link>
+            <url>https://www.blog.devcoffee.me/favicon.ico</url>
+            <link>https://www.blog.devcoffee.me</link>
         </image>
         <copyright>All rights reserved 2026, Prajwal P</copyright>
         <item>
             <title><![CDATA[Aerospike Unreplicated Records After Restart]]></title>
-            <link>http://localhost:3000/posts/2026-07-06-aerospike-unreplicated-records</link>
-            <guid>http://localhost:3000/posts/2026-07-06-aerospike-unreplicated-records</guid>
+            <link>https://www.blog.devcoffee.me/posts/2026-07-06-aerospike-unreplicated-records</link>
+            <guid>https://www.blog.devcoffee.me/posts/2026-07-06-aerospike-unreplicated-records</guid>
             <pubDate>Sat, 11 Jul 2026 07:21:04 GMT</pubDate>
             <description><![CDATA[Aerospike unreplicated records show up after a restart which can be pretty daunting at first, But once you understand primary index, partitions, CAP, AP mode, strong consistency, roster and recovery, the metric becomes much less magical.]]></description>
             <content:encoded><![CDATA[Aerospike unreplicated records show up after a restart which can be pretty daunting at first, But once you understand primary index, partitions, CAP, AP mode, strong consistency, roster and recovery, the metric becomes much less magical.]]></content:encoded>
             <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
         </item>
         <item>
+            <title><![CDATA[Leaving My First House]]></title>
+            <link>https://www.blog.devcoffee.me/posts/2026-07-11-leaving-my-first-house</link>
+            <guid>https://www.blog.devcoffee.me/posts/2026-07-11-leaving-my-first-house</guid>
+            <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[After one and a half years, I am moving out of the first house I lived in alone. It taught me food, silence, discipline, and the strange truth that sometimes you are your own biggest problem.]]></description>
+            <content:encoded><![CDATA[After one and a half years, I am moving out of the first house I lived in alone. It taught me food, silence, discipline, and the strange truth that sometimes you are your own biggest problem.]]></content:encoded>
+            <author>prajwalprakash3722@gmail.com (Prajwal P)</author>
+        </item>
+        <item>
             <title><![CDATA[RabbitMQ Classic Queues, Quorum Queues and Reliability]]></title>
-            <link>http://localhost:3000/posts/2026-07-05-rabbitmq-classic-quorum-queues</link>
-            <guid>http://localhost:3000/posts/2026-07-05-rabbitmq-classic-quorum-queues</guid>
+            <link>https://www.blog.devcoffee.me/posts/2026-07-05-rabbitmq-classic-quorum-queues</link>
+            <guid>https://www.blog.devcoffee.me/posts/2026-07-05-rabbitmq-classic-quorum-queues</guid>
             <pubDate>Sun, 05 Jul 2026 18:00:00 GMT</pubDate>
             <description><![CDATA[RabbitMQ queues confused me more than I expected. Classic queues, quorum queues, acks, confirms, dead letters, sideline queues, Raft, all this shit sounds scary until you draw the flow.]]></description>
             <content:encoded><![CDATA[RabbitMQ queues confused me more than I expected. Classic queues, quorum queues, acks, confirms, dead letters, sideline queues, Raft, all this shit sounds scary until you draw the flow.]]></content:encoded>
@@ -33,8 +42,8 @@
         </item>
         <item>
             <title><![CDATA[The Kid Inside Me Is Still Here]]></title>
-            <link>http://localhost:3000/posts/2026-07-03-the-kid-inside-me-is-still-here</link>
-            <guid>http://localhost:3000/posts/2026-07-03-the-kid-inside-me-is-still-here</guid>
+            <link>https://www.blog.devcoffee.me/posts/2026-07-03-the-kid-inside-me-is-still-here</link>
+            <guid>https://www.blog.devcoffee.me/posts/2026-07-03-the-kid-inside-me-is-still-here</guid>
             <pubDate>Fri, 03 Jul 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Today I turn 24, and I keep thinking about the little kid inside me, the one I promised not to lose when I turned 21.]]></description>
             <content:encoded><![CDATA[Today I turn 24, and I keep thinking about the little kid inside me, the one I promised not to lose when I turned 21.]]></content:encoded>
@@ -42,8 +51,8 @@
         </item>
         <item>
             <title><![CDATA[Live Captions at the Movies]]></title>
-            <link>http://localhost:3000/posts/2026-06-21-live-captions-at-the-movies</link>
-            <guid>http://localhost:3000/posts/2026-06-21-live-captions-at-the-movies</guid>
+            <link>https://www.blog.devcoffee.me/posts/2026-06-21-live-captions-at-the-movies</link>
+            <guid>https://www.blog.devcoffee.me/posts/2026-06-21-live-captions-at-the-movies</guid>
             <pubDate>Sun, 21 Jun 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[I watched Obsession without subtitles using my iPhone's Live Captions, and for once, technology made a missing piece feel a little less missing.]]></description>
             <content:encoded><![CDATA[I watched Obsession without subtitles using my iPhone's Live Captions, and for once, technology made a missing piece feel a little less missing.]]></content:encoded>
@@ -51,8 +60,8 @@
         </item>
         <item>
             <title><![CDATA[Some Things Keep Breaking]]></title>
-            <link>http://localhost:3000/posts/2026-06-02-some-things-keep-breaking</link>
-            <guid>http://localhost:3000/posts/2026-06-02-some-things-keep-breaking</guid>
+            <link>https://www.blog.devcoffee.me/posts/2026-06-02-some-things-keep-breaking</link>
+            <guid>https://www.blog.devcoffee.me/posts/2026-06-02-some-things-keep-breaking</guid>
             <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Somewhere around 9:30 PM in Gokarna, I am watching the waves break again and again, and nothing in the sea seems surprised by it.]]></description>
             <content:encoded><![CDATA[Somewhere around 9:30 PM in Gokarna, I am watching the waves break again and again, and nothing in the sea seems surprised by it.]]></content:encoded>
@@ -60,8 +69,8 @@
         </item>
         <item>
             <title><![CDATA[Some Friendships End Without a Funeral]]></title>
-            <link>http://localhost:3000/posts/2026-05-23-some-friendships-end-without-a-funeral</link>
-            <guid>http://localhost:3000/posts/2026-05-23-some-friendships-end-without-a-funeral</guid>
+            <link>https://www.blog.devcoffee.me/posts/2026-05-23-some-friendships-end-without-a-funeral</link>
+            <guid>https://www.blog.devcoffee.me/posts/2026-05-23-some-friendships-end-without-a-funeral</guid>
             <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
             <description><![CDATA[Nobody tells you that some people leave your life so slowly that you do not notice the goodbye happening.]]></description>
             <content:encoded><![CDATA[Nobody tells you that some people leave your life so slowly that you do not notice the goodbye happening.]]></content:encoded>
@@ -69,8 +78,8 @@
         </item>
         <item>
             <title><![CDATA[Maybe Becoming Is Not the Point]]></title>
-            <link>http://localhost:3000/posts/2026-05-22-maybe-becoming-is-not-the-point</link>
-            <guid>http://localhost:3000/posts/2026-05-22-maybe-becoming-is-not-the-point</guid>
+            <link>https://www.blog.devcoffee.me/posts/2026-05-22-maybe-becoming-is-not-the-point</link>
+            <guid>https://www.blog.devcoffee.me/posts/2026-05-22-maybe-becoming-is-not-the-point</guid>
             <pubDate>Fri, 22 May 2026 15:54:36 GMT</pubDate>
             <description><![CDATA[I do not think I hate ambition. I think I am tired of treating growth like a debt I owe to a future version of myself.]]></description>
             <content:encoded><![CDATA[I do not think I hate ambition. I think I am tired of treating growth like a debt I owe to a future version of myself.]]></content:encoded>
@@ -78,8 +87,8 @@
         </item>
         <item>
             <title><![CDATA[AI is Finally Listening: Are we starting to Get Accessibility Right]]></title>
-            <link>http://localhost:3000/posts/ai-is-finally-listening</link>
-            <guid>http://localhost:3000/posts/ai-is-finally-listening</guid>
+            <link>https://www.blog.devcoffee.me/posts/ai-is-finally-listening</link>
+            <guid>https://www.blog.devcoffee.me/posts/ai-is-finally-listening</guid>
             <pubDate>Sun, 14 Dec 2025 12:00:00 GMT</pubDate>
             <description><![CDATA[The tech world is finally waking up to accessibility. From Apple's Live Captions to the potential of LLMs, we're seeing real progress. but are we truly there yet?]]></description>
             <content:encoded><![CDATA[The tech world is finally waking up to accessibility. From Apple's Live Captions to the potential of LLMs, we're seeing real progress. but are we truly there yet?]]></content:encoded>
@@ -87,8 +96,8 @@
         </item>
         <item>
             <title><![CDATA[Is this all there is to life?]]></title>
-            <link>http://localhost:3000/posts/is_this_all_there_is_to_life</link>
-            <guid>http://localhost:3000/posts/is_this_all_there_is_to_life</guid>
+            <link>https://www.blog.devcoffee.me/posts/is_this_all_there_is_to_life</link>
+            <guid>https://www.blog.devcoffee.me/posts/is_this_all_there_is_to_life</guid>
             <pubDate>Fri, 01 Aug 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[
 Another message.
@@ -108,8 +117,8 @@ And th...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Building Your Go App Like LEGOs: A Simple Guide to Plugins]]></title>
-            <link>http://localhost:3000/posts/writing-plugin-system-for-golang-apps</link>
-            <guid>http://localhost:3000/posts/writing-plugin-system-for-golang-apps</guid>
+            <link>https://www.blog.devcoffee.me/posts/writing-plugin-system-for-golang-apps</link>
+            <guid>https://www.blog.devcoffee.me/posts/writing-plugin-system-for-golang-apps</guid>
             <pubDate>Sun, 15 Jun 2025 12:35:54 GMT</pubDate>
             <description><![CDATA[
 ### **Building Your Go App Like LEGOs: A Simple Guide to Plugins**
@@ -123,8 +132,8 @@ As a system grows, adding new features can feel like performing open-heart surge
         </item>
         <item>
             <title><![CDATA[Invisible Threads]]></title>
-            <link>http://localhost:3000/posts/invisible-threads</link>
-            <guid>http://localhost:3000/posts/invisible-threads</guid>
+            <link>https://www.blog.devcoffee.me/posts/invisible-threads</link>
+            <guid>https://www.blog.devcoffee.me/posts/invisible-threads</guid>
             <pubDate>Sun, 02 Feb 2025 14:51:20 GMT</pubDate>
             <description><![CDATA[
 ## Invisible Threads
@@ -138,8 +147,8 @@ Have you ever noticed how people sometimes look at others differently just becau
         </item>
         <item>
             <title><![CDATA[A ZFS tale]]></title>
-            <link>http://localhost:3000/posts/a-zfs-story</link>
-            <guid>http://localhost:3000/posts/a-zfs-story</guid>
+            <link>https://www.blog.devcoffee.me/posts/a-zfs-story</link>
+            <guid>https://www.blog.devcoffee.me/posts/a-zfs-story</guid>
             <pubDate>Sun, 12 Jan 2025 03:58:33 GMT</pubDate>
             <description><![CDATA[
 # A ZFS tale
@@ -151,8 +160,8 @@ I recently traded and got in return 1TB HDD from a friend, had another one colle
         </item>
         <item>
             <title><![CDATA[Is 'Accessibility' Losing Its Meaning?]]></title>
-            <link>http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning</link>
-            <guid>http://localhost:3000/posts/accessibility-is-the-word-losing-its-meaning</guid>
+            <link>https://www.blog.devcoffee.me/posts/accessibility-is-the-word-losing-its-meaning</link>
+            <guid>https://www.blog.devcoffee.me/posts/accessibility-is-the-word-losing-its-meaning</guid>
             <pubDate>Sat, 28 Dec 2024 03:58:33 GMT</pubDate>
             <description><![CDATA[People often get confused about accessibility. Is it just about being able to reach something? Or is it about actually being able to use it? Let's break it down in simple terms.]]></description>
             <content:encoded><![CDATA[People often get confused about accessibility. Is it just about being able to reach something? Or is it about actually being able to use it? Let's break it down in simple terms.]]></content:encoded>
@@ -160,8 +169,8 @@ I recently traded and got in return 1TB HDD from a friend, had another one colle
         </item>
         <item>
             <title><![CDATA[How Yoga Changed My Thinking]]></title>
-            <link>http://localhost:3000/posts/how-yoga-changed-my-thinking</link>
-            <guid>http://localhost:3000/posts/how-yoga-changed-my-thinking</guid>
+            <link>https://www.blog.devcoffee.me/posts/how-yoga-changed-my-thinking</link>
+            <guid>https://www.blog.devcoffee.me/posts/how-yoga-changed-my-thinking</guid>
             <pubDate>Tue, 24 Dec 2024 20:30:00 GMT</pubDate>
             <description><![CDATA[
 # How Yoga Changed My Thinking
@@ -175,8 +184,8 @@ I found my way back to yoga this year. As a kid, I was an ardent lover of it but
         </item>
         <item>
             <title><![CDATA[Intermittent Fasting for 2 Months: My Journey]]></title>
-            <link>http://localhost:3000/posts/intermeit-fasting</link>
-            <guid>http://localhost:3000/posts/intermeit-fasting</guid>
+            <link>https://www.blog.devcoffee.me/posts/intermeit-fasting</link>
+            <guid>https://www.blog.devcoffee.me/posts/intermeit-fasting</guid>
             <pubDate>Tue, 12 Mar 2024 19:51:20 GMT</pubDate>
             <description><![CDATA[
 # Intermittent Fasting for 2 Months: My Journey (and Struggles!)
@@ -190,8 +199,8 @@ Two months down, and feeling energized!   I'm not the fittest, but I wanted to m
         </item>
         <item>
             <title><![CDATA[Diving Deep into top & htop]]></title>
-            <link>http://localhost:3000/posts/top</link>
-            <guid>http://localhost:3000/posts/top</guid>
+            <link>https://www.blog.devcoffee.me/posts/top</link>
+            <guid>https://www.blog.devcoffee.me/posts/top</guid>
             <pubDate>Sun, 13 Aug 2023 16:31:15 GMT</pubDate>
             <description><![CDATA[
 You might be familiar with the Windows Task Manager - the go-to tool for monitoring and managing processes. In the Linux world, the equivalent comman...]]></description>
@@ -201,8 +210,8 @@ You might be familiar with the Windows Task Manager - the go-to tool for monitor
         </item>
         <item>
             <title><![CDATA[Quickly spin up VM's using Vagrant]]></title>
-            <link>http://localhost:3000/posts/vagrant</link>
-            <guid>http://localhost:3000/posts/vagrant</guid>
+            <link>https://www.blog.devcoffee.me/posts/vagrant</link>
+            <guid>https://www.blog.devcoffee.me/posts/vagrant</guid>
             <pubDate>Mon, 07 Aug 2023 21:35:54 GMT</pubDate>
             <description><![CDATA[
 Vagrant is a tool to build up and operate Virtual Machines on the top of innumerable (actually few) virtual platform over an operating system, what d...]]></description>
@@ -212,8 +221,8 @@ Vagrant is a tool to build up and operate Virtual Machines on the top of innumer
         </item>
         <item>
             <title><![CDATA[Turning 21]]></title>
-            <link>http://localhost:3000/posts/turning-21</link>
-            <guid>http://localhost:3000/posts/turning-21</guid>
+            <link>https://www.blog.devcoffee.me/posts/turning-21</link>
+            <guid>https://www.blog.devcoffee.me/posts/turning-21</guid>
             <pubDate>Mon, 03 Jul 2023 15:58:54 GMT</pubDate>
             <description><![CDATA[In this blog post, I share my thoughts and feelings as I celebrate my 21st birthday. Join me as I reflect on my journey so far, the expectations I had as a child, and the realization that I am now entering adulthood. I ponder what my younger self would think of the person I have become, and I express gratitude for the incredible people and experiences that have shaped my life. Come along as I navigate the excitement and nostalgia that come with turning 21.]]></description>
             <content:encoded><![CDATA[In this blog post, I share my thoughts and feelings as I celebrate my 21st birthday. Join me as I reflect on my journey so far, the expectations I had as a child, and the realization that I am now entering adulthood. I ponder what my younger self would think of the person I have become, and I express gratitude for the incredible people and experiences that have shaped my life. Come along as I navigate the excitement and nostalgia that come with turning 21.]]></content:encoded>
@@ -221,8 +230,8 @@ Vagrant is a tool to build up and operate Virtual Machines on the top of innumer
         </item>
         <item>
             <title><![CDATA[Diving deep into my Personal Infrastructure]]></title>
-            <link>http://localhost:3000/posts/personal-infra</link>
-            <guid>http://localhost:3000/posts/personal-infra</guid>
+            <link>https://www.blog.devcoffee.me/posts/personal-infra</link>
+            <guid>https://www.blog.devcoffee.me/posts/personal-infra</guid>
             <pubDate>Thu, 20 Apr 2023 19:06:23 GMT</pubDate>
             <description><![CDATA[
 ## Diving deep into my Personal Infrastructure
@@ -236,8 +245,8 @@ We are 110 days in to 2023. Have you been able to keep your New Years Resolution
         </item>
         <item>
             <title><![CDATA[Living in the present]]></title>
-            <link>http://localhost:3000/posts/life-living-death</link>
-            <guid>http://localhost:3000/posts/life-living-death</guid>
+            <link>https://www.blog.devcoffee.me/posts/life-living-death</link>
+            <guid>https://www.blog.devcoffee.me/posts/life-living-death</guid>
             <pubDate>Fri, 17 Mar 2023 18:00:00 GMT</pubDate>
             <description><![CDATA[
 ## Living in the present
@@ -251,8 +260,8 @@ Recently I came across a video, where the creator tried to live his last 7 days 
         </item>
         <item>
             <title><![CDATA[Conquering Kudremukh: 'A Novice Trekkers Journey to the top']]></title>
-            <link>http://localhost:3000/posts/conquering-kuduremukh</link>
-            <guid>http://localhost:3000/posts/conquering-kuduremukh</guid>
+            <link>https://www.blog.devcoffee.me/posts/conquering-kuduremukh</link>
+            <guid>https://www.blog.devcoffee.me/posts/conquering-kuduremukh</guid>
             <pubDate>Thu, 02 Feb 2023 13:00:00 GMT</pubDate>
             <description><![CDATA[
 This Post is different from other posts on this blog, Remember I had made a goal, **Go on 12 Treks in 2023**.
@@ -264,8 +273,8 @@ Well, this is the first of many, introd...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Look ma it's already 2023 and I am still dumb]]></title>
-            <link>http://localhost:3000/posts/look-ma-its-already-2023-and-i-am-dumb</link>
-            <guid>http://localhost:3000/posts/look-ma-its-already-2023-and-i-am-dumb</guid>
+            <link>https://www.blog.devcoffee.me/posts/look-ma-its-already-2023-and-i-am-dumb</link>
+            <guid>https://www.blog.devcoffee.me/posts/look-ma-its-already-2023-and-i-am-dumb</guid>
             <pubDate>Sun, 08 Jan 2023 10:00:00 GMT</pubDate>
             <description><![CDATA[
 ## Look ma it's already 2023 and I am still dumb
@@ -279,8 +288,8 @@ As the end of the year approaches, I find myself reflecting on the past 12 month
         </item>
         <item>
             <title><![CDATA[NTP- Network Time Protocol]]></title>
-            <link>http://localhost:3000/posts/ntp-network-time-protocol</link>
-            <guid>http://localhost:3000/posts/ntp-network-time-protocol</guid>
+            <link>https://www.blog.devcoffee.me/posts/ntp-network-time-protocol</link>
+            <guid>https://www.blog.devcoffee.me/posts/ntp-network-time-protocol</guid>
             <pubDate>Tue, 13 Dec 2022 16:40:40 GMT</pubDate>
             <description><![CDATA[
 Not a lot of people might have heard of NTP,NTP is likely an essential part of many of the devices and services that you use on a daily basis. It hel...]]></description>
@@ -290,8 +299,8 @@ Not a lot of people might have heard of NTP,NTP is likely an essential part of m
         </item>
         <item>
             <title><![CDATA[new AbortController()]]></title>
-            <link>http://localhost:3000/posts/abortController</link>
-            <guid>http://localhost:3000/posts/abortController</guid>
+            <link>https://www.blog.devcoffee.me/posts/abortController</link>
+            <guid>https://www.blog.devcoffee.me/posts/abortController</guid>
             <pubDate>Fri, 09 Dec 2022 21:35:54 GMT</pubDate>
             <description><![CDATA[
 Ever heard of AbortController, if not allow me to introduce you to the AbortController,
@@ -305,8 +314,8 @@ I came across AbortController in my company code base, at fi...]]></content:enco
         </item>
         <item>
             <title><![CDATA[What I learnt from writing low level code for a semester]]></title>
-            <link>http://localhost:3000/posts/what-i-learnt-from-writing-low-level-programming</link>
-            <guid>http://localhost:3000/posts/what-i-learnt-from-writing-low-level-programming</guid>
+            <link>https://www.blog.devcoffee.me/posts/what-i-learnt-from-writing-low-level-programming</link>
+            <guid>https://www.blog.devcoffee.me/posts/what-i-learnt-from-writing-low-level-programming</guid>
             <pubDate>Sun, 25 Sep 2022 21:35:54 GMT</pubDate>
             <description><![CDATA[Low-level programming is a style of computer programming in which little or no abstraction is used between the instructions in the programming language and the architecture's machine code instructions. Low-level programming is the opposite of high-level programming, which uses a large amount of abstraction to make the process of developing a program easier.]]></description>
             <content:encoded><![CDATA[Low-level programming is a style of computer programming in which little or no abstraction is used between the instructions in the programming language and the architecture's machine code instructions. Low-level programming is the opposite of high-level programming, which uses a large amount of abstraction to make the process of developing a program easier.]]></content:encoded>
@@ -314,8 +323,8 @@ I came across AbortController in my company code base, at fi...]]></content:enco
         </item>
         <item>
             <title><![CDATA[Heroku Alternatives]]></title>
-            <link>http://localhost:3000/posts/heroku-alternatives</link>
-            <guid>http://localhost:3000/posts/heroku-alternatives</guid>
+            <link>https://www.blog.devcoffee.me/posts/heroku-alternatives</link>
+            <guid>https://www.blog.devcoffee.me/posts/heroku-alternatives</guid>
             <pubDate>Sun, 18 Sep 2022 21:35:54 GMT</pubDate>
             <description><![CDATA[However, Heroku is not the only PaaS  platform out there. In this article, we will look at some of the best Heroku alternatives as it has announced to stop supporting the free tier (hobby) plan from November 28th 2022.You can read more about this [here](https://blog.heroku.com/next-chapter/).
 I still remember the first time I deployed an application on Heroku, It was so easy to deploy.
@@ -331,8 +340,8 @@ Earlier in the days it was not easy to run code on server, it required a special
         </item>
         <item>
             <title><![CDATA[learning_rust[0]]]></title>
-            <link>http://localhost:3000/posts/learning-rust</link>
-            <guid>http://localhost:3000/posts/learning-rust</guid>
+            <link>https://www.blog.devcoffee.me/posts/learning-rust</link>
+            <guid>https://www.blog.devcoffee.me/posts/learning-rust</guid>
             <pubDate>Fri, 16 Sep 2022 07:51:20 GMT</pubDate>
             <description><![CDATA[
 ## learning_rust[0]
@@ -348,8 +357,8 @@ I was thinking about learning `G...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Don't get confused between map() and forEach()]]></title>
-            <link>http://localhost:3000/posts/map-forEach</link>
-            <guid>http://localhost:3000/posts/map-forEach</guid>
+            <link>https://www.blog.devcoffee.me/posts/map-forEach</link>
+            <guid>https://www.blog.devcoffee.me/posts/map-forEach</guid>
             <pubDate>Thu, 15 Sep 2022 21:35:54 GMT</pubDate>
             <description><![CDATA[JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.]]></description>
             <content:encoded><![CDATA[JavaScript is the one of the easiest langauge to learn and as well as the most confusing langauge ever. I have been using JavaScript for more than 2 years and I have missed out of a fair share of features. One of the most common mistakes I have seen is people (including me) using map() and forEach() wrong. Now JavaScript offers us two methods to iterate over an array, `map()` and `forEach()`.]]></content:encoded>
@@ -357,8 +366,8 @@ I was thinking about learning `G...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Namespaces in Typescript]]></title>
-            <link>http://localhost:3000/posts/namespaces-in-typescript</link>
-            <guid>http://localhost:3000/posts/namespaces-in-typescript</guid>
+            <link>https://www.blog.devcoffee.me/posts/namespaces-in-typescript</link>
+            <guid>https://www.blog.devcoffee.me/posts/namespaces-in-typescript</guid>
             <pubDate>Wed, 14 Sep 2022 07:51:20 GMT</pubDate>
             <description><![CDATA[In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.]]></description>
             <content:encoded><![CDATA[In this article we will try to grasp the concept of namespaces and how they are helpful and finally we will learn how to use them in Typescript.]]></content:encoded>
@@ -366,8 +375,8 @@ I was thinking about learning `G...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Why I Prefer Type-Script more than JavaScript …?]]></title>
-            <link>http://localhost:3000/posts/typescript-javascript</link>
-            <guid>http://localhost:3000/posts/typescript-javascript</guid>
+            <link>https://www.blog.devcoffee.me/posts/typescript-javascript</link>
+            <guid>https://www.blog.devcoffee.me/posts/typescript-javascript</guid>
             <pubDate>Thu, 03 Feb 2022 07:51:20 GMT</pubDate>
             <description><![CDATA[If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer]]></description>
             <content:encoded><![CDATA[If you have experience with JS you know that the data type is completely dynamic, to give you a example, I declare arr` as a const , and try to apply arr.map()` function, This is a error because arr` is not a array to map through and we’ll get to know this error during run (JS doesn’t need any compiling we can directly run / interpret it in Browser) time which is more frustrating for a developer]]></content:encoded>
@@ -375,8 +384,8 @@ I was thinking about learning `G...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[The Problem which no one Overlooks]]></title>
-            <link>http://localhost:3000/posts/the-problem-which-no-one-overlooks</link>
-            <guid>http://localhost:3000/posts/the-problem-which-no-one-overlooks</guid>
+            <link>https://www.blog.devcoffee.me/posts/the-problem-which-no-one-overlooks</link>
+            <guid>https://www.blog.devcoffee.me/posts/the-problem-which-no-one-overlooks</guid>
             <pubDate>Mon, 06 Dec 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.]]></description>
             <content:encoded><![CDATA[After all you might think several students wear glasses and need no further assistance same happens with deaf students, But hearing loss is more complicated than that.]]></content:encoded>
@@ -384,8 +393,8 @@ I was thinking about learning `G...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[The Respect !!!]]></title>
-            <link>http://localhost:3000/posts/the-respect</link>
-            <guid>http://localhost:3000/posts/the-respect</guid>
+            <link>https://www.blog.devcoffee.me/posts/the-respect</link>
+            <guid>https://www.blog.devcoffee.me/posts/the-respect</guid>
             <pubDate>Sun, 21 Nov 2021 06:01:03 GMT</pubDate>
             <description><![CDATA[Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying]]></description>
             <content:encoded><![CDATA[Sir, It has been around 10 years, Since we came to Bengaluru.When me and my wife came here I had only 1000 rupees in my hand, I worked some odd jobs and saved enough money to open this hotel back in 5–6 years, Since then my life has been going good, My children are studying]]></content:encoded>
@@ -393,8 +402,8 @@ I was thinking about learning `G...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Let's Talk Money: You've Worked Hard for It, Now Make It Work for You]]></title>
-            <link>http://localhost:3000/posts/lets-talk-money</link>
-            <guid>http://localhost:3000/posts/lets-talk-money</guid>
+            <link>https://www.blog.devcoffee.me/posts/lets-talk-money</link>
+            <guid>https://www.blog.devcoffee.me/posts/lets-talk-money</guid>
             <pubDate>Sat, 17 Jul 2021 21:35:54 GMT</pubDate>
             <description><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></description>
             <content:encoded><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></content:encoded>
@@ -402,8 +411,8 @@ I was thinking about learning `G...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Bengaluru Daires 1]]></title>
-            <link>http://localhost:3000/posts/bengaluru-daires</link>
-            <guid>http://localhost:3000/posts/bengaluru-daires</guid>
+            <link>https://www.blog.devcoffee.me/posts/bengaluru-daires</link>
+            <guid>https://www.blog.devcoffee.me/posts/bengaluru-daires</guid>
             <pubDate>Sat, 12 Jun 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[Bengaluru Daires is a collection of my beautiful memories, experiences and stories from the city of Bengaluru.]]></description>
             <content:encoded><![CDATA[Bengaluru Daires is a collection of my beautiful memories, experiences and stories from the city of Bengaluru.]]></content:encoded>
@@ -411,8 +420,8 @@ I was thinking about learning `G...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Introduction to Open-Cv]]></title>
-            <link>http://localhost:3000/posts/introduction-to-opencv</link>
-            <guid>http://localhost:3000/posts/introduction-to-opencv</guid>
+            <link>https://www.blog.devcoffee.me/posts/introduction-to-opencv</link>
+            <guid>https://www.blog.devcoffee.me/posts/introduction-to-opencv</guid>
             <pubDate>Mon, 31 May 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[A brief introduction to a popular module called Open-Cv]]></description>
             <content:encoded><![CDATA[A brief introduction to a popular module called Open-Cv]]></content:encoded>
@@ -420,8 +429,8 @@ I was thinking about learning `G...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[The Only Friend……. (Series) Ep-04]]></title>
-            <link>http://localhost:3000/posts/The-Only-Friend-Ep-04</link>
-            <guid>http://localhost:3000/posts/The-Only-Friend-Ep-04</guid>
+            <link>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-04</link>
+            <guid>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-04</guid>
             <pubDate>Sat, 17 Apr 2021 10:35:54 GMT</pubDate>
             <description><![CDATA[
 Increase the charge by 150J Dr Mathur Said to the nurse, The heartbeat was still nil.
@@ -433,8 +442,8 @@ Finally, it was increased to 250J the heart responded, CPR was ...]]></content:e
         </item>
         <item>
             <title><![CDATA[The Only Friend……. (Series) Ep-03]]></title>
-            <link>http://localhost:3000/posts/The-Only-Friend-Ep-03</link>
-            <guid>http://localhost:3000/posts/The-Only-Friend-Ep-03</guid>
+            <link>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-03</link>
+            <guid>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-03</guid>
             <pubDate>Fri, 16 Apr 2021 10:35:54 GMT</pubDate>
             <description><![CDATA[
 Dr Mathur was surprised to find Geetha, He thought, what happened to her since she was very healthy?
@@ -446,8 +455,8 @@ The nurse told him she suddenly went to cardiac ...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[The Only Friend……. (Series) Ep-02]]></title>
-            <link>http://localhost:3000/posts/The-Only-Friend-Ep-02</link>
-            <guid>http://localhost:3000/posts/The-Only-Friend-Ep-02</guid>
+            <link>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-02</link>
+            <guid>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-02</guid>
             <pubDate>Thu, 15 Apr 2021 10:00:00 GMT</pubDate>
             <description><![CDATA[
 This baby was the result of their fourth IVF try,
@@ -461,8 +470,8 @@ Three unsuccessful rounds of IVF had exhausted the mother-to-be Geeth...]]></con
         </item>
         <item>
             <title><![CDATA[The Only Friend……. (Series) Ep-01]]></title>
-            <link>http://localhost:3000/posts/The-Only-Friend-Ep-01</link>
-            <guid>http://localhost:3000/posts/The-Only-Friend-Ep-01</guid>
+            <link>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-01</link>
+            <guid>https://www.blog.devcoffee.me/posts/The-Only-Friend-Ep-01</guid>
             <pubDate>Tue, 13 Apr 2021 10:35:54 GMT</pubDate>
             <description><![CDATA[
 You could hear the baby’s cries all over the hospital as soon as the doctor slapped the baby’s butt,
@@ -474,8 +483,8 @@ I saw A man running towards the babies ward smil...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[How Lucky Are We……?]]></title>
-            <link>http://localhost:3000/posts/how-lucky-are-we</link>
-            <guid>http://localhost:3000/posts/how-lucky-are-we</guid>
+            <link>https://www.blog.devcoffee.me/posts/how-lucky-are-we</link>
+            <guid>https://www.blog.devcoffee.me/posts/how-lucky-are-we</guid>
             <pubDate>Fri, 02 Apr 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.]]></description>
             <content:encoded><![CDATA[F*** this Covid, I thought to myself, having cursed the pandemic countless times. This time wasn’t that much different. If it wasn’t for the pandemic, I would have had a blissful college life.]]></content:encoded>
@@ -483,8 +492,8 @@ I saw A man running towards the babies ward smil...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[The Silent Struggle]]></title>
-            <link>http://localhost:3000/posts/the-slient-struggle</link>
-            <guid>http://localhost:3000/posts/the-slient-struggle</guid>
+            <link>https://www.blog.devcoffee.me/posts/the-slient-struggle</link>
+            <guid>https://www.blog.devcoffee.me/posts/the-slient-struggle</guid>
             <pubDate>Sun, 21 Mar 2021 05:35:07 GMT</pubDate>
             <description><![CDATA[Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.]]></description>
             <content:encoded><![CDATA[Hearing aids are just a medium that connects us to the outer world. They are an integral part of my life; I do not go anywhere without them. I got introduced to this world on July 3rd 2002 and was declared deaf within 5 months.]]></content:encoded>
@@ -492,8 +501,8 @@ I saw A man running towards the babies ward smil...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Ikigai: The Japanese Secret to a Long and Happy Life.]]></title>
-            <link>http://localhost:3000/posts/ikigai</link>
-            <guid>http://localhost:3000/posts/ikigai</guid>
+            <link>https://www.blog.devcoffee.me/posts/ikigai</link>
+            <guid>https://www.blog.devcoffee.me/posts/ikigai</guid>
             <pubDate>Wed, 18 Nov 2020 21:35:54 GMT</pubDate>
             <description><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></description>
             <content:encoded><![CDATA[Do you know why most sports athletes go broke just after few years of retiring ? They almost retire with 250% more than the net worth of a common man. still go broke. The main reason Is Poor Finance Planning!!]]></content:encoded>
@@ -501,8 +510,8 @@ I saw A man running towards the babies ward smil...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Rich Dad Poor Dad: Assets and Liability management]]></title>
-            <link>http://localhost:3000/posts/rich-dad-poor-dad</link>
-            <guid>http://localhost:3000/posts/rich-dad-poor-dad</guid>
+            <link>https://www.blog.devcoffee.me/posts/rich-dad-poor-dad</link>
+            <guid>https://www.blog.devcoffee.me/posts/rich-dad-poor-dad</guid>
             <pubDate>Sun, 15 Nov 2020 21:35:54 GMT</pubDate>
             <description><![CDATA[It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.]]></description>
             <content:encoded><![CDATA[It encourages you to invest in real estate, and there if you make a loss it teaches how to be not sad about losing the money instead of taking it as a lesson for future investments. It gives you simple explanations of how money works. It will not give you any trading tips, but it helps you understand the things no one teaches us in the school or at home. The financial insights aid you to take action, and be your boss.]]></content:encoded>
@@ -510,8 +519,8 @@ I saw A man running towards the babies ward smil...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Three Thousand Stitches: Ordinary People, Extraordinary Lives.]]></title>
-            <link>http://localhost:3000/posts/3000-stories</link>
-            <guid>http://localhost:3000/posts/3000-stories</guid>
+            <link>https://www.blog.devcoffee.me/posts/3000-stories</link>
+            <guid>https://www.blog.devcoffee.me/posts/3000-stories</guid>
             <pubDate>Fri, 13 Nov 2020 21:35:54 GMT</pubDate>
             <description><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></description>
             <content:encoded><![CDATA[Two decades ago when she tried to make changes in the DEVDASIS’S life they threw chappals at her, when she went for the second time they threw tomatoes at her instead of taking this as a strict no she took this incident as an improvement]]></content:encoded>
@@ -519,8 +528,8 @@ I saw A man running towards the babies ward smil...]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Why India is obsessed with engineering?]]></title>
-            <link>http://localhost:3000/posts/why-is-obsessed-with-engineering</link>
-            <guid>http://localhost:3000/posts/why-is-obsessed-with-engineering</guid>
+            <link>https://www.blog.devcoffee.me/posts/why-is-obsessed-with-engineering</link>
+            <guid>https://www.blog.devcoffee.me/posts/why-is-obsessed-with-engineering</guid>
             <pubDate>Fri, 13 Nov 2020 07:51:20 GMT</pubDate>
             <description><![CDATA[In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..]]></description>
             <content:encoded><![CDATA[In the world japan is famous producing for its electronics, France is famous for producing baking eatables, Italy is famous for producing wine and cheese, America is famous for producing automobiles, aerospace, etc..]]></content:encoded>
