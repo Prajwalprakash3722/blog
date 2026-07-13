@@ -2,7 +2,7 @@
 title: "Aerospike Unreplicated Records After Restart"
 excerpt: "Aerospike unreplicated records show up after a restart which can be pretty daunting at first, But once you understand primary index, partitions, CAP, AP mode, strong consistency, roster and recovery, the metric becomes much less magical."
 coverImage: "https://images.unsplash.com/photo-1755018237843-2f47f470cf11?auto=format&fit=crop&fm=jpg&q=80&w=3000"
-date: "2026-07-11T07:21:04.000Z"
+date: "2026-07-14T07:21:04.000Z"
 ogImage:
   url: "https://images.unsplash.com/photo-1755018237843-2f47f470cf11?auto=format&fit=crop&fm=jpg&q=80&w=1600"
 draft: false
@@ -1138,9 +1138,9 @@ while Aerospike rebuilds index/state and proves replication state
 Deletes:
 
 ```text
-delete is also a replicated write,
-often represented with tombstones,
-so old copies do not come back from the dead
+normal delete can expunge the record,
+durable delete writes a tombstone,
+and tombstones stop old copies coming back from the dead
 ```
 
 CRUD is easy. Maintaining a database will make you look 35 when you are 25.
