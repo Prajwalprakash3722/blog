@@ -522,13 +522,64 @@ This is why strong consistency exists.
 
 ## How deletes happen
 
-Delete is also a write.
+Delete is where things get a little annoying.
 
-This is important.
+Because "delete" does not always mean the same thing.
 
-When you delete a record, Aerospike cannot simply remove it from one node and call it a day.
+There are two mental models:
 
-If it did that, an older copy from another node could come back later and resurrect the record.
+```text
+normal delete / expunge
+durable delete / tombstone
+```
+
+They are not the same.
+
+In the simple non-durable delete case, Aerospike can remove the record from the primary index and forget it.
+
+In human words:
+
+```text
+remove primary index entry from memory
+record is gone from this node's live view
+```
+
+That is closer to:
+
+```text
+remove it and move on
+```
+
+But durable delete is different.
+
+Durable delete is a write of deletion history.
+
+Instead of only saying:
+
+```text
+I do not have this record anymore
+```
+
+it says:
+
+```text
+this record was deleted
+do not let an older copy become alive again
+```
+
+That difference matters when nodes restart, migrate, or come back with old data.
+
+In strong consistency namespaces, expunge behavior also depends on config.
+
+The parameter to know is:
+
+```text
+strong-consistency-allow-expunge
+```
+
+If this is enabled for an SC namespace, Aerospike can allow expunge-style deletes.
+
+If you want delete safety across cold starts/recovery, durable deletes and tombstones are the safer mental model.
 
 How?
 
@@ -549,7 +600,7 @@ Now node B goes down.
 
 While node B is down, client deletes `user:42`.
 
-If delete was just a normal "remove bytes from node A" operation, node A would remove the record.
+If delete was just an expunge-style "remove it from node A's primary index and storage" operation, node A would remove the record from its live view.
 
 But node B is not online to hear about that delete.
 
@@ -582,7 +633,7 @@ old copy appears again
 
 No thanks.
 
-So deletes need to be coordinated too.
+So for important replicated data, delete needs to carry intent too.
 
 In Aerospike, durable deletes use tombstones.
 
