@@ -1,0 +1,1128 @@
+---
+title: "How Distributed Systems Agree With Each Other"
+excerpt: "Consensus, consistency, quorum, CAP, PACELC, Raft and Paxos sound scary until you reduce them to one boring question: what must a distributed system wait for before it tells the client success?"
+coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&fm=jpg&q=80&w=3000"
+date: "2026-08-19T04:00:54.000Z"
+ogImage:
+  url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&fm=jpg&q=80&w=1600"
+draft: false
+category: "Software Development"
+---
+
+## How Distributed Systems Agree With Each Other
+
+You did everything "right".
+
+At least according to the so called Silicon Valley bros.
+
+You read the blogs.
+
+You broke your massive, clunky monolith into sleek, independent microservices.
+
+You deployed them to Kubernetes, because of course you did.
+
+You added an API Gateway.
+
+You looked at your architecture diagram and felt like a 10x engineer.
+
+Then prod went down at 2 AM.
+
+Lol.
+
+Now you are awake, staring at dashboards, and every service is blaming another service.
+
+API Gateway says upstream timeout.
+
+Service A says dependency failed.
+
+Service B says replica lag.
+
+Database says leader election happened.
+
+Some queue says it lost quorum.
+
+And suddenly the clean architecture diagram is not helping.
+
+So you start reading about distributed systems properly.
+
+That is usually where the second headache starts.
+
+Most explanations begin like this:
+
+```text
+A replicated state machine requires consensus over a totally ordered log.
+```
+
+Nice bro.
+
+I came here because three nodes have three different opinions about the same data.
+
+Not because the topic is boring.
+
+The topic is actually beautiful.
+
+Then you see words like:
+
+```text
+Raft
+Paxos
+quorum
+linearizability
+sequential consistency
+eventual consistency
+CAP
+PACELC
+```
+
+and each word opens one more tab.
+
+This post is to make folks feel less scared about distributed systems.
+
+The real question behind most of this is:
+
+```text
+What does the system need to wait for
+before it can honestly tell the client "success"?
+```
+
+Once you ask that, the whole topic becomes crystal clear.
+
+You can apply it to a database.
+
+You can apply it to a queue.
+
+You can apply it to a config store.
+
+You can apply it to a service that replicates state across regions.
+
+Same basic pain.
+
+Multiple machines.
+
+One truth.
+
+Bad network.
+
+Good luck.
+
+So the path is:
+
+```text
+distributed systems
+-> replication
+-> disagreement
+-> consistency models
+-> quorum
+-> consensus
+-> Paxos and Raft
+-> CAP
+-> PACELC
+-> what this means during normal production operations
+```
+
+If that path clicks, you stop asking only:
+
+```text
+Is this CP or AP?
+```
+
+and start asking the better question:
+
+```text
+What is this system coordinating on the hot path?
+```
+
+## Why do we even need agreement?
+
+Start with one server.
+
+```text
+client -> server -> data
+```
+
+I wish life was this simple.
+
+If the server writes `balance = 100`, then that is the value.
+
+There is one copy.
+There is one place to debug.
+There is one truth, at least until the server dies.
+
+Now add replication.
+
+```text
+client -> node A
+          node B
+          node C
+```
+
+Now the question becomes:
+
+```text
+What is the real value?
+```
+
+If node A says:
+
+```text
+balance = 100
+```
+
+and node B says:
+
+```text
+balance = 80
+```
+
+and node C is not responding because it is having a bad day, what should the system return?
+
+This is the start of most distributed systems pain.
+
+Replication is not just copying bytes.
+
+Replication means deciding:
+
+- who accepts writes
+- who receives copies
+- when a write is considered successful
+- what reads are allowed to see
+- what happens if the network splits
+- what happens if a node comes back with old data
+
+In short:
+
+```text
+replication creates disagreement
+distributed systems are mostly about controlling that disagreement
+```
+
+## Agreement does not always mean consensus
+
+This part matters.
+
+People sometimes use "agreement" and "consensus" like they are the same thing.
+
+Conceptually, agreement just means nodes eventually line up on some shared truth.
+
+Consensus is a stronger and more specific idea:
+
+```text
+multiple nodes choose one value/order
+even when some nodes fail
+without choosing two different truths
+```
+
+For example, in a replicated log:
+
+```text
+log index 41 = write user:7 plan=pro
+```
+
+The cluster must not allow another committed truth like:
+
+```text
+log index 41 = delete user:7
+```
+
+That would be chaos.
+
+So consensus systems usually make nodes agree on a sequence:
+
+```text
+index 1 -> command A
+index 2 -> command B
+index 3 -> command C
+```
+
+Once everyone applies the same commands in the same order, they should reach the same state.
+
+This is the idea behind replicated state machines.
+
+Big phrase, simple shape:
+
+```text
+same starting state
++ same ordered commands
+= same final state
+```
+
+## The real enemy is partial failure
+
+Distributed systems are not hard because machines fail.
+
+Single machine systems also fail.
+
+Distributed systems are hard because failures are partial.
+
+```text
+node A can talk to node B
+node B can talk to node C
+node A cannot talk to node C
+client can talk to A
+another client can talk to C
+```
+
+Is the cluster alive?
+
+Yes.
+
+Is it healthy?
+
+No.
+
+Can some requests succeed?
+
+Yes.
+
+Can some requests return old data?
+
+Maybe.
+
+Can two sides both think they are allowed to accept writes?
+
+If the system is badly designed, absolutely.
+
+This is why distributed databases obsess over:
+
+- heartbeats
+- membership
+- leaders
+- leases
+- epochs
+- terms
+- quorums
+- fencing
+- commit indexes
+
+All these things are basically the system asking:
+
+```text
+Who is allowed to speak for the data right now?
+```
+
+## Strong consistency
+
+Strong consistency is the phrase people use when they want the system to behave like there is one correct copy.
+
+The strict version people usually mean is **linearizability**.
+
+Linearizability means:
+
+```text
+if write W completes before read R starts,
+then R must see W or something newer
+```
+
+Timeline:
+
+```text
+T1: client A writes x = 10
+T2: write succeeds
+T3: client B reads x
+T4: read must not return old x = 5
+```
+
+That sounds obvious.
+
+But in a replicated system, it is expensive because the system has to make sure the read is not talking to some stale copy that missed the latest write.
+
+Strong consistency usually costs something:
+
+- extra coordination
+- leader routing
+- quorum checks
+- slower reads or writes
+- less availability during partitions
+
+This is not bad.
+
+This is the bill.
+
+## Sequential consistency
+
+Sequential consistency is weaker than linearizability.
+
+It says all clients observe operations in some single order, and each client's own operations appear in the order that client issued them.
+
+But that single order does not have to match real wall-clock time.
+
+Example:
+
+```text
+client A writes x = 1
+client B writes x = 2
+```
+
+Everyone must agree on one order:
+
+```text
+x = 1 then x = 2
+```
+
+or:
+
+```text
+x = 2 then x = 1
+```
+
+But if one write finished in real life before the other started, sequential consistency does not care as strictly as linearizability does.
+
+So:
+
+```text
+linearizable = respects real-time ordering
+sequential = everyone sees one valid order, but not necessarily real-time order
+```
+
+Good enough for some systems.
+
+Not good enough for every money-moving path.
+
+## Eventual consistency
+
+Eventual consistency says:
+
+```text
+if writes stop,
+replicas should eventually converge
+```
+
+That is it.
+
+Not:
+
+```text
+every read sees latest write
+```
+
+Not:
+
+```text
+all clients see the same value right now
+```
+
+Just:
+
+```text
+given enough time and no new updates,
+copies should settle
+```
+
+This is useful when availability and latency matter more than immediate correctness.
+
+Example:
+
+```text
+profile photo changed
+one region sees it now
+another region sees it after 3 seconds
+fine
+```
+
+Bad example:
+
+```text
+withdraw money
+one region sees old balance
+another region sees new balance
+both allow withdrawal
+not fine
+```
+
+Eventual consistency is not "bad consistency".
+
+It is a tradeoff.
+
+The bug is using it where the business needs a stronger guarantee.
+
+## Read your writes and monotonic reads
+
+There are also middle-ground guarantees.
+
+Read your writes:
+
+```text
+I wrote x = 10
+my next read should see x = 10 or newer
+```
+
+Monotonic reads:
+
+```text
+once I see x = 10
+I should not later see older x = 5
+```
+
+Monotonic writes:
+
+```text
+my writes should be applied in the order I sent them
+```
+
+These are often called session guarantees.
+
+They are extremely practical.
+
+For many products, a user mostly cares that their own session makes sense.
+
+If I update my shipping address and refresh the page, I should not see the old address.
+
+That matters more than giving every client in the world a perfectly synchronized global view at every millisecond.
+
+## Quorum
+
+Quorum is the idea that you do not need everyone to agree.
+
+You need enough nodes to prevent two different truths from both being accepted.
+
+For 3 nodes:
+
+```text
+majority = 2
+```
+
+For 5 nodes:
+
+```text
+majority = 3
+```
+
+The nice property of majority quorum:
+
+```text
+any two majorities overlap
+```
+
+In a 3 node cluster:
+
+```text
+A B
+A C
+B C
+```
+
+Any two groups of 2 share at least one node.
+
+That overlap is the trick.
+
+It prevents two separate majorities from committing two different values at the same position.
+
+This is why consensus systems love odd numbers like 3 and 5.
+
+Not because even numbers are illegal.
+
+Because 4 nodes still need 3 for majority, and can usually only tolerate 1 failure for consensus progress.
+
+```text
+3 nodes -> majority 2 -> tolerate 1 failure
+4 nodes -> majority 3 -> tolerate 1 failure
+5 nodes -> majority 3 -> tolerate 2 failures
+```
+
+So if you are paying for 4 consensus voters, ask what the 4th one is actually buying you.
+
+## Paxos at conceptual level
+
+Paxos is the famous consensus algorithm that everyone references and almost nobody wants to explain at dinner.
+
+The simple version:
+
+```text
+nodes must agree on one value
+even if messages are delayed, duplicated, or some nodes fail
+```
+
+Paxos has proposers, acceptors, and learners.
+
+Think:
+
+```text
+proposer = suggests a value
+acceptor = votes/accepts under rules
+learner = finds out what got chosen
+```
+
+The main safety idea:
+
+```text
+once a value might have been chosen,
+future proposals must preserve that chosen value
+```
+
+So Paxos uses proposal numbers.
+
+Higher proposal numbers can override older attempts, but they cannot casually replace a value that may already be chosen.
+
+Very rough shape:
+
+```text
+prepare: can I propose with number 7?
+promise: yes, and here is the highest value I already accepted
+accept: then accept this value for proposal 7
+accepted: okay
+chosen: majority accepted it
+```
+
+The important bit is not memorizing message names.
+
+The important bit is this:
+
+```text
+Paxos protects safety first.
+It refuses to choose two conflicting truths.
+```
+
+If the network is awful, Paxos may make slow progress.
+
+But it should not commit two different values for the same decision.
+
+## Raft at conceptual level
+
+Raft solves the same broad consensus problem, but it was designed to be easier to understand.
+
+Raft uses:
+
+- leader election
+- log replication
+- terms
+- commit index
+
+At any time, a Raft cluster wants one leader.
+
+```text
+leader -> accepts client writes
+followers -> replicate leader log
+```
+
+Write flow:
+
+```text
+client sends command to leader
+leader appends command to its log
+leader sends log entry to followers
+majority stores it
+leader marks entry committed
+leader applies it
+followers eventually apply it
+client gets success
+```
+
+In a 3 node cluster:
+
+```text
+leader + 1 follower = majority
+```
+
+This is exactly why many replicated systems can survive one member being unavailable.
+
+The queue does not need every member to be perfect before making progress.
+
+It needs a majority.
+
+But if the leader dies:
+
+```text
+followers notice missing heartbeat
+new election starts
+one follower wins majority vote
+new leader continues from the safest known log
+```
+
+Raft still has details.
+
+Of course it does.
+
+But the shape is much cleaner than Paxos:
+
+```text
+one leader owns the write order
+majority makes that order durable
+terms prevent old leaders from coming back and lying
+```
+
+## Paxos vs Raft
+
+At a high level:
+
+| Topic | Paxos | Raft |
+| --- | --- | --- |
+| Goal | Consensus | Consensus |
+| How to think about it | Proposal/accept phases | Leader and replicated log |
+| Common reputation | Hard to understand | Easier to teach |
+| Safety focus | Do not choose conflicting values | Do not commit conflicting logs |
+| Used for | Databases, lock services, replicated metadata | Databases, queues, control planes |
+
+Raft did not make consensus magically easy.
+
+It made the shape easier:
+
+```text
+elect leader
+replicate log
+commit by majority
+recover with terms
+```
+
+That is usually enough for conceptual debugging.
+
+## CAP theorem
+
+CAP says that when there is a network partition, a distributed system has to choose between:
+
+- consistency
+- availability
+
+Partition tolerance is not really optional once you are distributed.
+
+Networks fail.
+Packets drop.
+Nodes pause.
+Switches misbehave.
+
+So the real CAP question is:
+
+```text
+During a partition, do you prefer consistency or availability?
+```
+
+CP system:
+
+```text
+protect correctness
+reject/block some operations if needed
+```
+
+AP system:
+
+```text
+keep accepting operations
+risk stale/conflicting data during partition
+repair later
+```
+
+CAP is useful, but incomplete.
+
+Because most of production is not a clean network partition.
+
+Most of production is:
+
+```text
+no partition
+but latency is high
+replication is busy
+migrations are running
+one disk is slow
+one node is hot
+```
+
+That is where PACELC is more useful.
+
+## PACELC
+
+PACELC extends CAP.
+
+It says:
+
+```text
+if Partition:
+  choose Availability or Consistency
+Else:
+  choose Latency or Consistency
+```
+
+That is the name:
+
+```text
+P A C
+E L C
+```
+
+If there is a partition, what do you sacrifice?
+
+If there is no partition, what do you optimize?
+
+This is a much better production lens.
+
+Because latency spikes often happen during normal operations.
+
+No scary network split.
+No dramatic outage.
+Just a cluster doing extra coordination or background repair.
+
+So the real question becomes:
+
+```text
+In steady state, does the database wait for replicas before confirming writes?
+```
+
+If yes, you are paying a consistency/durability cost on the normal path.
+
+If no, you are optimizing latency but accepting a larger loss/staleness window.
+
+That is PACELC in daily life.
+
+## Normal operations are where PACELC becomes useful
+
+CAP helps when there is a partition.
+
+PACELC helps when there is no partition but latency moved.
+
+Example:
+
+```text
+Cluster healthy.
+No split brain.
+New node added.
+Rebalancing is running.
+p99 writes went up.
+```
+
+CAP is not enough here.
+
+PACELC asks:
+
+```text
+Even when there is no partition,
+does the system wait for replica coordination?
+does it need a majority before commit?
+does it serve reads from leaders or replicas?
+does rebalancing compete with foreground traffic?
+does the selected read policy need freshness checks?
+```
+
+That is the useful way to look at it.
+
+Take a generic replicated database.
+
+It may look like this:
+
+```text
+client -> primary node
+primary writes locally
+primary sends write to replicas
+some policy decides when to return success
+```
+
+That policy is the interesting part.
+
+It might be:
+
+```text
+return after primary write only
+```
+
+Very low latency.
+
+But if the primary dies before replicas receive the write, that write can disappear.
+
+Or:
+
+```text
+return after one replica acknowledges
+```
+
+More durable.
+
+More latency.
+
+Or:
+
+```text
+return after majority acknowledges
+```
+
+Stronger safety.
+
+More coordination.
+
+Or:
+
+```text
+return after every replica acknowledges
+```
+
+Very conservative.
+
+Also very sensitive to the slowest replica.
+
+This is why two systems can both say:
+
+```text
+replicated
+```
+
+and still behave completely differently under load.
+
+The word replicated does not tell you enough.
+
+You need to ask:
+
+```text
+Replicated when?
+Before success or after success?
+To one node or majority?
+Can reads hit stale replicas?
+What happens when a replica is slow?
+```
+
+## Rebalancing, repair and migrations
+
+Most distributed systems also have background movement.
+
+Different systems call it different things:
+
+- rebalancing
+- migration
+- repair
+- anti-entropy
+- shard movement
+- partition movement
+- replica catch-up
+- log compaction
+
+The idea is usually:
+
+```text
+cluster membership changed
+or replica fell behind
+or data placement is uneven
+so the system moves/copies data in the background
+```
+
+This does not always mean the system stops serving traffic.
+
+Many systems try hard to keep foreground reads and writes running while background repair happens.
+
+But background work is not free.
+
+It uses:
+
+- CPU
+- disk IO
+- network
+- memory bandwidth
+- internal queues
+
+So a very normal production graph can look like:
+
+```text
+no outage
+no partition
+no errors
+but p99 latency is ugly
+```
+
+This is where people sometimes reach for CAP and get stuck.
+
+CAP is about partitions.
+
+Your problem might be the PACELC `Else` case.
+
+The system is available.
+
+The system is not split.
+
+But it is paying the normal-operation cost of consistency, durability, and background repair.
+
+## What changes in strong consistency mode?
+
+In many databases, turning on a stronger consistency mode does not mean:
+
+```text
+everything is magically correct and equally fast
+```
+
+It usually means:
+
+```text
+the system is willing to coordinate more
+and sometimes reject/block unsafe operations
+instead of returning stale or conflicting data
+```
+
+That can show up in a few ways.
+
+A write may need:
+
+```text
+leader acceptance
+replica acknowledgement
+majority commit
+lease validation
+term/epoch check
+```
+
+A read may need:
+
+```text
+leader read
+quorum read
+read index check
+lease check
+freshness check
+```
+
+During a partition, the system may say:
+
+```text
+I cannot safely prove this partition owns the latest truth,
+so I will fail this request.
+```
+
+That is not the system being lazy.
+
+That is the system protecting correctness.
+
+For a weaker availability-focused mode, the system may say:
+
+```text
+I can still accept this write locally,
+and we will reconcile later.
+```
+
+That may be exactly what you want for some product paths.
+
+It may also be exactly how you corrupt important state.
+
+Context matters.
+
+## A few real-world shapes
+
+A leader-based replicated database often looks like:
+
+```text
+all writes go to leader
+leader decides order
+followers replicate
+reads may go to leader or followers depending on policy
+```
+
+A quorum-based database often looks like:
+
+```text
+write to N replicas
+wait for W acknowledgements
+read from R replicas
+choose value using version/timestamp/vector metadata
+```
+
+Then people say things like:
+
+```text
+N = 3
+W = 2
+R = 2
+```
+
+Why?
+
+Because:
+
+```text
+W + R > N
+```
+
+The write quorum and read quorum overlap.
+
+At least one node in the read path should have seen the latest successful write.
+
+Again, the overlap is the trick.
+
+A log-based consensus system often looks like:
+
+```text
+leader owns log order
+followers copy log
+majority commit makes entries durable
+state machine applies committed entries
+```
+
+Different implementations.
+
+Same theme:
+
+```text
+control disagreement
+before users observe nonsense
+```
+
+This gives you a much better debugging checklist than just saying:
+
+```text
+CAP theorem bro
+```
+
+## A simple debugging checklist
+
+When you see a distributed system metric spike, ask:
+
+```text
+1. Is there an actual network partition or node membership change?
+2. Is the system running migrations, recovery, repair, or rebalancing?
+3. What consistency mode is enabled?
+4. What read policy is being used?
+5. What write commit policy is being used?
+6. Does success require majority or all replicas?
+7. Is latency coming from coordination or resource contention?
+8. Are clients reading from leader, replica, or nearest node?
+9. Are stale reads acceptable for this path?
+10. Are rejected writes better than conflicting writes?
+```
+
+This is the point where fancy theory turns into useful production debugging.
+
+You are not just asking:
+
+```text
+Is this CP or AP?
+```
+
+You are asking:
+
+```text
+What does this system wait for before it tells the client success?
+```
+
+That one question explains a lot.
+
+## Final takeaway
+
+If I had to compress the whole thing:
+
+```text
+Replication creates multiple copies.
+Multiple copies can disagree.
+Consistency models define what disagreement clients are allowed to observe.
+Consensus algorithms help nodes agree on one ordered truth.
+Quorum lets the system make progress without every node.
+CAP explains the partition tradeoff.
+PACELC explains the normal-operation latency tradeoff.
+```
+
+Paxos and Raft are not just academic names.
+
+They are ways to make sure a group of machines does not commit two different realities.
+
+Strong consistency is not free.
+
+Eventual consistency is not broken.
+
+AP does not mean "never replicate synchronously".
+
+CP does not mean "always down".
+
+And migrations do not have to fully block client traffic to still show up in your latency graphs.
+
+That is the part worth remembering.
+
+Distributed systems are not magic.
+
+They are just machines trying very hard to agree while the network keeps making everything suspicious.
+
+## References
+
+- [Raft official site](https://raft.github.io/)
+- [The Secret Lives of Data - Raft](https://thesecretlivesofdata.com/raft/)
+- [Paxos Made Simple](https://lamport.azurewebsites.net/pubs/paxos-simple.pdf)
+- [The Raft paper](https://raft.github.io/raft.pdf)
+- [PACELC theorem](https://en.wikipedia.org/wiki/PACELC_theorem)
