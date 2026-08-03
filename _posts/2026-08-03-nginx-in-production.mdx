@@ -1,0 +1,642 @@
+---
+title: "Nginx in Production: Workers, Threads, and How a Request Finds Your Upstream"
+ogImage:
+  url: "/assets/blog/nginx-in-production/nginx-production-architecture-hero.png"
+category: "Software Development"
+coverImage: "/assets/blog/nginx-in-production/nginx-production-architecture-hero.png"
+date: "2026-08-03T15:03:45.000Z"
+draft: false
+---
+
+# Nginx in Production: Workers, Threads, and How a Request Finds Your Upstream
+
+```
+$ ps aux | grep nginx
+nginx: master process /usr/sbin/nginx
+nginx: worker process
+nginx: worker process
+nginx: worker process
+nginx: worker process
+nginx: worker process
+nginx: worker process
+nginx: worker process
+nginx: worker process
+```
+
+Nine of them.
+
+On a box running one nginx.
+
+Everyone says nginx is single threaded and async.
+
+The same people also say thread pool.
+
+Nine processes is neither of those things.
+
+All three statements are true, and none of them are useful on their own.
+
+This is the exact post I needed to read years ago.
+
+The questions it answers:
+
+If a worker is single threaded, what is `worker_processes` for?
+
+If 8 workers listen on 443, who gets the connection?
+
+Why does nginx keep sending traffic to a dead IP?
+
+Why does reload not drop connections but restart does?
+
+Should you just raise `worker_connections`, because that fixes everything bro?
+
+Most posts answer one and stop.
+
+Here is the whole flow.
+
+```
+nginx from outside
+-> master process
+-> worker processes
+-> the event loop
+-> who accepts the connection
+-> where the threads actually are
+-> the edge and anycast
+-> upstream lookup
+-> load balancing state
+-> keepalive to upstream
+-> reload
+```
+
+If that clicks, nginx stops looking like a config file with magic inside.
+
+## First, what is it doing
+
+From outside:
+
+```
+client -> nginx -> backend
+```
+
+Internally, for one proxied request:
+
+![A proxied request moving from the client through the Nginx listening socket, worker event loop, upstream lookup, and connection to the backend](/assets/blog/nginx-in-production/nginx-proxied-request-flow.png)
+
+Each part has a job.
+
+And its own way of embarrassing you later.
+
+## Master and workers
+
+Start nginx and you do not get one nginx.
+
+You get a master and N workers.
+
+![The Nginx master process reading configuration and forking worker processes that serve traffic](/assets/blog/nginx-in-production/nginx-master-worker-process-model.png)
+
+The master does not serve traffic.
+
+It reads the config.
+
+It binds the listening sockets.
+
+Then it forks workers.
+
+The master starts as root.
+
+That is how it binds 80 and 443.
+
+Workers drop to whatever the `user` directive says.
+
+Workers serve every single request.
+
+If you turn on `proxy_cache`, the master forks two more.
+
+A cache manager, which trims the cache down to `max_size` on a timer.
+
+And a cache loader, which reads existing cache metadata into shared memory at startup.
+
+The loader runs once, then exits.
+
+So a `ps aux` with caching on shows processes that are not workers and never touch a request.
+
+First thing to get straight:
+
+```
+worker_processes = processes, not threads
+```
+
+`worker_processes auto` is one worker per core.
+
+Not per connection.
+
+Not per request.
+
+Per core.
+
+8 cores, 8 workers.
+
+Those 8 processes handle everything.
+
+One catch on `auto`.
+
+It counts logical cores, not physical ones.
+
+4 physical cores with hyper-threading reports 8.
+
+So you get 8 workers on 4 real cores.
+
+Worth knowing before you read anything into the number.
+
+You can also pin each worker to a CPU:
+
+```nginx
+worker_processes auto;
+worker_cpu_affinity auto;
+```
+
+A pinned worker stops bouncing between cores.
+
+So it keeps its CPU cache warm and skips some context switching.
+
+## The event loop
+
+Each worker is single threaded.
+
+Each worker runs an event loop.
+
+On Linux that is `epoll`.
+
+The worker asks the kernel which sockets are ready.
+
+The kernel hands back the ready ones.
+
+It does a little work on each.
+
+Then asks again.
+
+Again.
+
+Again.
+
+So no thread per connection.
+
+A slow client costs almost nothing.
+
+An FD and some state in memory.
+
+But there is a strict rule.
+
+**A worker must never block.**
+
+Block for 200ms and that is not one slow request.
+
+That is every connection it holds, waiting together.
+
+That rule is the entire reason thread pools exist.
+
+## Who accepts the connection
+
+This is where lot of folks get lost.
+
+Every worker was forked from the master.
+
+So every worker inherited the same listening socket.
+
+All 8 can accept on 443.
+
+The frame that makes this click is the accept queue.
+
+The kernel completes the TCP handshake by itself.
+
+It parks the finished connection in a queue on that socket.
+
+Nginx never touches the handshake.
+
+Workers just pull from the queue.
+
+So the question is not who handles the connection.
+
+It is which worker gets to `accept()` it off the queue.
+
+![The kernel completing the TCP handshake and placing the connection in a shared accept queue for Nginx workers](/assets/blog/nginx-in-production/shared-socket-accept-queue.png)
+
+So who wins?
+
+The old answer was `accept_mutex`.
+
+Workers take turns holding a lock.
+
+Only the holder accepts.
+
+It existed for the thundering herd.
+
+Kernel wakes all 8 for one connection.
+
+7 find nothing.
+
+They go back to sleep.
+
+`accept_mutex` has defaulted to `off` since 1.11.3.
+
+Modern kernels handle the wakeup better.
+
+The better answer is `reuseport`:
+
+```
+listen 443 ssl reuseport;
+```
+
+That turns on `SO_REUSEPORT`.
+
+Now each worker gets its own listening socket.
+
+The kernel decides where a connection lands.
+
+No userspace lock.
+
+No herd.
+
+Sounds free.
+
+It is not.
+
+The sockets are per worker.
+
+So a reload has to make new ones.
+
+Distribution in that window gets weird.
+
+People have hit this on HTTP/3.
+
+QUIC connections dropped across a reload.
+
+![Nginx workers taking turns accepting connections from a shared queue using accept mutex](/assets/blog/nginx-in-production/accept-mutex-connection-flow.png)
+
+![The kernel routing connections to per-worker socket queues with SO_REUSEPORT](/assets/blog/nginx-in-production/reuseport-per-worker-sockets.png)
+
+```
+accept_mutex -> userspace fairness, mostly historical
+reuseport    -> kernel balances, faster, reload gets sharper edges
+```
+
+## So where are the threads
+
+This is the part that gets repeated wrong.
+
+"nginx is single threaded" is everywhere.
+
+So is "nginx has a thread pool".
+
+Both are true.
+
+They are about different things.
+
+The event loop is never threaded.
+
+Networking stays in the loop.
+
+The thread pool exists for one reason.
+
+**Blocking disk I/O.**
+
+A worker calls `read()` on a file that is not in page cache.
+
+That call blocks.
+
+Disk does not care about your event loop.
+
+So since 1.7.11:
+
+```
+aio threads;
+```
+
+Now read and sendfile go to real OS threads.
+
+The worker fires the request at the pool.
+
+Then goes back to the loop.
+
+It picks up the result later.
+
+The Core Idea:
+
+![An Nginx worker handling network I/O in its event loop while a thread pool performs blocking disk reads](/assets/blog/nginx-in-production/worker-event-loop-thread-pool.png)
+
+```
+network I/O -> event loop, single threaded, never blocks
+disk I/O    -> thread pool, so it can block somewhere harmless
+```
+
+It needs `--with-threads` at build time.
+
+And it only helps when your files outgrow page cache.
+
+Pure reverse proxy, it does nothing.
+
+It is not a performance switch.
+
+It is not a tuning knob.
+
+It is a fix for one specific stall.
+
+## The edge and anycast
+
+Behind Cloudflare, one IP is announced from many data centres.
+
+BGP picks which one your packets reach.
+
+Usually the network-closest.
+
+Which is usually, not always, closest on a map.
+
+The part that matters for your nginx:
+
+Your nginx has nothing to do with any of it.
+
+Anycast happens at the edge.
+
+Your origin sees a small set of Cloudflare IPs.
+
+TLS is terminated there and re-originated.
+
+Connections get reused hard.
+
+Which leads to the classic mistake:
+
+```
+limit_req_zone $remote_addr zone=one:10m rate=10r/s;
+```
+
+Behind Cloudflare, `$remote_addr` is Cloudflare.
+
+You just rate limited a CDN.
+
+Every user now shares a handful of buckets.
+
+Nice.
+
+You want `set_real_ip_from` with Cloudflare's ranges.
+
+And `real_ip_header CF-Connecting-IP`.
+
+Without that your logs describe the wrong entity.
+
+So do your rate limits.
+
+## Upstream lookup
+
+This one costs people real outages.
+
+```
+upstream backend {
+    server api.internal.example.com:8080;
+}
+```
+
+That hostname is resolved once, at config load.
+
+Then cached for the life of the process.
+
+The DNS TTL is irrelevant.
+
+New IP on the backend, nginx keeps dialling the old one.
+
+Until you reload.
+
+Two more edges on the same thing.
+
+If the name does not resolve at startup, nginx refuses to start.
+
+`host not found in upstream`.
+
+So a DNS blip during a deploy becomes a config error.
+
+And a static `proxy_pass` caches the same way.
+
+The open source workaround is to make the name dynamic:
+
+```
+resolver 10.0.0.2 valid=30s;
+set $backend "api.internal.example.com";
+proxy_pass http://$backend:8080;
+```
+
+With a variable there, nginx re-resolves on the resolver TTL.
+
+Instead of caching forever.
+
+You lose things this way.
+
+The upstream block's load balancing, for one.
+
+NGINX Plus has a `resolve` parameter that does it properly.
+
+Everyone else picks between a variable, a sidecar, or reloading on change.
+
+## Load balancing state is per worker
+
+Default is round robin.
+
+You also get `least_conn`, `ip_hash`, `hash`, and `random two`.
+
+But this is easy to miss.
+
+Without a shared memory zone, upstream state lives inside each worker.
+
+So on 8 workers, `least_conn` is 8 separate opinions.
+
+Each worker only knows its own connections.
+
+Same for `max_fails` and `fail_timeout`.
+
+Same for per-server connection limits.
+
+```
+upstream backend {
+    zone backend 64k;
+    least_conn;
+    server 10.0.0.11:8080;
+    server 10.0.0.12:8080;
+}
+```
+
+`zone` moves that state to shared memory.
+
+Now every worker sees one truth.
+
+Not a micro optimisation.
+
+If you lean on `least_conn` or passive health checks, it is closer to a correctness fix.
+
+## Keepalive to upstream
+
+This one changed recently.
+
+If you learned nginx before 2026, your muscle memory is stale.
+
+The snippet everyone used to paste:
+
+```
+proxy_http_version 1.1;
+proxy_set_header Connection "";
+```
+
+Before 1.29.7, nginx spoke HTTP/1.0 to upstreams.
+
+No persistent connections.
+
+A fresh TCP handshake per request, unless you pasted that.
+
+A lot of people never did.
+
+And paid for it quietly, for years.
+
+Since 1.29.7, in March 2026, upstreams default to HTTP/1.1 with keepalive.
+
+The default is 32 idle connections **per worker process**.
+
+Note the wording.
+
+That is where people misread it.
+
+`keepalive 32` on 8 workers is not 32 idle connections.
+
+It is up to 32 each.
+
+And it caps the idle pool.
+
+Not what nginx will open.
+
+Under load it opens more.
+
+It just does not keep the extras around.
+
+And the per worker part is not a small detail.
+
+Each worker keeps its own private upstream connection pool.
+
+Processes do not share memory, so pooling across workers is hard by design.
+
+8 workers is 8 pools that know nothing about each other.
+
+Your upstream sees far more idle connections than it needs.
+
+And your reuse ratio is worse than the config implies.
+
+This is the exact reason Cloudflare stopped using nginx.
+
+They wrote Pingora, in Rust, threaded instead of process based.
+
+Threads share memory.
+
+So Pingora runs one connection pool across every thread.
+
+![Nginx per-worker upstream connection pools compared with Pingora's shared connection pool](/assets/blog/nginx-in-production/nginx-vs-pingora-connection-pools.png)
+
+They reported a better reuse ratio and a real drop in new connections to origins.
+
+Same problem you have on 8 workers.
+
+They just had it at a scale where rewriting the proxy was cheaper than living with it.
+
+## Reload
+
+`nginx -s reload` sends SIGHUP to the master.
+
+The master re-reads and validates the config.
+
+If it is broken, the old workers stay.
+
+Nothing goes down.
+
+That is genuinely nice.
+
+If it is fine, the master spawns new workers.
+
+Old workers stop accepting.
+
+They finish what they hold.
+
+So you briefly have two generations alive.
+
+Running two different configs.
+
+Old workers exit when their connections drain.
+
+With keepalive clients, draining takes a while.
+
+Those workers sit there holding the old config.
+
+`worker_shutdown_timeout` keeps that bounded.
+
+![The Nginx graceful reload sequence where new workers start and old workers drain existing connections](/assets/blog/nginx-in-production/graceful-reload-worker-lifecycle.png)
+
+```
+restart -> sockets closed, connections dropped
+reload  -> new workers alongside old, old ones drain
+```
+
+## The number people tune first
+
+```
+events {
+    worker_connections 4096;
+}
+```
+
+That is per worker.
+
+So 8 workers is roughly 32,768 connections.
+
+Except a proxied request uses **two** file descriptors.
+
+One to the client, one to the upstream.
+
+So your real proxy ceiling is about half.
+
+Capped again by `worker_rlimit_nofile`.
+
+And by the system limit under that.
+
+Raising `worker_connections` past your FD limit gives you no capacity.
+
+It gives you `worker_connections exceed open file resource limit` in the log.
+
+## The shape of it
+
+Nginx has very few moving parts.
+
+A master holding the config and the sockets.
+
+One process per core, each spinning a loop that must not block.
+
+A thread pool bolted on for the one unavoidable block.
+
+And upstream decisions made once, at config load.
+
+Then never revisited.
+
+Almost every nginx surprise in production comes from that last line.
+
+DNS resolved once and cached forever.
+
+Load balancing state that is per worker.
+
+A keepalive limit that is per worker and not global.
+
+None of those are bugs.
+
+They are answers to questions from 2004, still holding.
+
+Decided by someone else, left as the default, inherited by you.
+
+Which is most of production, honestly.
+
+The config file is four lines and a `proxy_pass`.
+
+Everything above is what those four lines actually mean.
+
+Some of the framing here is borrowed. Hussein Nasser's [NGINX Architecture](https://medium.com/@hnasr/the-architecture-of-nginx-2b32fc0b7877) and his [NGINX Internal Architecture - Workers](https://www.youtube.com/watch?v=vVYM2QBk-iQ) video are where the accept queue and the connection pool points came from. If this was useful, his stuff goes deeper.
+
+*Wriitten by a human among AI Agents*
