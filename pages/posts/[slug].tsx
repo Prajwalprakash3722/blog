@@ -18,28 +18,24 @@ import Seo from "../../components/Seo";
 import markdownToHtml from "../../lib/markdownToHtml";
 import { useRouter } from "next/router";
 
-type Props = {
-  post: PostType;
-  morePosts: PostType[];
-  draft?: boolean;
-};
-
 const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const post: PostType = props.post;
   const [width, setWidth] = useState(0);
 
-  const scrollHeight = () => {
-    const el = document.documentElement;
-    const scrollTop = el.scrollTop || document.body.scrollTop;
-    const scrollHeight = el.scrollHeight || document.body.scrollHeight;
-    const percent = (scrollTop / (scrollHeight - el.clientHeight)) * 100;
-    setWidth(percent);
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", scrollHeight);
-    return () => window.removeEventListener("scroll", scrollHeight);
-  });
+    const updateProgress = () => {
+      const el = document.documentElement;
+      const scrollTop = el.scrollTop || document.body.scrollTop;
+      const scrollHeight = el.scrollHeight || document.body.scrollHeight;
+      const percent = (scrollTop / (scrollHeight - el.clientHeight)) * 100;
+      setWidth(percent);
+    };
+
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+
+    return () => window.removeEventListener("scroll", updateProgress);
+  }, []);
 
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
@@ -118,7 +114,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     "excerpt",
     "readingTime",
   ]);
-  const posts = getPublishedPosts(["title"]);
   const content = await markdownToHtml(post.content || "");
 
   return {
@@ -127,7 +122,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
         ...post,
         content,
       },
-      posts,
     },
   };
 };

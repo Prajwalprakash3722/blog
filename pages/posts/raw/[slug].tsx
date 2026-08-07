@@ -1,38 +1,14 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { getPostBySlug, getPublishedPosts } from "../../../lib/api";
-import { useEffect, useState } from "react";
 
 import ErrorPage from "next/error";
-import Head from "next/head";
 import Meta from "../../../components/meta";
 import PostTitle from "../../../components/post-title";
 import PostType from "../../../types/post";
 import { useRouter } from "next/router";
 
-type Props = {
-  post: PostType;
-  morePosts: PostType[];
-  draft?: boolean;
-};
-
 const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const post: PostType = props.post;
-  const newArticle = props.posts[0];
-  const [width, setWidth] = useState(0);
-  // scroll function
-  const scrollHeight = () => {
-    var el = document.documentElement,
-      ScrollTop = el.scrollTop || document.body.scrollTop,
-      ScrollHeight = el.scrollHeight || document.body.scrollHeight;
-    var percent = (ScrollTop / (ScrollHeight - el.clientHeight)) * 100;
-    // store percentage in state
-    setWidth(percent);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", scrollHeight);
-    return () => window.removeEventListener("scroll", scrollHeight);
-  });
 
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
@@ -80,14 +56,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     "ogImage",
     "coverImage",
   ]);
-  const posts = getPublishedPosts(["title"]);
-
   return {
     props: {
       post: {
         ...post,
       },
-      posts,
     },
   };
 };

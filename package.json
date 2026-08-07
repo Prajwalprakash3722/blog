@@ -9,12 +9,12 @@
   },
   "engines": {
     "npm": ">=9.0.0",
-    "node": ">=18.0.0"
+    "node": "22.x"
   },
   "license": " GNU GENERAL PUBLIC LICENSE Version 3",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "typecheck": "tsc",
     "analyze": "cross-env ANALYZE=true next build",
@@ -33,7 +33,7 @@
     "feed": "^4.2.2",
     "gray-matter": "4.0.3",
     "moment": "^2.29.4",
-    "next": "^16.2.6",
+    "next": "16.3.0",
     "next-seo": "^5.5.0",
     "preact": "^10.7.1",
     "prism-react-renderer": "^1.3.5",

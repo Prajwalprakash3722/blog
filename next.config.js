@@ -1,5 +1,9 @@
-/**@type{import('next').NextConfig} */
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
-  output: "standalone",
+  // Vercel creates its own deployment output. Standalone is only needed by
+  // Dockerfile.production, which copies .next/standalone into the final image.
+  ...(process.env.VERCEL ? {} : { output: "standalone" }),
 };
+
+module.exports = nextConfig;

@@ -28,9 +28,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     "title",
     "date",
     "slug",
-    "content",
-    "draft",
     "category",
+    "readingTime",
   ]);
   const tag = context?.params?.tag as string;
 
