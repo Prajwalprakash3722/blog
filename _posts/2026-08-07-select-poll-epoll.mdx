@@ -1,0 +1,301 @@
+---
+title: "select, poll, and epoll: The Linux I/O Story"
+ogImage:
+  url: "/assets/blog/select-poll-epoll/cover.png"
+category: "Software Development"
+coverImage: "/assets/blog/select-poll-epoll/cover.png"
+date: "2026-08-07T12:00:00.000Z"
+draft: false
+---
+
+# select, poll, and epoll: The Linux I/O Story
+
+Imagine a server with 10,000 connected clients.
+
+Most of them are doing nothing.
+
+One client sends a message. How does the server find that one connection without checking all 10,000 in a loop?
+
+That is the problem `select`, `poll`, and `epoll` solve.
+
+They let a program say:
+
+> Put me to sleep. Wake me when one of these file descriptors is ready.
+
+A file descriptor, or FD, is just a small number the operating system gives us for an open resource. A TCP socket, UDP socket, pipe, and many Linux kernel interfaces can all be represented by an FD.
+
+The important word here is **ready**.
+
+Ready does not always mean the operation is complete. It means an operation such as `read()`, `write()`, or `accept()` can make progress without blocking.
+
+## Before polling: blocking and busy waiting
+
+The simplest server blocks:
+
+```c
+data = read(socket);
+```
+
+If no data exists, the thread sleeps. That is fine for one connection. With thousands of connections, creating a thread for every connection becomes expensive.
+
+The other extreme is busy waiting:
+
+```c
+while (true) {
+    try_read(socket_1);
+    try_read(socket_2);
+    try_read(socket_3);
+}
+```
+
+This burns CPU even when nothing is happening.
+
+I/O multiplexing gives us a better model:
+
+```text
+many file descriptors
+        |
+        v
+select / poll / epoll
+        |
+        v
+only the ready descriptors
+```
+
+One thread can now manage many connections.
+
+## `select`: the old, portable one
+
+`select()` receives sets of file descriptors and tells us which ones are ready.
+
+```c
+select(max_fd + 1, &read_set, &write_set, NULL, &timeout);
+```
+
+It is widely available, but it has two important costs:
+
+1. The program rebuilds and passes the FD sets on every call.
+2. The kernel checks the whole set, even if only one FD is ready.
+
+It also commonly has an `FD_SETSIZE` limit of 1,024 descriptors.
+
+`select()` is still useful for small, portable programs. It is not a great fit for a Linux server with tens of thousands of connections.
+
+## `poll`: a cleaner list, but still a scan
+
+`poll()` removes the fixed bitmap used by `select()` and accepts an array instead:
+
+```c
+struct pollfd fds[] = {
+    {tcp_socket, POLLIN, 0},
+    {udp_socket, POLLIN, 0},
+};
+
+poll(fds, 2, -1);
+```
+
+This avoids the usual 1,024-FD limit and is easier to work with. But every call still sends the list to the kernel, and the list still needs to be scanned.
+
+For 20 FDs, that hardly matters. For 100,000 mostly idle connections, it does.
+
+## `epoll`: Linux remembers the interest list
+
+`epoll` is a **Linux-specific** interface. It is not a general Unix or POSIX feature.
+
+Instead of sending the full list on every wait, we create an epoll instance and register our interests once:
+
+```c
+int epfd = epoll_create1(0);
+
+epoll_ctl(epfd, EPOLL_CTL_ADD, tcp_socket, &tcp_event);
+epoll_ctl(epfd, EPOLL_CTL_ADD, udp_socket, &udp_event);
+
+while (true) {
+    int count = epoll_wait(epfd, events, MAX_EVENTS, -1);
+
+    for (int i = 0; i < count; i++) {
+        handle(events[i].data.fd);
+    }
+}
+```
+
+The kernel keeps an **interest list** of registered FDs and gives the program a **ready list** when it calls `epoll_wait()`.
+
+This is why `epoll` works well when there are many connections but only a small number are active at a time. The program handles the active ones instead of repeatedly walking every idle connection.
+
+It is the mechanism behind many event-driven servers on Linux, including Nginx.
+
+The short comparison:
+
+| API | What is passed when waiting? | Typical cost | Where? |
+| --- | --- | --- | --- |
+| `select` | FD sets | Scans the set | POSIX and others |
+| `poll` | Array of FDs | Scans the array | POSIX and others |
+| `epoll` | Output-event buffer | Returns ready events | Linux only |
+
+`epoll` is not always faster. For a handful of FDs, the difference may be irrelevant. Its design matters most when the watched set is large and mostly idle.
+
+## Level-triggered and edge-triggered
+
+By default, epoll is **level-triggered**.
+
+Think of it like a sticky note:
+
+> There is still unread data.
+
+As long as data remains in the socket buffer, `epoll_wait()` can report the socket again.
+
+With `EPOLLET`, epoll becomes **edge-triggered**. Now the notification means:
+
+> The state just changed from not ready to ready.
+
+You may not receive another notification until a new change happens. So the FD must be non-blocking, and the program must keep reading until `read()` returns `EAGAIN`:
+
+```c
+while (true) {
+    n = read(socket, buffer, sizeof(buffer));
+
+    if (n > 0) process(buffer, n);
+    else if (n == -1 && errno == EAGAIN) break;
+    else handle_closed_or_error();
+}
+```
+
+Edge-triggered mode can reduce repeated notifications, but it is easier to get wrong. Level-triggered mode is usually the simpler starting point.
+
+Now let us put this into real examples.
+
+## 1. Asynchronous TCP and UDP sockets
+
+### TCP
+
+A non-blocking TCP server usually watches two kinds of sockets:
+
+- The listening socket becomes readable when completed connections are ready for `accept()`.
+- A connected socket becomes readable when bytes are available or the peer has closed the connection.
+
+The flow looks like this:
+
+```text
+client completes TCP handshake
+             |
+             v
+listening socket becomes ready
+             |
+             v
+epoll_wait() returns it
+             |
+             v
+server accept()s the connection
+             |
+             v
+new socket is registered with epoll
+```
+
+Later, when the client sends bytes, epoll reports the connected socket. The server reads what is currently available, updates that connection's state, and returns to the event loop.
+
+This is asynchronous from the program's point of view: it does not sit inside `read()` waiting for one slow client.
+
+Writing needs care too. A socket being writable does not mean an unlimited amount of data can be sent. It means the send buffer currently has some space. If `write()` returns `EAGAIN`, register interest in `EPOLLOUT` and continue when epoll reports it. Do not permanently watch `EPOLLOUT`, because sockets are writable most of the time and can wake the loop continuously.
+
+### UDP
+
+UDP has no connection to accept. One socket receives independent datagrams.
+
+```text
+datagram arrives -> UDP socket becomes readable
+                 -> epoll reports the socket
+                 -> recvfrom() returns one datagram and its sender
+```
+
+In edge-triggered mode, call `recvfrom()` repeatedly until it returns `EAGAIN`; otherwise datagrams already waiting in the buffer may be left without another edge notification.
+
+TCP gives us a byte stream. UDP gives us separate messages. `epoll` can watch both because both are sockets represented by FDs.
+
+## 2. Asynchronous DNS resolution
+
+This one is easy to misunderstand.
+
+Calling the usual `getaddrinfo()` can block. Adding the current socket to epoll does not make that DNS lookup asynchronous.
+
+An application normally uses one of these approaches:
+
+1. Run blocking DNS calls in a worker thread pool.
+2. Use an asynchronous DNS resolver that sends DNS queries through non-blocking UDP or TCP sockets.
+3. Ask a separate local resolver service and integrate its socket or API into the event loop.
+
+With an async DNS library, the flow is:
+
+```text
+application asks for example.com
+        |
+        v
+resolver sends a DNS query over UDP
+        |
+        v
+epoll watches the resolver's socket
+        |
+        v
+DNS response arrives, socket becomes ready
+        |
+        v
+resolver parses the answer and runs the callback
+```
+
+DNS also needs timeouts and retries. A lost UDP response creates no readable event, so the event loop must track a timer and resend the query or fail it. Some DNS answers are too large for UDP and fall back to TCP, which the resolver must also handle.
+
+So epoll can drive the network sockets used by an asynchronous resolver. It does not turn a blocking resolver function into a non-blocking one.
+
+## 3. Asynchronous files and file system operations
+
+Sockets may need to wait for packets from another machine. Regular files are different. Their bytes may already be cached in memory, or the kernel may need to fetch disk blocks. Readiness does not describe that situation well.
+
+On Linux, regular files cannot usefully be registered with epoll. `epoll_ctl()` normally fails with `EPERM` for a regular file or directory because it does not support epoll readiness notifications.
+
+For asynchronous regular-file reads and writes, common options are:
+
+- a thread pool, where worker threads perform blocking file calls;
+- Linux `io_uring`, which can submit operations and collect completions;
+- Linux AIO for the narrower workloads it supports.
+
+Notice the change in language:
+
+```text
+epoll:     tell me when this FD is ready
+io_uring:  perform this operation and tell me when it completes
+```
+
+But file **system events** are a good fit for epoll.
+
+Linux `inotify` can watch paths for changes such as file creation, modification, movement, and deletion. The inotify instance itself is an FD, so epoll can watch it alongside network sockets:
+
+```text
+file changes
+    |
+    v
+inotify queues an event
+    |
+    v
+inotify FD becomes readable
+    |
+    v
+epoll reports it
+```
+
+A server can therefore use one event loop for TCP clients, UDP packets, async DNS sockets, timers, signals, and inotify notifications. Regular-file content I/O still needs a different mechanism.
+
+## What epoll does not do
+
+`epoll` does not create threads, parse protocols, perform DNS resolution, or read files on our behalf.
+
+It is a waiting mechanism.
+
+It answers one narrow and extremely useful question:
+
+> Which of these Linux file descriptors can make progress right now?
+
+`select` answers it with an old fixed-size set. `poll` answers it with an array. Linux `epoll` keeps the interest list in the kernel and returns the ready events.
+
+That small difference is what lets one event-loop thread calmly manage thousands of mostly idle connections.
+
+And that is the whole idea: do not wait on one operation, and do not keep checking every operation. Let the kernel wake you for the work that is ready.
