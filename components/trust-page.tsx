@@ -37,8 +37,6 @@ export default function TrustPage({ title, description, path, children }: Props)
             <Link className="text-accent-terminal hover:text-accent-link" href="/llms.txt">agent instructions</Link>
             {" · "}
             <Link className="text-accent-terminal hover:text-accent-link" href="/sitemap.xml">sitemap</Link>
-            {" · "}
-            <Link className="text-accent-terminal hover:text-accent-link" href="/developers">developer resources</Link>
           </nav>
         </article>
       </Container>

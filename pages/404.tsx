@@ -18,7 +18,6 @@ function ErrorPage() {
         <Link href="/" className="px-5 py-3 rounded bg-accent-brand text-text-heading">home</Link>
         <Link href="/sitemap.xml" className="px-5 py-3 border border-surface-muted rounded text-accent-terminal">sitemap</Link>
         <Link href="/llms.txt" className="px-5 py-3 border border-surface-muted rounded text-accent-terminal">llms.txt</Link>
-        <Link href="/developers" className="px-5 py-3 border border-surface-muted rounded text-accent-terminal">developer resources</Link>
       </nav>
     </main>
   );

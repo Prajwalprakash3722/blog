@@ -20,7 +20,7 @@ Email Prajwal Prakash at [prajwalprakash3722@gmail.com](mailto:prajwalprakash372
 
 This is a personal publication, not a support desk or an official channel for Prajwal's employer. Do not send passwords, API keys, private production data, health records, financial information, or other secrets. Unsolicited marketing and link-exchange requests may not receive a response. Responsible reports about a security issue should describe the affected URL, observable impact, and safe reproduction steps without exploiting readers or accessing data that is not yours.
 
-You can also find Prajwal on [GitHub](https://github.com/Prajwalprakash3722) and [X/Twitter](https://twitter.com/prajwal_3722). For automated discovery, use [llms.txt](${SITE_URL}/llms.txt), the [sitemap](${SITE_URL}/sitemap.xml), or the [developer resources page](${SITE_URL}/developers).
+You can also find Prajwal on [GitHub](https://github.com/Prajwalprakash3722) and [X/Twitter](https://twitter.com/prajwal_3722). For automated discovery, use [llms.txt](${SITE_URL}/llms.txt), the [sitemap](${SITE_URL}/sitemap.xml), or [RSS](${SITE_URL}/rss.xml).
 `,
   "/privacy": `# Privacy policy
 
@@ -29,19 +29,6 @@ Prajwal's Blog publishes articles without requiring an account, subscription, or
 The site is delivered through hosting and content-delivery providers and uses Vercel Analytics and Cloudflare Web Analytics. Those providers may process limited request or device information under their own terms. Email sent through the contact address is processed by the sender's and recipient's email providers and retained only as reasonably needed to answer, preserve context, prevent abuse, or meet legal obligations.
 
 Articles may link to third-party sites whose privacy practices are outside this site's control. Avoid sending secrets or sensitive personal data through email. To ask a privacy question or request deletion of information you previously sent directly, email [prajwalprakash3722@gmail.com](mailto:prajwalprakash3722@gmail.com) with enough context to identify the relevant message. This policy may change when the site's services change; the current version is effective 23 August 2026.
-`,
-  "/developers": `# DevCoffee developer resources
-
-DevCoffee is the publishing identity used by Prajwal Prakash for this blog and related open-source work. This blog has no private customer API and does not require authentication. Its public, read-only developer interfaces are designed for feed readers, search engines, research tools, and AI agents.
-
-- [MCP Streamable HTTP endpoint](${SITE_URL}/.well-known/mcp) — discover and read published blog posts through Model Context Protocol tools.
-- [@devcoffee/mcp-tools on npm](https://www.npmjs.com/package/@devcoffee/mcp-tools) — the first-party DevCoffee MCP tools package.
-- [llms.txt](${SITE_URL}/llms.txt) — scope, when-to-use guidance, and canonical resource links.
-- [XML sitemap](${SITE_URL}/sitemap.xml) — indexable pages and articles with last-modified dates.
-- [RSS feed](${SITE_URL}/rss.xml) and [JSON feed](${SITE_URL}/rss.json) — publication updates.
-- [GitHub profile](https://github.com/Prajwalprakash3722) — source projects and issue trackers.
-
-The interfaces are public and read-only. Clients should cache responses, identify themselves honestly, follow HTTP status codes, and link to the canonical article when quoting or summarizing it. Use the MCP endpoint for targeted article discovery; use RSS for incremental updates; use the sitemap for crawling.
 `,
 };
 
@@ -76,7 +63,7 @@ function homepageMarkdown() {
     )
     .join("\n");
 
-  return `# Prajwal's Blog — DevCoffee\n\nI'm Prajwal Prakash, a site reliability engineer in India. I write practical explanations of Linux, scalable and reliable systems, distributed systems, web development, and accessibility, alongside personal essays about philosophy, books, life, and travel. The full article text is server-rendered and each title below links to its canonical page.\n\n## All posts\n\n${links}\n\n## Site resources\n\n- [About](${SITE_URL}/about)\n- [Contact](${SITE_URL}/contact)\n- [Privacy](${SITE_URL}/privacy)\n- [Developer resources](${SITE_URL}/developers)\n- [Today I Learned](${SITE_URL}/til)\n- [Travel journal](${SITE_URL}/travel)\n- [RSS feed](${SITE_URL}/rss.xml)\n- [Sitemap](${SITE_URL}/sitemap.xml)\n- [Agent instructions](${SITE_URL}/llms.txt)\n`;
+  return `# Prajwal's Blog — DevCoffee\n\nI'm Prajwal Prakash, a site reliability engineer in India. I write practical explanations of Linux, scalable and reliable systems, distributed systems, web development, and accessibility, alongside personal essays about philosophy, books, life, and travel. The full article text is server-rendered and each title below links to its canonical page.\n\n## All posts\n\n${links}\n\n## Site resources\n\n- [About](${SITE_URL}/about)\n- [Contact](${SITE_URL}/contact)\n- [Privacy](${SITE_URL}/privacy)\n- [Today I Learned](${SITE_URL}/til)\n- [Travel journal](${SITE_URL}/travel)\n- [RSS feed](${SITE_URL}/rss.xml)\n- [Sitemap](${SITE_URL}/sitemap.xml)\n- [Agent instructions](${SITE_URL}/llms.txt)\n`;
 }
 
 function collectionMarkdown(kind: "travel" | "til") {
@@ -152,7 +139,7 @@ export default function handler(request: NextApiRequest, response: NextApiRespon
   response.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate=86400");
 
   if (!markdown) {
-    return response.status(404).send(`# 404 — Not found\n\nNo published page exists at \`${requestedPath}\`. Recover through the [homepage](${SITE_URL}/), [sitemap](${SITE_URL}/sitemap.xml), [agent instructions](${SITE_URL}/llms.txt), or [developer resources](${SITE_URL}/developers).\n`);
+    return response.status(404).send(`# 404 — Not found\n\nNo published page exists at \`${requestedPath}\`. Recover through the [homepage](${SITE_URL}/), [sitemap](${SITE_URL}/sitemap.xml), [agent instructions](${SITE_URL}/llms.txt), or [RSS feed](${SITE_URL}/rss.xml).\n`);
   }
   return response.status(200).send(request.method === "HEAD" ? "" : markdown);
 }

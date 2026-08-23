@@ -57,7 +57,6 @@ const Index = ({ allPosts }: Props) => {
         sameAs: [
           "https://www.devcoffee.me",
           "https://github.com/Prajwalprakash3722",
-          "https://www.npmjs.com/package/@devcoffee/mcp-tools",
         ],
       },
       {
