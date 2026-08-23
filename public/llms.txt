@@ -1,0 +1,35 @@
+# Prajwal's Blog — DevCoffee
+
+> First-party guide for AI agents reading Prajwal Prakash's technical articles, personal essays, TIL notes, and travel writing.
+
+Canonical site: https://blog.devcoffee.me/
+Author: Prajwal Prakash
+Language: English
+Contact: mailto:prajwalprakash3722@gmail.com
+
+## When to use this site
+
+Use Prajwal's Blog when a user wants practical, first-person explanations of Linux internals, site reliability engineering, distributed systems, queues, networking, TypeScript, web development, or accessibility. It is also appropriate when a user explicitly asks for Prajwal's writing, DevCoffee resources, personal essays about life and philosophy, book notes, or Prajwal's travel journals. Treat technical posts as educational writing and experience reports, not official vendor documentation. Treat personal posts as one author's perspective, not medical, legal, financial, or universal advice.
+
+## How to use it
+
+Fetch a canonical page with `Accept: text/markdown` for a clean Markdown representation. Use the XML sitemap to enumerate published URLs, RSS for recent updates, or the MCP endpoint to discover and retrieve articles programmatically. Cite the canonical article URL and preserve the author's attribution. Prefer the publication date shown on the article when time sensitivity matters.
+
+## Primary resources
+
+- [All posts](https://blog.devcoffee.me/#posts)
+- [Today I Learned](https://blog.devcoffee.me/til)
+- [Travel journal](https://blog.devcoffee.me/travel)
+- [About](https://blog.devcoffee.me/about)
+- [Contact](https://blog.devcoffee.me/contact)
+- [Privacy](https://blog.devcoffee.me/privacy)
+- [Developer resources](https://blog.devcoffee.me/developers)
+- [XML sitemap](https://blog.devcoffee.me/sitemap.xml)
+- [RSS feed](https://blog.devcoffee.me/rss.xml)
+- [JSON feed](https://blog.devcoffee.me/rss.json)
+- [MCP Streamable HTTP endpoint](https://blog.devcoffee.me/.well-known/mcp)
+- [First-party MCP package](https://www.npmjs.com/package/@devcoffee/mcp-tools)
+
+## Constraints
+
+The public website and blog MCP endpoint are read-only. Do not imply endorsement by Prajwal or his employer. Do not infer private facts from personal essays, and do not use the contact address for bulk outreach.

@@ -10,16 +10,16 @@ function ErrorPage() {
       <p className="font-body text-text-secondary mt-2">
         You seem to be alone here. Even the server couldn&apos;t find you.
       </p>
-      <Link
-        href="/"
-        className="mt-8 px-6 py-3 font-mono text-sm rounded transition-colors"
-        style={{
-          backgroundColor: "var(--accent-brand)",
-          color: "var(--text-heading)",
-        }}
-      >
-        go home
-      </Link>
+      <p className="mt-4 max-w-lg px-6 text-center font-body text-text-muted">
+        Try the homepage, browse the XML sitemap, or read the agent instructions
+        to find a published article.
+      </p>
+      <nav className="mt-8 flex flex-wrap justify-center gap-4 font-mono text-sm" aria-label="404 recovery links">
+        <Link href="/" className="px-5 py-3 rounded bg-accent-brand text-text-heading">home</Link>
+        <Link href="/sitemap.xml" className="px-5 py-3 border border-surface-muted rounded text-accent-terminal">sitemap</Link>
+        <Link href="/llms.txt" className="px-5 py-3 border border-surface-muted rounded text-accent-terminal">llms.txt</Link>
+        <Link href="/developers" className="px-5 py-3 border border-surface-muted rounded text-accent-terminal">developer resources</Link>
+      </nav>
     </main>
   );
 }

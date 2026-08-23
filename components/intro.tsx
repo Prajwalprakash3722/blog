@@ -7,6 +7,10 @@ interface Props {
 const Intro = ({ totalPostNumber }: Props) => {
   return (
     <section className="py-20 md:py-28">
+      <h1 className="sr-only">
+        Prajwal&apos;s Blog — DevCoffee articles on reliable systems, technology,
+        accessibility, life, books, and travel
+      </h1>
       {/* Hero: binary post count */}
       <div className="mb-10">
         <p className="font-display font-black text-text-heading leading-[0.85] tracking-[-0.04em]"

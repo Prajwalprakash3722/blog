@@ -7,6 +7,9 @@ const Footer = () => {
     { name: "twitter", path: "https://twitter.com/prajwal_3722" },
     { name: "portfolio", path: "https://www.devcoffee.me" },
     { name: "rss", path: "https://blog.devcoffee.me/rss.xml" },
+    { name: "about", path: "/about" },
+    { name: "contact", path: "/contact" },
+    { name: "privacy", path: "/privacy" },
   ];
 
   return (
@@ -17,14 +20,14 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Prajwal P
           </p>
           <nav aria-label="Footer navigation">
-            <ul className="flex gap-8">
+            <ul className="flex flex-wrap justify-center gap-x-8 gap-y-3">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     className="font-mono text-sm text-text-secondary hover:text-accent-terminal transition-colors"
                     href={link.path}
-                    target="_blank"
-                    rel="noreferrer"
+                    target={link.path.startsWith("http") ? "_blank" : undefined}
+                    rel={link.path.startsWith("http") ? "noreferrer" : undefined}
                   >
                     {link.name}
                   </a>

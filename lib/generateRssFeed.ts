@@ -13,7 +13,7 @@ export default async function generateRssFeed() {
   ]);
   const siteURL =
     process.env.NODE_ENV === "production"
-      ? "https://www.blog.devcoffee.me"
+      ? "https://blog.devcoffee.me"
       : "http://localhost:3000";
   const date = new Date();
   const author = {
@@ -24,9 +24,9 @@ export default async function generateRssFeed() {
 
   // Creating feed
   const feed = new Feed({
-    title: "Prajwals Blog",
+    title: "Prajwal's Blog — DevCoffee",
     description:
-      "Hi I'm Prajwal, and this is my blog. Here, I share through my writing my experience as a Computer science student and everything I'm learning about on React, Typescript, Go, Serverless, System Design and Testing.",
+      "Practical writing by Prajwal Prakash about reliable systems, Linux, distributed systems, accessibility, philosophy, books, life, and travel.",
     id: siteURL,
     link: siteURL,
     image: `${siteURL}/favicon.ico`,
@@ -35,8 +35,8 @@ export default async function generateRssFeed() {
     updated: date, // today's date
     generator: "Feed for Node.js",
     feedLinks: {
-      rss2: `${siteURL}/rss/feed.xml`, // xml format
-      json: `${siteURL}/rss/feed.json`, // json fromat
+      rss2: `${siteURL}/rss.xml`,
+      json: `${siteURL}/rss.json`,
     },
     author,
   });

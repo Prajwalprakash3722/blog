@@ -5,6 +5,9 @@ interface Props {
   imageUrl?: string;
 }
 
+const DEFAULT_IMAGE =
+  "https://blog.devcoffee.me/assets/blog/nginx-in-production/nginx-production-architecture-hero.png";
+
 const Meta = ({ description, imageUrl }: Props) => {
   return (
     <Head>
@@ -35,7 +38,7 @@ const Meta = ({ description, imageUrl }: Props) => {
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#1a1410" />
-      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
       <meta
         name="description"
         content={
@@ -44,7 +47,7 @@ const Meta = ({ description, imageUrl }: Props) => {
             : "Prajwal's blog for all the things I love to write about. I write about tech, design, life, and more."
         }
       />
-      <meta property="og:image" content={imageUrl ? imageUrl : ""} />
+      <meta property="og:image" content={imageUrl ? imageUrl : DEFAULT_IMAGE} />
     </Head>
   );
 };
