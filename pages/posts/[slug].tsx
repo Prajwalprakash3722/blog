@@ -57,7 +57,6 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
               <article className="mb-16">
                 <Head>
                   <title>{post.title}</title>
-                  <meta property="og:image" content={post.ogImage.url} />
                 </Head>
                 <PostHeader
                   title={post.title}
@@ -86,11 +85,13 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     {" / "}
                     <span>{post.slug}</span>
                   </nav>
-                  <Link
+                  {/* Plain <a>: raw is a text/plain document, not a Next page to route to. */}
+                  {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+                  <a
                     href={`/posts/raw/${post.slug}`}
                     className="font-mono text-xs text-text-muted hover:text-accent-terminal transition-colors">
                     view raw
-                  </Link>
+                  </a>
                 </div>
               </article>
             </>

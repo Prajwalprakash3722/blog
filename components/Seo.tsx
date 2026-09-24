@@ -1,4 +1,5 @@
 import { NextSeo } from "next-seo";
+import { absoluteImageUrl } from "./meta";
 
 export default function Seo({ post }: any) {
   const { title, excerpt, slug, coverImage } = post;
@@ -16,7 +17,7 @@ export default function Seo({ post }: any) {
           locale: "en_EN",
           images: [
             {
-              url: coverImage,
+              url: absoluteImageUrl(coverImage),
               width: 800,
               height: 600,
               alt: `hero image for ${title}`,

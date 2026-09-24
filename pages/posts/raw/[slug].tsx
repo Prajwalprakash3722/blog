@@ -1,81 +1,41 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { getPostBySlug, getPublishedPosts } from "../../../lib/api";
+import fs from "fs";
+import { join } from "path";
+import type { GetServerSideProps } from "next";
+import { getPublishedPosts } from "../../../lib/api";
 
-import ErrorPage from "next/error";
-import Meta from "../../../components/meta";
-import PostTitle from "../../../components/post-title";
-import PostType from "../../../types/post";
-import { useRouter } from "next/router";
-
-const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const post: PostType = props.post;
-
-  const router = useRouter();
-  if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
-  return (
-    <>
-      <Meta
-        description={post.excerpt}
-        // title={post.title}
-        imageUrl={post.ogImage.url}
-      />
-      {router.isFallback ? (
-        <PostTitle>Loading…</PostTitle>
-      ) : (
-        <>
-          <pre
-            style={{
-              wordWrap: "break-word",
-              whiteSpace: "pre-wrap",
-            }}
-            className="bg-white min-h-screen select-none">
-            {post.content}
-          </pre>
-        </>
-      )}
-    </>
-  );
-};
-
-export default Post;
-
-type Params = {
-  params: {
-    slug: string;
-  };
-};
-
-export const getStaticProps: GetStaticProps = async (context) => {
-  const post = getPostBySlug(context.params?.slug as string, [
-    "title",
-    "date",
-    "slug",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
-  return {
-    props: {
-      post: {
-        ...post,
-      },
-    },
-  };
-};
-
-export async function getStaticPaths() {
-  const posts = getPublishedPosts(["slug"]);
-
-  return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
-    fallback: false,
-  };
+// Behaves like raw.githubusercontent.com: the exact .mdx bytes as text/plain,
+// with GitHub's raw headers. Only published posts resolve; anything else is a
+// plain-text 404, never an HTML page.
+function RawPost() {
+  return null;
 }
+
+function send(res: Parameters<GetServerSideProps>[0]["res"], status: number, body: string | Buffer) {
+  res.statusCode = status;
+  res.setHeader("Content-Type", "text/plain; charset=utf-8");
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("X-Frame-Options", "deny");
+  res.setHeader("Content-Security-Policy", "default-src 'none'; style-src 'unsafe-inline'; sandbox");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Cache-Control",
+    status === 200 ? "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400" : "public, max-age=60"
+  );
+  res.end(body);
+}
+
+export const getServerSideProps: GetServerSideProps = async ({ params, res }) => {
+  const slug = String(params?.slug ?? "");
+  // Match against the published list instead of trusting the URL, so drafts
+  // and path tricks never reach the filesystem.
+  const published = getPublishedPosts(["slug"]).some((post) => post.slug === slug);
+
+  if (!published) {
+    send(res, 404, "404: Not Found");
+  } else {
+    send(res, 200, fs.readFileSync(join(process.cwd(), "_posts", `${slug}.mdx`)));
+  }
+  return { props: {} };
+};
+
+export default RawPost;

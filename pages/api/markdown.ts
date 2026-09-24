@@ -98,8 +98,6 @@ function markdownFor(requestPath: string) {
 
   const postMatch = requestPath.match(/^\/posts\/([^/]+)$/);
   if (postMatch) return readMarkdown("_posts", postMatch[1]);
-  const rawPostMatch = requestPath.match(/^\/posts\/raw\/([^/]+)$/);
-  if (rawPostMatch) return readMarkdown("_posts", rawPostMatch[1]);
   const tagMatch = requestPath.match(/^\/posts\/tag\/([^/]+)$/);
   if (tagMatch) {
     const tag = decodeURIComponent(tagMatch[1]).toLowerCase();

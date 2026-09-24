@@ -8,6 +8,8 @@ export function proxy(request: NextRequest) {
   if (
     pathname.startsWith("/_next/") ||
     pathname.startsWith("/api/") ||
+    // Raw files are always text/plain, like raw.githubusercontent.com.
+    pathname.startsWith("/posts/raw/") ||
     PUBLIC_FILE.test(pathname)
   ) {
     return NextResponse.next();

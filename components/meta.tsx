@@ -5,8 +5,18 @@ interface Props {
   imageUrl?: string;
 }
 
-const DEFAULT_IMAGE =
-  "https://blog.devcoffee.me/assets/blog/nginx-in-production/nginx-production-architecture-hero.png";
+const SITE_URL = "https://blog.devcoffee.me";
+
+const DEFAULT_IMAGE = `${SITE_URL}/assets/blog/nginx-in-production/nginx-production-architecture-hero.png`;
+
+// Link-preview scrapers (WhatsApp, X, LinkedIn, Slack) ignore relative
+// og:image paths, so local covers like "/assets/..." must be made absolute.
+export const absoluteImageUrl = (url?: string) => {
+  if (!url) return DEFAULT_IMAGE;
+  if (/^https?:\/\//i.test(url)) return url;
+  if (url.startsWith("//")) return `https:${url}`;
+  return `${SITE_URL}${url.startsWith("/") ? "" : "/"}${url}`;
+};
 
 const Meta = ({ description, imageUrl }: Props) => {
   return (
@@ -47,7 +57,7 @@ const Meta = ({ description, imageUrl }: Props) => {
             : "Prajwal's blog for all the things I love to write about. I write about tech, design, life, and more."
         }
       />
-      <meta property="og:image" content={imageUrl ? imageUrl : DEFAULT_IMAGE} />
+      <meta property="og:image" content={absoluteImageUrl(imageUrl)} />
     </Head>
   );
 };
