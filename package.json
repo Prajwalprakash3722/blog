@@ -13,6 +13,10 @@
   },
   "license": " GNU GENERAL PUBLIC LICENSE Version 3",
   "scripts": {
+    "images:prepare": "node scripts/prepare-images.mjs",
+    "images:check": "node scripts/prepare-images.mjs --check",
+    "check:delivery": "node scripts/check-delivery.mjs",
+    "prebuild": "npm run images:check",
     "dev": "next",
     "build": "next build --webpack",
     "start": "next start",
@@ -32,6 +36,7 @@
     "date-fns": "2.21.3",
     "feed": "^4.2.2",
     "gray-matter": "4.0.3",
+    "hast-util-sanitize": "^5.0.2",
     "moment": "^2.29.4",
     "next": "16.3.0",
     "next-seo": "^5.5.0",
@@ -68,6 +73,7 @@
     "eslint-config-next": "^16.2.6",
     "postcss": "^8.5.15",
     "prettier": "2.7.1",
+    "sharp": "^0.35.5",
     "tailwindcss": "3.0.5"
   }
 }

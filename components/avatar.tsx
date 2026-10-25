@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import StaticImage from "./static-image";
 type Props = {
   name: string;
   picture: string;
@@ -7,8 +7,15 @@ type Props = {
 const Avatar = ({ name, picture }: Props) => {
   return (
     <div className="flex items-center">
-      <img src={picture} className="w-12 h-12 rounded-full mr-4" alt={name} />
-      <div className="font-display text-xl font-bold text-text-heading">{name}</div>
+      <StaticImage
+        src={picture}
+        sizes="48px"
+        className="w-12 h-12 rounded-full mr-4"
+        alt={name}
+      />
+      <div className="font-display text-xl font-bold text-text-heading">
+        {name}
+      </div>
     </div>
   );
 };

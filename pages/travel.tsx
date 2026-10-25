@@ -8,6 +8,7 @@ import DateFormatter from "../components/date-formatter";
 import Header from "../components/header";
 import Layout from "../components/layout";
 import Meta from "../components/meta";
+import StaticImage from "../components/static-image";
 import Post from "../types/post";
 import { getPublishedTravel } from "../lib/api";
 
@@ -94,16 +95,14 @@ const Travel = ({ trips }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Container wide>
         <Header />
 
-        <main className="pb-16 md:pb-24">
+        <div className="pb-16 md:pb-24">
           <section className="mb-12 md:mb-16">
             <p className="font-mono text-sm tracking-[0.15em] uppercase text-text-muted">
               travel journal
             </p>
             <div className="mt-5 grid gap-8 lg:grid-cols-[1fr_22rem] lg:items-end">
               <div>
-                <h1
-                  className="font-display font-extrabold text-5xl leading-[1.05] tracking-tight text-text-heading md:text-6xl lg:text-7xl"
-                >
+                <h1 className="font-display font-extrabold text-5xl leading-[1.05] tracking-tight text-text-heading md:text-6xl lg:text-7xl">
                   Out of office.
                 </h1>
                 <p className="mt-8 max-w-[680px] font-body text-xl leading-[1.8] text-text-body">
@@ -142,11 +141,10 @@ const Travel = ({ trips }: InferGetStaticPropsType<typeof getStaticProps>) => {
               <section className="mb-14 md:mb-20" id="featured-trip">
                 <Link
                   href={`/travel/${featuredTrip.slug}`}
-                  className="group grid overflow-hidden border border-surface-muted bg-surface-raised transition-colors hover:border-accent-terminal-muted lg:grid-cols-[1.08fr_0.92fr]"
-                >
+                  className="group grid overflow-hidden border border-surface-muted bg-surface-raised transition-colors hover:border-accent-terminal-muted lg:grid-cols-[1.08fr_0.92fr]">
                   <div className="relative min-h-[360px] border-b border-surface-muted bg-surface-overlay lg:border-b-0 lg:border-r">
                     {featuredTrip.coverImage ? (
-                      <img
+                      <StaticImage
                         src={featuredTrip.coverImage}
                         alt={`Cover for ${featuredTrip.title}`}
                         className="absolute inset-0 h-full w-full object-cover opacity-85 transition-opacity group-hover:opacity-100"
@@ -201,11 +199,10 @@ const Travel = ({ trips }: InferGetStaticPropsType<typeof getStaticProps>) => {
                       <Link
                         key={trip.slug}
                         href={`/travel/${trip.slug}`}
-                        className="group grid overflow-hidden border border-surface-muted bg-surface-raised transition-colors hover:border-accent-terminal-muted sm:grid-cols-[11rem_1fr]"
-                      >
+                        className="group grid overflow-hidden border border-surface-muted bg-surface-raised transition-colors hover:border-accent-terminal-muted sm:grid-cols-[11rem_1fr]">
                         <div className="relative min-h-[180px] border-b border-surface-muted bg-surface-overlay sm:border-b-0 sm:border-r">
                           {trip.coverImage ? (
-                            <img
+                            <StaticImage
                               src={trip.coverImage}
                               alt={`Cover for ${trip.title}`}
                               className="absolute inset-0 h-full w-full object-cover opacity-80 transition-opacity group-hover:opacity-100"
@@ -241,7 +238,7 @@ const Travel = ({ trips }: InferGetStaticPropsType<typeof getStaticProps>) => {
               </p>
             </section>
           )}
-        </main>
+        </div>
       </Container>
     </Layout>
   );

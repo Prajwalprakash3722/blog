@@ -27,7 +27,11 @@ const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
       const el = document.documentElement;
       const scrollTop = el.scrollTop || document.body.scrollTop;
       const scrollHeight = el.scrollHeight || document.body.scrollHeight;
-      const percent = (scrollTop / (scrollHeight - el.clientHeight)) * 100;
+      const scrollableHeight = scrollHeight - el.clientHeight;
+      const percent =
+        scrollableHeight > 0
+          ? Math.min(100, Math.max(0, (scrollTop / scrollableHeight) * 100))
+          : 100;
       setWidth(percent);
     };
 

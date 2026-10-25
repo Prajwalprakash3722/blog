@@ -17,7 +17,9 @@ const Layout = ({ children, newArticle }: Props) => {
       </a>
       <div className="min-h-screen">
         <Alert newArticle={newArticle} />
-        <main id="main-content">{children}</main>
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
       </div>
       <Footer />
     </>

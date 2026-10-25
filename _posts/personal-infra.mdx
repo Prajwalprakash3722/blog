@@ -1,9 +1,9 @@
 ---
 title: "Diving deep into my Personal Infrastructure"
-coverImage: "https://i.ibb.co/hydTStZ/Add-a-subheading-1.png"
+coverImage: "/assets/images/0df50a1032fbc810-500.webp"
 date: "2023-04-20T19:06:23.775Z"
 ogImage:
-  url: "https://i.ibb.co/hydTStZ/Add-a-subheading-1.png"
+  url: "/assets/images/0df50a1032fbc810-500.webp"
 draft: false
 category: "Software Development"
 ---
@@ -51,7 +51,7 @@ Now how to interconnect all these devices? You guessed it right, I use `VPN` to 
 
 All the 3 VPS have a public IP address, but not the Raspberry Pi and the CPU. I use `Nginx` as a reverse proxy to route all the traffic to the correct VPS. Basically it pipes the traffic from public IP to the private IP, one of the VPS acts as a gateway to the internet.
 
-[![network-diagram](https://mermaid.ink/img/pako:eNqFUstuwjAQ_BVrT60UEI4hITn00l6QWmSB2kOViyFbsErsyHEoKfDvdR7i0UrFkWzvzmR2PfYeljpFiGFlRL4mz7NEETcmyqJRaEmv93Dg5WIjl2TCD-SNz-ldAm4hNIH7llwnG2KqMyEVUSLDA5mupNo5brOSGW7RFEi40bvq9GeLNTWM3AqLTZFH_vofPBNFvkBjKi6d_CkiXN7QdX36XfP-bSrrqKyh1l9NL8pF61RnyhTtlzafLXjp3DlT29NGqNJ281urq_xH7OREPS7OfSXuX0XsohR4kKFxd5K6C97XQAJ2jRkmELvtRq7WNoFEHR1RlFbPK7WE2JoSPSjz1LX0JIVrMYP4Q2wKl82Fetf6KoZ4DzuI6WDUH4eMhW6ijPoB9aCC2A9G_SAMI0qZA6KABUcPvhsJ2h-xAQ2jQeQPx8EwGPseYCqtNi_tk2xe5vEHZE3JvA?type=png)](https://mermaid.live/edit#pako:eNqFUstuwjAQ_BVrT60UEI4hITn00l6QWmSB2kOViyFbsErsyHEoKfDvdR7i0UrFkWzvzmR2PfYeljpFiGFlRL4mz7NEETcmyqJRaEmv93Dg5WIjl2TCD-SNz-ldAm4hNIH7llwnG2KqMyEVUSLDA5mupNo5brOSGW7RFEi40bvq9GeLNTWM3AqLTZFH_vofPBNFvkBjKi6d_CkiXN7QdX36XfP-bSrrqKyh1l9NL8pF61RnyhTtlzafLXjp3DlT29NGqNJ281urq_xH7OREPS7OfSXuX0XsohR4kKFxd5K6C97XQAJ2jRkmELvtRq7WNoFEHR1RlFbPK7WE2JoSPSjz1LX0JIVrMYP4Q2wKl82Fetf6KoZ4DzuI6WDUH4eMhW6ijPoB9aCC2A9G_SAMI0qZA6KABUcPvhsJ2h-xAQ2jQeQPx8EwGPseYCqtNi_tk2xe5vEHZE3JvA)
+[![network-diagram](/assets/images/90a12c08dc54a855-988.webp)](https://mermaid.live/edit#pako:eNqFUstuwjAQ_BVrT60UEI4hITn00l6QWmSB2kOViyFbsErsyHEoKfDvdR7i0UrFkWzvzmR2PfYeljpFiGFlRL4mz7NEETcmyqJRaEmv93Dg5WIjl2TCD-SNz-ldAm4hNIH7llwnG2KqMyEVUSLDA5mupNo5brOSGW7RFEi40bvq9GeLNTWM3AqLTZFH_vofPBNFvkBjKi6d_CkiXN7QdX36XfP-bSrrqKyh1l9NL8pF61RnyhTtlzafLXjp3DlT29NGqNJ281urq_xH7OREPS7OfSXuX0XsohR4kKFxd5K6C97XQAJ2jRkmELvtRq7WNoFEHR1RlFbPK7WE2JoSPSjz1LX0JIVrMYP4Q2wKl82Fetf6KoZ4DzuI6WDUH4eMhW6ijPoB9aCC2A9G_SAMI0qZA6KABUcPvhsJ2h-xAQ2jQeQPx8EwGPseYCqtNi_tk2xe5vEHZE3JvA)
 
 I use cloudflare as my DNS provider, its free and secure and it has a lot of features. I use it to manage my domains. (Just the one lol :P) [devcoffee.me](https://devcoffee.me)
 

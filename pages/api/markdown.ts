@@ -134,6 +134,7 @@ export default function handler(request: NextApiRequest, response: NextApiRespon
   const markdown = markdownFor(requestedPath);
   response.setHeader("Content-Type", "text/markdown; charset=utf-8");
   response.setHeader("Vary", "Accept");
+  response.setHeader("Cloudflare-CDN-Cache-Control", "no-store");
   response.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate=86400");
 
   if (!markdown) {

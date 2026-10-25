@@ -69,7 +69,7 @@
 }
 
 .markdown a:hover {
-  color: var(--accent-brand);
+  color: var(--accent-terminal);
 }
 
 .markdown img {

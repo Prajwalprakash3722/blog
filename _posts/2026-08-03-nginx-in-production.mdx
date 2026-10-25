@@ -1,9 +1,9 @@
 ---
 title: "Nginx in Production: Workers, Threads, and How a Request Finds Your Upstream"
 ogImage:
-  url: "/assets/blog/nginx-in-production/nginx-production-architecture-hero.png"
+  url: "/assets/images/504db3f39fe36198-1672.webp"
 category: "Software Development"
-coverImage: "/assets/blog/nginx-in-production/nginx-production-architecture-hero.png"
+coverImage: "/assets/images/504db3f39fe36198-1672.webp"
 date: "2026-08-03T15:03:45.000Z"
 draft: false
 ---
@@ -79,7 +79,7 @@ client -> nginx -> backend
 
 Internally, for one proxied request:
 
-![A proxied request moving from the client through the Nginx listening socket, worker event loop, upstream lookup, and connection to the backend](/assets/blog/nginx-in-production/nginx-proxied-request-flow.png)
+![A proxied request moving from the client through the Nginx listening socket, worker event loop, upstream lookup, and connection to the backend](/assets/images/d2c3bf2a920b40cb-2400.webp)
 
 Each part has a job.
 
@@ -91,7 +91,7 @@ Start nginx and you do not get one nginx.
 
 You get a master and N workers.
 
-![The Nginx master process reading configuration and forking worker processes that serve traffic](/assets/blog/nginx-in-production/nginx-master-worker-process-model.png)
+![The Nginx master process reading configuration and forking worker processes that serve traffic](/assets/images/8122c862916274cf-2069.webp)
 
 The master does not serve traffic.
 
@@ -218,7 +218,7 @@ So the question is not who handles the connection.
 
 It is which worker gets to `accept()` it off the queue.
 
-![The kernel completing the TCP handshake and placing the connection in a shared accept queue for Nginx workers](/assets/blog/nginx-in-production/shared-socket-accept-queue.png)
+![The kernel completing the TCP handshake and placing the connection in a shared accept queue for Nginx workers](/assets/images/ba936689bb132dff-1449.webp)
 
 So who wins?
 
@@ -270,9 +270,9 @@ People have hit this on HTTP/3.
 
 QUIC connections dropped across a reload.
 
-![Nginx workers taking turns accepting connections from a shared queue using accept mutex](/assets/blog/nginx-in-production/accept-mutex-connection-flow.png)
+![Nginx workers taking turns accepting connections from a shared queue using accept mutex](/assets/images/c91224c87bfa3440-2134.webp)
 
-![The kernel routing connections to per-worker socket queues with SO_REUSEPORT](/assets/blog/nginx-in-production/reuseport-per-worker-sockets.png)
+![The kernel routing connections to per-worker socket queues with SO_REUSEPORT](/assets/images/76776194832a9ca5-2197.webp)
 
 ```
 accept_mutex -> userspace fairness, mostly historical
@@ -321,7 +321,7 @@ It picks up the result later.
 
 The Core Idea:
 
-![An Nginx worker handling network I/O in its event loop while a thread pool performs blocking disk reads](/assets/blog/nginx-in-production/worker-event-loop-thread-pool.png)
+![An Nginx worker handling network I/O in its event loop while a thread pool performs blocking disk reads](/assets/images/196dc64abd18c0b9-2272.webp)
 
 ```
 network I/O -> event loop, single threaded, never blocks
@@ -532,7 +532,7 @@ Threads share memory.
 
 So Pingora runs one connection pool across every thread.
 
-![Nginx per-worker upstream connection pools compared with Pingora's shared connection pool](/assets/blog/nginx-in-production/nginx-vs-pingora-connection-pools.png)
+![Nginx per-worker upstream connection pools compared with Pingora's shared connection pool](/assets/images/5fef08377fa72e85-2400.webp)
 
 They reported a better reuse ratio and a real drop in new connections to origins.
 
@@ -570,7 +570,7 @@ Those workers sit there holding the old config.
 
 `worker_shutdown_timeout` keeps that bounded.
 
-![The Nginx graceful reload sequence where new workers start and old workers drain existing connections](/assets/blog/nginx-in-production/graceful-reload-worker-lifecycle.png)
+![The Nginx graceful reload sequence where new workers start and old workers drain existing connections](/assets/images/be921144e9db5aad-1647.webp)
 
 ```
 restart -> sockets closed, connections dropped

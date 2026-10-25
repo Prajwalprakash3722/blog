@@ -36,6 +36,7 @@ export function proxy(request: NextRequest) {
     destination.searchParams.set("path", pathname);
     const response = NextResponse.rewrite(destination);
     response.headers.set("Vary", "Accept");
+    response.headers.set("Cloudflare-CDN-Cache-Control", "no-store");
     response.headers.set(
       "Link",
       `<${pathname}>; rel="canonical"; type="text/html"`
@@ -45,9 +46,18 @@ export function proxy(request: NextRequest) {
 
   const response = NextResponse.next();
   response.headers.set("Vary", appendVary(response.headers.get("Vary")));
+  const isPrivate =
+    request.headers.has("authorization") ||
+    request.cookies.has("__prerender_bypass") ||
+    request.cookies.has("__next_preview_data");
+  response.headers.set(
+    "Cloudflare-CDN-Cache-Control",
+    isPrivate ? "no-store" : "public, max-age=300, stale-while-revalidate=86400"
+  );
   return response;
 }
 
 export const config = {
-  matcher: "/:path*",
+  matcher:
+    "/((?!_next/|api/|assets/|fonts/|favicon/|posts/raw/|.*\\.[^/]+$).*)",
 };

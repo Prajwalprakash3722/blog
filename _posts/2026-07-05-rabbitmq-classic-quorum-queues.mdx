@@ -1,10 +1,10 @@
 ---
 title: "RabbitMQ Classic Queues, Quorum Queues and Reliability"
 excerpt: "RabbitMQ queues confused me more than I expected. Classic queues, quorum queues, acks, confirms, dead letters, sideline queues, Raft, all this shit sounds scary until you draw the flow."
-coverImage: "/assets/blog/rabbitmq-queues/quorum-queue-leader-followers.png"
+coverImage: "/assets/images/adace3776b0b78f9-1368.webp"
 date: "2026-07-05T18:00:00.000Z"
 ogImage:
-  url: "/assets/blog/rabbitmq-queues/quorum-queue-leader-followers.png"
+  url: "/assets/images/adace3776b0b78f9-1368.webp"
 draft: false
 category: "Software Development"
 ---
@@ -41,7 +41,7 @@ Producer puts messages into RabbitMQ. Consumer takes messages from RabbitMQ.
 
 But the producer usually does not publish directly to a queue. It publishes to an **exchange**. The exchange looks at the routing key and bindings and decides which queue should get the message.
 
-![Producer publishes to an exchange, and RabbitMQ routes the message through a binding into a queue](/assets/blog/rabbitmq-queues/exchange-routing-flow.png)
+![Producer publishes to an exchange, and RabbitMQ routes the message through a binding into a queue](/assets/images/7cd6d847d1ecba16-1836.webp)
 
 So when someone says "message went to RabbitMQ", ask:
 
@@ -76,7 +76,7 @@ rabbit3
 
 and I create a classic queue, it might live on `rabbit1`.
 
-![A classic RabbitMQ queue living on one node inside a three node cluster](/assets/blog/rabbitmq-queues/classic-queue-single-node.png)
+![A classic RabbitMQ queue living on one node inside a three node cluster](/assets/images/5524fec0b3417e73-710.webp)
 
 So if your classic queue is on `rabbit1`, then `rabbit1` is important for that queue.
 
@@ -152,7 +152,7 @@ orders.queue members:
 
 One node is the leader. The others are followers.
 
-![A quorum queue with one leader node and two follower nodes replicating messages](/assets/blog/rabbitmq-queues/quorum-queue-leader-followers.png)
+![A quorum queue with one leader node and two follower nodes replicating messages](/assets/images/adace3776b0b78f9-1368.webp)
 
 When a producer publishes a message:
 
@@ -198,7 +198,7 @@ leader + 1 follower = majority
 
 So if one follower is slow, the queue can still continue.
 
-![A producer publishing to a quorum queue leader, with majority replication before publisher confirm](/assets/blog/rabbitmq-queues/quorum-publish-majority-confirm.png)
+![A producer publishing to a quorum queue leader, with majority replication before publisher confirm](/assets/images/17e71a83c02f97bc-1580.webp)
 
 This is the balance:
 
@@ -220,7 +220,7 @@ consumer sends ack = message can be removed
 
 Flow:
 
-![A queue delivering a message to a consumer and deleting it only after the consumer acknowledgement](/assets/blog/rabbitmq-queues/consumer-acknowledgement-flow.png)
+![A queue delivering a message to a consumer and deleting it only after the consumer acknowledgement](/assets/images/e5e95c17a1134cab-912.webp)
 
 If the consumer crashes before ack:
 
@@ -260,7 +260,7 @@ Publisher confirm is from RabbitMQ to producer.
 
 Do not mix them.
 
-![Publisher confirms flow from RabbitMQ to producer, while consumer acknowledgements flow from consumer to RabbitMQ](/assets/blog/rabbitmq-queues/publisher-confirm-vs-consumer-ack.png)
+![Publisher confirms flow from RabbitMQ to producer, while consumer acknowledgements flow from consumer to RabbitMQ](/assets/images/d4c7949d493800de-1608.webp)
 
 Publisher confirm answers:
 
@@ -330,7 +330,7 @@ Existing quorum queues do not automatically become 5 member queues.
 
 Cluster membership is not same as queue membership.
 
-![A five node RabbitMQ cluster where only the first three nodes are quorum queue members](/assets/blog/rabbitmq-queues/cluster-nodes-vs-queue-members.png)
+![A five node RabbitMQ cluster where only the first three nodes are quorum queue members](/assets/images/eedc021e253cb53b-710.webp)
 
 The queue still has its old members until you explicitly grow/rebalance the queue.
 
@@ -402,7 +402,7 @@ That aside queue is often called:
 
 The idea is:
 
-![A failed message being routed from the main orders queue to a sideline queue through a dead letter exchange](/assets/blog/rabbitmq-queues/dead-letter-sideline-queue-flow.png)
+![A failed message being routed from the main orders queue to a sideline queue through a dead letter exchange](/assets/images/cb28ffe65fe22c73-2400.webp)
 
 RabbitMQ's mechanism is dead lettering.
 
@@ -575,7 +575,7 @@ If email service is down, checkout might become slow or fail.
 
 With queue:
 
-![Checkout service publishing to an exchange, with payment, invoice and email workers consuming from separate queues](/assets/blog/rabbitmq-queues/async-checkout-queue-flow.png)
+![Checkout service publishing to an exchange, with payment, invoice and email workers consuming from separate queues](/assets/images/1d1d2d62a811f5ca-1994.webp)
 
 Now checkout can publish an event and move on.
 

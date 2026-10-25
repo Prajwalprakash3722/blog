@@ -1,5 +1,4 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
-import Script from "next/script";
 
 export default class MyDocument extends Document {
   render() {
@@ -14,26 +13,6 @@ export default class MyDocument extends Document {
         <body className="bg-surface-base text-text-body font-body">
           <Main />
           <NextScript />
-          <Script id="smooth-scroll" strategy="lazyOnload">
-            {`
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
- function onLoad() {
-        var elements = document.querySelectorAll(".gist > .gist-file > .gist-meta");
-        elements.forEach(function (element) {
-          element.parentElement.removeChild(element);
-        });
-    }
-    onLoad();
-            `}
-          </Script>
         </body>
       </Html>
     );

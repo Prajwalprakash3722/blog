@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-import { useRouter } from "next/router";
+import StaticImage from "./static-image";
 
 interface BookWrapperProps {
   imgSrc: string;
@@ -8,21 +7,23 @@ interface BookWrapperProps {
 }
 
 const BookWrapper = ({ imgSrc, bookName, articleLink }: BookWrapperProps) => {
-  const router = useRouter();
-  return (
-    <div
-      className="flex flex-col items-center cursor-pointer"
-      onClick={() => {
-        articleLink ? router.push(articleLink) : null;
-      }}
-    >
-      <img
+  const book = (
+    <>
+      <StaticImage
         src={imgSrc}
+        sizes="200px"
         className="h-48 w-auto object-contain rounded"
         alt={bookName}
       />
       <h3 className="font-body text-sm text-text-body mt-3">{bookName}</h3>
-    </div>
+    </>
+  );
+  return articleLink ? (
+    <a href={articleLink} className="flex flex-col items-center">
+      {book}
+    </a>
+  ) : (
+    <div className="flex flex-col items-center">{book}</div>
   );
 };
 

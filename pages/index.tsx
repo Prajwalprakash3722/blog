@@ -18,7 +18,7 @@ const Index = ({ allPosts }: Props) => {
   const siteUrl = "https://blog.devcoffee.me";
   const description =
     "Prajwal Prakash writes DevCoffee articles about reliable systems, Linux, distributed systems, accessibility, philosophy, books, life, and travel.";
-  const image = `${siteUrl}/assets/blog/nginx-in-production/nginx-production-architecture-hero.png`;
+  const image = `${siteUrl}/assets/images/504db3f39fe36198-1672.webp`;
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [

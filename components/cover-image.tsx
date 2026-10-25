@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import StaticImage from "./static-image";
 
 type Props = {
   title: string;
@@ -9,10 +9,12 @@ type Props = {
 
 const CoverImage = ({ title, src, slug }: Props) => {
   const image = (
-    <img
+    <StaticImage
       src={src}
       alt={`Cover Image for ${title}`}
       className="w-full h-auto rounded-md object-cover"
+      loading="eager"
+      fetchPriority="high"
     />
   );
 
