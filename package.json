@@ -13,6 +13,8 @@
   },
   "license": " GNU GENERAL PUBLIC LICENSE Version 3",
   "scripts": {
+    "prepare": "node scripts/install-hooks.mjs",
+    "test:images": "node --test tests/image-hook.test.mjs",
     "images:prepare": "node scripts/prepare-images.mjs",
     "images:check": "node scripts/prepare-images.mjs --check",
     "check:delivery": "node scripts/check-delivery.mjs",

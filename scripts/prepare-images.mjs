@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { readFile, readdir, mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
@@ -7,6 +8,39 @@ import { remark } from "remark";
 import sharp from "sharp";
 
 const root = process.cwd();
+const stagedOnly = process.argv.includes("--staged");
+const stagedPaths = stagedOnly
+  ? execFileSync(
+      "git",
+      ["diff", "--cached", "--name-only", "--diff-filter=ACMR", "-z"],
+      { encoding: "utf8" }
+    )
+      .split("\0")
+      .filter(Boolean)
+  : [];
+const sourcePaths = [];
+for (const folder of ["_posts", "_travel", "_til", "components", "pages"]) {
+  for (const filename of await readdir(folder, { recursive: true })) {
+    const filenamePath = path.join(folder, filename);
+    if (
+      (filename.endsWith(".mdx") || filename.endsWith(".tsx")) &&
+      (!stagedOnly || stagedPaths.includes(filenamePath))
+    )
+      sourcePaths.push(filenamePath);
+  }
+}
+if (stagedOnly) {
+  if (!sourcePaths.length) process.exit(0);
+  const unstagedPaths = execFileSync("git", ["diff", "--name-only", "-z"], {
+    encoding: "utf8",
+  }).split("\0");
+  for (const filename of [...sourcePaths, "lib/image-manifest.json"]) {
+    assert(
+      !unstagedPaths.includes(filename),
+      `Image conversion requires the complete file to be staged: ${filename}`
+    );
+  }
+}
 const directory = path.join(root, "public/assets/images");
 const manifestPath = path.join(root, "lib/image-manifest.json");
 const manifest = await readFile(manifestPath, "utf8")
@@ -23,12 +57,9 @@ function collectImages(node) {
   node.children?.forEach(collectImages);
 }
 
-for (const folder of ["_posts", "_travel", "_til"]) {
-  for (const filename of (await readdir(folder))
-    .filter((name) => name.endsWith(".mdx"))
-    .sort()) {
-    const filenamePath = path.join(folder, filename);
-    const text = await readFile(filenamePath, "utf8");
+for (const filenamePath of sourcePaths.sort()) {
+  const text = await readFile(filenamePath, "utf8");
+  if (filenamePath.endsWith(".mdx")) {
     const { data, content } = matter(text);
     for (const source of [
       data.coverImage,
@@ -38,17 +69,20 @@ for (const folder of ["_posts", "_travel", "_til"]) {
       if (source) sources.add(source);
     }
     collectImages(remark().parse(content));
-    files.push({ filename: filenamePath, text });
   }
-}
-for (const filename of ["components/BookWidget.tsx", "pages/index.tsx"]) {
-  const text = await readFile(filename, "utf8");
-  for (const match of text.matchAll(
-    /(?:imgSrc=|const image =\s*)["`]([^"`]+)["`]/g
+  for (const tag of text.matchAll(
+    /<(?:img|Image|StaticImage|BookWrapper)\b[^>]*>/g
   )) {
-    sources.add(match[1].replace("${siteUrl}", ""));
+    for (const match of tag[0].matchAll(
+      /\b(?:src|imgSrc)\s*=\s*(?:["']([^"']+)["']|\{["']([^"']+)["']\})/g
+    ))
+      sources.add(match[1] || match[2]);
   }
-  files.push({ filename, text });
+  if (filenamePath === "pages/index.tsx") {
+    const image = text.match(/const image =\s*["`]([^"`]+)["`]/);
+    if (image) sources.add(image[1].replace("${siteUrl}", ""));
+  }
+  files.push({ filename: filenamePath, text });
 }
 
 await mkdir(directory, { recursive: true });
@@ -97,6 +131,8 @@ if (process.argv.includes("--check")) {
 }
 
 const replacements = new Map();
+const generatedPaths = new Set();
+const updatedPaths = [];
 const failures = [];
 let inputBytes = 0;
 let outputBytes = 0;
@@ -162,6 +198,7 @@ async function prepare(source) {
     const hash = createHash("sha256").update(data).digest("hex").slice(0, 16);
     const src = `/assets/images/${hash}-${info.width}.webp`;
     await writeFile(path.join(root, "public", src), data);
+    generatedPaths.add(path.join("public", src));
     variants.push({
       src,
       width: info.width,
@@ -194,7 +231,10 @@ for (const file of files) {
   )) {
     text = text.replaceAll(source, destination);
   }
-  if (text !== file.text) await writeFile(file.filename, text);
+  if (text !== file.text) {
+    await writeFile(file.filename, text);
+    updatedPaths.push(file.filename);
+  }
 }
 await writeFile(
   manifestPath,
@@ -206,6 +246,13 @@ await writeFile(
     2
   ) + "\n"
 );
+if (stagedOnly && replacements.size) {
+  execFileSync(
+    "git",
+    ["add", "--", ...updatedPaths, manifestPath, ...generatedPaths],
+    { stdio: "inherit" }
+  );
+}
 console.log(
   JSON.stringify(
     {
